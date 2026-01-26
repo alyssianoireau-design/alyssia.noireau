@@ -18,34 +18,100 @@
         
         <nav class="flex-1 p-4 space-y-1">
             <p class="text-slate-500 uppercase text-[10px] font-bold tracking-wider mb-4 px-3 italic">Explorateur</p>
-            <a href="#accueil" class="flex items-center gap-3 p-3 rounded-lg hover:bg-slate-700 transition text-slate-300 group"><i class="fa-solid fa-house w-5 text-blue-500"></i> Accueil</a>
-            <a href="#profil" class="flex items-center gap-3 p-3 rounded-lg hover:bg-slate-700 transition text-slate-300 group"><i class="fa-solid fa-user w-5 text-blue-500"></i> Profil</a>
-            <a href="#entreprise" class="flex items-center gap-3 p-3 rounded-lg hover:bg-slate-700 transition text-slate-300 group"><i class="fa-solid fa-building w-5 text-blue-500"></i> Entreprise</a>
-            <a href="#tp" class="flex items-center gap-3 p-3 rounded-lg hover:bg-slate-700 transition text-slate-300 group"><i class="fa-solid fa-microchip w-5 text-blue-500"></i> TP / Projets</a>
-            <a href="#certifications" class="flex items-center gap-3 p-3 rounded-lg hover:bg-slate-700 transition text-slate-300 group"><i class="fa-solid fa-certificate w-5 text-blue-500"></i> Certifications</a>
-            <a href="#contact" class="flex items-center gap-3 p-3 rounded-lg hover:bg-slate-700 transition text-slate-300 group"><i class="fa-solid fa-envelope w-5 text-blue-500"></i> Contact</a>
-            
-            <div class="pt-10 px-3">
-                <a href="#" class="flex items-center justify-center gap-2 p-3 rounded-lg bg-blue-600/10 text-blue-400 border border-blue-500/20 hover:bg-blue-600/20 transition font-bold text-xs">
-                    <i class="fa-solid fa-file-contract"></i> Tableau de Synthèse
-                </a>
-            </div>
+            <a href="#accueil" class="flex items-center gap-3 p-3 rounded-lg hover:bg-slate-700 transition text-slate-300"><i class="fa-solid fa-house w-5 text-blue-500"></i> Accueil</a>
+            <a href="#entreprise" class="flex items-center gap-3 p-3 rounded-lg hover:bg-slate-700 transition text-slate-300"><i class="fa-solid fa-building w-5 text-blue-500"></i> Entreprise</a>
+            <a href="#profil" class="flex items-center gap-3 p-3 rounded-lg hover:bg-slate-700 transition text-slate-300"><i class="fa-solid fa-user w-5 text-blue-500"></i> Profil</a>
+            <a href="#tp" class="flex items-center gap-3 p-3 rounded-lg hover:bg-slate-700 transition text-slate-300"><i class="fa-solid fa-microchip w-5 text-blue-500"></i> TP / Projets</a>
+            <a href="#certifications" class="flex items-center gap-3 p-3 rounded-lg hover:bg-slate-700 transition text-slate-300"><i class="fa-solid fa-certificate w-5 text-blue-500"></i> Certifications</a>
+            <a href="#contact" class="flex items-center gap-3 p-3 rounded-lg hover:bg-slate-700 transition text-slate-300"><i class="fa-solid fa-envelope w-5 text-blue-500"></i> Contact</a>
         </nav>
     </aside>
 
     <div class="md:ml-64 min-h-screen bg-gradient-to-br from-slate-900 via-slate-900 to-slate-800">
         <main class="max-w-5xl mx-auto p-8 lg:p-16 space-y-32">
             
-            <section id="accueil" class="py-20 flex flex-col justify-center min-h-[50vh]">
+            <section id="accueil" class="py-20 flex flex-col justify-center min-h-[40vh]">
                 <h3 class="text-5xl md:text-6xl font-black mb-8 leading-tight">
                     Bienvenue sur mon <br>
                     <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">Portfolio</span>
                 </h3>
             </section>
 
-            <section id="profil" class="scroll-mt-20">
-                <div class="bg-slate-800/40 p-8 rounded-3xl border border-slate-700 backdrop-blur-sm shadow-xl">
-                    <p class="text-blue-500 font-bold text-lg mb-6 uppercase tracking-wide">À propos de moi</p>
+            <section id="entreprise" class="scroll-mt-20">
+                <h2 class="text-3xl font-bold mb-10 flex items-center gap-4 text-white uppercase tracking-widest">
+                    <span class="h-px w-12 bg-blue-500"></span> Expérience chez ISTA
+                </h2>
+
+                <div class="space-y-8 text-left">
+                    <div class="bg-white rounded-3xl p-8 flex flex-col md:flex-row items-center gap-8 shadow-2xl transition hover:scale-[1.01]">
+                        <img src="image_e736df.png" alt="Logo ISTA" class="h-12 md:h-20 object-contain">
+                        <p class="text-slate-800 text-lg leading-relaxed italic border-l-4 border-blue-500 pl-6 font-medium">
+                            Ista est une entreprise spécialisée dans la mesure et la gestion des consommations d’énergie et d’eau des bâtiments. 
+                            Elle aide les propriétaires et gestionnaires à répartir les charges et à optimiser l’efficacité énergétique.
+                        </p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm">
+                        
+                        <div class="bg-slate-800/60 p-6 rounded-2xl border border-slate-700 shadow-md">
+                            <h5 class="text-blue-400 font-bold mb-4 flex items-center gap-3 italic text-base">
+                                <i class="fa-solid fa-headset text-lg"></i> Support & Relation Utilisateur
+                            </h5>
+                            <ul class="text-slate-300 space-y-2 list-none">
+                                <li>• Prise en charge des incidents (Téléphone, Mail, Jira).</li>
+                                <li>• Diagnostic et résolution de pannes hardware & software.</li>
+                                <li>• Support à distance via <b>TeamViewer et Teams</b>.</li>
+                                <li>• Installation et configuration de postes de travail.</li>
+                                <li>• Rédaction de procédures et documentation technique.</li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-slate-800/60 p-6 rounded-2xl border border-slate-700 shadow-md">
+                            <h5 class="text-blue-400 font-bold mb-4 flex items-center gap-3 italic text-base">
+                                <i class="fa-solid fa-server text-lg"></i> Administration & Sécurité
+                            </h5>
+                            <ul class="text-slate-300 space-y-2">
+                                <li>• Gestion des comptes via <b>Active Directory (AD)</b>.</li>
+                                <li>• Administration des droits NTFS et partages réseau.</li>
+                                <li>• Gestion des accès distants et connexions <b>VPN</b>.</li>
+                                <li>• Sauvegarde et restauration de données sur demande.</li>
+                                <li>• Configuration et gestion de parcs d'imprimantes.</li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-slate-800/60 p-6 rounded-2xl border border-slate-700 md:col-span-2 shadow-md">
+                            <h5 class="text-blue-400 font-bold mb-4 flex items-center gap-3 italic text-base">
+                                <i class="fa-solid fa-microchip text-lg"></i> Gestion de Parc & Déploiement (Intune / Baramundi)
+                            </h5>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-4">
+                                <div class="border-l-2 border-blue-500/30 pl-4">
+                                    <p class="text-white font-bold mb-2 uppercase text-xs tracking-widest">Microsoft Intune</p>
+                                    <p class="text-slate-400 text-xs italic leading-relaxed">Enrôlement d'appareils, application de politiques de sécurité (PIN, chiffrement) et déploiement d'applications mobiles.</p>
+                                </div>
+                                <div class="border-l-2 border-blue-500/30 pl-4">
+                                    <p class="text-white font-bold mb-2 uppercase text-xs tracking-widest">Baramundi</p>
+                                    <p class="text-slate-400 text-xs italic leading-relaxed">Déploiement automatisé d'applications, inventaire matériel et suivi des mises à jour critiques de sécurité.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-slate-800/40 p-6 rounded-2xl border border-slate-700 md:col-span-2 text-xs text-slate-400">
+                            <p class="flex flex-wrap gap-4 items-center">
+                                <span class="bg-slate-700/50 px-3 py-1 rounded-full border border-slate-600">Compliance Training 2025</span>
+                                <span class="bg-slate-700/50 px-3 py-1 rounded-full border border-slate-600">Annual Data Cleaning</span>
+                                <span class="bg-slate-700/50 px-3 py-1 rounded-full border border-slate-600">RSE Soccer Cup</span>
+                                <span class="text-blue-400 font-bold italic"><i class="fa-solid fa-microphone"></i> Voix du répondeur interne ISTA</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="profil" class="scroll-mt-20 pt-20">
+                <div class="bg-slate-800/40 p-10 rounded-3xl border border-slate-700 backdrop-blur-sm shadow-xl">
+                    <p class="text-blue-500 font-bold text-lg mb-6 uppercase tracking-widest flex items-center gap-3">
+                        <span class="h-px w-8 bg-blue-500"></span> À propos de moi
+                    </p>
                     <p class="text-slate-200 text-xl leading-relaxed text-justify font-normal">
                         Bien que formée aux bases du développement, mon expertise et mes aspirations se tournent résolument vers les solutions d'infrastructure et la sécurité système. 
                         Étudiante en BTS SIO spécialité SISR, j'effectue mon alternance au sein de l'entreprise ISTA, où je suis pleinement investie au support informatique. 
@@ -54,57 +120,18 @@
                 </div>
             </section>
 
-            <section id="entreprise" class="scroll-mt-20">
-                <h2 class="text-3xl font-bold mb-10 flex items-center gap-4 text-white">
-                    <span class="h-px w-12 bg-blue-500"></span> Expérience chez ISTA
-                </h2>
-
-                <div class="space-y-8 text-left">
-                    <div class="bg-white rounded-2xl p-6 flex flex-col md:flex-row items-center gap-8 shadow-lg">
-                        <img src="image_e736df.png" alt="Logo ISTA" class="h-16 md:h-24 object-contain">
-                        <p class="text-slate-800 text-lg leading-relaxed italic">
-                            Ista est une entreprise spécialisée dans la mesure et la gestion des consommations d’énergie et d’eau des bâtiments. 
-                            Elle aide les propriétaires et gestionnaires à répartir les charges et à optimiser l’efficacité énergétique.
-                        </p>
-                    </div>
-
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm">
-                        <div class="bg-slate-800/60 p-6 rounded-2xl border border-slate-700 hover:border-blue-500/50 transition shadow-md">
-                            <h5 class="text-blue-400 font-bold mb-4 flex items-center gap-3 italic text-base">
-                                <i class="fa-solid fa-headset text-lg"></i> Support & Relation Utilisateur
-                            </h5>
-                            <ul class="text-slate-400 space-y-2">
-                                <li>• Assistance N1/N2 via <b>Jira, Outlook et Voxtron</b>.</li>
-                                <li>• Diagnostic hardware/software et support à distance.</li>
-                                <li>• Installation et configuration de postes de travail.</li>
-                            </ul>
-                        </div>
-                        <div class="bg-slate-800/60 p-6 rounded-2xl border border-slate-700 hover:border-blue-500/50 transition shadow-md">
-                            <h5 class="text-blue-400 font-bold mb-4 flex items-center gap-3 italic text-base">
-                                <i class="fa-solid fa-server text-lg"></i> Infrastructure & Systèmes
-                            </h5>
-                            <ul class="text-slate-400 space-y-2">
-                                <li>• Gestion des comptes via <b>Active Directory (AD)</b>.</li>
-                                <li>• Administration des droits d'accès et permissions NTFS.</li>
-                                <li>• Support sur les connexions VPN et accès distants.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
             <section id="contact" class="py-20 border-t border-slate-800/50 text-center">
                 <h2 class="text-3xl font-bold mb-12 text-white italic">Me contacter</h2>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <a href="tel:0767178908" class="flex flex-col items-center gap-4 bg-slate-800/50 p-6 rounded-2xl hover:bg-slate-700 transition border border-slate-700 group">
+                    <a href="tel:0767178908" class="flex flex-col items-center gap-4 bg-slate-800/50 p-6 rounded-2xl hover:bg-slate-700 transition border border-slate-700 group shadow-lg">
                         <i class="fa-solid fa-phone text-2xl text-blue-500 group-hover:scale-110 transition"></i>
                         <p class="text-slate-200">07 67 17 89 08</p>
                     </a>
-                    <a href="mailto:Alyssia.noireau@gmail.com" class="flex flex-col items-center gap-4 bg-slate-800/50 p-6 rounded-2xl hover:bg-slate-700 transition border border-slate-700 group">
+                    <a href="mailto:Alyssia.noireau@gmail.com" class="flex flex-col items-center gap-4 bg-slate-800/50 p-6 rounded-2xl hover:bg-slate-700 transition border border-slate-700 group shadow-lg">
                         <i class="fa-solid fa-envelope text-2xl text-blue-500 group-hover:scale-110 transition"></i>
                         <p class="text-slate-200 text-sm">Alyssia.noireau@gmail.com</p>
                     </a>
-                    <a href="http://www.linkedin.com/in/alyssia-noireau" target="_blank" class="flex flex-col items-center gap-4 bg-slate-800/50 p-6 rounded-2xl hover:bg-slate-700 transition border border-slate-700 group">
+                    <a href="http://www.linkedin.com/in/alyssia-noireau" target="_blank" class="flex flex-col items-center gap-4 bg-slate-800/50 p-6 rounded-2xl hover:bg-slate-700 transition border border-slate-700 group shadow-lg">
                         <i class="fa-brands fa-linkedin text-2xl text-blue-500 group-hover:scale-110 transition"></i>
                         <p class="text-slate-200">LinkedIn</p>
                     </a>
