@@ -3,72 +3,117 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio BTS SIO | Alyssia Noireau</title>
+    <title>Portfolio | Alyssia Noireau</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .neon-text { text-shadow: 0 0 10px rgba(59, 130, 246, 0.8); }
+        .neon-border { box-shadow: 0 0 15px rgba(59, 130, 246, 0.4); }
+    </style>
 </head>
-<body class="bg-[#b30000] text-white font-sans">
+<body class="bg-[#1a1a2e] text-slate-100 font-sans antialiased">
 
-    <nav class="bg-[#1a1a1a] p-4 sticky top-0 z-50 shadow-xl">
-        <div class="max-w-6xl mx-auto flex justify-between items-center">
-            <div class="flex items-center gap-2">
-                <i class="fa-solid fa-user-shield text-xl"></i>
-                <span class="font-bold tracking-tight">Alyssia NOIREAU</span>
+    <aside class="fixed top-0 left-0 h-screen w-64 bg-[#16213e] border-r border-blue-500/30 hidden md:flex flex-col shadow-2xl z-50">
+        <div class="p-8 text-center border-b border-blue-500/20">
+            <div class="w-20 h-20 bg-slate-700 rounded-full mx-auto mb-4 border-2 border-blue-500 neon-border flex items-center justify-center">
+                <i class="fa-solid fa-user text-3xl text-blue-400"></i>
             </div>
-            <div class="hidden md:flex space-x-8 text-sm font-medium uppercase tracking-widest">
-                <a href="#accueil" class="hover:text-gray-400 transition">Accueil</a>
-                <a href="#entreprise" class="hover:text-gray-400 transition">Stages / Entreprise</a>
-                <a href="#tp" class="hover:text-gray-400 transition">Réalisations</a>
-                <a href="#certifications" class="hover:text-gray-400 transition">Certifications</a>
-                <a href="#profil" class="hover:text-gray-400 transition">À propos</a>
-                <a href="#contact" class="hover:text-gray-400 transition">Contact</a>
+            <h1 class="text-xl font-black tracking-tighter neon-text uppercase text-blue-400">Alyssia<br>Noireau</h1>
+            <div class="flex justify-center gap-3 mt-4 text-slate-400">
+                <a href="http://www.linkedin.com/in/alyssia-noireau" target="_blank" class="hover:text-blue-400 transition"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://github.com/Alyssianr" target="_blank" class="hover:text-blue-400 transition"><i class="fa-brands fa-github"></i></a>
             </div>
         </div>
-    </nav>
+        
+        <nav class="flex-1 p-6 space-y-2 text-sm uppercase font-bold tracking-widest">
+            <a href="#accueil" class="flex items-center gap-4 p-3 rounded-lg hover:bg-blue-500/10 hover:text-blue-400 transition group text-slate-400">
+                <i class="fa-solid fa-house w-5 group-hover:neon-text"></i> Accueil
+            </a>
+            <a href="#entreprise" class="flex items-center gap-4 p-3 rounded-lg hover:bg-blue-500/10 hover:text-blue-400 transition group text-slate-400">
+                <i class="fa-solid fa-building w-5"></i> Entreprise
+            </a>
+            <a href="#tp" class="flex items-center gap-4 p-3 rounded-lg hover:bg-blue-500/10 hover:text-blue-400 transition group text-slate-400">
+                <i class="fa-solid fa-folder-open w-5"></i> Projets
+            </a>
+            <a href="#certifications" class="flex items-center gap-4 p-3 rounded-lg hover:bg-blue-500/10 hover:text-blue-400 transition group text-slate-400">
+                <i class="fa-solid fa-certificate w-5"></i> Certifs
+            </a>
+            <a href="#profil" class="flex items-center gap-4 p-3 rounded-lg hover:bg-blue-500/10 hover:text-blue-400 transition group text-slate-400">
+                <i class="fa-solid fa-address-card w-5"></i> Profil
+            </a>
+            <a href="#contact" class="flex items-center gap-4 p-3 rounded-lg hover:bg-blue-500/10 hover:text-blue-400 transition group text-slate-400">
+                <i class="fa-solid fa-envelope w-5"></i> Contact
+            </a>
+        </nav>
 
-    <header id="accueil" class="h-[60vh] flex flex-col justify-center items-center text-center p-6">
-        <h1 class="text-6xl font-black mb-4 uppercase tracking-tighter">Bienvenue sur mon Portfolio</h1>
-        <p class="text-xl font-light opacity-90 italic">BTS SIO - Option SISR (Solutions d'Infrastructure, Systèmes et Réseaux)</p>
-    </header>
+        <div class="p-6 border-t border-blue-500/20">
+            <a href="#" class="block w-full py-3 bg-blue-600 hover:bg-blue-500 text-center rounded-xl text-[10px] font-black uppercase tracking-widest transition neon-border">
+                Epreuve E4
+            </a>
+        </div>
+    </aside>
 
-    <main class="max-w-5xl mx-auto p-6 space-y-24 pb-20">
+    <div class="md:ml-64 min-h-screen">
+        <main class="max-w-5xl mx-auto p-8 lg:p-20 space-y-40">
 
-        <section id="entreprise" class="scroll-mt-24">
-            <h2 class="text-4xl font-black mb-10 border-b-4 border-white pb-2 inline-block italic">Stages / Entreprise</h2>
-            <div class="bg-white text-gray-900 rounded-lg p-8 shadow-2xl">
-                <p class="text-gray-500 italic">Contenu à venir : Présentation de tes missions chez ISTA...</p>
-            </div>
-        </section>
+            <section id="accueil" class="min-h-[60vh] flex flex-col justify-center text-center md:text-left">
+                <h2 class="text-white text-7xl font-black tracking-tighter uppercase leading-none">Alyssia Noireau</h2>
+                <h3 class="text-blue-500 text-3xl font-bold uppercase tracking-[0.2em] mt-2 italic neon-text">Bienvenue sur mon Portfolio</h3>
+            </section>
 
-        <section id="tp" class="scroll-mt-24">
-            <h2 class="text-4xl font-black mb-10 border-b-4 border-white pb-2 inline-block italic">Réalisations</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div class="bg-black/20 border border-white/30 p-6 rounded-lg italic">Projets à lister...</div>
-            </div>
-        </section>
+            <section id="entreprise" class="scroll-mt-20">
+                <h2 class="text-4xl font-black mb-12 border-l-8 border-blue-500 pl-6 uppercase tracking-tighter italic">Expérience chez ISTA</h2>
+                
+                <div class="space-y-12">
+                    <div class="bg-[#16213e] p-10 rounded-3xl border border-blue-500/20 shadow-2xl flex flex-col md:flex-row items-center gap-10">
+                        <img src="image_e736df.png" alt="ISTA" class="h-20 md:h-28 object-contain">
+                        <p class="text-slate-300 text-xl leading-relaxed italic border-l-2 border-slate-700 pl-8 font-light">
+                            Ista est une entreprise spécialisée dans la mesure et la gestion des consommations d’énergie et d’eau des bâtiments. Elle aide les propriétaires et gestionnaires à répartir les charges et à optimiser l’efficacité énergétique.
+                        </p>
+                    </div>
 
-        <section id="certifications" class="scroll-mt-24">
-            <h2 class="text-4xl font-black mb-10 border-b-4 border-white pb-2 inline-block italic">Certifications</h2>
-            <div class="bg-black/20 border border-white/30 p-6 rounded-lg">
-                <p class="opacity-70">Certifications à venir (Pix, Cisco, etc.)...</p>
-            </div>
-        </section>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="bg-[#16213e]/50 p-8 rounded-2xl border border-slate-800 hover:border-blue-500/40 transition">
+                            <h4 class="text-blue-400 font-black uppercase text-sm mb-6 tracking-widest italic border-b border-blue-500/20 pb-2">Support & Assistance</h4>
+                            <ul class="text-slate-400 space-y-4 text-sm font-medium">
+                                <li>• Assistance N1/N2 : <b>Jira, Outlook, Voxtron</b>.</li>
+                                <li>• Maintenance matérielle & logicielle du parc.</li>
+                                <li>• Support à distance : <b>TeamViewer, Teams</b>.</li>
+                                <li>• Rédaction de procédures techniques.</li>
+                            </ul>
+                        </div>
+                        <div class="bg-[#16213e]/50 p-8 rounded-2xl border border-slate-800 hover:border-blue-500/40 transition">
+                            <h4 class="text-blue-400 font-black uppercase text-sm mb-6 tracking-widest italic border-b border-blue-500/20 pb-2">Admin Systèmes & Réseaux</h4>
+                            <ul class="text-slate-400 space-y-4 text-sm font-medium">
+                                <li>• <b>Active Directory (AD)</b> : Comptes & GPO.</li>
+                                <li>• Gestion des accès <b>VPN</b> & droits NTFS.</li>
+                                <li>• Configuration & Gestion MDM via <b>Intune</b>.</li>
+                                <li>• Automatisation parc via <b>Baramundi</b>.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-        <section id="profil" class="scroll-mt-24">
-            <h2 class="text-4xl font-black mb-10 border-b-4 border-white pb-2 inline-block italic">À propos de moi <i class="fa-regular fa-comment-dots"></i></h2>
-            <div class="bg-black/10 p-8 rounded-lg">
-                <p class="text-xl leading-relaxed italic">Contenu de ta biographie à insérer ici...</p>
-            </div>
-        </section>
+            <section id="profil" class="scroll-mt-20">
+                <div class="bg-[#16213e] p-12 rounded-[3rem] border-t-4 border-blue-500 shadow-2xl">
+                    <h2 class="text-3xl font-black mb-8 uppercase text-blue-400 italic">À propos de moi <i class="fa-regular fa-comment-dots ml-2"></i></h2>
+                    <p class="text-slate-200 text-2xl leading-relaxed font-light italic">
+                        Bien que formée aux bases du développement, mon expertise et mes aspirations se tournent résolument vers les solutions d'infrastructure et la sécurité système. Étudiante en BTS SIO spécialité SISR, j'effectue mon alternance au sein de l'entreprise ISTA, où je suis pleinement investie au support informatique. Très impliquée dans l'administration réseaux, je veille au quotidien à la gestion de l'infrastructure pour garantir la haute disponibilité et la sécurité des services informatiques.
+                    </p>
+                </div>
+            </section>
 
-        <section id="contact" class="scroll-mt-24 text-center">
-            <h2 class="text-4xl font-black mb-10 border-b-4 border-white pb-2 inline-block italic">Contact</h2>
-            <div class="flex flex-wrap justify-center gap-8">
-                <p><i class="fa-solid fa-phone"></i> 07 67 17 89 08</p>
-                <p><i class="fa-solid fa-envelope"></i> Alyssia.noireau@gmail.com</p>
-            </div>
-        </section>
+            <section id="contact" class="pb-40 text-center">
+                <h2 class="text-4xl font-black mb-12 italic uppercase tracking-tighter">Contact</h2>
+                <div class="flex flex-wrap justify-center gap-12 text-blue-400 font-bold tracking-widest">
+                    <p class="bg-[#16213e] p-6 rounded-2xl border border-blue-500/20"><i class="fa-solid fa-phone mr-3 text-white"></i> 07 67 17 89 08</p>
+                    <p class="bg-[#16213e] p-6 rounded-2xl border border-blue-500/20"><i class="fa-solid fa-envelope mr-3 text-white"></i> Alyssia.noireau@gmail.com</p>
+                </div>
+            </section>
 
-    </main>
+        </main>
+    </div>
+
 </body>
 </html>
