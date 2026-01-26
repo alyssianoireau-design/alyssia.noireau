@@ -10,13 +10,8 @@
         .neon-text { text-shadow: 0 0 15px rgba(59, 130, 246, 0.9); }
         .neon-border { box-shadow: 0 0 20px rgba(59, 130, 246, 0.3); }
         .glass-card { background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(10px); }
-        
-        /* Police Arial Droite pour tout le contenu */
-        .arial-text { 
-            font-family: Arial, Helvetica, sans-serif !important; 
-            font-style: normal !important;
-            font-weight: 400;
-        }
+        .arial-text { font-family: Arial, Helvetica, sans-serif !important; font-style: normal !important; }
+        .tech-badge { background: rgba(59, 130, 246, 0.2); border: 1px solid rgba(59, 130, 246, 0.5); padding: 2px 8px; border-radius: 4px; color: #60a5fa; font-weight: bold; }
     </style>
 </head>
 <body class="bg-[#0f172a] text-slate-100 font-sans antialiased text-left arial-text">
@@ -28,38 +23,15 @@
                 <i class="fa-solid fa-user text-3xl text-blue-400"></i>
             </div>
             <h1 class="text-xl font-black tracking-tighter neon-text uppercase text-blue-400">Alyssia<br>Noireau</h1>
-            <div class="flex justify-center gap-3 mt-4 text-slate-400">
-                <a href="http://www.linkedin.com/in/alyssia-noireau" target="_blank" class="hover:text-blue-400 transition"><i class="fa-brands fa-linkedin"></i></a>
-                <a href="https://github.com/Alyssianr" target="_blank" class="hover:text-blue-400 transition"><i class="fa-brands fa-github"></i></a>
-            </div>
         </div>
-        
-        <nav class="flex-1 p-6 space-y-2 text-sm uppercase font-bold tracking-widest">
-            <a href="#accueil" class="flex items-center gap-4 p-3 rounded-lg hover:bg-blue-500/10 hover:text-blue-400 transition text-slate-400">
-                <i class="fa-solid fa-house w-5"></i> Accueil
-            </a>
-            <a href="#profil" class="flex items-center gap-4 p-3 rounded-lg hover:bg-blue-500/10 hover:text-blue-400 transition text-slate-400">
-                <i class="fa-solid fa-address-card w-5"></i> Profil
-            </a>
-            <a href="#entreprise" class="flex items-center gap-4 p-3 rounded-lg hover:bg-blue-500/10 hover:text-blue-400 transition text-slate-400">
-                <i class="fa-solid fa-building w-5"></i> Entreprise
-            </a>
-            <a href="#tp" class="flex items-center gap-4 p-3 rounded-lg hover:bg-blue-500/10 hover:text-blue-400 transition text-slate-400">
-                <i class="fa-solid fa-folder-open w-5"></i> Projets
-            </a>
-            <a href="#certifications" class="flex items-center gap-4 p-3 rounded-lg hover:bg-blue-500/10 hover:text-blue-400 transition text-slate-400">
-                <i class="fa-solid fa-certificate w-5"></i> Certifs
-            </a>
-            <a href="#contact" class="flex items-center gap-4 p-3 rounded-lg hover:bg-blue-500/10 hover:text-blue-400 transition text-slate-400">
-                <i class="fa-solid fa-envelope w-5"></i> Contact
-            </a>
+        <nav class="flex-1 p-6 space-y-2 text-sm uppercase font-bold tracking-widest text-slate-400">
+            <a href="#accueil" class="flex items-center gap-4 p-3 rounded-lg hover:bg-blue-500/10 hover:text-blue-400 transition"><i class="fa-solid fa-house w-5"></i> Accueil</a>
+            <a href="#profil" class="flex items-center gap-4 p-3 rounded-lg hover:bg-blue-500/10 hover:text-blue-400 transition"><i class="fa-solid fa-address-card w-5"></i> Profil</a>
+            <a href="#entreprise" class="flex items-center gap-4 p-3 rounded-lg hover:bg-blue-500/10 hover:text-blue-400 transition"><i class="fa-solid fa-building w-5"></i> Entreprise</a>
+            <a href="#tp" class="flex items-center gap-4 p-3 rounded-lg hover:bg-blue-500/10 hover:text-blue-400 transition"><i class="fa-solid fa-folder-open w-5"></i> Projets</a>
+            <a href="#certifications" class="flex items-center gap-4 p-3 rounded-lg hover:bg-blue-500/10 hover:text-blue-400 transition"><i class="fa-solid fa-certificate w-5"></i> Certifs</a>
+            <a href="#contact" class="flex items-center gap-4 p-3 rounded-lg hover:bg-blue-500/10 hover:text-blue-400 transition"><i class="fa-solid fa-envelope w-5"></i> Contact</a>
         </nav>
-
-        <div class="p-6 border-t border-blue-500/20">
-            <a href="#" class="block w-full py-3 bg-blue-600 hover:bg-blue-500 text-center rounded-xl text-[10px] font-black uppercase tracking-widest transition neon-border">
-                Epreuve E4
-            </a>
-        </div>
     </aside>
 
     <div class="md:ml-64 min-h-screen">
@@ -77,7 +49,6 @@
                             <img src="maphoto.png" alt="Alyssia Noireau" class="w-full h-full object-cover rounded-2xl" onerror="this.style.display='none';">
                             <i class="fa-solid fa-user-tie text-7xl text-slate-700"></i>
                         </div>
-                        
                         <div class="glass-card p-4 rounded-2xl border border-blue-500/20 text-center">
                             <a href="MON_CV.pdf" target="_blank" class="flex items-center justify-center gap-2 py-4 bg-blue-600/20 hover:bg-blue-600/40 text-blue-400 rounded-xl text-xs font-black uppercase tracking-widest transition border border-blue-500/30">
                                 <i class="fa-solid fa-file-pdf"></i> Voir mon CV
@@ -98,8 +69,8 @@
                             <div class="absolute top-0 left-0 w-1 h-full bg-blue-500"></div>
                             <h2 class="text-sm font-black mb-4 uppercase text-blue-400 tracking-[0.3em]">Parcours & Objectifs</h2>
                             <p class="text-slate-200 text-lg leading-relaxed text-justify">
-                                Mon immersion actuelle dans les infrastructures techniques constitue le socle de mon projet professionnel : 
-                                évoluer vers la gestion de projets informatiques afin de piloter des solutions technologiques innovantes et stratégiques.
+                                L’année prochaine, je souhaite continuer mes études en informatique en alternance et intégrer la licence Chef de projet développement, sécurité et exploitation. 
+                                Mon immersion actuelle constitue le socle de mon projet : évoluer vers le pilotage de solutions technologiques innovantes et stratégiques.
                             </p>
                         </div>
                     </div>
@@ -107,15 +78,15 @@
             </section>
 
             <section id="entreprise" class="scroll-mt-24">
-                <h2 class="text-3xl font-black mb-2 border-l-8 border-blue-500 pl-6 uppercase tracking-tighter italic">Entreprise</h2>
+                <h2 class="text-3xl font-black mb-2 border-l-8 border-blue-500 pl-6 uppercase tracking-tighter">Entreprise</h2>
                 <div class="mb-12 pl-8">
-                    <h3 class="text-2xl font-bold text-blue-400 uppercase tracking-widest">Ista</h3>
-                    <p class="text-slate-400 italic text-sm">Solution de comptage individuel d'eau et de chauffage</p>
+                    <h3 class="text-2xl font-bold text-white uppercase tracking-widest">Ista</h3>
+                    <p class="text-white text-sm font-medium">Solution de comptage individuel d'eau et de chauffage</p>
                 </div>
 
                 <div class="space-y-12">
                     <div class="flex justify-center md:justify-start">
-                        <div class="bg-white p-8 rounded-[2.5rem] border-4 border-blue-500/50 shadow-2xl neon-border inline-block transition hover:scale-105">
+                        <div class="bg-white p-8 rounded-[2.5rem] border-4 border-blue-500 shadow-2xl neon-border inline-block">
                             <img src="image_e736df.png" alt="Logo ISTA" class="h-24 md:h-32 object-contain">
                         </div>
                     </div>
@@ -130,31 +101,20 @@
                         <div class="glass-card p-8 rounded-2xl border border-slate-700/50 relative">
                             <div class="absolute -top-3 left-6 bg-blue-600 px-3 py-1 rounded text-[10px] font-black uppercase tracking-widest">Support & Assistance</div>
                             <ul class="text-slate-400 space-y-4 text-sm mt-4">
-                                <li>• <span class="text-blue-300 font-bold">ITSM :</span> Gestion des incidents et demandes via <b>Jira</b>.</li>
-                                <li>• <span class="text-blue-300 font-bold">Assistance N1/N2 :</span> Support multisite (Voxtron, Outlook).</li>
-                                <li>• <span class="text-blue-300 font-bold">Dépannage :</span> Intervention distante via TeamViewer & Teams.</li>
-                                <li>• <span class="text-blue-300 font-bold">Logistique :</span> Préparation et déploiement de postes de travail.</li>
+                                <li>• <span class="text-blue-300 font-bold">ITSM :</span> Gestion des incidents via <span class="tech-badge">Jira</span>.</li>
+                                <li>• <span class="text-blue-300 font-bold">Support Distant :</span> Maintenance via <span class="tech-badge">TeamViewer</span> & Teams.</li>
+                                <li>• <span class="text-blue-300 font-bold">Infrastructures :</span> Support utilisateur sur environnements <span class="tech-badge">Azure Cloud</span>.</li>
                             </ul>
                         </div>
                         <div class="glass-card p-8 rounded-2xl border border-slate-700/50 relative">
                             <div class="absolute -top-3 left-6 bg-blue-600 px-3 py-1 rounded text-[10px] font-black uppercase tracking-widest">Administration Systèmes</div>
                             <ul class="text-slate-400 space-y-4 text-sm mt-4">
-                                <li>• <span class="text-blue-300 font-bold">AD :</span> Gestion des objets et droits Active Directory.</li>
-                                <li>• <span class="text-blue-300 font-bold">Mobilité :</span> Administration de flotte via <b>Microsoft Intune</b>.</li>
-                                <li>• <span class="text-blue-300 font-bold">UEM :</span> Inventaire et déploiement via <b>Baramundi</b>.</li>
-                                <li>• <span class="text-blue-300 font-bold">Sécurité :</span> Gestion des accès VPN et droits NTFS.</li>
+                                <li>• <span class="text-blue-300 font-bold">Gestion MDM :</span> Sécurisation flotte mobile avec <span class="tech-badge">Microsoft Intune</span>.</li>
+                                <li>• <span class="text-blue-300 font-bold">Automatisation :</span> Déploiement applicatif via <span class="tech-badge">Baramundi</span>.</li>
+                                <li>• <span class="text-blue-300 font-bold">Directory :</span> Administration comptes et GPO sur <span class="tech-badge">Active Directory</span>.</li>
                             </ul>
                         </div>
                     </div>
-                </div>
-            </section>
-
-            <section id="contact" class="pb-40 text-center">
-                <div class="flex flex-wrap justify-center gap-8">
-                    <a href="mailto:Alyssia.noireau@gmail.com" class="glass-card px-10 py-6 rounded-2xl border border-blue-500/20 hover:border-blue-500 transition-all group">
-                        <i class="fa-solid fa-envelope mb-2 block text-2xl text-blue-500 group-hover:scale-110 transition"></i>
-                        <span class="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400">Alyssia.noireau@gmail.com</span>
-                    </a>
                 </div>
             </section>
 
