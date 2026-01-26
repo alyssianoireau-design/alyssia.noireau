@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio SISR | Ton Nom</title>
+    <title>Portfolio SISR | Alyssia Noireau</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-900 text-gray-100">
 
     <nav class="p-5 bg-gray-800 flex justify-between items-center sticky top-0 z-50">
-        <span class="font-bold text-xl text-blue-400">NOM Prénom - SISR</span>
+        <span class="font-bold text-xl text-blue-400">Alyssia NOIREAU - SISR</span>
         <div class="space-x-6">
             <a href="#projets" class="hover:text-blue-400">Projets</a>
             <a href="#competences" class="hover:text-blue-400">Compétences</a>
@@ -17,24 +17,40 @@
         </div>
     </nav>
 
-    <header class="h-64 flex flex-col justify-center items-center bg-gradient-to-b from-gray-800 to-gray-900">
+    <header class="h-64 flex flex-col justify-center items-center bg-gradient-to-b from-gray-800 to-gray-900 text-center px-4">
         <h1 class="text-4xl font-extrabold">Futur Administrateur Réseaux</h1>
-        <p class="mt-4 text-gray-400">BTS SIO Option SISR</p>
+        <p class="mt-4 text-gray-400 max-w-2xl text-center">Étudiante en BTS SIO Option SISR. Passionnée par l'infrastructure, la sécurité et la gestion de parc informatique.</p>
     </header>
 
-    <main class="max-w-4xl mx-auto p-5" id="projets">
-        <h2 class="text-2xl font-bold mb-6 border-l-4 border-blue-500 pl-3">Mes Réalisations Techniques</h2>
+    <main class="max-w-6xl mx-auto p-5" id="projets">
+        <h2 class="text-2xl font-bold mb-8 border-l-4 border-blue-500 pl-3">Mes Travaux Académiques</h2>
         
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div class="bg-gray-800 p-5 rounded-lg shadow-lg border border-gray-700">
-                <h3 class="text-xl font-semibold text-blue-300">Déploiement GLPI</h3>
-                <p class="text-sm text-gray-400 mt-2">Installation sous Debian 12 avec base de données MariaDB.</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="bg-gray-800 p-6 rounded-lg border border-gray-700 hover:border-blue-500 transition shadow-xl">
+                <h3 class="text-xl font-semibold text-blue-300">Bases de Données (SQL)</h3>
+                <p class="text-sm text-gray-400 mt-2">Manipulation de données, jointures et gestion de bases de données réalisées en SIO 1.</p>
                 <div class="mt-4">
-                    <a href="docs/cr-glpi.pdf" class="text-xs text-blue-400 underline italic">Voir la doc technique (PDF)</a>
+                    <a href="https://github.com/Alyssianr/SQL-TD3-SIO1" target="_blank" class="text-xs text-blue-400 underline font-bold italic">Consulter le dépôt GitHub →</a>
+                </div>
+            </div>
+
+            <div class="bg-gray-800 p-6 rounded-lg border border-gray-700 hover:border-blue-500 transition shadow-xl">
+                <h3 class="text-xl font-semibold text-orange-400">Développement Java</h3>
+                <p class="text-sm text-gray-400 mt-2">Algorithmique, manipulation des listes et programmation orientée objet.</p>
+                <div class="mt-4">
+                    <a href="https://github.com/Alyssianr/JAVA-TP3-SIO1" target="_blank" class="text-xs text-blue-400 underline font-bold italic">Consulter le dépôt GitHub →</a>
                 </div>
             </div>
         </div>
     </main>
+
+    <section class="max-w-6xl mx-auto p-5 mb-20" id="veille">
+        <h2 class="text-2xl font-bold mb-8 border-l-4 border-blue-500 pl-3">Veille Technologique</h2>
+        <div class="bg-gray-800 p-6 rounded-lg border border-gray-700">
+            <p class="text-gray-300 italic mb-4">"Ma veille technologique porte actuellement sur l'évolution de la cybersécurité dans les infrastructures hybrides."</p>
+            <p class="text-sm text-gray-400 leading-relaxed">J'utilise des outils comme **Feedly** et les flux RSS de l'**ANSSI** pour rester informée des dernières vulnérabilités et solutions de protection réseau.</p>
+        </div>
+    </section>
 
 </body>
 </html>
