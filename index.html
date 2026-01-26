@@ -4,68 +4,68 @@
     </h2>
 
     <div class="space-y-8">
-        <div class="bg-slate-800/40 p-6 rounded-2xl border border-slate-700 flex justify-between items-center">
+        <div class="bg-slate-800/40 p-8 rounded-3xl border border-slate-700 backdrop-blur-sm shadow-xl flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
             <div>
-                <h4 class="text-2xl font-bold text-blue-400 italic">ISTA</h4>
-                <p class="text-slate-400">Technicienne Systèmes et Réseaux en alternance</p>
+                <h4 class="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400 italic">ISTA</h4>
+                <p class="text-slate-300 font-medium mt-1">Technicienne Systèmes et Réseaux en alternance</p>
+                <p class="text-xs text-slate-500 mt-2 flex items-center gap-2">
+                    <i class="fa-solid fa-calendar-days"></i> Septembre 2024 - Présent
+                </p>
             </div>
-            <div class="text-right hidden md:block">
-                <span class="text-xs bg-green-900/30 text-green-400 px-3 py-1 rounded-full border border-green-500/20 uppercase tracking-tighter">Contrat d'alternance</span>
-            </div>
+            <span class="bg-blue-500/10 text-blue-400 px-4 py-2 rounded-xl text-[10px] font-bold border border-blue-500/20 uppercase tracking-widest">Alternance SIO SISR</span>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             
-            <div class="bg-slate-800/60 p-6 rounded-2xl border border-slate-700">
-                <h5 class="text-blue-300 font-bold mb-4 flex items-center gap-2">
-                    <i class="fa-solid fa-headset"></i> Support & Maintenance
+            <div class="bg-slate-800/60 p-6 rounded-2xl border border-slate-700 hover:border-blue-500/50 transition">
+                <h5 class="text-blue-400 font-bold mb-4 flex items-center gap-3">
+                    <i class="fa-solid fa-headset text-lg"></i> Support & Relation Utilisateur
                 </h5>
-                <ul class="text-sm text-slate-400 space-y-2 list-disc list-inside">
-                    <li>Assistance N1/N2 via <span class="text-slate-200 font-semibold">Jira, Outlook et Voxtron</span>.</li>
-                    <li>Diagnostic hardware/software (postes, imprimantes, périphériques).</li>
-                    <li>Prise en main à distance via <span class="text-slate-200 font-semibold">TeamViewer & Teams</span>.</li>
-                    <li>Rédaction de documentations et procédures techniques.</li>
+                <ul class="text-sm text-slate-400 space-y-3">
+                    <li class="flex gap-2"><i class="fa-solid fa-check text-blue-500 mt-1 text-[10px]"></i> <span>Assistance N1/N2 via <b>Jira (Ticketing)</b>, Outlook et téléphonie (Voxtron).</span></li>
+                    <li class="flex gap-2"><i class="fa-solid fa-check text-blue-500 mt-1 text-[10px]"></i> <span>Diagnostic hardware/software et support à distance (TeamViewer/Teams).</span></li>
+                    <li class="flex gap-2"><i class="fa-solid fa-check text-blue-500 mt-1 text-[10px]"></i> <span>Rédaction et mise à jour de procédures techniques.</span></li>
                 </ul>
             </div>
 
-            <div class="bg-slate-800/60 p-6 rounded-2xl border border-slate-700">
-                <h5 class="text-blue-300 font-bold mb-4 flex items-center gap-2">
-                    <i class="fa-solid fa-server"></i> Administration & Identité
+            <div class="bg-slate-800/60 p-6 rounded-2xl border border-slate-700 hover:border-blue-500/50 transition">
+                <h5 class="text-blue-400 font-bold mb-4 flex items-center gap-3">
+                    <i class="fa-solid fa-server text-lg"></i> Infrastructure & Identité
                 </h5>
-                <ul class="text-sm text-slate-400 space-y-2 list-disc list-inside">
-                    <li>Gestion des objets <span class="text-slate-200 font-semibold">Active Directory</span> (Users, Groupes, GPO).</li>
-                    <li>Administration des droits d'accès et partages réseaux.</li>
-                    <li>Gestion des accès distants et support <span class="text-slate-200 font-semibold">VPN</span>.</li>
-                    <li>Supervision des sauvegardes et restaurations de données.</li>
+                <ul class="text-sm text-slate-400 space-y-3">
+                    <li class="flex gap-2"><i class="fa-solid fa-check text-blue-500 mt-1 text-[10px]"></i> <span>Gestion des comptes et droits d'accès via <b>Active Directory</b>.</span></li>
+                    <li class="flex gap-2"><i class="fa-solid fa-check text-blue-500 mt-1 text-[10px]"></i> <span>Sécurisation des partages réseaux et permissions NTFS.</span></li>
+                    <li class="flex gap-2"><i class="fa-solid fa-check text-blue-500 mt-1 text-[10px]"></i> <span>Gestion des accès distants (VPN) et sauvegardes de données.</span></li>
                 </ul>
             </div>
 
-            <div class="bg-slate-800/60 p-6 rounded-2xl border border-slate-700">
-                <h5 class="text-blue-300 font-bold mb-4 flex items-center gap-2">
-                    <i class="fa-solid fa-mobile-screen"></i> Mobilité & Déploiement
+            <div class="bg-slate-800/60 p-6 rounded-2xl border border-slate-700 hover:border-blue-500/50 transition md:col-span-2">
+                <h5 class="text-blue-400 font-bold mb-4 flex items-center gap-3">
+                    <i class="fa-solid fa-mobile-screen-button text-lg"></i> Gestion de Parc & Automatisation (MDM / UEM)
                 </h5>
-                <ul class="text-sm text-slate-400 space-y-2 list-disc list-inside">
-                    <li><span class="text-slate-200 font-semibold">Microsoft Intune :</span> Gestion de la conformité, enrôlement et déploiement d'apps.</li>
-                    <li><span class="text-slate-200 font-semibold">Baramundi :</span> Automatisation des déploiements applicatifs et mises à jour de sécurité.</li>
-                    <li>Inventaire matériel et logiciel via consoles de gestion.</li>
-                </ul>
-            </div>
-
-            <div class="bg-slate-800/60 p-6 rounded-2xl border border-slate-700 font-mono text-xs">
-                <h5 class="text-blue-300 font-bold mb-4 flex items-center gap-2 font-sans text-base">
-                    <i class="fa-solid fa-graduation-cap"></i> Formations & Engagement
-                </h5>
-                <div class="space-y-3">
-                    <div class="border-l-2 border-blue-500 pl-3">
-                        <p class="text-slate-200">Formations internes 2025</p>
-                        <p class="text-[10px] italic">Workday roll-out, Compliance & Annual data cleaning.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="space-y-2">
+                        <p class="text-white text-xs font-bold uppercase tracking-wider underline decoration-blue-500">Microsoft Intune</p>
+                        <p class="text-xs text-slate-400 leading-relaxed italic">Enrôlement d'appareils mobiles, application de politiques de sécurité (PIN, chiffrement) et déploiement d'applications.</p>
                     </div>
-                    <div class="border-l-2 border-blue-500 pl-3 text-slate-400">
-                        Engagement RSE (Soccer Cup) & Communication (Voix du répondeur).
+                    <div class="space-y-2">
+                        <p class="text-white text-xs font-bold uppercase tracking-wider underline decoration-blue-500">Baramundi</p>
+                        <p class="text-xs text-slate-400 leading-relaxed italic">Déploiement automatisé d'applications, gestion de l'inventaire matériel/logiciel et suivi des mises à jour de sécurité.</p>
                     </div>
                 </div>
             </div>
 
+            <div class="bg-slate-800/60 p-6 rounded-2xl border border-slate-700 hover:border-blue-500/50 transition md:col-span-2">
+                <h5 class="text-blue-400 font-bold mb-4 flex items-center gap-3 italic">
+                    <i class="fa-solid fa-shield-halved text-lg text-slate-400"></i> Compliance & Vie de l'entreprise
+                </h5>
+                <div class="flex flex-wrap gap-3">
+                    <span class="text-[10px] bg-slate-700 px-3 py-1 rounded-md text-slate-300">Data Cleaning 2025</span>
+                    <span class="text-[10px] bg-slate-700 px-3 py-1 rounded-md text-slate-300">Compliance Training</span>
+                    <span class="text-[10px] bg-slate-700 px-3 py-1 rounded-md text-slate-300">RSE (Soccer Cup)</span>
+                    <span class="text-[10px] bg-slate-700 px-3 py-1 rounded-md text-slate-300 font-bold text-blue-400 underline italic">Voix du répondeur interne</span>
+                </div>
+            </div>
         </div>
     </div>
 </section>
