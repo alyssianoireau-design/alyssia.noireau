@@ -11,10 +11,11 @@
         .neon-border { box-shadow: 0 0 20px rgba(59, 130, 246, 0.3); }
         .glass-card { background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(10px); }
         
-        /* Application de Times New Roman et suppression de l'italique */
-        .serif-text { 
-            font-family: "Times New Roman", Times, serif !important; 
+        /* Application de la police Arial et suppression de l'italique */
+        .arial-text { 
+            font-family: Arial, Helvetica, sans-serif !important; 
             font-style: normal !important;
+            font-weight: 400;
         }
     </style>
 </head>
@@ -73,14 +74,14 @@
                         <div class="glass-card p-8 rounded-[2rem] border border-blue-500/20 shadow-xl relative overflow-hidden">
                             <div class="absolute top-0 left-0 w-1 h-full bg-blue-500"></div>
                             <h2 class="text-sm font-black mb-4 uppercase text-blue-400 tracking-[0.3em]">À propos de moi</h2>
-                            <p class="serif-text text-slate-200 text-xl leading-relaxed text-justify">
+                            <p class="arial-text text-slate-200 text-lg leading-relaxed text-justify">
                                 Bien que formée aux bases du développement, mon expertise et mes aspirations se tournent résolument vers les solutions d'infrastructure et la sécurité système. Étudiante en BTS SIO spécialité SISR, j'effectue mon alternance au sein de l'entreprise ISTA, où je suis pleinement investie au support informatique. Très impliquée dans l'administration réseaux, je veille au quotidien à la gestion de l'infrastructure pour garantir la haute disponibilité et la sécurité des services informatiques.
                             </p>
                         </div>
 
                         <div class="glass-card p-8 rounded-[2rem] border border-blue-500/10 shadow-lg relative">
                             <h2 class="text-sm font-black mb-4 uppercase text-slate-400 tracking-[0.3em]">Parcours & Objectifs</h2>
-                            <p class="serif-text text-slate-200 text-xl leading-relaxed text-justify border-l-2 border-blue-500/50 pl-6">
+                            <p class="arial-text text-slate-200 text-lg leading-relaxed text-justify border-l-2 border-blue-500/50 pl-6">
                                 Mon immersion actuelle dans les infrastructures techniques constitue le socle de mon projet professionnel : 
                                 évoluer vers la gestion de projets informatiques afin de piloter des solutions technologiques innovantes et stratégiques.
                             </p>
@@ -96,7 +97,7 @@
                         <div class="bg-white p-4 rounded-xl shadow-inner h-24 w-40 flex items-center justify-center flex-shrink-0">
                             <img src="image_e736df.png" alt="ISTA" class="h-full w-full object-contain">
                         </div>
-                        <p class="serif-text text-slate-300 text-lg leading-relaxed text-justify">
+                        <p class="arial-text text-slate-300 text-lg leading-relaxed text-justify">
                             Ista est une entreprise spécialisée dans la mesure et la gestion des consommations d’énergie et d’eau des bâtiments. Elle aide les propriétaires et gestionnaires à répartir les charges et à optimiser l’efficacité énergétique.
                         </p>
                     </div>
@@ -119,15 +120,6 @@
                             </ul>
                         </div>
                     </div>
-                </div>
-            </section>
-
-            <section id="contact" class="pb-40">
-                <div class="flex flex-wrap justify-center gap-6">
-                    <a href="mailto:Alyssia.noireau@gmail.com" class="glass-card px-10 py-6 rounded-2xl border border-blue-500/20 hover:border-blue-500 transition-all group">
-                        <i class="fa-solid fa-envelope mb-2 block text-2xl text-blue-500 group-hover:scale-110 transition"></i>
-                        <span class="text-xs font-black uppercase tracking-widest">Alyssia.noireau@gmail.com</span>
-                    </a>
                 </div>
             </section>
 
