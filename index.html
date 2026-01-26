@@ -1,93 +1,41 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio | Alyssia Noireau</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-</head>
-<body class="bg-slate-900 text-slate-100 font-sans antialiased">
-
-    <aside class="fixed top-0 left-0 h-screen w-64 bg-slate-800 border-r border-slate-700 hidden md:flex flex-col">
+<aside class="fixed top-0 left-0 h-screen w-64 bg-slate-800 border-r border-slate-700 hidden md:flex flex-col">
         <div class="p-6 border-b border-slate-700">
             <h1 class="text-xl font-bold text-blue-400">Alyssia Noireau</h1>
-            <p class="text-xs text-slate-400">BTS SIO SISR</p>
+            <p class="text-[10px] text-slate-400 uppercase tracking-widest mt-1">BTS SIO SISR</p>
         </div>
         
-        <nav class="flex-1 p-4 space-y-2 text-sm">
-            <p class="text-slate-500 uppercase text-[10px] font-bold tracking-wider mb-2">Navigation</p>
-            <a href="#projets" class="flex items-center gap-3 p-3 rounded-lg hover:bg-slate-700 transition">
-                <i class="fa-solid fa-folder-open text-blue-400"></i> Réalisations
-            </a>
-            <a href="#competences" class="flex items-center gap-3 p-3 rounded-lg hover:bg-slate-700 transition">
-                <i class="fa-solid fa-list-check text-green-400"></i> Compétences
-            </a>
-            <a href="#veille" class="flex items-center gap-3 p-3 rounded-lg hover:bg-slate-700 transition">
-                <i class="fa-solid fa-rss text-orange-400"></i> Veille Techno
+        <nav class="flex-1 p-4 space-y-1 text-sm">
+            <p class="text-slate-500 uppercase text-[10px] font-bold tracking-wider mb-4 px-3">Navigation</p>
+            
+            <a href="#accueil" class="flex items-center gap-3 p-3 rounded-lg hover:bg-slate-700 transition text-slate-300 hover:text-white">
+                <i class="fa-solid fa-house w-5"></i> Accueil
             </a>
             
-            <div class="pt-6">
-                <p class="text-slate-500 uppercase text-[10px] font-bold tracking-wider mb-2">Documents</p>
-                <a href="#" class="flex items-center gap-3 p-3 rounded-lg bg-blue-600/20 text-blue-300 border border-blue-500/30 hover:bg-blue-600/30 transition">
-                    <i class="fa-solid fa-file-pdf"></i> Tableau de Synthèse
+            <a href="#profil" class="flex items-center gap-3 p-3 rounded-lg hover:bg-slate-700 transition text-slate-300 hover:text-white">
+                <i class="fa-solid fa-user w-5"></i> Profil
+            </a>
+            
+            <a href="#entreprise" class="flex items-center gap-3 p-3 rounded-lg hover:bg-slate-700 transition text-slate-300 hover:text-white">
+                <i class="fa-solid fa-building w-5"></i> Entreprise
+            </a>
+            
+            <a href="#tp" class="flex items-center gap-3 p-3 rounded-lg hover:bg-slate-700 transition text-slate-300 hover:text-white">
+                <i class="fa-solid fa-microchip w-5"></i> TP / Projets
+            </a>
+            
+            <a href="#certifications" class="flex items-center gap-3 p-3 rounded-lg hover:bg-slate-700 transition text-slate-300 hover:text-white">
+                <i class="fa-solid fa-certificate w-5"></i> Certifications
+            </a>
+            
+            <a href="#contact" class="flex items-center gap-3 p-3 rounded-lg hover:bg-slate-700 transition text-slate-300 hover:text-white">
+                <i class="fa-solid fa-envelope w-5"></i> Contact
+            </a>
+
+            <div class="pt-10">
+                <p class="text-slate-500 uppercase text-[10px] font-bold tracking-wider mb-4 px-3">Documents Officiels</p>
+                <a href="#" class="flex items-center gap-3 p-3 rounded-lg bg-blue-600/10 text-blue-400 border border-blue-500/20 hover:bg-blue-600/20 transition">
+                    <i class="fa-solid fa-file-contract"></i> Tableau de Synthèse
                 </a>
             </div>
         </nav>
     </aside>
-
-    <div class="md:ml-64 min-h-screen">
-        
-        <header class="sticky top-0 z-40 bg-slate-900/80 backdrop-blur-md border-b border-slate-800 p-4">
-            <div class="flex justify-between items-center max-w-5xl mx-auto">
-                <h2 class="font-semibold text-slate-300 italic">Portfolio Professionnel</h2>
-                <div class="flex gap-4">
-                    <a href="https://github.com/Alyssianr" target="_blank" class="hover:text-blue-400 text-xl"><i class="fa-brands fa-github"></i></a>
-                    <a href="#" class="hover:text-blue-400 text-xl"><i class="fa-brands fa-linkedin"></i></a>
-                </div>
-            </div>
-        </header>
-
-        <main class="max-w-5xl mx-auto p-8 space-y-20">
-            
-            <section id="accueil" class="py-10">
-                <span class="text-blue-500 font-mono text-sm font-bold">Initialisation du système...</span>
-                <h3 class="text-5xl font-black mt-2 mb-6 tracking-tight">Futur Administrateur <span class="text-blue-400">Réseaux</span>.</h3>
-                <p class="text-slate-400 text-lg leading-relaxed max-w-2xl">
-                    Étudiante passionnée par l'infrastructure et la cybersécurité. 
-                    Actuellement en formation BTS SIO option SISR.
-                </p>
-            </section>
-
-            <section id="projets">
-                <div class="flex items-center gap-4 mb-10 text-2xl font-bold">
-                    <span class="h-px w-12 bg-blue-500"></span>
-                    <h2>Mes Projets</h2>
-                </div>
-                
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div class="group bg-slate-800/50 p-6 rounded-2xl border border-slate-700 hover:border-blue-500 transition-all duration-300 hover:-translate-y-2">
-                        <div class="h-10 w-10 bg-orange-500/10 text-orange-500 rounded-lg flex items-center justify-center mb-4">
-                            <i class="fa-brands fa-java text-xl"></i>
-                        </div>
-                        <h4 class="text-xl font-bold mb-2">Développement Java</h4>
-                        <p class="text-slate-400 text-sm mb-6 leading-relaxed">Algorithmique et manipulation de données complexes.</p>
-                        <a href="https://github.com/Alyssianr/JAVA-TP3-SIO1" class="text-blue-400 text-xs font-bold uppercase tracking-widest group-hover:underline italic">Voir le dépôt →</a>
-                    </div>
-
-                    <div class="group bg-slate-800/50 p-6 rounded-2xl border border-slate-700 hover:border-blue-500 transition-all duration-300 hover:-translate-y-2 shadow-sm">
-                        <div class="h-10 w-10 bg-blue-500/10 text-blue-500 rounded-lg flex items-center justify-center mb-4 text-xl">
-                            <i class="fa-solid fa-database"></i>
-                        </div>
-                        <h4 class="text-xl font-bold mb-2">Bases de Données</h4>
-                        <p class="text-slate-400 text-sm mb-6 leading-relaxed">Conception de schémas et requêtes SQL optimisées.</p>
-                        <a href="https://github.com/Alyssianr/SQL-TD3-SIO1" class="text-blue-400 text-xs font-bold uppercase tracking-widest group-hover:underline italic">Voir le dépôt →</a>
-                    </div>
-                </div>
-            </section>
-
-        </main>
-    </div>
-
-</body>
-</html>
