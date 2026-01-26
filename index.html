@@ -1,117 +1,71 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio | Alyssia Noireau</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-</head>
-<body class="bg-slate-900 text-slate-100 font-sans antialiased">
+<section id="entreprise" class="py-10">
+    <h2 class="text-3xl font-bold mb-10 flex items-center gap-4 text-white">
+        <span class="h-px w-12 bg-blue-500"></span> Expérience chez ISTA
+    </h2>
 
-    <aside class="fixed top-0 left-0 h-screen w-64 bg-slate-800 border-r border-slate-700 hidden md:flex flex-col text-sm">
-        <div class="p-6 border-b border-slate-700">
-            <h1 class="text-xl font-bold text-blue-400">Alyssia Noireau</h1>
-            <p class="text-[10px] text-slate-400 uppercase tracking-widest mt-1">BTS SIO SISR</p>
-        </div>
-        
-        <nav class="flex-1 p-4 space-y-1">
-            <p class="text-slate-500 uppercase text-[10px] font-bold tracking-wider mb-4 px-3 italic">Répertoire</p>
-            
-            <a href="#accueil" class="flex items-center gap-3 p-3 rounded-lg hover:bg-slate-700 transition text-slate-300">
-                <i class="fa-solid fa-house w-5 text-blue-400"></i> Accueil
-            </a>
-            
-            <a href="#profil" class="flex items-center gap-3 p-3 rounded-lg hover:bg-slate-700 transition text-slate-300">
-                <i class="fa-solid fa-user w-5 text-blue-400"></i> Profil
-            </a>
-            
-            <a href="#entreprise" class="flex items-center gap-3 p-3 rounded-lg hover:bg-slate-700 transition text-slate-300">
-                <i class="fa-solid fa-building w-5 text-blue-400"></i> Entreprise
-            </a>
-            
-            <a href="#tp" class="flex items-center gap-3 p-3 rounded-lg hover:bg-slate-700 transition text-slate-300">
-                <i class="fa-solid fa-microchip w-5 text-blue-400"></i> TP / Projets
-            </a>
-            
-            <a href="#certifications" class="flex items-center gap-3 p-3 rounded-lg hover:bg-slate-700 transition text-slate-300">
-                <i class="fa-solid fa-certificate w-5 text-blue-400"></i> Certifications
-            </a>
-            
-            <a href="#contact" class="flex items-center gap-3 p-3 rounded-lg hover:bg-slate-700 transition text-slate-300">
-                <i class="fa-solid fa-envelope w-5 text-blue-400"></i> Contact
-            </a>
-
-            <div class="pt-10">
-                <a href="#" class="flex items-center gap-3 p-3 rounded-lg bg-blue-600/10 text-blue-400 border border-blue-500/20 hover:bg-blue-600/20 transition font-bold">
-                    <i class="fa-solid fa-file-contract"></i> Tableau de Synthèse
-                </a>
+    <div class="space-y-8">
+        <div class="bg-slate-800/40 p-6 rounded-2xl border border-slate-700 flex justify-between items-center">
+            <div>
+                <h4 class="text-2xl font-bold text-blue-400 italic">ISTA</h4>
+                <p class="text-slate-400">Technicienne Systèmes et Réseaux en alternance</p>
             </div>
-        </nav>
-    </aside>
+            <div class="text-right hidden md:block">
+                <span class="text-xs bg-green-900/30 text-green-400 px-3 py-1 rounded-full border border-green-500/20 uppercase tracking-tighter">Contrat d'alternance</span>
+            </div>
+        </div>
 
-    <div class="md:ml-64 min-h-screen">
-        
-        <main class="max-w-5xl mx-auto p-8 space-y-20">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             
-            <section id="accueil" class="py-20 border-b border-slate-800">
-                <h3 class="text-5xl font-black mb-6">Bonjour, je suis <span class="text-blue-400">Alyssia</span>.</h3>
-                <p class="text-slate-400 text-lg max-w-2xl leading-relaxed">
-                    Étudiante en deuxième année de BTS SIO spécialité SISR. Bienvenue sur mon portfolio technique.
-                </p>
-            </section>
+            <div class="bg-slate-800/60 p-6 rounded-2xl border border-slate-700">
+                <h5 class="text-blue-300 font-bold mb-4 flex items-center gap-2">
+                    <i class="fa-solid fa-headset"></i> Support & Maintenance
+                </h5>
+                <ul class="text-sm text-slate-400 space-y-2 list-disc list-inside">
+                    <li>Assistance N1/N2 via <span class="text-slate-200 font-semibold">Jira, Outlook et Voxtron</span>.</li>
+                    <li>Diagnostic hardware/software (postes, imprimantes, périphériques).</li>
+                    <li>Prise en main à distance via <span class="text-slate-200 font-semibold">TeamViewer & Teams</span>.</li>
+                    <li>Rédaction de documentations et procédures techniques.</li>
+                </ul>
+            </div>
 
-            <section id="contact" class="py-10 bg-slate-800/30 p-8 rounded-2xl border border-slate-700">
-                <h2 class="text-3xl font-bold mb-8 flex items-center gap-3 text-white">
-                    <i class="fa-solid fa-address-book text-blue-400"></i> Me contacter
-                </h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div class="space-y-6">
-                        <div class="flex items-center gap-4">
-                            <div class="h-12 w-12 bg-blue-500/10 rounded-full flex items-center justify-center text-blue-400 text-xl shadow-inner">
-                                <i class="fa-solid fa-phone"></i>
-                            </div>
-                            <div>
-                                <p class="text-xs text-slate-500 font-bold uppercase tracking-widest">Téléphone</p>
-                                <p class="text-slate-200">06 00 00 00 00</p> </div>
-                        </div>
+            <div class="bg-slate-800/60 p-6 rounded-2xl border border-slate-700">
+                <h5 class="text-blue-300 font-bold mb-4 flex items-center gap-2">
+                    <i class="fa-solid fa-server"></i> Administration & Identité
+                </h5>
+                <ul class="text-sm text-slate-400 space-y-2 list-disc list-inside">
+                    <li>Gestion des objets <span class="text-slate-200 font-semibold">Active Directory</span> (Users, Groupes, GPO).</li>
+                    <li>Administration des droits d'accès et partages réseaux.</li>
+                    <li>Gestion des accès distants et support <span class="text-slate-200 font-semibold">VPN</span>.</li>
+                    <li>Supervision des sauvegardes et restaurations de données.</li>
+                </ul>
+            </div>
 
-                        <div class="flex items-center gap-4">
-                            <div class="h-12 w-12 bg-blue-500/10 rounded-full flex items-center justify-center text-blue-400 text-xl shadow-inner">
-                                <i class="fa-solid fa-at"></i>
-                            </div>
-                            <div>
-                                <p class="text-xs text-slate-500 font-bold uppercase tracking-widest">Adresse Mail</p>
-                                <p class="text-slate-200">alyssia.noireau@exemple.com</p> </div>
-                        </div>
+            <div class="bg-slate-800/60 p-6 rounded-2xl border border-slate-700">
+                <h5 class="text-blue-300 font-bold mb-4 flex items-center gap-2">
+                    <i class="fa-solid fa-mobile-screen"></i> Mobilité & Déploiement
+                </h5>
+                <ul class="text-sm text-slate-400 space-y-2 list-disc list-inside">
+                    <li><span class="text-slate-200 font-semibold">Microsoft Intune :</span> Gestion de la conformité, enrôlement et déploiement d'apps.</li>
+                    <li><span class="text-slate-200 font-semibold">Baramundi :</span> Automatisation des déploiements applicatifs et mises à jour de sécurité.</li>
+                    <li>Inventaire matériel et logiciel via consoles de gestion.</li>
+                </ul>
+            </div>
+
+            <div class="bg-slate-800/60 p-6 rounded-2xl border border-slate-700 font-mono text-xs">
+                <h5 class="text-blue-300 font-bold mb-4 flex items-center gap-2 font-sans text-base">
+                    <i class="fa-solid fa-graduation-cap"></i> Formations & Engagement
+                </h5>
+                <div class="space-y-3">
+                    <div class="border-l-2 border-blue-500 pl-3">
+                        <p class="text-slate-200">Formations internes 2025</p>
+                        <p class="text-[10px] italic">Workday roll-out, Compliance & Annual data cleaning.</p>
                     </div>
-
-                    <div class="space-y-6">
-                        <div class="flex items-center gap-4">
-                            <div class="h-12 w-12 bg-blue-500/10 rounded-full flex items-center justify-center text-blue-400 text-xl shadow-inner">
-                                <i class="fa-brands fa-linkedin-in"></i>
-                            </div>
-                            <div>
-                                <p class="text-xs text-slate-500 font-bold uppercase tracking-widest">LinkedIn</p>
-                                <a href="https://www.linkedin.com/in/alyssia-noireau-97b77732a/" target="_blank" class="text-blue-400 hover:underline">Alyssia Noireau</a>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-center gap-4">
-                            <div class="h-12 w-12 bg-blue-500/10 rounded-full flex items-center justify-center text-blue-400 text-xl shadow-inner">
-                                <i class="fa-brands fa-github"></i>
-                            </div>
-                            <div>
-                                <p class="text-xs text-slate-500 font-bold uppercase tracking-widest">GitHub</p>
-                                <a href="https://github.com/Alyssianr" target="_blank" class="text-blue-400 hover:underline">Alyssianr</a>
-                            </div>
-                        </div>
+                    <div class="border-l-2 border-blue-500 pl-3 text-slate-400">
+                        Engagement RSE (Soccer Cup) & Communication (Voix du répondeur).
                     </div>
                 </div>
-            </section>
+            </div>
 
-        </main>
+        </div>
     </div>
-
-</body>
-</html>
+</section>
