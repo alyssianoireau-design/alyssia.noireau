@@ -9,8 +9,8 @@
 </head>
 <body class="bg-slate-900 text-slate-100 font-sans antialiased">
 
-    <aside class="fixed top-0 left-0 h-screen w-64 bg-slate-800 border-r border-slate-700 hidden md:flex flex-col text-sm shadow-2xl">
-        <div class="p-6 border-b border-slate-700 text-center">
+    <aside class="fixed top-0 left-0 h-screen w-64 bg-slate-800 border-r border-slate-700 hidden md:flex flex-col text-sm shadow-2xl text-left">
+        <div class="p-6 border-b border-slate-700">
             <h1 class="text-xl font-bold text-blue-400 leading-tight">
                 Alyssia<br>Noireau
             </h1>
@@ -44,7 +44,7 @@
             </a>
 
             <div class="pt-10 px-3">
-                <a href="#" class="flex items-center justify-center gap-2 p-3 rounded-lg bg-blue-600/10 text-blue-400 border border-blue-500/20 hover:bg-blue-600/20 transition font-bold text-center text-xs">
+                <a href="#" class="flex items-center justify-center gap-2 p-3 rounded-lg bg-blue-600/10 text-blue-400 border border-blue-500/20 hover:bg-blue-600/20 transition font-bold text-xs">
                     <i class="fa-solid fa-file-contract"></i> Tableau de Synthèse
                 </a>
             </div>
@@ -62,10 +62,12 @@
                 </h3>
                 
                 <div id="profil" class="bg-slate-800/40 p-8 rounded-3xl border border-slate-700 backdrop-blur-sm shadow-xl">
-                    <p class="text-blue-500 font-bold text-lg mb-4">À propos de moi</p>
+                    <p class="text-blue-500 font-bold text-lg mb-6 uppercase tracking-wide">À propos de moi</p>
+                    
                     <p class="text-slate-200 text-xl leading-relaxed text-justify">
-                        Étudiante en <span class="text-white font-semibold italic">BTS SIO</span> spécialité <span class="text-white font-semibold">SISR</span>, j'effectue mon alternance chez <span class="text-blue-400 font-bold tracking-wider uppercase">Ista</span>. 
-                        Passionnée par l'administration systèmes et réseaux, je m'investis au quotidien dans la gestion d'infrastructure et le support utilisateur pour garantir la performance et la sécurité des outils informatiques.
+                        Bien que formée aux bases du développement, mon expertise et mes aspirations se tournent résolument vers les solutions d'infrastructure et la sécurité système. 
+                        Étudiante en <span class="text-white font-semibold italic border-b border-blue-500/50">BTS SIO spécialité SISR</span>, j'effectue mon alternance au sein de l'entreprise <span class="text-blue-400 font-bold uppercase tracking-wider">ISTA</span>, où je suis pleinement investie au support informatique. 
+                        Très impliquée dans l'administration réseaux, je veille au quotidien à la gestion de l'infrastructure pour garantir la haute disponibilité et la sécurité des services informatiques.
                     </p>
                 </div>
             </section>
@@ -75,24 +77,24 @@
                     <span class="h-px w-12 bg-blue-500"></span> Expérience chez ISTA
                 </h2>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div class="bg-slate-800/60 p-6 rounded-2xl border border-slate-700">
-                        <h5 class="text-blue-400 font-bold mb-4 flex items-center gap-3">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm">
+                    <div class="bg-slate-800/60 p-6 rounded-2xl border border-slate-700 hover:border-blue-500/50 transition">
+                        <h5 class="text-blue-400 font-bold mb-4 flex items-center gap-3 italic">
                             <i class="fa-solid fa-headset text-lg"></i> Support & Relation Utilisateur
                         </h5>
-                        <ul class="text-sm text-slate-400 space-y-2">
+                        <ul class="text-slate-400 space-y-2">
                             <li>• Assistance N1/N2 via <b>Jira, Outlook et Voxtron</b>.</li>
-                            <li>• Diagnostic hardware/software et support à distance (TeamViewer/Teams).</li>
+                            <li>• Diagnostic hardware/software et support à distance.</li>
                             <li>• Installation et configuration de postes de travail.</li>
                             <li>• Rédaction de procédures et documentation technique.</li>
                         </ul>
                     </div>
 
-                    <div class="bg-slate-800/60 p-6 rounded-2xl border border-slate-700">
-                        <h5 class="text-blue-400 font-bold mb-4 flex items-center gap-3">
+                    <div class="bg-slate-800/60 p-6 rounded-2xl border border-slate-700 hover:border-blue-500/50 transition">
+                        <h5 class="text-blue-400 font-bold mb-4 flex items-center gap-3 italic">
                             <i class="fa-solid fa-server text-lg"></i> Infrastructure & Systèmes
                         </h5>
-                        <ul class="text-sm text-slate-400 space-y-2">
+                        <ul class="text-slate-400 space-y-2">
                             <li>• Gestion des comptes via <b>Active Directory (AD)</b>.</li>
                             <li>• Administration des droits d'accès et permissions NTFS.</li>
                             <li>• Support sur les connexions VPN et accès distants.</li>
@@ -100,43 +102,34 @@
                         </ul>
                     </div>
 
-                    <div class="bg-slate-800/60 p-6 rounded-2xl border border-slate-700 md:col-span-2">
-                        <h5 class="text-blue-400 font-bold mb-4 flex items-center gap-3">
-                            <i class="fa-solid fa-mobile-screen-button text-lg"></i> Gestion de Parc & Automatisation
-                        </h5>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-2">
-                            <div>
-                                <p class="text-white text-xs font-bold uppercase underline decoration-blue-500 mb-2">Microsoft Intune</p>
-                                <p class="text-xs text-slate-400 italic">Enrôlement d'appareils, politiques de sécurité et déploiement d'applications mobiles.</p>
-                            </div>
-                            <div>
-                                <p class="text-white text-xs font-bold uppercase underline decoration-blue-500 mb-2">Baramundi</p>
-                                <p class="text-xs text-slate-400 italic">Déploiement automatisé d'applications et gestion de l'inventaire matériel/logiciel.</p>
-                            </div>
-                        </div>
+                    <div class="bg-slate-800/60 p-6 rounded-2xl border border-slate-700 md:col-span-2 italic text-xs">
+                        <p class="text-blue-300 font-bold mb-2 uppercase tracking-widest flex items-center gap-2">
+                            <i class="fa-solid fa-microchip"></i> Gestion de Parc (Intune / Baramundi)
+                        </p>
+                        <p class="text-slate-400">Enrôlement d'appareils, déploiement automatisé d'applications et suivi de la conformité de sécurité pour les collaborateurs.</p>
                     </div>
                 </div>
             </section>
 
-            <section id="contact" class="py-20 border-t border-slate-800/50">
-                <h2 class="text-3xl font-bold mb-12 text-center text-white italic">Me contacter</h2>
+            <section id="contact" class="py-20 border-t border-slate-800/50 text-center">
+                <h2 class="text-3xl font-bold mb-12 text-white italic text-center">Me contacter</h2>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <a href="tel:0767178908" class="flex flex-col items-center gap-4 bg-slate-800/50 p-6 rounded-2xl hover:bg-slate-700 transition border border-slate-700 text-center">
-                        <i class="fa-solid fa-phone text-2xl text-blue-500"></i>
+                    <a href="tel:0767178908" class="flex flex-col items-center gap-4 bg-slate-800/50 p-6 rounded-2xl hover:bg-slate-700 transition border border-slate-700 group">
+                        <i class="fa-solid fa-phone text-2xl text-blue-500 group-hover:scale-110 transition"></i>
                         <span class="text-sm font-bold text-slate-400 uppercase tracking-widest">Téléphone</span>
                         <p class="text-slate-200">07 67 17 89 08</p>
                     </a>
                     
-                    <a href="mailto:Alyssia.noireau@gmail.com" class="flex flex-col items-center gap-4 bg-slate-800/50 p-6 rounded-2xl hover:bg-slate-700 transition border border-slate-700 text-center">
-                        <i class="fa-solid fa-envelope text-2xl text-blue-500"></i>
+                    <a href="mailto:Alyssia.noireau@gmail.com" class="flex flex-col items-center gap-4 bg-slate-800/50 p-6 rounded-2xl hover:bg-slate-700 transition border border-slate-700 group">
+                        <i class="fa-solid fa-envelope text-2xl text-blue-500 group-hover:scale-110 transition"></i>
                         <span class="text-sm font-bold text-slate-400 uppercase tracking-widest">Email</span>
                         <p class="text-slate-200 text-sm">Alyssia.noireau@gmail.com</p>
                     </a>
                     
-                    <a href="https://www.linkedin.com/in/alyssia-noireau-97b77732a/" target="_blank" class="flex flex-col items-center gap-4 bg-slate-800/50 p-6 rounded-2xl hover:bg-slate-700 transition border border-slate-700 text-center">
-                        <i class="fa-brands fa-linkedin text-2xl text-blue-500"></i>
+                    <a href="http://www.linkedin.com/in/alyssia-noireau" target="_blank" class="flex flex-col items-center gap-4 bg-slate-800/50 p-6 rounded-2xl hover:bg-slate-700 transition border border-slate-700 group">
+                        <i class="fa-brands fa-linkedin text-2xl text-blue-500 group-hover:scale-110 transition"></i>
                         <span class="text-sm font-bold text-slate-400 uppercase tracking-widest">LinkedIn</span>
-                        <p class="text-slate-200 text-sm italic underline">Alyssia Noireau</p>
+                        <p class="text-slate-200">Alyssia Noireau</p>
                     </a>
                 </div>
             </section>
