@@ -1,41 +1,117 @@
-<aside class="fixed top-0 left-0 h-screen w-64 bg-slate-800 border-r border-slate-700 hidden md:flex flex-col">
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Alyssia Noireau</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="bg-slate-900 text-slate-100 font-sans antialiased">
+
+    <aside class="fixed top-0 left-0 h-screen w-64 bg-slate-800 border-r border-slate-700 hidden md:flex flex-col text-sm">
         <div class="p-6 border-b border-slate-700">
             <h1 class="text-xl font-bold text-blue-400">Alyssia Noireau</h1>
             <p class="text-[10px] text-slate-400 uppercase tracking-widest mt-1">BTS SIO SISR</p>
         </div>
         
-        <nav class="flex-1 p-4 space-y-1 text-sm">
-            <p class="text-slate-500 uppercase text-[10px] font-bold tracking-wider mb-4 px-3">Navigation</p>
+        <nav class="flex-1 p-4 space-y-1">
+            <p class="text-slate-500 uppercase text-[10px] font-bold tracking-wider mb-4 px-3 italic">Répertoire</p>
             
-            <a href="#accueil" class="flex items-center gap-3 p-3 rounded-lg hover:bg-slate-700 transition text-slate-300 hover:text-white">
-                <i class="fa-solid fa-house w-5"></i> Accueil
+            <a href="#accueil" class="flex items-center gap-3 p-3 rounded-lg hover:bg-slate-700 transition text-slate-300">
+                <i class="fa-solid fa-house w-5 text-blue-400"></i> Accueil
             </a>
             
-            <a href="#profil" class="flex items-center gap-3 p-3 rounded-lg hover:bg-slate-700 transition text-slate-300 hover:text-white">
-                <i class="fa-solid fa-user w-5"></i> Profil
+            <a href="#profil" class="flex items-center gap-3 p-3 rounded-lg hover:bg-slate-700 transition text-slate-300">
+                <i class="fa-solid fa-user w-5 text-blue-400"></i> Profil
             </a>
             
-            <a href="#entreprise" class="flex items-center gap-3 p-3 rounded-lg hover:bg-slate-700 transition text-slate-300 hover:text-white">
-                <i class="fa-solid fa-building w-5"></i> Entreprise
+            <a href="#entreprise" class="flex items-center gap-3 p-3 rounded-lg hover:bg-slate-700 transition text-slate-300">
+                <i class="fa-solid fa-building w-5 text-blue-400"></i> Entreprise
             </a>
             
-            <a href="#tp" class="flex items-center gap-3 p-3 rounded-lg hover:bg-slate-700 transition text-slate-300 hover:text-white">
-                <i class="fa-solid fa-microchip w-5"></i> TP / Projets
+            <a href="#tp" class="flex items-center gap-3 p-3 rounded-lg hover:bg-slate-700 transition text-slate-300">
+                <i class="fa-solid fa-microchip w-5 text-blue-400"></i> TP / Projets
             </a>
             
-            <a href="#certifications" class="flex items-center gap-3 p-3 rounded-lg hover:bg-slate-700 transition text-slate-300 hover:text-white">
-                <i class="fa-solid fa-certificate w-5"></i> Certifications
+            <a href="#certifications" class="flex items-center gap-3 p-3 rounded-lg hover:bg-slate-700 transition text-slate-300">
+                <i class="fa-solid fa-certificate w-5 text-blue-400"></i> Certifications
             </a>
             
-            <a href="#contact" class="flex items-center gap-3 p-3 rounded-lg hover:bg-slate-700 transition text-slate-300 hover:text-white">
-                <i class="fa-solid fa-envelope w-5"></i> Contact
+            <a href="#contact" class="flex items-center gap-3 p-3 rounded-lg hover:bg-slate-700 transition text-slate-300">
+                <i class="fa-solid fa-envelope w-5 text-blue-400"></i> Contact
             </a>
 
             <div class="pt-10">
-                <p class="text-slate-500 uppercase text-[10px] font-bold tracking-wider mb-4 px-3">Documents Officiels</p>
-                <a href="#" class="flex items-center gap-3 p-3 rounded-lg bg-blue-600/10 text-blue-400 border border-blue-500/20 hover:bg-blue-600/20 transition">
+                <a href="#" class="flex items-center gap-3 p-3 rounded-lg bg-blue-600/10 text-blue-400 border border-blue-500/20 hover:bg-blue-600/20 transition font-bold">
                     <i class="fa-solid fa-file-contract"></i> Tableau de Synthèse
                 </a>
             </div>
         </nav>
     </aside>
+
+    <div class="md:ml-64 min-h-screen">
+        
+        <main class="max-w-5xl mx-auto p-8 space-y-20">
+            
+            <section id="accueil" class="py-20 border-b border-slate-800">
+                <h3 class="text-5xl font-black mb-6">Bonjour, je suis <span class="text-blue-400">Alyssia</span>.</h3>
+                <p class="text-slate-400 text-lg max-w-2xl leading-relaxed">
+                    Étudiante en deuxième année de BTS SIO spécialité SISR. Bienvenue sur mon portfolio technique.
+                </p>
+            </section>
+
+            <section id="contact" class="py-10 bg-slate-800/30 p-8 rounded-2xl border border-slate-700">
+                <h2 class="text-3xl font-bold mb-8 flex items-center gap-3 text-white">
+                    <i class="fa-solid fa-address-book text-blue-400"></i> Me contacter
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="space-y-6">
+                        <div class="flex items-center gap-4">
+                            <div class="h-12 w-12 bg-blue-500/10 rounded-full flex items-center justify-center text-blue-400 text-xl shadow-inner">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-500 font-bold uppercase tracking-widest">Téléphone</p>
+                                <p class="text-slate-200">06 00 00 00 00</p> </div>
+                        </div>
+
+                        <div class="flex items-center gap-4">
+                            <div class="h-12 w-12 bg-blue-500/10 rounded-full flex items-center justify-center text-blue-400 text-xl shadow-inner">
+                                <i class="fa-solid fa-at"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-500 font-bold uppercase tracking-widest">Adresse Mail</p>
+                                <p class="text-slate-200">alyssia.noireau@exemple.com</p> </div>
+                        </div>
+                    </div>
+
+                    <div class="space-y-6">
+                        <div class="flex items-center gap-4">
+                            <div class="h-12 w-12 bg-blue-500/10 rounded-full flex items-center justify-center text-blue-400 text-xl shadow-inner">
+                                <i class="fa-brands fa-linkedin-in"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-500 font-bold uppercase tracking-widest">LinkedIn</p>
+                                <a href="https://www.linkedin.com/in/alyssia-noireau-97b77732a/" target="_blank" class="text-blue-400 hover:underline">Alyssia Noireau</a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center gap-4">
+                            <div class="h-12 w-12 bg-blue-500/10 rounded-full flex items-center justify-center text-blue-400 text-xl shadow-inner">
+                                <i class="fa-brands fa-github"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-500 font-bold uppercase tracking-widest">GitHub</p>
+                                <a href="https://github.com/Alyssianr" target="_blank" class="text-blue-400 hover:underline">Alyssianr</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+</body>
+</html>
