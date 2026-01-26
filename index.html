@@ -11,11 +11,11 @@
         .neon-border { box-shadow: 0 0 20px rgba(59, 130, 246, 0.5); }
     </style>
 </head>
-<body class="bg-[#0f172a] text-slate-100 font-sans antialiased">
+<body class="bg-[#0f172a] text-slate-100 font-sans antialiased text-left">
 
     <aside class="fixed top-0 left-0 h-screen w-64 bg-[#1e293b] border-r border-blue-500/30 hidden md:flex flex-col shadow-2xl z-50">
         <div class="p-8 text-center border-b border-blue-500/20">
-            <div class="w-20 h-20 bg-slate-700 rounded-full mx-auto mb-4 border-2 border-blue-500 neon-border flex items-center justify-center">
+            <div class="w-20 h-20 bg-slate-700 rounded-full mx-auto mb-4 border-2 border-blue-500 neon-border flex items-center justify-center overflow-hidden">
                 <i class="fa-solid fa-user text-3xl text-blue-400"></i>
             </div>
             <h1 class="text-xl font-black tracking-tighter neon-text uppercase text-blue-400">Alyssia<br>Noireau</h1>
@@ -26,22 +26,22 @@
         </div>
         
         <nav class="flex-1 p-6 space-y-2 text-sm uppercase font-bold tracking-widest">
-            <a href="#accueil" class="flex items-center gap-4 p-3 rounded-lg hover:bg-blue-500/10 hover:text-blue-400 transition group text-slate-400">
-                <i class="fa-solid fa-house w-5 group-hover:neon-text"></i> Accueil
+            <a href="#accueil" class="flex items-center gap-4 p-3 rounded-lg hover:bg-blue-500/10 hover:text-blue-400 transition text-slate-400">
+                <i class="fa-solid fa-house w-5"></i> Accueil
             </a>
-            <a href="#profil" class="flex items-center gap-4 p-3 rounded-lg hover:bg-blue-500/10 hover:text-blue-400 transition group text-slate-400">
+            <a href="#profil" class="flex items-center gap-4 p-3 rounded-lg hover:bg-blue-500/10 hover:text-blue-400 transition text-slate-400">
                 <i class="fa-solid fa-address-card w-5"></i> Profil
             </a>
-            <a href="#entreprise" class="flex items-center gap-4 p-3 rounded-lg hover:bg-blue-500/10 hover:text-blue-400 transition group text-slate-400">
+            <a href="#entreprise" class="flex items-center gap-4 p-3 rounded-lg hover:bg-blue-500/10 hover:text-blue-400 transition text-slate-400">
                 <i class="fa-solid fa-building w-5"></i> Entreprise
             </a>
-            <a href="#tp" class="flex items-center gap-4 p-3 rounded-lg hover:bg-blue-500/10 hover:text-blue-400 transition group text-slate-400">
+            <a href="#tp" class="flex items-center gap-4 p-3 rounded-lg hover:bg-blue-500/10 hover:text-blue-400 transition text-slate-400">
                 <i class="fa-solid fa-folder-open w-5"></i> Projets
             </a>
-            <a href="#certifications" class="flex items-center gap-4 p-3 rounded-lg hover:bg-blue-500/10 hover:text-blue-400 transition group text-slate-400">
+            <a href="#certifications" class="flex items-center gap-4 p-3 rounded-lg hover:bg-blue-500/10 hover:text-blue-400 transition text-slate-400">
                 <i class="fa-solid fa-certificate w-5"></i> Certifs
             </a>
-            <a href="#contact" class="flex items-center gap-4 p-3 rounded-lg hover:bg-blue-500/10 hover:text-blue-400 transition group text-slate-400">
+            <a href="#contact" class="flex items-center gap-4 p-3 rounded-lg hover:bg-blue-500/10 hover:text-blue-400 transition text-slate-400">
                 <i class="fa-solid fa-envelope w-5"></i> Contact
             </a>
         </nav>
@@ -56,64 +56,74 @@
     <div class="md:ml-64 min-h-screen">
         <main class="max-w-5xl mx-auto p-8 lg:p-20 space-y-40">
 
-            <section id="accueil" class="min-h-[50vh] flex flex-col justify-center text-center">
+            <section id="accueil" class="min-h-[40vh] flex flex-col justify-center text-center">
                 <h2 class="text-white text-7xl font-black tracking-tighter uppercase leading-none">Alyssia Noireau</h2>
-                <h3 class="text-blue-400 text-3xl font-bold uppercase tracking-[0.2em] mt-4 italic neon-text">Bienvenue sur mon Portfolio</h3>
+                <h3 class="text-blue-400 text-3xl font-bold uppercase tracking-[0.2em] mt-4 neon-text">Bienvenue sur mon Portfolio</h3>
             </section>
 
             <section id="profil" class="scroll-mt-24">
-                <div class="bg-[#1e293b] p-12 rounded-[2rem] border-t-4 border-blue-500 shadow-2xl">
-                    <h2 class="text-2xl font-black mb-8 uppercase text-blue-400 italic">À propos de moi <i class="fa-regular fa-comment-dots ml-2"></i></h2>
-                    <p class="text-slate-200 text-2xl leading-relaxed font-light italic">
-                        Bien que formée aux bases du développement, mon expertise et mes aspirations se tournent résolument vers les solutions d'infrastructure et la sécurité système. Étudiante en BTS SIO spécialité SISR, j'effectue mon alternance au sein de l'entreprise ISTA, où je suis pleinement investie au support informatique. Très impliquée dans l'administration réseaux, je veille au quotidien à la gestion de l'infrastructure pour garantir la haute disponibilité et la sécurité des services informatiques.
-                    </p>
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+                    
+                    <div class="lg:col-span-1 flex justify-center">
+                        <div class="bg-[#1e293b] p-4 rounded-3xl border border-blue-500/30 shadow-2xl neon-border w-full aspect-square flex items-center justify-center overflow-hidden">
+                            <img src="maphoto.png" alt="Alyssia Noireau" class="w-full h-full object-cover rounded-2xl" onerror="this.innerHTML='<i class=\'fa-solid fa-user text-6xl text-slate-600\'></i>'; this.style.display='none';">
+                            <i class="fa-solid fa-user text-6xl text-slate-600"></i>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-2 space-y-8">
+                        <div class="bg-[#1e293b] p-10 rounded-[2rem] border-t-4 border-blue-500 shadow-2xl">
+                            <h2 class="text-xl font-black mb-6 uppercase text-blue-400">À propos de moi</h2>
+                            <p class="text-slate-200 text-xl leading-relaxed text-justify font-light italic">
+                                Bien que formée aux bases du développement, mon expertise et mes aspirations se tournent résolument vers les solutions d'infrastructure et la sécurité système. Étudiante en BTS SIO spécialité SISR, j'effectue mon alternance au sein de l'entreprise ISTA, où je suis pleinement investie au support informatique. Très impliquée dans l'administration réseaux, je veille au quotidien à la gestion de l'infrastructure pour garantir la haute disponibilité et la sécurité des services informatiques.
+                            </p>
+                        </div>
+
+                        <div class="bg-[#1e293b]/60 p-8 rounded-[2rem] border border-blue-500/20 shadow-xl">
+                            <h2 class="text-lg font-bold mb-4 uppercase text-slate-400 tracking-widest">Parcours & Objectifs</h2>
+                            <p class="text-slate-400 italic">
+                                [Ici, tu peux ajouter tes objectifs professionnels ou une phrase sur ton parcours scolaire]
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </section>
 
             <section id="entreprise" class="scroll-mt-24">
                 <h2 class="text-3xl font-black mb-12 border-l-8 border-blue-500 pl-6 uppercase tracking-tighter italic">Expérience chez ISTA</h2>
-                
                 <div class="space-y-12">
                     <div class="bg-[#1e293b] p-10 rounded-3xl border border-blue-500/20 shadow-2xl flex flex-col md:flex-row items-center gap-10">
                         <img src="image_e736df.png" alt="ISTA" class="h-20 md:h-28 object-contain">
-                        <p class="text-slate-300 text-xl leading-relaxed italic border-l-2 border-slate-700 pl-8 font-light">
+                        <p class="text-slate-300 text-xl leading-relaxed italic border-l-2 border-slate-700 pl-8 font-light text-justify">
                             Ista est une entreprise spécialisée dans la mesure et la gestion des consommations d’énergie et d’eau des bâtiments. Elle aide les propriétaires et gestionnaires à répartir les charges et à optimiser l’efficacité énergétique.
                         </p>
                     </div>
-
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        <div class="bg-[#1e293b]/50 p-8 rounded-2xl border border-slate-800 hover:border-blue-500/40 transition">
+                        <div class="bg-[#1e293b]/50 p-8 rounded-2xl border border-slate-800 hover:border-blue-500/40 transition shadow-lg">
                             <h4 class="text-blue-400 font-black uppercase text-sm mb-6 tracking-widest italic border-b border-blue-500/20 pb-2">Support & Assistance</h4>
                             <ul class="text-slate-400 space-y-4 text-sm font-medium">
-                                <li>• Assistance N1/N2 : <b>Jira (Ticketing)</b>, Outlook, Voxtron.</li>
+                                <li>• Assistance N1/N2 : Jira, Outlook, Voxtron.</li>
                                 <li>• Maintenance matérielle & logicielle du parc.</li>
-                                <li>• Support à distance : <b>TeamViewer, Teams</b>.</li>
+                                <li>• Support à distance : TeamViewer, Teams.</li>
                             </ul>
                         </div>
-                        <div class="bg-[#1e293b]/50 p-8 rounded-2xl border border-slate-800 hover:border-blue-500/40 transition">
+                        <div class="bg-[#1e293b]/50 p-8 rounded-2xl border border-slate-800 hover:border-blue-500/40 transition shadow-lg">
                             <h4 class="text-blue-400 font-black uppercase text-sm mb-6 tracking-widest italic border-b border-blue-500/20 pb-2">Admin Systèmes & Réseaux</h4>
                             <ul class="text-slate-400 space-y-4 text-sm font-medium">
-                                <li>• <b>Active Directory (AD)</b> : Comptes & Droits NTFS.</li>
-                                <li>• Gestion des accès <b>VPN</b> & sauvegardes.</li>
-                                <li>• MDM : <b>Microsoft Intune</b> & <b>Baramundi</b>.</li>
+                                <li>• Active Directory : Comptes & GPO.</li>
+                                <li>• Gestion des accès VPN & droits NTFS.</li>
+                                <li>• MDM : Microsoft Intune & Baramundi.</li>
                             </ul>
                         </div>
                     </div>
-                </div>
-            </section>
-
-            <section id="tp" class="scroll-mt-24">
-                <h2 class="text-3xl font-black mb-12 border-l-8 border-blue-500 pl-6 uppercase tracking-tighter italic">Projets & Travaux Pratiques</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-center text-slate-500 italic border-2 border-dashed border-slate-700 p-20 rounded-3xl">
-                    Contenu des projets à venir...
                 </div>
             </section>
 
             <section id="contact" class="pb-40 text-center">
                 <h2 class="text-4xl font-black mb-12 italic uppercase tracking-tighter">Contact</h2>
-                <div class="flex flex-wrap justify-center gap-12 text-blue-400 font-bold tracking-widest">
-                    <p class="bg-[#1e293b] p-6 rounded-2xl border border-blue-500/20 shadow-lg"><i class="fa-solid fa-phone mr-3 text-white"></i> 07 67 17 89 08</p>
-                    <p class="bg-[#1e293b] p-6 rounded-2xl border border-blue-500/20 shadow-lg"><i class="fa-solid fa-envelope mr-3 text-white"></i> Alyssia.noireau@gmail.com</p>
+                <div class="flex flex-wrap justify-center gap-8">
+                    <p class="bg-[#1e293b] p-6 rounded-2xl border border-blue-500/20"><i class="fa-solid fa-phone mr-3 text-blue-500"></i> 07 67 17 89 08</p>
+                    <p class="bg-[#1e293b] p-6 rounded-2xl border border-blue-500/20"><i class="fa-solid fa-envelope mr-3 text-blue-500"></i> Alyssia.noireau@gmail.com</p>
                 </div>
             </section>
 
