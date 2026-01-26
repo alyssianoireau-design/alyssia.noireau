@@ -10,13 +10,7 @@
         .neon-text { text-shadow: 0 0 15px rgba(59, 130, 246, 0.9); }
         .neon-border { box-shadow: 0 0 20px rgba(59, 130, 246, 0.3); }
         .glass-card { background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(10px); }
-        
-        /* Police Arial Droite impérative */
-        .arial-text { 
-            font-family: Arial, Helvetica, sans-serif !important; 
-            font-style: normal !important;
-            font-weight: 400;
-        }
+        .arial-text { font-family: Arial, Helvetica, sans-serif !important; font-style: normal !important; }
         .tech-badge { background: rgba(59, 130, 246, 0.2); border: 1px solid rgba(59, 130, 246, 0.5); padding: 2px 8px; border-radius: 4px; color: #60a5fa; font-weight: bold; }
     </style>
 </head>
@@ -38,22 +32,24 @@
             <a href="#certifications" class="flex items-center gap-4 p-3 rounded-lg hover:bg-blue-500/10 hover:text-blue-400 transition"><i class="fa-solid fa-certificate w-5"></i> Certifs</a>
             <a href="#contact" class="flex items-center gap-4 p-3 rounded-lg hover:bg-blue-500/10 hover:text-blue-400 transition"><i class="fa-solid fa-envelope w-5"></i> Contact</a>
         </nav>
-        <div class="p-6 border-t border-blue-500/20">
-            <a href="#" class="block w-full py-3 bg-blue-600 hover:bg-blue-500 text-center rounded-xl text-[10px] font-black uppercase tracking-widest transition neon-border">
-                Epreuve E4
-            </a>
-        </div>
     </aside>
 
     <div class="md:ml-64 min-h-screen">
-        <main class="max-w-5xl mx-auto p-8 lg:p-20 space-y-40">
+        <main class="space-y-40">
 
-            <section id="accueil" class="min-h-[40vh] flex flex-col justify-center text-center">
-                <h2 class="text-white text-7xl font-black tracking-tighter uppercase leading-none">Alyssia Noireau</h2>
-                <h3 class="text-blue-400 text-3xl font-bold uppercase tracking-[0.2em] mt-4 neon-text">Bienvenue sur mon Portfolio</h3>
+            <section id="accueil" class="min-h-screen flex flex-col justify-center text-center relative overflow-hidden">
+                <div class="absolute inset-0 z-0">
+                    <img src="http://googleusercontent.com/image_collection/image_retrieval/15503534758322495006_0" alt="" class="w-full h-full object-cover opacity-40">
+                    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-[#0f172a]/40 to-[#0f172a]"></div>
+                </div>
+
+                <div class="relative z-10 px-8">
+                    <h2 class="text-white text-7xl font-black tracking-tighter uppercase leading-none">Alyssia Noireau</h2>
+                    <h3 class="text-blue-400 text-3xl font-bold uppercase tracking-[0.2em] mt-4 neon-text">Bienvenue sur mon Portfolio</h3>
+                </div>
             </section>
 
-            <section id="profil" class="scroll-mt-24">
+            <section id="profil" class="max-w-5xl mx-auto px-8 scroll-mt-24">
                 <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
                     <div class="lg:col-span-1 space-y-6">
                         <div class="glass-card h-64 p-2 rounded-3xl border border-blue-500/30 shadow-2xl neon-border flex items-center justify-center overflow-hidden">
@@ -72,11 +68,8 @@
                             <h2 class="text-sm font-black mb-8 uppercase text-blue-400 tracking-[0.3em]">Parcours et objectif</h2>
                             <div class="space-y-6 text-slate-200 text-lg leading-relaxed text-justify">
                                 <p>Je suis Alyssia Noireau, j'ai 19 ans et je suis diplômée d'un BAC STMG (sciences et technologies du management et de la gestion) avec la spécialité mercatique.</p>
-                                
                                 <p>Je suis étudiante en deuxième année de BTS SIO (Services Informatiques aux Organisations), option SISR (Solutions d'Infrastructures Systèmes et Réseaux) à l'ORT Daniel Mayer à Montreuil (93048).</p>
-                                
                                 <p>J'effectue mon alternance au sein de l'entreprise ISTA, où je suis pleinement investie au support informatique. Très impliquée dans l'administration réseaux, je veille au quotidien à la gestion de l'infrastructure pour garantir la haute disponibilité et la sécurité des services informatiques.</p>
-                                
                                 <p class="text-blue-400 font-bold">L’année prochaine, je souhaite continuer mes études en informatique en alternance et intégrer la licence Chef de projet développement, sécurité et exploitation.</p>
                             </div>
                         </div>
@@ -84,7 +77,7 @@
                 </div>
             </section>
 
-            <section id="entreprise" class="scroll-mt-24">
+            <section id="entreprise" class="max-w-5xl mx-auto px-8 scroll-mt-24">
                 <h2 class="text-3xl font-black mb-2 border-l-8 border-blue-500 pl-6 uppercase tracking-tighter">Entreprise</h2>
                 <div class="mb-12 pl-8">
                     <h3 class="text-2xl font-bold text-white uppercase tracking-widest">Ista</h3>
@@ -127,5 +120,6 @@
 
         </main>
     </div>
+
 </body>
 </html>
