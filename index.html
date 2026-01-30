@@ -11,9 +11,7 @@
         .neon-border { box-shadow: 0 0 20px rgba(59, 130, 246, 0.3); }
         .glass-card { background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(10px); }
         .arial-text { font-family: Arial, Helvetica, sans-serif !important; font-style: normal !important; }
-        .tech-badge { background: rgba(59, 130, 246, 0.2); border: 1px solid rgba(59, 130, 246, 0.5); padding: 2px 8px; border-radius: 4px; color: #60a5fa; font-weight: bold; }
         
-        /* Curseur de la machine à écrire */
         .typing::after {
             content: '|';
             animation: blink 0.7s infinite;
@@ -51,28 +49,16 @@
     <div class="md:ml-64 min-h-screen">
         <main class="space-y-40">
 
-            <section id="accueil" class="min-h-screen flex flex-col justify-start pt-32 text-center relative overflow-hidden">
-                <div class="absolute inset-0 z-0">
-                    <img src="fond-accueil.jpg" alt="" class="w-full h-full object-cover opacity-70">
-                    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-[#0f172a]/30 to-[#0f172a]"></div>
+            <section id="accueil" class="min-h-screen flex flex-col justify-center items-center text-center px-8 space-y-8">
+                <div>
+                    <h2 class="text-white text-4xl font-black tracking-tighter uppercase leading-none">Alyssia Noireau</h2>
+                    <h3 id="typewriter" class="text-blue-400 text-2xl font-bold uppercase tracking-[0.2em] mt-4 neon-text typing min-h-[1.5em]"></h3>
                 </div>
-
-                <div class="relative z-10 px-8 space-y-6">
-                    <div>
-                        <h2 class="text-white text-7xl font-black tracking-tighter uppercase leading-none">Alyssia Noireau</h2>
-                        <h3 id="typewriter" class="text-blue-400 text-3xl font-bold uppercase tracking-[0.2em] mt-4 neon-text typing min-h-[1.5em]"></h3>
-                    </div>
-                    
-                    <div class="flex flex-col md:flex-row justify-center items-center gap-6 mt-10">
-                        <div class="glass-card px-6 py-3 rounded-full border border-blue-500/30 flex items-center gap-3">
-                            <i class="fa-solid fa-phone text-blue-400"></i>
-                            <span class="text-sm font-bold tracking-widest text-white">07 67 17 89 08</span>
-                        </div>
-                        <div class="glass-card px-6 py-3 rounded-full border border-blue-500/30 flex items-center gap-3">
-                            <i class="fa-solid fa-envelope text-blue-400"></i>
-                            <span class="text-sm font-bold tracking-widest text-white">Alyssia.noireau@gmail.com</span>
-                        </div>
-                    </div>
+                
+                <div class="glass-card max-w-2xl w-full p-8 rounded-xl border border-blue-500/30 shadow-2xl">
+                    <p class="text-slate-300 text-lg leading-relaxed">
+                        [ Insère ton petit texte ici... ]
+                    </p>
                 </div>
             </section>
 
@@ -96,7 +82,7 @@
                         <div class="glass-card p-10 rounded-[2rem] border-l-4 border-blue-500 shadow-xl">
                             <h2 class="text-sm font-black mb-8 uppercase text-blue-400 tracking-[0.3em]">Parcours et objectif</h2>
                             <div class="space-y-6 text-slate-200 text-lg text-justify">
-                                <p>[ Ton nouveau texte ici... ]</p>
+                                <p>[ Ton texte de profil ici... ]</p>
                             </div>
                         </div>
                     </div>
@@ -107,8 +93,8 @@
 
     <script>
         const text = "Bienvenue sur mon Portfolio";
-        const speed = 100; // Vitesse d'écriture
-        const pause = 2000; // 2 secondes de pause
+        const speed = 100;
+        const pause = 2000;
         let i = 0;
         const element = document.getElementById("typewriter");
 
@@ -118,7 +104,6 @@
                 i++;
                 setTimeout(typeWriter, speed);
             } else {
-                // Pause de 2s puis réinitialisation
                 setTimeout(() => {
                     element.innerHTML = "";
                     i = 0;
