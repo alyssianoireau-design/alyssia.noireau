@@ -13,6 +13,7 @@
         .arial-text { font-family: Arial, Helvetica, sans-serif !important; font-style: normal !important; }
         .tech-badge { background: rgba(59, 130, 246, 0.2); border: 1px solid rgba(59, 130, 246, 0.5); padding: 2px 8px; border-radius: 4px; color: #60a5fa; font-weight: bold; }
         
+        /* Effet machine à écrire */
         .typing::after {
             content: '|';
             animation: blink 0.7s infinite;
@@ -32,11 +33,13 @@
                 <i class="fa-solid fa-user text-3xl text-blue-400"></i>
             </div>
             <h1 class="text-xl font-black tracking-tighter neon-text uppercase text-blue-400 leading-tight">Alyssia<br>Noireau</h1>
+            
             <div class="flex justify-center gap-4 mt-4 text-slate-400 text-xl">
                 <a href="https://www.linkedin.com/in/alyssia-noireau" target="_blank" class="hover:text-blue-400 transition"><i class="fa-brands fa-linkedin"></i></a>
                 <a href="https://github.com/Alyssianr" target="_blank" class="hover:text-blue-400 transition"><i class="fa-brands fa-github"></i></a>
             </div>
         </div>
+        
         <nav class="flex-1 p-6 space-y-2 text-sm uppercase font-bold tracking-widest text-slate-400">
             <a href="#accueil" class="flex items-center gap-4 p-3 rounded-lg hover:bg-blue-500/10 hover:text-blue-400 transition"><i class="fa-solid fa-house w-5"></i> Accueil</a>
             <a href="#profil" class="flex items-center gap-4 p-3 rounded-lg hover:bg-blue-500/10 hover:text-blue-400 transition"><i class="fa-solid fa-address-card w-5"></i> Profil</a>
@@ -45,18 +48,29 @@
             <a href="#competences" class="flex items-center gap-4 p-3 rounded-lg hover:bg-blue-500/10 hover:text-blue-400 transition"><i class="fa-solid fa-layer-group w-5"></i> Compétences</a>
             <a href="#contact" class="flex items-center gap-4 p-3 rounded-lg hover:bg-blue-500/10 hover:text-blue-400 transition"><i class="fa-solid fa-envelope w-5"></i> Contact</a>
         </nav>
+
+        <div class="p-6 border-t border-blue-500/20">
+            <a href="#" class="block w-full py-3 bg-blue-600 hover:bg-blue-500 text-center rounded-xl text-[10px] font-black uppercase tracking-widest transition neon-border">
+                Epreuve E4
+            </a>
+        </div>
     </aside>
 
     <div class="md:ml-64 min-h-screen">
         <main class="space-y-40">
+
             <section id="accueil" class="min-h-screen flex flex-col justify-center text-center relative overflow-hidden">
                 <div class="absolute inset-0 z-0">
-                    <img src="fond-accueil.avif" alt="" class="w-full h-full object-cover opacity-50">
+                    <img src="fond-accueil.png" alt="" class="w-full h-full object-cover opacity-50">
                     <div class="absolute inset-0 bg-gradient-to-b from-transparent via-[#0f172a]/60 to-[#0f172a]"></div>
                 </div>
+
                 <div class="relative z-10 px-8 space-y-6">
-                    <h2 class="text-white text-7xl font-black tracking-tighter uppercase leading-none">Alyssia Noireau</h2>
-                    <h3 id="typewriter" class="text-blue-400 text-3xl font-bold uppercase tracking-[0.2em] mt-4 neon-text typing"></h3>
+                    <div>
+                        <h2 class="text-white text-7xl font-black tracking-tighter uppercase leading-none">Alyssia Noireau</h2>
+                        <h3 id="typewriter" class="text-blue-400 text-3xl font-bold uppercase tracking-[0.2em] mt-4 neon-text typing"></h3>
+                    </div>
+                    
                     <div class="flex flex-col md:flex-row justify-center items-center gap-6 mt-10">
                         <div class="glass-card px-6 py-3 rounded-full border border-blue-500/30 flex items-center gap-3">
                             <i class="fa-solid fa-phone text-blue-400"></i>
@@ -77,19 +91,62 @@
                             <img src="maphoto.png" alt="" class="w-full h-full object-cover rounded-2xl" onerror="this.style.display='none';">
                             <i class="fa-solid fa-user-tie text-7xl text-slate-700"></i>
                         </div>
-                        <a href="MON_CV.pdf" target="_blank" class="flex items-center justify-center gap-2 py-3 bg-blue-600/20 hover:bg-blue-600/40 text-blue-400 rounded-xl text-xs font-black uppercase border border-blue-500/30 transition">
-                            <i class="fa-solid fa-file-pdf"></i> Voir mon CV
-                        </a>
-                        <a href="TABLEAU_COMPETENCES.pdf" target="_blank" class="flex items-center justify-center gap-2 py-3 bg-slate-700/30 hover:bg-slate-700/50 text-slate-300 rounded-xl text-[10px] font-black uppercase border border-slate-600/30 transition">
-                            <i class="fa-solid fa-table-list"></i> Tableau de compétences
-                        </a>
+                        
+                        <div class="glass-card p-4 rounded-2xl border border-blue-500/20 text-center space-y-3">
+                            <a href="MON_CV.pdf" target="_blank" class="flex items-center justify-center gap-2 py-3 bg-blue-600/20 hover:bg-blue-600/40 text-blue-400 rounded-xl text-xs font-black uppercase tracking-widest transition border border-blue-500/30">
+                                <i class="fa-solid fa-file-pdf"></i> Voir mon CV
+                            </a>
+                            <a href="TABLEAU_COMPETENCES.pdf" target="_blank" class="flex items-center justify-center gap-2 py-3 bg-slate-700/30 hover:bg-slate-700/50 text-slate-300 rounded-xl text-[10px] font-black uppercase tracking-widest transition border border-slate-600/30">
+                                <i class="fa-solid fa-table-list"></i> Tableau de compétences
+                            </a>
+                        </div>
                     </div>
+
                     <div class="lg:col-span-2">
-                        <div class="glass-card p-10 rounded-[2rem] border-l-4 border-blue-500 shadow-xl">
+                        <div class="glass-card p-10 rounded-[2rem] border-l-4 border-blue-500 shadow-xl relative overflow-hidden">
                             <h2 class="text-sm font-black mb-8 uppercase text-blue-400 tracking-[0.3em]">Parcours et objectif</h2>
-                            <div class="space-y-6 text-slate-200 text-lg text-justify">
-                                <p>[ Ton nouveau texte ici... ]</p>
+                            <div class="space-y-6 text-slate-200 text-lg leading-relaxed text-justify">
+                                <p>[ Ajoute ton nouveau texte ici ]</p>
                             </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="entreprise" class="max-w-5xl mx-auto px-8 scroll-mt-24">
+                <h2 class="text-3xl font-black mb-2 border-l-8 border-blue-500 pl-6 uppercase tracking-tighter">Entreprise</h2>
+                <div class="mb-12 pl-8">
+                    <h3 class="text-2xl font-bold text-white uppercase tracking-widest">Ista</h3>
+                    <p class="text-white text-sm font-medium">Solution de comptage individuel d'eau et de chauffage</p>
+                </div>
+
+                <div class="space-y-12">
+                    <div class="bg-white p-8 rounded-[2.5rem] border-4 border-blue-500 shadow-2xl neon-border inline-block">
+                        <img src="Ista-Logo-side.jpg" alt="Logo ISTA" class="h-24 md:h-32 object-contain">
+                    </div>
+
+                    <div class="glass-card p-10 rounded-3xl border border-blue-500/20 shadow-2xl">
+                        <p class="text-slate-300 text-xl leading-relaxed text-justify">
+                            Ista est une entreprise spécialisée dans la mesure et la gestion des consommations d’énergie et d’eau des bâtiments. Elle aide les propriétaires et gestionnaires à répartir les charges et à optimiser l’efficacité énergétique.
+                        </p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="glass-card p-8 rounded-2xl border border-slate-700/50 relative">
+                            <div class="absolute -top-3 left-6 bg-blue-600 px-3 py-1 rounded text-[10px] font-black uppercase tracking-widest">Support & Assistance</div>
+                            <ul class="text-slate-400 space-y-4 text-sm mt-4">
+                                <li>• <span class="text-blue-300 font-bold">ITSM :</span> Gestion des incidents via <span class="tech-badge">Jira</span>.</li>
+                                <li>• <span class="text-blue-300 font-bold">Support Distant :</span> Maintenance via <span class="tech-badge">TeamViewer</span> & Teams.</li>
+                                <li>• <span class="text-blue-300 font-bold">Infrastructures :</span> Support utilisateur sur environnements <span class="tech-badge">Azure Cloud</span>.</li>
+                            </ul>
+                        </div>
+                        <div class="glass-card p-8 rounded-2xl border border-slate-700/50 relative">
+                            <div class="absolute -top-3 left-6 bg-blue-600 px-3 py-1 rounded text-[10px] font-black uppercase tracking-widest">Administration Systèmes</div>
+                            <ul class="text-slate-400 space-y-4 text-sm mt-4">
+                                <li>• <span class="text-blue-300 font-bold">Gestion MDM :</span> Sécurisation flotte mobile avec <span class="tech-badge">Microsoft Intune</span>.</li>
+                                <li>• <span class="text-blue-300 font-bold">Automatisation :</span> Déploiement applicatif via <span class="tech-badge">Baramundi</span>.</li>
+                                <li>• <span class="text-blue-300 font-bold">Directory :</span> Administration comptes et GPO sur <span class="tech-badge">Active Directory</span>.</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -101,6 +158,7 @@
         const text = "Bienvenue sur mon Portfolio";
         const speed = 100;
         let i = 0;
+
         function typeWriter() {
             if (i < text.length) {
                 document.getElementById("typewriter").innerHTML += text.charAt(i);
