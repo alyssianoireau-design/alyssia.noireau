@@ -12,13 +12,7 @@
         .glass-sidebar { background: rgba(17, 24, 39, 0.85); backdrop-filter: blur(15px); }
         .glass-card { background: rgba(15, 23, 42, 0.75); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); }
         .arial-text { font-family: Arial, Helvetica, sans-serif !important; font-style: normal !important; }
-        
-        /* Style des bulles blanches parfaitement droites */
-        .white-border-card { 
-            border: 2px solid rgba(255, 255, 255, 0.9) !important; 
-            box-shadow: 0 4px 20px rgba(255, 255, 255, 0.05);
-            transform: none !important; /* Force la bulle à rester droite */
-        }
+        .white-border-card { border: 2px solid rgba(255, 255, 255, 0.9) !important; }
 
         .nav-link { position: relative; transition: all 0.3s ease; }
         .nav-link:hover { color: #60a5fa; padding-left: 2rem; background: rgba(59, 130, 246, 0.1); }
@@ -28,14 +22,8 @@
         }
         .nav-link:hover::before { width: 4px; }
 
-        .typing::after {
-            content: '|';
-            animation: blink 0.7s infinite;
-        }
-        @keyframes blink {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0; }
-        }
+        .typing::after { content: '|'; animation: blink 0.7s infinite; }
+        @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
 
         .bg-nebula {
             background: linear-gradient(rgba(15, 23, 42, 0.45), rgba(15, 23, 42, 0.65)), url('fond-accueil.jpg');
@@ -53,7 +41,6 @@
             </div>
             <h1 class="text-xl font-black tracking-widest neon-text uppercase leading-tight text-white">Alyssia<br><span class="text-blue-500">Noireau</span></h1>
         </div>
-
         <nav class="flex-1 flex flex-col justify-evenly py-8 text-xs font-bold uppercase tracking-widest text-slate-400">
             <a href="#accueil" class="nav-link flex items-center gap-4 py-4 px-8"><i class="fa-solid fa-house-chimney w-5"></i> Accueil</a>
             <a href="#profil" class="nav-link flex items-center gap-4 py-4 px-8"><i class="fa-solid fa-id-badge w-5"></i> Profil</a>
@@ -79,20 +66,17 @@
                 <div class="text-center mb-16">
                     <h2 class="text-3xl font-black uppercase tracking-widest inline-block border-b-2 border-blue-500 pb-2 text-white">Présentation</h2>
                 </div>
-
                 <div class="grid grid-cols-1 lg:grid-cols-5 gap-12 items-start">
                     <div class="lg:col-span-2 flex flex-col items-center space-y-8">
                         <div class="glass-card w-72 h-72 p-2 rounded-3xl border border-blue-500/30 shadow-2xl overflow-hidden flex items-center justify-center neon-border transition-transform hover:scale-105">
                             <img src="maphoto.png" alt="Alyssia Noireau" class="w-full h-full object-cover rounded-2xl" onerror="this.style.display='none';">
                             <i class="fa-solid fa-user-tie text-7xl text-blue-400/20"></i>
                         </div>
-                        
                         <a href="CV_Alyssia_Noireau.pdf" target="_blank" class="w-72 flex items-center justify-center gap-4 px-6 py-4 bg-blue-600/20 hover:bg-blue-600/40 text-blue-400 rounded-xl border border-blue-500/30 transition-all shadow-xl group">
                             <i class="fa-solid fa-file-pdf text-xl"></i> 
                             <span class="font-black uppercase tracking-[0.2em] text-xs">CV</span>
                         </a>
                     </div>
-
                     <div class="lg:col-span-3 space-y-6">
                         <div class="glass-card white-border-card p-8 rounded-2xl">
                             <div class="text-slate-100 text-lg leading-relaxed text-justify">
@@ -100,10 +84,44 @@
                                 <p class="mt-4">J'entame ma deuxième année avec une solide base de compétences humaines et techniques. Dotée d'un fort esprit d'équipe et d'une rigueur constante, je m'efforce de transformer chaque défi technique en une solution fluide grâce à mon sens de l'organisation et ma diplomatie.</p>
                             </div>
                         </div>
-
                         <div class="glass-card white-border-card p-8 rounded-2xl">
                             <div class="text-slate-100 text-lg leading-relaxed text-justify">
                                 <p>Véritablement motivée par l'évolution vers la gestion de projets informatiques, je souhaite poursuivre mon parcours par une Licence Chef de projet (Développement, Sécurité et Exploitation) puis un Master MIAGE, afin de mettre mon dynamisme et mon expertise terrain au service du pilotage de solutions innovantes, toujours en alternance.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="entreprise" class="max-w-6xl mx-auto px-8 py-24 scroll-mt-24">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl font-black uppercase tracking-widest inline-block border-b-2 border-blue-500 pb-2 text-white">Expérience chez Ista</h2>
+                </div>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+                    <div class="space-y-6">
+                        <div class="glass-card white-border-card p-6 rounded-xl">
+                            <h3 class="text-blue-400 font-bold uppercase text-xs mb-3">Mission 1 : Support Utilisateurs</h3>
+                            <p class="text-slate-300 text-sm">Gestion des tickets de niveau 1 et 2, assistance technique à distance et sur site pour les collaborateurs.</p>
+                        </div>
+                        <div class="glass-card white-border-card p-6 rounded-xl">
+                            <h3 class="text-blue-400 font-bold uppercase text-xs mb-3">Mission 2 : Administration Système</h3>
+                            <p class="text-slate-300 text-sm">Gestion des comptes utilisateurs via Active Directory et configuration des accès réseaux.</p>
+                        </div>
+                        <div class="glass-card white-border-card p-6 rounded-xl">
+                            <h3 class="text-blue-400 font-bold uppercase text-xs mb-3">Mission 3 : Maintenance Parc</h3>
+                            <p class="text-slate-300 text-sm">Préparation et déploiement des postes de travail, installation des logiciels et périphériques.</p>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 gap-6">
+                        <div class="glass-card h-48 rounded-2xl overflow-hidden border border-white/20">
+                            <img src="ista-locaux.jpg" alt="Locaux Ista" class="w-full h-full object-cover opacity-60 hover:opacity-100 transition" onerror="this.src='https://via.placeholder.com/600x300?text=Image+Locaux+Ista';">
+                        </div>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="glass-card h-40 rounded-2xl overflow-hidden border border-white/20 text-center flex items-center justify-center">
+                                <span class="text-[10px] uppercase font-bold text-slate-500">[ Image Intervention ]</span>
+                            </div>
+                            <div class="glass-card h-40 rounded-2xl overflow-hidden border border-white/20 text-center flex items-center justify-center">
+                                <span class="text-[10px] uppercase font-bold text-slate-500">[ Image Serveur ]</span>
                             </div>
                         </div>
                     </div>
@@ -119,7 +137,6 @@
         const pause = 2000;
         let i = 0;
         const element = document.getElementById("typewriter");
-
         function typeWriter() {
             if (i < text.length) {
                 element.innerHTML += text.charAt(i);
