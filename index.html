@@ -16,7 +16,6 @@
         .white-border-card { 
             border: 2px solid rgba(255, 255, 255, 0.9) !important; 
             box-shadow: 0 4px 20px rgba(255, 255, 255, 0.05);
-            transform: none !important;
         }
 
         .nav-link { position: relative; transition: all 0.3s ease; }
@@ -40,7 +39,7 @@
 
     <aside class="fixed top-0 left-0 h-screen w-64 glass-sidebar border-r border-white/10 hidden md:flex flex-col z-50 shadow-2xl">
         <div class="p-10 text-center border-b border-white/5">
-            <div class="w-24 h-24 bg-slate-800 rounded-2xl mx-auto mb-6 border border-blue-500/50 shadow-lg flex items-center justify-center overflow-hidden transition-transform hover:scale-105">
+            <div class="w-24 h-24 bg-slate-800 rounded-2xl mx-auto mb-6 border border-blue-500/50 shadow-lg flex items-center justify-center overflow-hidden">
                 <img src="maphoto.png" alt="" class="w-full h-full object-cover" onerror="this.style.display='none';">
                 <i class="fa-solid fa-user-shield text-4xl text-blue-400"></i>
             </div>
@@ -78,9 +77,10 @@
                             <img src="maphoto.png" alt="Alyssia Noireau" class="w-full h-full object-cover rounded-2xl" onerror="this.style.display='none';">
                             <i class="fa-solid fa-user-tie text-7xl text-blue-400/20"></i>
                         </div>
+                        
                         <a href="CV_Alyssia_Noireau.pdf" target="_blank" class="w-72 flex items-center justify-center gap-4 px-6 py-4 bg-blue-600/20 hover:bg-blue-600/40 text-blue-400 rounded-xl border border-blue-500/30 transition-all shadow-xl group">
                             <i class="fa-solid fa-file-pdf text-xl"></i> 
-                            <span class="font-black uppercase tracking-[0.2em] text-xs">CV</span>
+                            <span class="font-black uppercase tracking-[0.4em] text-xs">CV</span>
                         </a>
                     </div>
                     <div class="lg:col-span-3 space-y-6">
@@ -109,7 +109,7 @@
                         <div class="glass-card white-border-card p-8 rounded-2xl">
                             <h3 class="text-blue-400 font-black uppercase text-xs tracking-widest mb-4">Notre Activité</h3>
                             <p class="text-slate-200 text-sm leading-relaxed text-justify">
-                                Ista installe des compteurs connectés pour mesurer précisément la consommation d'eau et de chauffage de chaque habitant. Elle permet ainsi de facturer les charges au réel plutôt qu'au forfait, encourageant les économies d'énergie dans les immeubles collectifs. L'entreprise gère également le relevé des données à distance et l'entretien des équipements de sécurité comme les détecteurs de fumée.
+                                Ista installe des compteurs connectés pour mesurer précisément la consommation d'eau et de chauffage de chaque habitant. Elle permet ainsi de facturer les charges au réel plutôt qu'au forfait, encourageant les économies d'énergie dans les immeubles collectifs.
                             </p>
                         </div>
                         <div class="glass-card white-border-card p-8 rounded-2xl">
@@ -121,32 +121,28 @@
                         <div class="glass-card white-border-card p-8 rounded-2xl">
                             <h3 class="text-blue-400 font-black uppercase text-xs tracking-widest mb-4">Rôle du Support Informatique</h3>
                             <p class="text-slate-200 text-sm leading-relaxed text-justify">
-                                Au quotidien, notre équipe assure la maintenance et le bon fonctionnement des outils numériques pour garantir la productivité de tous les collaborateurs. Nous intervenons rapidement pour résoudre les incidents techniques et accompagner les utilisateurs dans leurs besoins informatiques.
+                                Au quotidien, notre équipe assure la maintenance et le bon fonctionnement des outils numériques pour garantir la productivité de tous les collaborateurs. Nous intervenons rapidement pour résoudre les incidents techniques et accompagner les utilisateurs.
                             </p>
                         </div>
                     </div>
 
                     <div class="flex flex-col gap-6">
-                        <div class="glass-card white-border-card p-2 rounded-3xl overflow-hidden h-60 shadow-xl">
-                            <img src="ista-1.jpg" alt="Ista Locaux" class="w-full h-full object-cover rounded-2xl opacity-90 hover:opacity-100 transition duration-500">
+                        <div class="glass-card white-border-card p-2 rounded-3xl overflow-hidden h-72 shadow-xl">
+                            <img src="ista-1.jpg" alt="Ista" class="w-full h-full object-cover rounded-2xl opacity-90 hover:opacity-100 transition duration-500">
                         </div>
-                        <div class="glass-card white-border-card p-2 rounded-3xl overflow-hidden h-60 shadow-xl">
-                            <img src="ista-2.jpg" alt="Matériel" class="w-full h-full object-cover rounded-2xl opacity-90 hover:opacity-100 transition duration-500">
-                        </div>
-                        <div class="glass-card white-border-card p-2 rounded-3xl overflow-hidden h-60 shadow-xl">
-                            <img src="ista-3.jpg" alt="Intervention" class="w-full h-full object-cover rounded-2xl opacity-90 hover:opacity-100 transition duration-500">
+                        <div class="glass-card white-border-card p-2 rounded-3xl overflow-hidden h-72 shadow-xl">
+                            <img src="ista-2.jpg" alt="Support Technique" class="w-full h-full object-cover rounded-2xl opacity-90 hover:opacity-100 transition duration-500">
                         </div>
                     </div>
                 </div>
 
                 <div class="glass-card white-border-card p-8 rounded-2xl w-full">
-                    <h3 class="text-blue-400 font-black uppercase text-xs tracking-widest mb-4">Informations Complémentaires</h3>
+                    <h3 class="text-blue-400 font-black uppercase text-xs tracking-widest mb-4">Expertise Technique</h3>
                     <p class="text-slate-100 text-base leading-relaxed text-justify">
-                        [ Écris ici tes détails supplémentaires ]
+                        Expert du support informatique, j'assure la gestion complète du parc via le déploiement automatisé avec Baramundi et l'administration des terminaux mobiles sous Microsoft Intune. Je garantis la sécurité des accès et des données à travers Active Directory et la configuration des VPN, tout en résolvant les incidents matériels et logiciels via Jira. Au-delà de l'assistance technique, j'optimise l'efficacité du service en rédigeant des procédures détaillées et en veillant à la mise en conformité des systèmes.
                     </p>
                 </div>
             </section>
-
         </main>
     </div>
 
@@ -162,11 +158,7 @@
                 i++;
                 setTimeout(typeWriter, speed);
             } else {
-                setTimeout(() => {
-                    element.innerHTML = "";
-                    i = 0;
-                    typeWriter();
-                }, pause);
+                setTimeout(() => { element.innerHTML = ""; i = 0; typeWriter(); }, pause);
             }
         }
         window.onload = typeWriter;
