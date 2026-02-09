@@ -12,7 +12,13 @@
         .glass-sidebar { background: rgba(17, 24, 39, 0.85); backdrop-filter: blur(15px); }
         .glass-card { background: rgba(15, 23, 42, 0.75); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); }
         .arial-text { font-family: Arial, Helvetica, sans-serif !important; font-style: normal !important; }
-        .white-border-card { border: 2px solid rgba(255, 255, 255, 0.9) !important; }
+        
+        /* Bulles avec bordures blanches propres */
+        .white-border-card { 
+            border: 2px solid rgba(255, 255, 255, 0.9) !important; 
+            box-shadow: 0 4px 20px rgba(255, 255, 255, 0.05);
+            transform: none !important;
+        }
 
         .nav-link { position: relative; transition: all 0.3s ease; }
         .nav-link:hover { color: #60a5fa; padding-left: 2rem; background: rgba(59, 130, 246, 0.1); }
@@ -41,6 +47,7 @@
             </div>
             <h1 class="text-xl font-black tracking-widest neon-text uppercase leading-tight text-white">Alyssia<br><span class="text-blue-500">Noireau</span></h1>
         </div>
+
         <nav class="flex-1 flex flex-col justify-evenly py-8 text-xs font-bold uppercase tracking-widest text-slate-400">
             <a href="#accueil" class="nav-link flex items-center gap-4 py-4 px-8"><i class="fa-solid fa-house-chimney w-5"></i> Accueil</a>
             <a href="#profil" class="nav-link flex items-center gap-4 py-4 px-8"><i class="fa-solid fa-id-badge w-5"></i> Profil</a>
@@ -66,17 +73,20 @@
                 <div class="text-center mb-16">
                     <h2 class="text-3xl font-black uppercase tracking-widest inline-block border-b-2 border-blue-500 pb-2 text-white">Présentation</h2>
                 </div>
+
                 <div class="grid grid-cols-1 lg:grid-cols-5 gap-12 items-start">
                     <div class="lg:col-span-2 flex flex-col items-center space-y-8">
                         <div class="glass-card w-72 h-72 p-2 rounded-3xl border border-blue-500/30 shadow-2xl overflow-hidden flex items-center justify-center neon-border transition-transform hover:scale-105">
                             <img src="maphoto.png" alt="Alyssia Noireau" class="w-full h-full object-cover rounded-2xl" onerror="this.style.display='none';">
                             <i class="fa-solid fa-user-tie text-7xl text-blue-400/20"></i>
                         </div>
+                        
                         <a href="CV_Alyssia_Noireau.pdf" target="_blank" class="w-72 flex items-center justify-center gap-4 px-6 py-4 bg-blue-600/20 hover:bg-blue-600/40 text-blue-400 rounded-xl border border-blue-500/30 transition-all shadow-xl group">
                             <i class="fa-solid fa-file-pdf text-xl"></i> 
-                            <span class="font-black uppercase tracking-[0.4em] text-xs">CV</span>
+                            <span class="font-black uppercase tracking-[0.2em] text-xs">CV</span>
                         </a>
                     </div>
+
                     <div class="lg:col-span-3 space-y-6">
                         <div class="glass-card white-border-card p-8 rounded-2xl">
                             <div class="text-slate-100 text-lg leading-relaxed text-justify">
@@ -84,6 +94,7 @@
                                 <p class="mt-4">J'entame ma deuxième année avec une solide base de compétences humaines et techniques. Dotée d'un fort esprit d'équipe et d'une rigueur constante, je m'efforce de transformer chaque défi technique en une solution fluide grâce à mon sens de l'organisation et ma diplomatie.</p>
                             </div>
                         </div>
+
                         <div class="glass-card white-border-card p-8 rounded-2xl">
                             <div class="text-slate-100 text-lg leading-relaxed text-justify">
                                 <p>Véritablement motivée par l'évolution vers la gestion de projets informatiques, je souhaite poursuivre mon parcours par une Licence Chef de projet (Développement, Sécurité et Exploitation) puis un Master MIAGE, afin de mettre mon dynamisme et mon expertise terrain au service du pilotage de solutions innovantes, toujours en alternance.</p>
@@ -98,23 +109,23 @@
                     <h2 class="text-3xl font-black uppercase tracking-widest inline-block border-b-2 border-blue-500 pb-2 text-white">Expérience chez Ista</h2>
                 </div>
                 
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start mb-12">
                     <div class="space-y-6">
                         <div class="glass-card white-border-card p-8 rounded-2xl">
                             <h3 class="text-blue-400 font-black uppercase text-xs tracking-widest mb-4">Notre Activité</h3>
-                            <p class="text-slate-200 text-sm leading-relaxed">
-                                Ista installe des compteurs connectés pour mesurer précisément la consommation d'eau et de chauffage de chaque habitant. Elle permet ainsi de facturer les charges au réel plutôt qu'au forfait, encourageant les économies d'énergie. L'entreprise gère également le relevé des données à distance et l'entretien des équipements de sécurité.
+                            <p class="text-slate-200 text-sm leading-relaxed text-justify">
+                                Ista installe des compteurs connectés pour mesurer précisément la consommation d'eau et de chauffage de chaque habitant. Elle permet ainsi de facturer les charges au réel plutôt qu'au forfait, encourageant les économies d'énergie dans les immeubles collectifs. L'entreprise gère également le relevé des données à distance et l'entretien des équipements de sécurité comme les détecteurs de fumée.
                             </p>
                         </div>
                         <div class="glass-card white-border-card p-8 rounded-2xl">
                             <h3 class="text-blue-400 font-black uppercase text-xs tracking-widest mb-4">Dimension Internationale</h3>
-                            <p class="text-slate-200 text-sm leading-relaxed">
-                                D'origine allemande avec son siège à Essen, Ista est présente dans 22 pays. Au quotidien, notre équipe collabore particulièrement avec nos collègues roumains et allemands pour mener à bien nos projets internationaux.
+                            <p class="text-slate-200 text-sm leading-relaxed text-justify">
+                                L'entreprise est d'origine allemande et a son siège social à Essen. Elle est aujourd'hui présente dans 22 pays, principalement en Europe mais aussi en Chine et au Brésil. Au quotidien, notre équipe collabore particulièrement avec nos collègues roumains et allemands pour mener à bien nos projets.
                             </p>
                         </div>
                         <div class="glass-card white-border-card p-8 rounded-2xl">
                             <h3 class="text-blue-400 font-black uppercase text-xs tracking-widest mb-4">Rôle du Support Informatique</h3>
-                            <p class="text-slate-200 text-sm leading-relaxed">
+                            <p class="text-slate-200 text-sm leading-relaxed text-justify">
                                 Au quotidien, notre équipe assure la maintenance et le bon fonctionnement des outils numériques pour garantir la productivité de tous les collaborateurs. Nous intervenons rapidement pour résoudre les incidents techniques et accompagner les utilisateurs dans leurs besoins informatiques.
                             </p>
                         </div>
@@ -134,6 +145,13 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="glass-card white-border-card p-8 rounded-2xl w-full">
+                    <h3 class="text-blue-400 font-black uppercase text-xs tracking-widest mb-4">Informations Complémentaires</h3>
+                    <p class="text-slate-100 text-base leading-relaxed text-justify">
+                        [ Écris ici ce que tu souhaites ajouter sur ton quotidien chez Ista, tes réussites ou un projet spécifique sur lequel tu travailles actuellement. ]
+                    </p>
+                </div>
             </section>
 
         </main>
@@ -145,6 +163,7 @@
         const pause = 2000;
         let i = 0;
         const element = document.getElementById("typewriter");
+
         function typeWriter() {
             if (i < text.length) {
                 element.innerHTML += text.charAt(i);
