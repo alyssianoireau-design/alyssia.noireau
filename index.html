@@ -8,139 +8,82 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         .neon-text { text-shadow: 0 0 15px rgba(59, 130, 246, 0.9); }
-        .neon-border { box-shadow: 0 0 20px rgba(59, 130, 246, 0.3); }
-        .glass-card { background: rgba(15, 23, 42, 0.8); backdrop-filter: blur(12px); }
-        .arial-text { font-family: Arial, Helvetica, sans-serif !important; font-style: normal !important; }
+        /* Effet Glassmorphism poussé */
+        .glass-sidebar { background: rgba(17, 24, 39, 0.8); backdrop-filter: blur(15px); }
+        .glass-card { background: rgba(15, 23, 42, 0.7); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        .arial-text { font-family: Arial, Helvetica, sans-serif !important; }
         
-        /* Style Sidebar Moderne */
-        .sidebar-link {
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
+        /* Animation Sidebar */
+        .nav-link { position: relative; transition: all 0.3s ease; }
+        .nav-link:hover { color: #60a5fa; padding-left: 2.5rem; background: rgba(59, 130, 246, 0.1); }
+        .nav-link::before { 
+            content: ''; position: absolute; left: 0; top: 0; height: 100%; width: 0; 
+            background: #3b82f6; transition: width 0.3s ease; 
         }
-        .sidebar-link:hover {
-            background: linear-gradient(90deg, rgba(59, 130, 246, 0.2) 0%, rgba(59, 130, 246, 0.05) 100%);
-            color: #60a5fa;
-            padding-left: 2rem;
-        }
-        .sidebar-link::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            height: 100%;
-            width: 4px;
-            background: #3b82f6;
-            transform: translateX(-4px);
-            transition: transform 0.3s ease;
-        }
-        .sidebar-link:hover::before {
-            transform: translateX(0);
-        }
+        .nav-link:hover::before { width: 4px; }
 
-        .typing::after {
-            content: '|';
-            animation: blink 0.7s infinite;
-        }
-        @keyframes blink {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0; }
-        }
-
-        .bg-custom-accueil {
+        .bg-nebula {
             background: linear-gradient(rgba(15, 23, 42, 0.6), rgba(15, 23, 42, 0.8)), url('fond-accueil.jpg');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
+            background-size: cover; background-position: center; background-attachment: fixed;
         }
     </style>
 </head>
-<body class="bg-[#0f172a] text-slate-100 font-sans antialiased text-left arial-text">
+<body class="bg-[#0f172a] text-slate-100 arial-text">
 
-    <aside class="fixed top-0 left-0 h-screen w-64 bg-[#111827]/95 backdrop-blur-xl border-r border-white/10 hidden md:flex flex-col shadow-2xl z-50">
+    <aside class="fixed top-0 left-0 h-screen w-64 glass-sidebar border-r border-white/10 hidden md:flex flex-col z-50">
         <div class="p-10 text-center border-b border-white/5">
-            <div class="w-24 h-24 bg-slate-800 rounded-2xl mx-auto mb-6 border border-blue-500/50 shadow-[0_0_20px_rgba(59,130,246,0.2)] flex items-center justify-center overflow-hidden transition-transform hover:scale-105">
+            <div class="w-24 h-24 bg-slate-800 rounded-2xl mx-auto mb-6 border border-blue-500/50 shadow-lg flex items-center justify-center overflow-hidden transition-transform hover:rotate-3">
                 <img src="maphoto.png" alt="" class="w-full h-full object-cover" onerror="this.style.display='none';">
                 <i class="fa-solid fa-user-shield text-4xl text-blue-400"></i>
             </div>
-            <h1 class="text-xl font-black tracking-widest neon-text uppercase text-white leading-tight">Alyssia<br><span class="text-blue-500">Noireau</span></h1>
+            <h1 class="text-xl font-black tracking-widest neon-text uppercase">Alyssia<br><span class="text-blue-500">Noireau</span></h1>
         </div>
 
-        <nav class="flex-1 flex flex-col justify-center py-8">
-            <div class="space-y-2 px-4">
-                <a href="#accueil" class="sidebar-link flex items-center gap-4 py-4 px-6 rounded-xl text-xs font-bold uppercase tracking-[0.2em] text-slate-400">
-                    <i class="fa-solid fa-house-chimney w-5"></i> Accueil
-                </a>
-                <a href="#profil" class="sidebar-link flex items-center gap-4 py-4 px-6 rounded-xl text-xs font-bold uppercase tracking-[0.2em] text-slate-400">
-                    <i class="fa-solid fa-id-badge w-5"></i> Profil
-                </a>
-                <a href="#entreprise" class="sidebar-link flex items-center gap-4 py-4 px-6 rounded-xl text-xs font-bold uppercase tracking-[0.2em] text-slate-400">
-                    <i class="fa-solid fa-building-user w-5"></i> Entreprise
-                </a>
-                <a href="#tp" class="sidebar-link flex items-center gap-4 py-4 px-6 rounded-xl text-xs font-bold uppercase tracking-[0.2em] text-slate-400">
-                    <i class="fa-solid fa-diagram-project w-5"></i> Projets
-                </a>
-                <a href="#competences" class="sidebar-link flex items-center gap-4 py-4 px-6 rounded-xl text-xs font-bold uppercase tracking-[0.2em] text-slate-400">
-                    <i class="fa-solid fa-microchip w-5"></i> Compétences
-                </a>
-                <a href="#contact" class="sidebar-link flex items-center gap-4 py-4 px-6 rounded-xl text-xs font-bold uppercase tracking-[0.2em] text-slate-400">
-                    <i class="fa-solid fa-paper-plane w-5"></i> Contact
-                </a>
-            </div>
+        <nav class="flex-1 flex flex-col justify-center space-y-2 py-8">
+            <a href="#accueil" class="nav-link flex items-center gap-4 py-4 px-8 text-xs font-bold uppercase tracking-widest text-slate-400">
+                <i class="fa-solid fa-house-chimney w-5"></i> Accueil
+            </a>
+            <a href="#profil" class="nav-link flex items-center gap-4 py-4 px-8 text-xs font-bold uppercase tracking-widest text-slate-400">
+                <i class="fa-solid fa-id-badge w-5"></i> Profil
+            </a>
+            <a href="#entreprise" class="nav-link flex items-center gap-4 py-4 px-8 text-xs font-bold uppercase tracking-widest text-slate-400">
+                <i class="fa-solid fa-building-user w-5"></i> Entreprise
+            </a>
+            <a href="#tp" class="nav-link flex items-center gap-4 py-4 px-8 text-xs font-bold uppercase tracking-widest text-slate-400">
+                <i class="fa-solid fa-diagram-project w-5"></i> Projets
+            </a>
+            <a href="#contact" class="nav-link flex items-center gap-4 py-4 px-8 text-xs font-bold uppercase tracking-widest text-slate-400">
+                <i class="fa-solid fa-paper-plane w-5"></i> Contact
+            </a>
         </nav>
 
-        <div class="p-8 border-t border-white/5">
+        <div class="p-8 border-t border-white/5 text-center">
             <div class="flex justify-center gap-6 mb-4 text-slate-500">
-                <a href="https://linkedin.com" class="hover:text-blue-400 transition-colors text-lg"><i class="fa-brands fa-linkedin-in"></i></a>
-                <a href="https://github.com" class="hover:text-blue-400 transition-colors text-lg"><i class="fa-brands fa-github"></i></a>
+                <a href="#" class="hover:text-blue-400 transition-colors"><i class="fa-brands fa-linkedin-in text-lg"></i></a>
+                <a href="#" class="hover:text-blue-400 transition-colors"><i class="fa-brands fa-github text-lg"></i></a>
             </div>
-            <p class="text-center text-[9px] font-black tracking-[0.3em] text-slate-600 uppercase">SISR Portfolio © 2026</p>
+            <p class="text-[9px] font-black tracking-[0.3em] text-slate-600 uppercase">SISR Portfolio © 2026</p>
         </div>
     </aside>
 
     <div class="md:ml-64 min-h-screen">
-        <main class="space-y-40 pb-20">
-
-            <section id="accueil" class="min-h-screen flex flex-col justify-center items-center text-center px-8 bg-custom-accueil">
+        <main class="space-y-40">
+            <section id="accueil" class="min-h-screen flex flex-col justify-center items-center text-center px-8 bg-nebula">
                 <div class="mb-12">
-                    <h2 class="text-white text-6xl font-black tracking-tighter uppercase leading-none neon-text">Alyssia Noireau</h2>
-                    <h3 id="typewriter" class="text-blue-400 text-2xl font-bold uppercase tracking-[0.2em] mt-6 neon-text typing min-h-[1.5em]"></h3>
+                    <h2 class="text-white text-6xl font-black tracking-tighter uppercase neon-text">Alyssia Noireau</h2>
+                    <h3 class="text-blue-400 text-2xl font-bold uppercase tracking-[0.3em] mt-6 neon-text">Bienvenue sur mon Portfolio</h3>
                 </div>
                 
-                <div class="glass-card max-w-4xl w-full p-10 rounded-3xl border border-white/10 shadow-2xl">
-                    <div class="text-slate-100 text-base leading-relaxed text-justify space-y-4">
+                <div class="glass-card max-w-4xl w-full p-10 rounded-3xl shadow-2xl">
+                    <div class="text-slate-100 text-base leading-relaxed text-justify space-y-6">
                         <p>Bonjour, je suis Alyssia Noireau, j'ai 19 ans et je suis diplômée d'un BAC STMG avec la spécialité mercatique.</p>
-                        <p>Je suis actuellement étudiante en deuxième année de BTS SIO, option SISR (Solutions d'Infrastructures Systèmes et Réseaux).</p>
-                        <p>J'effectue mon alternance au sein de l'entreprise ISTA, où je suis pleinement investie au support informatique.</p>
+                        <p>Je suis actuellement étudiante en deuxième année de **BTS SIO**, option SISR.</p>
+                        <p>J'effectue mon alternance au sein de l'entreprise **ISTA**, où je suis pleinement investie au support informatique.</p>
                         <p class="text-blue-400 font-bold border-t border-white/10 pt-6">L’année prochaine, je souhaite intégrer la licence Chef de projet développement, sécurité et exploitation, et poursuivre avec un Master MIAGE, toujours en alternance.</p>
                     </div>
                 </div>
             </section>
-
-            </main>
+        </main>
     </div>
-
-    <script>
-        const text = "Bienvenue sur mon Portfolio";
-        const speed = 100;
-        const pause = 2000;
-        let i = 0;
-        const element = document.getElementById("typewriter");
-
-        function typeWriter() {
-            if (i < text.length) {
-                element.innerHTML += text.charAt(i);
-                i++;
-                setTimeout(typeWriter, speed);
-            } else {
-                setTimeout(() => {
-                    element.innerHTML = "";
-                    i = 0;
-                    typeWriter();
-                }, pause);
-            }
-        }
-        window.onload = typeWriter;
-    </script>
 </body>
 </html>
