@@ -1,133 +1,113 @@
 <!DOCTYPE html>
-<html lang="fr" class="scroll-smooth">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio | Alyssia Noireau</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Portfolio - Alyssia Noireau</title>
     <style>
-        .neon-text { text-shadow: 0 0 15px rgba(59, 130, 246, 0.9); }
-        .neon-border { box-shadow: 0 0 20px rgba(59, 130, 246, 0.3); }
-        .glass-sidebar { background: rgba(17, 24, 39, 0.85); backdrop-filter: blur(15px); }
-        .glass-card { background: rgba(15, 23, 42, 0.75); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.05); }
-        .arial-text { font-family: Arial, Helvetica, sans-serif !important; font-style: normal !important; }
+        body { font-family: 'Segoe UI', sans-serif; margin: 0; padding: 0; background-color: #f0f2f5; color: #333; }
+        header { background: #333; color: white; padding: 20px; text-align: center; }
+        nav { display: flex; justify-content: center; background: #444; padding: 10px; }
+        nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: bold; }
+        section { padding: 40px 20px; max-width: 900px; margin: auto; }
+        .container { background: white; padding: 30px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
         
-        .nav-link { position: relative; transition: all 0.3s ease; }
-        .nav-link:hover { color: #60a5fa; padding-left: 2rem; background: rgba(59, 130, 246, 0.1); }
-        .nav-link::before { 
-            content: ''; position: absolute; left: 0; top: 0; height: 100%; width: 0; 
-            background: #3b82f6; transition: width 0.3s ease; 
+        /* Style des bulles de présentation */
+        .bubble-present {
+            background-color: #f4f4f4; 
+            border-radius: 20px; 
+            padding: 25px; 
+            margin-bottom: 25px; 
+            box-shadow: 4px 4px 10px rgba(0,0,0,0.1);
+            border-left: 6px solid #333;
         }
-        .nav-link:hover::before { width: 4px; }
-
-        .typing::after {
-            content: '|';
-            animation: blink 0.7s infinite;
+        .bubble-future {
+            background-color: #e9f5ff; 
+            border-radius: 20px; 
+            padding: 25px; 
+            box-shadow: 4px 4px 10px rgba(0,0,0,0.05);
+            border-left: 6px solid #0078d7;
         }
-        @keyframes blink {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0; }
-        }
-
-        .bg-nebula {
-            background: linear-gradient(rgba(15, 23, 42, 0.65), rgba(15, 23, 42, 0.85)), url('fond-accueil.jpg');
-            background-size: cover; background-position: center; background-attachment: fixed;
-        }
+        h2 { color: #333; border-bottom: 2px solid #333; padding-bottom: 10px; }
+        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 20px; }
+        .skill-item { background: #eee; padding: 15px; border-radius: 8px; text-align: center; font-weight: bold; }
+        footer { text-align: center; padding: 20px; background: #333; color: white; margin-top: 40px; }
     </style>
 </head>
-<body class="bg-[#0f172a] text-slate-100 arial-text">
+<body>
 
-    <aside class="fixed top-0 left-0 h-screen w-64 glass-sidebar border-r border-white/10 hidden md:flex flex-col z-50 shadow-2xl">
-        <div class="p-10 text-center border-b border-white/5">
-            <div class="w-24 h-24 bg-slate-800 rounded-2xl mx-auto mb-6 border border-blue-500/50 shadow-lg flex items-center justify-center overflow-hidden transition-transform hover:scale-105">
-                <img src="maphoto.png" alt="" class="w-full h-full object-cover" onerror="this.style.display='none';">
-                <i class="fa-solid fa-user-shield text-4xl text-blue-400"></i>
-            </div>
-            <h1 class="text-xl font-black tracking-widest neon-text uppercase leading-tight">Alyssia<br><span class="text-blue-500">Noireau</span></h1>
+<header>
+    <h1>Alyssia Noireau</h1>
+    <p>Technicienne Support Informatique</p>
+</header>
+
+<nav>
+    <a href="#accueil">Accueil</a>
+    <a href="#profil-ista">Mon Expérience</a>
+    <a href="#competences">Compétences</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<section id="accueil">
+    <div class="container">
+        <h2>Bienvenue sur mon Portfolio</h2>
+        <p>Découvrez mon parcours, mes compétences techniques et mes projets professionnels dans le domaine de l'informatique.</p>
+        </div>
+</section>
+
+<section id="profil-ista">
+    <div class="container">
+        <h2>Présentation Ista</h2>
+        
+        <div class="bubble-present">
+            <p style="font-size: 1.1em; line-height: 1.6; margin: 0;">
+                Je m'appelle <strong>Alyssia Noireau</strong>, j'ai <strong>19 ans</strong> et je suis actuellement 
+                <strong>technicienne au support informatique chez Ista à Massy</strong> en deuxième année d'alternance. 
+                Véritable touche-à-tout, j'allie rigueur, autonomie et curiosité intellectuelle pour accompagner 
+                au mieux les utilisateurs. Dotée d'un fort esprit d'équipe et d'un sens de l'écoute développé, 
+                je m'efforce de transformer chaque défi technique en une solution fluide grâce à mon organisation 
+                et ma diplomatie.
+            </p>
         </div>
 
-        <nav class="flex-1 flex flex-col justify-evenly py-8 text-xs font-bold uppercase tracking-widest text-slate-400">
-            <a href="#accueil" class="nav-link flex items-center gap-4 py-4 px-8"><i class="fa-solid fa-house-chimney w-5"></i> Accueil</a>
-            <a href="#profil" class="nav-link flex items-center gap-4 py-4 px-8"><i class="fa-solid fa-id-badge w-5"></i> Profil</a>
-            <a href="#entreprise" class="nav-link flex items-center gap-4 py-4 px-8"><i class="fa-solid fa-building-user w-5"></i> Entreprise</a>
-            <a href="#tp" class="nav-link flex items-center gap-4 py-4 px-8"><i class="fa-solid fa-diagram-project w-5"></i> Projets</a>
-            <a href="#competences" class="nav-link flex items-center gap-4 py-4 px-8"><i class="fa-solid fa-microchip w-5"></i> Compétences</a>
-            <a href="#contact" class="nav-link flex items-center gap-4 py-4 px-8"><i class="fa-solid fa-paper-plane w-5"></i> Contact</a>
-        </nav>
-        <div class="p-8 border-t border-white/5 text-center text-[9px] font-black tracking-[0.3em] text-slate-600 uppercase">SISR Portfolio © 2026</div>
-    </aside>
-
-    <div class="md:ml-64 min-h-screen">
-        <main class="space-y-40">
-            
-            <section id="accueil" class="min-h-screen flex flex-col justify-center items-center text-center px-8 bg-nebula">
-                <div class="mb-12">
-                    <h2 class="text-white text-6xl font-black tracking-tighter uppercase neon-text">Alyssia Noireau</h2>
-                    <h3 id="typewriter" class="text-blue-400 text-2xl font-bold uppercase tracking-[0.2em] mt-6 neon-text typing min-h-[1.5em]"></h3>
-                </div>
-                <div class="glass-card max-w-4xl w-full p-8 rounded-3xl shadow-2xl">
-                    <div class="text-slate-100 text-base leading-relaxed text-justify space-y-4">
-                        <p>Bonjour, je suis Alyssia Noireau, j'ai 19 ans et je suis diplômée d'un BAC STMG (sciences et technologies du management et de la gestion) avec la spécialité mercatique.</p>
-                        <p>Je suis actuellement étudiante en deuxième année de BTS SIO (Services Informatiques aux Organisations), option SISR (Solutions d'Infrastructures Systèmes et Réseaux).</p>
-                        <p>J'effectue mon alternance au sein de l'entreprise ISTA, où je suis pleinement investie au support informatique.</p>
-                        <p class="text-blue-400 font-bold border-t border-white/10 pt-6">L’année prochaine, je souhaite intégrer la licence Chef de projet développement, sécurité et exploitation, et poursuivre avec un Master MIAGE, toujours en alternance.</p>
-                    </div>
-                </div>
-            </section>
-
-            <section id="profil" class="max-w-6xl mx-auto px-8 py-24 scroll-mt-24">
-                <div class="text-center mb-16">
-                    <h2 class="text-3xl font-black uppercase tracking-widest inline-block border-b-2 border-blue-500 pb-2">Présentation</h2>
-                </div>
-
-                <div class="grid grid-cols-1 lg:grid-cols-5 gap-12 items-center">
-                    <div class="lg:col-span-2 flex flex-col items-center space-y-8">
-                        <div class="glass-card w-64 h-64 p-2 rounded-2xl border border-blue-500/30 shadow-2xl overflow-hidden flex items-center justify-center neon-border transition-transform hover:scale-105">
-                            <img src="maphoto.png" alt="Alyssia Noireau" class="w-full h-full object-cover rounded-xl" onerror="this.style.display='none';">
-                            <i class="fa-solid fa-user-tie text-6xl text-blue-400/20"></i>
-                        </div>
-                        
-                        <a href="CV_Alyssia_Noireau.pdf" target="_blank" class="w-64 flex items-center justify-center gap-4 px-6 py-4 bg-blue-600/20 hover:bg-blue-600/40 text-blue-400 rounded-xl border border-blue-500/30 transition shadow-xl group">
-                            <i class="fa-solid fa-file-pdf text-xl"></i> 
-                            <span class="font-black uppercase tracking-[0.2em] text-xs">CV</span>
-                        </a>
-                    </div>
-
-                    <div class="lg:col-span-3">
-                        <div class="glass-card p-10 rounded-3xl shadow-2xl border-l-4 border-blue-500">
-                            <div class="text-slate-100 text-lg leading-relaxed text-justify space-y-6">
-                                <p>Je m'appelle Alyssia Noireau, j'ai 19 ans et je suis actuellement technicienne alternante en support informatique chez ista (Massy).</p>
-                                <p>J'entame ma deuxième année avec une solide base de compétences humaines et techniques. Dotée d'un fort esprit d'équipe et d'une rigueur constante, je m'efforce de transformer chaque défi technique en une solution fluide grâce à mon sens de l'organisation et ma diplomatie.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </main>
+        <div class="bubble-future">
+            <p style="font-size: 1.1em; line-height: 1.6; color: #2c3e50; margin: 0;">
+                Véritablement motivée par l'évolution vers la gestion de projets informatiques, je souhaite 
+                poursuivre mon parcours par une <strong>Licence Chef de projet (Développement, Sécurité et Exploitation)</strong> 
+                puis un <strong>Master MIAGE</strong>, afin de mettre mon dynamisme et mon expertise terrain 
+                au service du pilotage de solutions innovantes, toujours en alternance.
+            </p>
+        </div>
     </div>
+</section>
 
-    <script>
-        const text = "Bienvenue sur mon Portfolio";
-        const speed = 100;
-        const pause = 2000;
-        let i = 0;
-        const element = document.getElementById("typewriter");
+<section id="competences">
+    <div class="container">
+        <h2>Mes Qualités Professionnelles</h2>
+        <div class="skills-grid">
+            <div class="skill-item">Esprit d'équipe</div>
+            <div class="skill-item">Adaptabilité</div>
+            <div class="skill-item">Sens de l'écoute</div>
+            <div class="skill-item">Curiosité intellectuelle</div>
+            <div class="skill-item">Autonomie</div>
+            <div class="skill-item">Rigueur</div>
+            <div class="skill-item">Analyse & Résolution</div>
+            <div class="skill-item">Diplomatie</div>
+        </div>
+    </div>
+</section>
 
-        function typeWriter() {
-            if (i < text.length) {
-                element.innerHTML += text.charAt(i);
-                i++;
-                setTimeout(typeWriter, speed);
-            } else {
-                setTimeout(() => {
-                    element.innerHTML = "";
-                    i = 0;
-                    typeWriter();
-                }, pause);
-            }
-        }
-        window.onload = typeWriter;
-    </script>
+<section id="contact">
+    <div class="container" style="text-align: center;">
+        <h2>Contact</h2>
+        <p>Disponible pour échanger sur vos projets ou futures opportunités.</p>
+        <p><strong>Email :</strong> alyssia.noireau@exemple.com</p>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2024 Alyssia Noireau - Tous droits réservés</p>
+</footer>
+
 </body>
 </html>
