@@ -34,11 +34,6 @@
             background: linear-gradient(rgba(15, 23, 42, 0.65), rgba(15, 23, 42, 0.85)), url('fond-accueil.jpg');
             background-size: cover; background-position: center; background-attachment: fixed;
         }
-
-        /* Couleur harmonisée pour le fond de la section Profil */
-        #profil {
-            background-color: #0f172a; /* Bleu nuit profond */
-        }
     </style>
 </head>
 <body class="bg-[#0f172a] text-slate-100 arial-text">
@@ -52,30 +47,15 @@
             <h1 class="text-xl font-black tracking-widest neon-text uppercase leading-tight">Alyssia<br><span class="text-blue-500">Noireau</span></h1>
         </div>
 
-        <nav class="flex-1 flex flex-col justify-evenly py-8">
-            <a href="#accueil" class="nav-link flex items-center gap-4 py-4 px-8 text-xs font-bold uppercase tracking-widest text-slate-400">
-                <i class="fa-solid fa-house-chimney w-5"></i> Accueil
-            </a>
-            <a href="#profil" class="nav-link flex items-center gap-4 py-4 px-8 text-xs font-bold uppercase tracking-widest text-slate-400">
-                <i class="fa-solid fa-id-badge w-5"></i> Profil
-            </a>
-            <a href="#entreprise" class="nav-link flex items-center gap-4 py-4 px-8 text-xs font-bold uppercase tracking-widest text-slate-400">
-                <i class="fa-solid fa-building-user w-5"></i> Entreprise
-            </a>
-            <a href="#tp" class="nav-link flex items-center gap-4 py-4 px-8 text-xs font-bold uppercase tracking-widest text-slate-400">
-                <i class="fa-solid fa-diagram-project w-5"></i> Projets
-            </a>
-            <a href="#competences" class="nav-link flex items-center gap-4 py-4 px-8 text-xs font-bold uppercase tracking-widest text-slate-400">
-                <i class="fa-solid fa-microchip w-5"></i> Compétences
-            </a>
-            <a href="#contact" class="nav-link flex items-center gap-4 py-4 px-8 text-xs font-bold uppercase tracking-widest text-slate-400">
-                <i class="fa-solid fa-paper-plane w-5"></i> Contact
-            </a>
+        <nav class="flex-1 flex flex-col justify-evenly py-8 text-xs font-bold uppercase tracking-widest text-slate-400">
+            <a href="#accueil" class="nav-link flex items-center gap-4 py-4 px-8"><i class="fa-solid fa-house-chimney w-5"></i> Accueil</a>
+            <a href="#profil" class="nav-link flex items-center gap-4 py-4 px-8"><i class="fa-solid fa-id-badge w-5"></i> Profil</a>
+            <a href="#entreprise" class="nav-link flex items-center gap-4 py-4 px-8"><i class="fa-solid fa-building-user w-5"></i> Entreprise</a>
+            <a href="#tp" class="nav-link flex items-center gap-4 py-4 px-8"><i class="fa-solid fa-diagram-project w-5"></i> Projets</a>
+            <a href="#competences" class="nav-link flex items-center gap-4 py-4 px-8"><i class="fa-solid fa-microchip w-5"></i> Compétences</a>
+            <a href="#contact" class="nav-link flex items-center gap-4 py-4 px-8"><i class="fa-solid fa-paper-plane w-5"></i> Contact</a>
         </nav>
-
-        <div class="p-8 border-t border-white/5 text-center text-[9px] font-black tracking-[0.3em] text-slate-600 uppercase">
-            SISR Portfolio © 2026
-        </div>
+        <div class="p-8 border-t border-white/5 text-center text-[9px] font-black tracking-[0.3em] text-slate-600 uppercase">SISR Portfolio © 2026</div>
     </aside>
 
     <div class="md:ml-64 min-h-screen">
@@ -86,7 +66,6 @@
                     <h2 class="text-white text-6xl font-black tracking-tighter uppercase neon-text">Alyssia Noireau</h2>
                     <h3 id="typewriter" class="text-blue-400 text-2xl font-bold uppercase tracking-[0.2em] mt-6 neon-text typing min-h-[1.5em]"></h3>
                 </div>
-                
                 <div class="glass-card max-w-4xl w-full p-8 rounded-3xl shadow-2xl">
                     <div class="text-slate-100 text-base leading-relaxed text-justify space-y-4">
                         <p>Bonjour, je suis Alyssia Noireau, j'ai 19 ans et je suis diplômée d'un BAC STMG (sciences et technologies du management et de la gestion) avec la spécialité mercatique.</p>
@@ -97,37 +76,29 @@
                 </div>
             </section>
 
-            <section id="profil" class="max-w-full mx-auto px-8 py-24 scroll-mt-24">
-                <div class="max-w-6xl mx-auto">
-                    <div class="text-center mb-16">
-                        <h2 class="text-4xl font-black uppercase tracking-tighter inline-block border-b-4 border-blue-500 pb-2">Mon Profil</h2>
+            <section id="profil" class="max-w-6xl mx-auto px-8 py-24 scroll-mt-24">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl font-black uppercase tracking-widest inline-block border-b-2 border-blue-500 pb-2">Présentation</h2>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-5 gap-12 items-center">
+                    <div class="lg:col-span-2 flex flex-col items-center space-y-8">
+                        <div class="glass-card w-64 h-64 p-2 rounded-2xl border border-blue-500/30 shadow-2xl overflow-hidden flex items-center justify-center neon-border transition-transform hover:scale-105">
+                            <img src="maphoto.png" alt="Alyssia Noireau" class="w-full h-full object-cover rounded-xl" onerror="this.style.display='none';">
+                            <i class="fa-solid fa-user-tie text-6xl text-blue-400/20"></i>
+                        </div>
+                        
+                        <a href="CV_Alyssia_Noireau.pdf" target="_blank" class="w-64 flex items-center justify-center gap-4 px-6 py-4 bg-blue-600/20 hover:bg-blue-600/40 text-blue-400 rounded-xl border border-blue-500/30 transition shadow-xl group">
+                            <i class="fa-solid fa-file-pdf text-xl"></i> 
+                            <span class="font-black uppercase tracking-[0.2em] text-xs">CV</span>
+                        </a>
                     </div>
 
-                    <div class="grid grid-cols-1 lg:grid-cols-4 gap-12 items-start">
-                        <div class="lg:col-span-1 flex flex-col items-center space-y-8">
-                            <div class="glass-card w-56 aspect-square p-2 rounded-2xl border border-blue-500/30 shadow-2xl overflow-hidden flex items-center justify-center neon-border">
-                                <img src="maphoto.png" alt="Alyssia Noireau" class="w-full h-full object-cover rounded-xl" onerror="this.style.display='none';">
-                                <i class="fa-solid fa-user-tie text-5xl text-blue-400/20"></i>
-                            </div>
-                            
-                            <a href="CV_Alyssia_Noireau.pdf" target="_blank" class="w-full flex items-center justify-center gap-4 px-6 py-5 bg-blue-600/20 hover:bg-blue-600/40 text-blue-400 rounded-xl border border-blue-500/30 transition shadow-xl group">
-                                <i class="fa-solid fa-file-pdf text-xl"></i> 
-                                <span class="font-black uppercase tracking-widest text-xs">Télécharger mon CV</span>
-                            </a>
-                        </div>
-
-                        <div class="lg:col-span-3">
-                            <div class="glass-card p-12 rounded-3xl shadow-2xl border-t-2 border-blue-500">
-                                <h3 class="text-blue-400 font-black uppercase tracking-widest mb-10 text-sm border-b border-white/5 pb-4">À propos de mon parcours</h3>
-                                <div class="text-slate-100 text-lg leading-relaxed text-justify space-y-8">
-                                    <p>Bonjour, je suis Alyssia Noireau, j'ai 19 ans et je suis diplômée d'un BAC STMG avec la spécialité mercatique. Passionnée par les nouvelles technologies et l'évolution des infrastructures numériques, j'ai choisi de m'orienter vers l'informatique pour comprendre les rouages des systèmes qui connectent aujourd'hui les entreprises.</p>
-                                    
-                                    <p>Actuellement étudiante en deuxième année de BTS SIO (Services Informatiques aux Organisations), option SISR, j'ai pu acquérir des bases solides en administration système, en déploiement réseau et en sécurité informatique. Ce parcours académique est complété par une expérience enrichissante en alternance au sein de l'entreprise ISTA.</p>
-
-                                    <p>Très impliquée dans l'administration réseaux et le support informatique, je veille au quotidien à la gestion de l'infrastructure pour garantir la haute disponibilité et la sécurité des services. De nature curieuse et rigoureuse, j'aime relever les défis techniques et m'adapter rapidement aux nouveaux outils.</p>
-
-                                    <p class="text-blue-400 font-bold">Mon objectif est de devenir une experte capable de piloter des projets d'infrastructure complexes. C'est pourquoi je souhaite intégrer une licence de Chef de projet développement, sécurité et exploitation l'année prochaine, avant de poursuivre vers un Master MIAGE en alternance.</p>
-                                </div>
+                    <div class="lg:col-span-3">
+                        <div class="glass-card p-10 rounded-3xl shadow-2xl border-l-4 border-blue-500">
+                            <div class="text-slate-100 text-lg leading-relaxed text-justify space-y-6">
+                                <p>Je m'appelle Alyssia Noireau, j'ai 19 ans et je suis actuellement technicienne alternante en support informatique chez ista (Massy).</p>
+                                <p>J'entame ma deuxième année avec une solide base de compétences humaines et techniques. Dotée d'un fort esprit d'équipe et d'une rigueur constante, je m'efforce de transformer chaque défi technique en une solution fluide grâce à mon sens de l'organisation et ma diplomatie.</p>
                             </div>
                         </div>
                     </div>
