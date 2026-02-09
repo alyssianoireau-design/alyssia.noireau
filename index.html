@@ -13,8 +13,12 @@
         .glass-card { background: rgba(15, 23, 42, 0.75); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); }
         .arial-text { font-family: Arial, Helvetica, sans-serif !important; font-style: normal !important; }
         
-        /* Bordure blanche propre pour les bulles de présentation */
-        .white-border-card { border: 2px solid rgba(255, 255, 255, 0.9) !important; box-shadow: 0 4px 20px rgba(255, 255, 255, 0.05); }
+        /* Style des bulles blanches parfaitement droites */
+        .white-border-card { 
+            border: 2px solid rgba(255, 255, 255, 0.9) !important; 
+            box-shadow: 0 4px 20px rgba(255, 255, 255, 0.05);
+            transform: none !important; /* Force la bulle à rester droite */
+        }
 
         .nav-link { position: relative; transition: all 0.3s ease; }
         .nav-link:hover { color: #60a5fa; padding-left: 2rem; background: rgba(59, 130, 246, 0.1); }
@@ -76,7 +80,7 @@
                     <h2 class="text-3xl font-black uppercase tracking-widest inline-block border-b-2 border-blue-500 pb-2 text-white">Présentation</h2>
                 </div>
 
-                <div class="grid grid-cols-1 lg:grid-cols-5 gap-12 items-center">
+                <div class="grid grid-cols-1 lg:grid-cols-5 gap-12 items-start">
                     <div class="lg:col-span-2 flex flex-col items-center space-y-8">
                         <div class="glass-card w-72 h-72 p-2 rounded-3xl border border-blue-500/30 shadow-2xl overflow-hidden flex items-center justify-center neon-border transition-transform hover:scale-105">
                             <img src="maphoto.png" alt="Alyssia Noireau" class="w-full h-full object-cover rounded-2xl" onerror="this.style.display='none';">
@@ -90,14 +94,14 @@
                     </div>
 
                     <div class="lg:col-span-3 space-y-6">
-                        <div class="glass-card white-border-card p-8 rounded-2xl transition-all">
+                        <div class="glass-card white-border-card p-8 rounded-2xl">
                             <div class="text-slate-100 text-lg leading-relaxed text-justify">
-                                <p>Je m'appelle Alyssia Noireau, j'ai 19 ans et je suis actuellement technicienne alternante en support informatique chez <span class="text-blue-400 font-bold">Ista</span> (Massy).</p>
+                                <p>Je m'appelle Alyssia Noireau, j'ai 19 ans et je suis actuellement technicienne alternante en support informatique chez Ista (Massy).</p>
                                 <p class="mt-4">J'entame ma deuxième année avec une solide base de compétences humaines et techniques. Dotée d'un fort esprit d'équipe et d'une rigueur constante, je m'efforce de transformer chaque défi technique en une solution fluide grâce à mon sens de l'organisation et ma diplomatie.</p>
                             </div>
                         </div>
 
-                        <div class="glass-card white-border-card p-8 rounded-2xl transition-all">
+                        <div class="glass-card white-border-card p-8 rounded-2xl">
                             <div class="text-slate-100 text-lg leading-relaxed text-justify">
                                 <p>Véritablement motivée par l'évolution vers la gestion de projets informatiques, je souhaite poursuivre mon parcours par une Licence Chef de projet (Développement, Sécurité et Exploitation) puis un Master MIAGE, afin de mettre mon dynamisme et mon expertise terrain au service du pilotage de solutions innovantes, toujours en alternance.</p>
                             </div>
