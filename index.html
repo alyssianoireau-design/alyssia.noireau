@@ -9,10 +9,35 @@
     <style>
         .neon-text { text-shadow: 0 0 15px rgba(59, 130, 246, 0.9); }
         .neon-border { box-shadow: 0 0 20px rgba(59, 130, 246, 0.3); }
-        /* La bulle est un peu plus sombre pour rester lisible sur l'image */
         .glass-card { background: rgba(15, 23, 42, 0.8); backdrop-filter: blur(12px); }
         .arial-text { font-family: Arial, Helvetica, sans-serif !important; font-style: normal !important; }
         
+        /* Style Sidebar Moderne */
+        .sidebar-link {
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .sidebar-link:hover {
+            background: linear-gradient(90deg, rgba(59, 130, 246, 0.2) 0%, rgba(59, 130, 246, 0.05) 100%);
+            color: #60a5fa;
+            padding-left: 2rem;
+        }
+        .sidebar-link::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 4px;
+            background: #3b82f6;
+            transform: translateX(-4px);
+            transition: transform 0.3s ease;
+        }
+        .sidebar-link:hover::before {
+            transform: translateX(0);
+        }
+
         .typing::after {
             content: '|';
             animation: blink 0.7s infinite;
@@ -22,44 +47,55 @@
             50% { opacity: 0; }
         }
 
-        .hover-card:hover {
-            transform: translateY(-5px);
-            border-color: rgba(59, 130, 246, 0.6);
-            box-shadow: 0 10px 30px -10px rgba(59, 130, 246, 0.3);
-        }
-
-        /* STYLE POUR L'IMAGE DE FOND ACCUEIL */
         .bg-custom-accueil {
-            background: linear-gradient(rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.7)), url('fond-accueil.jpg');
+            background: linear-gradient(rgba(15, 23, 42, 0.6), rgba(15, 23, 42, 0.8)), url('fond-accueil.jpg');
             background-size: cover;
             background-position: center;
-            background-attachment: fixed; /* L'image reste fixe quand on scroll, effet très pro */
+            background-attachment: fixed;
         }
     </style>
 </head>
 <body class="bg-[#0f172a] text-slate-100 font-sans antialiased text-left arial-text">
 
-    <aside class="fixed top-0 left-0 h-screen w-64 bg-[#1e293b] border-r border-blue-500/30 hidden md:flex flex-col shadow-2xl z-50">
-        <div class="p-8 text-center border-b border-blue-500/20">
-            <div class="w-20 h-20 bg-slate-800 rounded-full mx-auto mb-4 border-2 border-blue-500 neon-border flex items-center justify-center overflow-hidden">
+    <aside class="fixed top-0 left-0 h-screen w-64 bg-[#111827]/95 backdrop-blur-xl border-r border-white/10 hidden md:flex flex-col shadow-2xl z-50">
+        <div class="p-10 text-center border-b border-white/5">
+            <div class="w-24 h-24 bg-slate-800 rounded-2xl mx-auto mb-6 border border-blue-500/50 shadow-[0_0_20px_rgba(59,130,246,0.2)] flex items-center justify-center overflow-hidden transition-transform hover:scale-105">
                 <img src="maphoto.png" alt="" class="w-full h-full object-cover" onerror="this.style.display='none';">
-                <i class="fa-solid fa-user text-3xl text-blue-400"></i>
+                <i class="fa-solid fa-user-shield text-4xl text-blue-400"></i>
             </div>
-            <h1 class="text-xl font-black tracking-tighter neon-text uppercase text-blue-400 leading-tight">Alyssia<br>Noireau</h1>
-            <div class="flex justify-center gap-4 mt-4 text-slate-400 text-xl">
-                <a href="https://www.linkedin.com/in/alyssia-noireau" target="_blank" class="hover:text-blue-400 transition"><i class="fa-brands fa-linkedin"></i></a>
-                <a href="https://github.com/Alyssianr" target="_blank" class="hover:text-blue-400 transition"><i class="fa-brands fa-github"></i></a>
-            </div>
+            <h1 class="text-xl font-black tracking-widest neon-text uppercase text-white leading-tight">Alyssia<br><span class="text-blue-500">Noireau</span></h1>
         </div>
-        <nav class="flex-1 flex flex-col justify-evenly p-6 text-sm uppercase font-bold tracking-widest text-slate-400">
-            <a href="#accueil" class="flex items-center gap-4 p-4 rounded-lg hover:bg-blue-500/10 hover:text-blue-400 transition"><i class="fa-solid fa-house w-6 text-center text-blue-500"></i> Accueil</a>
-            <a href="#profil" class="flex items-center gap-4 p-4 rounded-lg hover:bg-blue-500/10 hover:text-blue-400 transition"><i class="fa-solid fa-address-card w-6 text-center text-blue-500"></i> Profil</a>
-            <a href="#entreprise" class="flex items-center gap-4 p-4 rounded-lg hover:bg-blue-500/10 hover:text-blue-400 transition"><i class="fa-solid fa-building w-6 text-center text-blue-500"></i> Entreprise</a>
-            <a href="#tp" class="flex items-center gap-4 p-4 rounded-lg hover:bg-blue-500/10 hover:text-blue-400 transition"><i class="fa-solid fa-folder-open w-6 text-center text-blue-500"></i> Projets</a>
-            <a href="#competences" class="flex items-center gap-4 p-4 rounded-lg hover:bg-blue-500/10 hover:text-blue-400 transition"><i class="fa-solid fa-layer-group w-6 text-center text-blue-500"></i> Compétences</a>
-            <a href="#contact" class="flex items-center gap-4 p-4 rounded-lg hover:bg-blue-500/10 hover:text-blue-400 transition"><i class="fa-solid fa-envelope w-6 text-center text-blue-500"></i> Contact</a>
+
+        <nav class="flex-1 flex flex-col justify-center py-8">
+            <div class="space-y-2 px-4">
+                <a href="#accueil" class="sidebar-link flex items-center gap-4 py-4 px-6 rounded-xl text-xs font-bold uppercase tracking-[0.2em] text-slate-400">
+                    <i class="fa-solid fa-house-chimney w-5"></i> Accueil
+                </a>
+                <a href="#profil" class="sidebar-link flex items-center gap-4 py-4 px-6 rounded-xl text-xs font-bold uppercase tracking-[0.2em] text-slate-400">
+                    <i class="fa-solid fa-id-badge w-5"></i> Profil
+                </a>
+                <a href="#entreprise" class="sidebar-link flex items-center gap-4 py-4 px-6 rounded-xl text-xs font-bold uppercase tracking-[0.2em] text-slate-400">
+                    <i class="fa-solid fa-building-user w-5"></i> Entreprise
+                </a>
+                <a href="#tp" class="sidebar-link flex items-center gap-4 py-4 px-6 rounded-xl text-xs font-bold uppercase tracking-[0.2em] text-slate-400">
+                    <i class="fa-solid fa-diagram-project w-5"></i> Projets
+                </a>
+                <a href="#competences" class="sidebar-link flex items-center gap-4 py-4 px-6 rounded-xl text-xs font-bold uppercase tracking-[0.2em] text-slate-400">
+                    <i class="fa-solid fa-microchip w-5"></i> Compétences
+                </a>
+                <a href="#contact" class="sidebar-link flex items-center gap-4 py-4 px-6 rounded-xl text-xs font-bold uppercase tracking-[0.2em] text-slate-400">
+                    <i class="fa-solid fa-paper-plane w-5"></i> Contact
+                </a>
+            </div>
         </nav>
-        <div class="p-6 border-t border-blue-500/20 text-center text-[10px] text-slate-500 font-bold tracking-widest uppercase">BTS SIO SISR 2026</div>
+
+        <div class="p-8 border-t border-white/5">
+            <div class="flex justify-center gap-6 mb-4 text-slate-500">
+                <a href="https://linkedin.com" class="hover:text-blue-400 transition-colors text-lg"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="https://github.com" class="hover:text-blue-400 transition-colors text-lg"><i class="fa-brands fa-github"></i></a>
+            </div>
+            <p class="text-center text-[9px] font-black tracking-[0.3em] text-slate-600 uppercase">SISR Portfolio © 2026</p>
+        </div>
     </aside>
 
     <div class="md:ml-64 min-h-screen">
@@ -67,16 +103,16 @@
 
             <section id="accueil" class="min-h-screen flex flex-col justify-center items-center text-center px-8 bg-custom-accueil">
                 <div class="mb-12">
-                    <h2 class="text-white text-5xl font-black tracking-tighter uppercase leading-none neon-text">Alyssia Noireau</h2>
-                    <h3 id="typewriter" class="text-blue-400 text-2xl font-bold uppercase tracking-[0.2em] mt-4 neon-text typing min-h-[1.5em]"></h3>
+                    <h2 class="text-white text-6xl font-black tracking-tighter uppercase leading-none neon-text">Alyssia Noireau</h2>
+                    <h3 id="typewriter" class="text-blue-400 text-2xl font-bold uppercase tracking-[0.2em] mt-6 neon-text typing min-h-[1.5em]"></h3>
                 </div>
                 
-                <div class="glass-card max-w-4xl w-full p-8 rounded-2xl border border-blue-500/30 shadow-2xl">
+                <div class="glass-card max-w-4xl w-full p-10 rounded-3xl border border-white/10 shadow-2xl">
                     <div class="text-slate-100 text-base leading-relaxed text-justify space-y-4">
                         <p>Bonjour, je suis Alyssia Noireau, j'ai 19 ans et je suis diplômée d'un BAC STMG avec la spécialité mercatique.</p>
                         <p>Je suis actuellement étudiante en deuxième année de BTS SIO, option SISR (Solutions d'Infrastructures Systèmes et Réseaux).</p>
                         <p>J'effectue mon alternance au sein de l'entreprise ISTA, où je suis pleinement investie au support informatique.</p>
-                        <p class="text-blue-400 font-bold border-t border-blue-500/20 pt-4">L’année prochaine, je souhaite intégrer la licence Chef de projet développement, sécurité et exploitation, et poursuivre avec un Master MIAGE, toujours en alternance.</p>
+                        <p class="text-blue-400 font-bold border-t border-white/10 pt-6">L’année prochaine, je souhaite intégrer la licence Chef de projet développement, sécurité et exploitation, et poursuivre avec un Master MIAGE, toujours en alternance.</p>
                     </div>
                 </div>
             </section>
