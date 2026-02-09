@@ -20,6 +20,13 @@
             0%, 100% { opacity: 1; }
             50% { opacity: 0; }
         }
+
+        /* Animation pour les cartes */
+        .hover-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(59, 130, 246, 0.6);
+            box-shadow: 0 10px 30px -10px rgba(59, 130, 246, 0.3);
+        }
     </style>
 </head>
 <body class="bg-[#0f172a] text-slate-100 font-sans antialiased text-left arial-text">
@@ -58,13 +65,14 @@
             </a>
         </nav>
 
-        <div class="p-6 border-t border-blue-500/20 text-center">
-            <span class="text-[10px] text-slate-500 font-bold tracking-widest uppercase">BTS SIO SISR 2026</span>
+        <div class="p-6 border-t border-blue-500/20 text-center text-[10px] text-slate-500 font-bold tracking-widest uppercase">
+            BTS SIO SISR 2026
         </div>
     </aside>
 
     <div class="md:ml-64 min-h-screen">
-        <main class="space-y-40">
+        <main class="space-y-40 pb-20">
+
             <section id="accueil" class="min-h-screen flex flex-col justify-center items-center text-center px-8 space-y-8">
                 <div>
                     <h2 class="text-white text-5xl font-black tracking-tighter uppercase leading-none">Alyssia Noireau</h2>
@@ -81,41 +89,146 @@
                 </div>
             </section>
 
-            <section id="profil" class="max-w-6xl mx-auto px-8 scroll-mt-24 pb-20">
+            <section id="profil" class="max-w-6xl mx-auto px-8 scroll-mt-24">
                 <div class="text-center mb-16">
                     <h2 class="text-4xl font-black uppercase tracking-tighter inline-block border-b-4 border-blue-500 pb-2">Mon Profil</h2>
                 </div>
-                
                 <div class="grid grid-cols-1 lg:grid-cols-4 gap-12 items-stretch">
-                    <div class="lg:col-span-1 flex flex-col items-center space-y-8">
+                    <div class="lg:col-span-1 flex flex-col items-center space-y-8 text-center">
                         <div class="glass-card w-48 aspect-square p-2 rounded-2xl border border-blue-500/30 shadow-2xl overflow-hidden flex items-center justify-center neon-border">
                             <img src="maphoto.png" alt="Alyssia Noireau" class="w-full h-full object-cover rounded-xl" onerror="this.style.display='none';">
                             <i class="fa-solid fa-user-tie text-5xl text-blue-400/20"></i>
                         </div>
                         <div class="w-full space-y-4">
-                            <a href="CV_Alyssia_Noireau.pdf" target="_blank" class="flex items-center justify-center gap-3 px-4 py-4 bg-blue-600/20 hover:bg-blue-600/40 text-blue-400 rounded-xl border border-blue-500/30 transition group shadow-lg">
-                                <i class="fa-solid fa-file-pdf text-lg"></i>
-                                <span class="font-black uppercase tracking-widest text-[10px]">Consulter mon CV</span>
+                            <a href="CV_Alyssia_Noireau.pdf" target="_blank" class="flex items-center justify-center gap-3 px-4 py-4 bg-blue-600/20 hover:bg-blue-600/40 text-blue-400 rounded-xl border border-blue-500/30 transition shadow-lg group">
+                                <i class="fa-solid fa-file-pdf group-hover:scale-110"></i> <span class="font-black uppercase tracking-widest text-[10px]">Mon CV</span>
                             </a>
-                            <a href="Tableau_Competences.pdf" target="_blank" class="flex items-center justify-center gap-3 px-4 py-4 bg-blue-600/20 hover:bg-blue-600/40 text-blue-400 rounded-xl border border-blue-500/30 transition group shadow-lg">
-                                <i class="fa-solid fa-table-list text-lg"></i>
-                                <span class="font-black uppercase tracking-widest text-[10px]">Tableau de compétences</span>
+                            <a href="Tableau_Competences.pdf" target="_blank" class="flex items-center justify-center gap-3 px-4 py-4 bg-blue-600/20 hover:bg-blue-600/40 text-blue-400 rounded-xl border border-blue-500/30 transition shadow-lg group">
+                                <i class="fa-solid fa-table-list group-hover:scale-110"></i> <span class="font-black uppercase tracking-widest text-[10px]">Compétences</span>
                             </a>
                         </div>
                     </div>
-
                     <div class="lg:col-span-3">
-                        <div class="glass-card p-10 rounded-2xl border border-blue-500/30 shadow-2xl h-full flex flex-col justify-start">
+                        <div class="glass-card p-10 rounded-2xl border border-blue-500/30 shadow-2xl h-full">
                             <h3 class="text-blue-400 font-black uppercase tracking-widest mb-8 text-sm border-b border-blue-500/20 pb-4">À propos de moi</h3>
                             <div class="text-slate-200 text-lg leading-relaxed text-justify space-y-6">
                                 <p>Passionnée par les nouvelles technologies et l'évolution des infrastructures numériques, j'ai choisi de m'orienter vers l'informatique après mon BAC STMG pour comprendre les rouages des systèmes qui connectent aujourd'hui les entreprises.</p>
-                                <p>Mon parcours en BTS SIO option SISR m'a permis d'acquérir des bases solides en administration système, en déploiement réseau et en sécurité informatique. Au quotidien, mon alternance chez ISTA est une véritable école de terrain : elle m'apprend la réactivité face aux incidents, la gestion du support utilisateur et l'importance d'une infrastructure robuste pour la continuité de service.</p>
-                                <p>De nature curieuse et rigoureuse, j'aime relever les défis techniques et je m'adapte rapidement aux nouveaux outils. Mon objectif est de devenir une experte capable de piloter des projets d'infrastructure complexes tout en garantissant un haut niveau de sécurité, c'est pourquoi je projette d'intégrer une licence de Chef de projet développement, sécurité et exploitation l'année prochaine.</p>
+                                <p>Mon parcours en BTS SIO option SISR m'a permis d'acquérir des bases solides en administration système, en déploiement réseau et en sécurité informatique.</p>
+                                <p>De nature curieuse et rigoureuse, j'aime relever les défis techniques et je m'adapte rapidement aux nouveaux outils. Mon objectif est de devenir une experte capable de piloter des projets d'infrastructure complexes.</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
+
+            <section id="entreprise" class="max-w-6xl mx-auto px-8 scroll-mt-24">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-black uppercase tracking-tighter inline-block border-b-4 border-blue-500 pb-2">Expérience Pro</h2>
+                </div>
+                <div class="glass-card p-10 rounded-2xl border border-blue-500/30 shadow-2xl hover-card transition-all duration-300">
+                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4">
+                        <div class="flex items-center gap-6">
+                            <div class="w-20 h-20 bg-white/10 rounded-xl flex items-center justify-center border border-blue-500/20">
+                                <i class="fa-solid fa-building text-3xl text-blue-400"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-black text-white uppercase tracking-tighter">ISTA</h3>
+                                <p class="text-blue-400 font-bold uppercase text-xs tracking-widest">Alternance - Technicienne Systèmes & Réseaux</p>
+                            </div>
+                        </div>
+                        <span class="px-4 py-2 bg-blue-500/10 border border-blue-500/30 rounded-full text-blue-400 text-xs font-bold">Sept 2024 - Présent</span>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                        <div class="space-y-4">
+                            <h4 class="text-blue-400 font-black text-xs uppercase tracking-[0.2em]">Missions Principales</h4>
+                            <ul class="space-y-3 text-slate-300 text-sm">
+                                <li class="flex items-start gap-3"><i class="fa-solid fa-caret-right text-blue-500 mt-1"></i> [ Mission 1 à remplir ]</li>
+                                <li class="flex items-start gap-3"><i class="fa-solid fa-caret-right text-blue-500 mt-1"></i> [ Mission 2 à remplir ]</li>
+                                <li class="flex items-start gap-3"><i class="fa-solid fa-caret-right text-blue-500 mt-1"></i> [ Mission 3 à remplir ]</li>
+                            </ul>
+                        </div>
+                        <div class="space-y-4">
+                            <h4 class="text-blue-400 font-black text-xs uppercase tracking-[0.2em]">Outils & Environnement</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-slate-800 border border-slate-700 rounded text-[10px] font-bold uppercase">Active Directory</span>
+                                <span class="px-3 py-1 bg-slate-800 border border-slate-700 rounded text-[10px] font-bold uppercase">Windows Server</span>
+                                <span class="px-3 py-1 bg-slate-800 border border-slate-700 rounded text-[10px] font-bold uppercase">GLPI</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="tp" class="max-w-6xl mx-auto px-8 scroll-mt-24">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-black uppercase tracking-tighter inline-block border-b-4 border-blue-500 pb-2">Projets Techniques</h2>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="glass-card p-6 rounded-2xl border border-blue-500/20 hover-card transition-all group">
+                        <div class="h-40 bg-slate-900/50 rounded-xl mb-6 flex items-center justify-center border border-blue-500/10">
+                            <i class="fa-solid fa-server text-5xl text-blue-500/20 group-hover:text-blue-400/40 transition"></i>
+                        </div>
+                        <h3 class="text-white font-black uppercase tracking-tighter text-lg mb-3">Titre du Projet</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-6">Description courte du TP, contexte et objectifs réalisés.</p>
+                        <a href="#" class="inline-flex items-center gap-2 text-blue-400 font-black text-[10px] uppercase tracking-widest hover:text-white transition">
+                            Documentation PDF <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </a>
+                    </div>
+                    </div>
+            </section>
+
+            <section id="competences" class="max-w-6xl mx-auto px-8 scroll-mt-24">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-black uppercase tracking-tighter inline-block border-b-4 border-blue-500 pb-2">Compétences</h2>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="glass-card p-8 rounded-2xl border border-blue-500/20">
+                        <i class="fa-solid fa-network-wired text-blue-400 text-2xl mb-4"></i>
+                        <h3 class="text-white font-black uppercase text-sm mb-6 tracking-widest">Réseaux</h3>
+                        <ul class="text-slate-400 text-sm space-y-2">
+                            <li>• Routage & Commutation</li>
+                            <li>• VLANs & Adressage IP</li>
+                            <li>• VPN (OpenVPN/IPsec)</li>
+                        </ul>
+                    </div>
+                    <div class="glass-card p-8 rounded-2xl border border-blue-500/20">
+                        <i class="fa-solid fa-shield-halved text-blue-400 text-2xl mb-4"></i>
+                        <h3 class="text-white font-black uppercase text-sm mb-6 tracking-widest">Sécurité</h3>
+                        <ul class="text-slate-400 text-sm space-y-2">
+                            <li>• Administration Pare-feu</li>
+                            <li>• Droits Active Directory</li>
+                            <li>• Gestion des sauvegardes</li>
+                        </ul>
+                    </div>
+                    <div class="glass-card p-8 rounded-2xl border border-blue-500/20">
+                        <i class="fa-solid fa-gears text-blue-400 text-2xl mb-4"></i>
+                        <h3 class="text-white font-black uppercase text-sm mb-6 tracking-widest">Systèmes</h3>
+                        <ul class="text-slate-400 text-sm space-y-2">
+                            <li>• Windows Server 2022</li>
+                            <li>• Virtualisation (ESXi)</li>
+                            <li>• Linux (Debian/Ubuntu)</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="contact" class="max-w-4xl mx-auto px-8 scroll-mt-24">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-black uppercase tracking-tighter inline-block border-b-4 border-blue-500 pb-2">Contact</h2>
+                </div>
+                <div class="glass-card p-12 rounded-[2rem] border border-blue-500/30 text-center shadow-2xl">
+                    <p class="text-slate-300 text-lg mb-10">Je reste à votre disposition pour discuter de mon parcours ou de futures opportunités en alternance.</p>
+                    <div class="flex flex-wrap justify-center gap-8">
+                        <a href="mailto:votre@mail.com" class="flex items-center gap-4 px-8 py-5 bg-blue-600/20 hover:bg-blue-600/40 text-blue-400 rounded-2xl border border-blue-500/30 transition-all hover:scale-105 shadow-xl font-black uppercase tracking-widest text-xs">
+                            <i class="fa-solid fa-envelope text-xl"></i> Email
+                        </a>
+                        <a href="tel:0600000000" class="flex items-center gap-4 px-8 py-5 bg-slate-700/30 hover:bg-slate-700/50 text-slate-300 rounded-2xl border border-slate-600/30 transition-all hover:scale-105 shadow-xl font-black uppercase tracking-widest text-xs">
+                            <i class="fa-solid fa-phone text-xl"></i> Téléphone
+                        </a>
+                    </div>
+                </div>
+            </section>
+
         </main>
     </div>
 
