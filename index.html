@@ -8,38 +8,46 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         .neon-text { text-shadow: 0 0 15px rgba(59, 130, 246, 0.9); }
-        /* Effet Glassmorphism poussé */
-        .glass-sidebar { background: rgba(17, 24, 39, 0.8); backdrop-filter: blur(15px); }
-        .glass-card { background: rgba(15, 23, 42, 0.7); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); }
-        .arial-text { font-family: Arial, Helvetica, sans-serif !important; }
+        .neon-border { box-shadow: 0 0 20px rgba(59, 130, 246, 0.3); }
+        .glass-sidebar { background: rgba(17, 24, 39, 0.85); backdrop-filter: blur(15px); }
+        .glass-card { background: rgba(15, 23, 42, 0.75); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.05); }
+        .arial-text { font-family: Arial, Helvetica, sans-serif !important; font-style: normal !important; }
         
-        /* Animation Sidebar */
         .nav-link { position: relative; transition: all 0.3s ease; }
-        .nav-link:hover { color: #60a5fa; padding-left: 2.5rem; background: rgba(59, 130, 246, 0.1); }
+        .nav-link:hover { color: #60a5fa; padding-left: 2rem; background: rgba(59, 130, 246, 0.1); }
         .nav-link::before { 
             content: ''; position: absolute; left: 0; top: 0; height: 100%; width: 0; 
             background: #3b82f6; transition: width 0.3s ease; 
         }
         .nav-link:hover::before { width: 4px; }
 
+        .typing::after {
+            content: '|';
+            animation: blink 0.7s infinite;
+        }
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
         .bg-nebula {
-            background: linear-gradient(rgba(15, 23, 42, 0.6), rgba(15, 23, 42, 0.8)), url('fond-accueil.jpg');
+            background: linear-gradient(rgba(15, 23, 42, 0.65), rgba(15, 23, 42, 0.85)), url('fond-accueil.jpg');
             background-size: cover; background-position: center; background-attachment: fixed;
         }
     </style>
 </head>
 <body class="bg-[#0f172a] text-slate-100 arial-text">
 
-    <aside class="fixed top-0 left-0 h-screen w-64 glass-sidebar border-r border-white/10 hidden md:flex flex-col z-50">
+    <aside class="fixed top-0 left-0 h-screen w-64 glass-sidebar border-r border-white/10 hidden md:flex flex-col z-50 shadow-2xl">
         <div class="p-10 text-center border-b border-white/5">
-            <div class="w-24 h-24 bg-slate-800 rounded-2xl mx-auto mb-6 border border-blue-500/50 shadow-lg flex items-center justify-center overflow-hidden transition-transform hover:rotate-3">
+            <div class="w-24 h-24 bg-slate-800 rounded-2xl mx-auto mb-6 border border-blue-500/50 shadow-lg flex items-center justify-center overflow-hidden transition-transform hover:scale-105">
                 <img src="maphoto.png" alt="" class="w-full h-full object-cover" onerror="this.style.display='none';">
                 <i class="fa-solid fa-user-shield text-4xl text-blue-400"></i>
             </div>
-            <h1 class="text-xl font-black tracking-widest neon-text uppercase">Alyssia<br><span class="text-blue-500">Noireau</span></h1>
+            <h1 class="text-xl font-black tracking-widest neon-text uppercase leading-tight">Alyssia<br><span class="text-blue-500">Noireau</span></h1>
         </div>
 
-        <nav class="flex-1 flex flex-col justify-center space-y-2 py-8">
+        <nav class="flex-1 flex flex-col justify-evenly py-8">
             <a href="#accueil" class="nav-link flex items-center gap-4 py-4 px-8 text-xs font-bold uppercase tracking-widest text-slate-400">
                 <i class="fa-solid fa-house-chimney w-5"></i> Accueil
             </a>
@@ -52,38 +60,124 @@
             <a href="#tp" class="nav-link flex items-center gap-4 py-4 px-8 text-xs font-bold uppercase tracking-widest text-slate-400">
                 <i class="fa-solid fa-diagram-project w-5"></i> Projets
             </a>
+            <a href="#competences" class="nav-link flex items-center gap-4 py-4 px-8 text-xs font-bold uppercase tracking-widest text-slate-400">
+                <i class="fa-solid fa-microchip w-5"></i> Compétences
+            </a>
             <a href="#contact" class="nav-link flex items-center gap-4 py-4 px-8 text-xs font-bold uppercase tracking-widest text-slate-400">
                 <i class="fa-solid fa-paper-plane w-5"></i> Contact
             </a>
         </nav>
 
-        <div class="p-8 border-t border-white/5 text-center">
-            <div class="flex justify-center gap-6 mb-4 text-slate-500">
-                <a href="#" class="hover:text-blue-400 transition-colors"><i class="fa-brands fa-linkedin-in text-lg"></i></a>
-                <a href="#" class="hover:text-blue-400 transition-colors"><i class="fa-brands fa-github text-lg"></i></a>
-            </div>
-            <p class="text-[9px] font-black tracking-[0.3em] text-slate-600 uppercase">SISR Portfolio © 2026</p>
+        <div class="p-8 border-t border-white/5 text-center text-[9px] font-black tracking-[0.3em] text-slate-600 uppercase">
+            SISR Portfolio © 2026
         </div>
     </aside>
 
     <div class="md:ml-64 min-h-screen">
         <main class="space-y-40">
+            
             <section id="accueil" class="min-h-screen flex flex-col justify-center items-center text-center px-8 bg-nebula">
                 <div class="mb-12">
                     <h2 class="text-white text-6xl font-black tracking-tighter uppercase neon-text">Alyssia Noireau</h2>
-                    <h3 class="text-blue-400 text-2xl font-bold uppercase tracking-[0.3em] mt-6 neon-text">Bienvenue sur mon Portfolio</h3>
+                    <h3 id="typewriter" class="text-blue-400 text-2xl font-bold uppercase tracking-[0.3em] mt-6 neon-text typing min-h-[1.5em]"></h3>
                 </div>
                 
-                <div class="glass-card max-w-4xl w-full p-10 rounded-3xl shadow-2xl">
-                    <div class="text-slate-100 text-base leading-relaxed text-justify space-y-6">
-                        <p>Bonjour, je suis Alyssia Noireau, j'ai 19 ans et je suis diplômée d'un BAC STMG avec la spécialité mercatique.</p>
-                        <p>Je suis actuellement étudiante en deuxième année de **BTS SIO**, option SISR.</p>
-                        <p>J'effectue mon alternance au sein de l'entreprise **ISTA**, où je suis pleinement investie au support informatique.</p>
+                <div class="glass-card max-w-4xl w-full p-8 rounded-3xl shadow-2xl">
+                    <div class="text-slate-100 text-base leading-relaxed text-justify space-y-4">
+                        <p>Bonjour, je suis Alyssia Noireau, j'ai 19 ans et je suis diplômée d'un BAC STMG (sciences et technologies du management et de la gestion) avec la spécialité mercatique.</p>
+                        <p>Je suis actuellement étudiante en deuxième année de BTS SIO (Services Informatiques aux Organisations), option SISR (Solutions d'Infrastructures Systèmes et Réseaux).</p>
+                        <p>J'effectue mon alternance au sein de l'entreprise ISTA, où je suis pleinement investie au support informatique.</p>
                         <p class="text-blue-400 font-bold border-t border-white/10 pt-6">L’année prochaine, je souhaite intégrer la licence Chef de projet développement, sécurité et exploitation, et poursuivre avec un Master MIAGE, toujours en alternance.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="profil" class="max-w-6xl mx-auto px-8 scroll-mt-24 pb-20">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-black uppercase tracking-tighter inline-block border-b-4 border-blue-500 pb-2">Mon Profil</h2>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-4 gap-12 items-stretch">
+                    <div class="lg:col-span-1 flex flex-col items-center space-y-6">
+                        <div class="glass-card w-48 aspect-square p-2 rounded-2xl border border-blue-500/30 shadow-2xl overflow-hidden flex items-center justify-center neon-border">
+                            <img src="maphoto.png" alt="Alyssia Noireau" class="w-full h-full object-cover rounded-xl" onerror="this.style.display='none';">
+                            <i class="fa-solid fa-user-tie text-5xl text-blue-400/20"></i>
+                        </div>
+                        
+                        <div class="w-full space-y-4">
+                            <a href="CV_Alyssia_Noireau.pdf" target="_blank" class="flex items-center justify-center gap-3 px-4 py-4 bg-blue-600/20 hover:bg-blue-600/40 text-blue-400 rounded-xl border border-blue-500/30 transition shadow-lg group">
+                                <i class="fa-solid fa-file-pdf"></i> <span class="font-black uppercase tracking-widest text-[10px]">Mon CV</span>
+                            </a>
+                            <a href="Tableau_Competences.pdf" target="_blank" class="flex items-center justify-center gap-3 px-4 py-4 bg-blue-600/20 hover:bg-blue-600/40 text-blue-400 rounded-xl border border-blue-500/30 transition shadow-lg group">
+                                <i class="fa-solid fa-table-list"></i> <span class="font-black uppercase tracking-widest text-[10px]">Compétences</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-3 space-y-8">
+                        <div class="glass-card p-10 rounded-2xl shadow-2xl border-l-4 border-blue-500">
+                            <h3 class="text-blue-400 font-black uppercase tracking-widest mb-6 text-sm">À propos de moi</h3>
+                            <div class="text-slate-200 text-lg leading-relaxed text-justify space-y-6">
+                                <p>Passionnée par les nouvelles technologies et l'évolution des infrastructures numériques, j'ai choisi de m'orienter vers l'informatique après mon BAC STMG pour comprendre les rouages des systèmes qui connectent aujourd'hui les entreprises.</p>
+                                <p>Mon parcours en BTS SIO option SISR m'a permis d'acquérir des bases solides en administration système, en déploiement réseau et en sécurité informatique.</p>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div class="glass-card p-8 rounded-2xl border border-white/5">
+                                <h4 class="text-white font-black uppercase tracking-widest mb-6 text-xs flex items-center gap-2">
+                                    <i class="fa-solid fa-star text-blue-400"></i> Qualités personnelles
+                                </h4>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="px-3 py-1 bg-blue-500/10 border border-blue-500/20 rounded-full text-blue-400 text-[10px] font-bold uppercase">Curiosité technique</span>
+                                    <span class="px-3 py-1 bg-blue-500/10 border border-blue-500/20 rounded-full text-blue-400 text-[10px] font-bold uppercase">Rigueur</span>
+                                    <span class="px-3 py-1 bg-blue-500/10 border border-blue-500/20 rounded-full text-blue-400 text-[10px] font-bold uppercase">Esprit d'équipe</span>
+                                    <span class="px-3 py-1 bg-blue-500/10 border border-blue-500/20 rounded-full text-blue-400 text-[10px] font-bold uppercase">Réactivité</span>
+                                </div>
+                            </div>
+                            <div class="glass-card p-8 rounded-2xl border border-white/5">
+                                <h4 class="text-white font-black uppercase tracking-widest mb-6 text-xs flex items-center gap-2">
+                                    <i class="fa-solid fa-globe text-blue-400"></i> Langues
+                                </h4>
+                                <div class="space-y-4">
+                                    <div class="flex justify-between items-center text-xs font-bold uppercase tracking-widest">
+                                        <span class="text-slate-300">Français</span>
+                                        <span class="text-blue-400">Langue maternelle</span>
+                                    </div>
+                                    <div class="flex justify-between items-center text-xs font-bold uppercase tracking-widest">
+                                        <span class="text-slate-300">Anglais</span>
+                                        <span class="text-blue-400">Niveau Technique (B1)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
         </main>
     </div>
+
+    <script>
+        const text = "Bienvenue sur mon Portfolio";
+        const speed = 100;
+        const pause = 2000;
+        let i = 0;
+        const element = document.getElementById("typewriter");
+
+        function typeWriter() {
+            if (i < text.length) {
+                element.innerHTML += text.charAt(i);
+                i++;
+                setTimeout(typeWriter, speed);
+            } else {
+                setTimeout(() => {
+                    element.innerHTML = "";
+                    i = 0;
+                    typeWriter();
+                }, pause);
+            }
+        }
+        window.onload = typeWriter;
+    </script>
 </body>
 </html>
