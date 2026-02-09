@@ -9,7 +9,7 @@
     <style>
         .neon-text { text-shadow: 0 0 15px rgba(59, 130, 246, 0.9); }
         .neon-border { box-shadow: 0 0 20px rgba(59, 130, 246, 0.3); }
-        .glass-card { background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(10px); }
+        .glass-card { background: rgba(30, 41, 59, 0.6); backdrop-filter: blur(12px); }
         .arial-text { font-family: Arial, Helvetica, sans-serif !important; font-style: normal !important; }
         
         .typing::after {
@@ -21,11 +21,16 @@
             50% { opacity: 0; }
         }
 
-        /* Animation pour les cartes */
         .hover-card:hover {
             transform: translateY(-5px);
             border-color: rgba(59, 130, 246, 0.6);
             box-shadow: 0 10px 30px -10px rgba(59, 130, 246, 0.3);
+        }
+
+        .bg-hero {
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
         }
     </style>
 </head>
@@ -45,22 +50,22 @@
         </div>
 
         <nav class="flex-1 flex flex-col justify-evenly p-6 text-sm uppercase font-bold tracking-widest text-slate-400">
-            <a href="#accueil" class="flex items-center gap-4 p-4 rounded-lg hover:bg-blue-500/10 hover:text-blue-400 transition border border-transparent hover:border-blue-500/20">
+            <a href="#accueil" class="flex items-center gap-4 p-4 rounded-lg hover:bg-blue-500/10 hover:text-blue-400 transition">
                 <i class="fa-solid fa-house w-6 text-center text-blue-500"></i> Accueil
             </a>
-            <a href="#profil" class="flex items-center gap-4 p-4 rounded-lg hover:bg-blue-500/10 hover:text-blue-400 transition border border-transparent hover:border-blue-500/20">
+            <a href="#profil" class="flex items-center gap-4 p-4 rounded-lg hover:bg-blue-500/10 hover:text-blue-400 transition">
                 <i class="fa-solid fa-address-card w-6 text-center text-blue-500"></i> Profil
             </a>
-            <a href="#entreprise" class="flex items-center gap-4 p-4 rounded-lg hover:bg-blue-500/10 hover:text-blue-400 transition border border-transparent hover:border-blue-500/20">
+            <a href="#entreprise" class="flex items-center gap-4 p-4 rounded-lg hover:bg-blue-500/10 hover:text-blue-400 transition">
                 <i class="fa-solid fa-building w-6 text-center text-blue-500"></i> Entreprise
             </a>
-            <a href="#tp" class="flex items-center gap-4 p-4 rounded-lg hover:bg-blue-500/10 hover:text-blue-400 transition border border-transparent hover:border-blue-500/20">
+            <a href="#tp" class="flex items-center gap-4 p-4 rounded-lg hover:bg-blue-500/10 hover:text-blue-400 transition">
                 <i class="fa-solid fa-folder-open w-6 text-center text-blue-500"></i> Projets
             </a>
-            <a href="#competences" class="flex items-center gap-4 p-4 rounded-lg hover:bg-blue-500/10 hover:text-blue-400 transition border border-transparent hover:border-blue-500/20">
+            <a href="#competences" class="flex items-center gap-4 p-4 rounded-lg hover:bg-blue-500/10 hover:text-blue-400 transition">
                 <i class="fa-solid fa-layer-group w-6 text-center text-blue-500"></i> Compétences
             </a>
-            <a href="#contact" class="flex items-center gap-4 p-4 rounded-lg hover:bg-blue-500/10 hover:text-blue-400 transition border border-transparent hover:border-blue-500/20">
+            <a href="#contact" class="flex items-center gap-4 p-4 rounded-lg hover:bg-blue-500/10 hover:text-blue-400 transition">
                 <i class="fa-solid fa-envelope w-6 text-center text-blue-500"></i> Contact
             </a>
         </nav>
@@ -73,18 +78,18 @@
     <div class="md:ml-64 min-h-screen">
         <main class="space-y-40 pb-20">
 
-            <section id="accueil" class="min-h-screen flex flex-col justify-center items-center text-center px-8 space-y-8">
-                <div>
+            <section id="accueil" class="min-h-screen flex flex-col justify-center items-center text-center px-8 bg-hero">
+                <div class="mb-12">
                     <h2 class="text-white text-5xl font-black tracking-tighter uppercase leading-none">Alyssia Noireau</h2>
                     <h3 id="typewriter" class="text-blue-400 text-2xl font-bold uppercase tracking-[0.2em] mt-4 neon-text typing min-h-[1.5em]"></h3>
                 </div>
                 
-                <div class="glass-card max-w-5xl w-full p-10 rounded-xl border border-blue-500/30 shadow-2xl">
+                <div class="glass-card max-w-4xl w-full p-8 rounded-2xl border border-blue-500/20 shadow-2xl">
                     <div class="text-slate-200 text-base leading-relaxed text-justify space-y-4">
                         <p>Bonjour, je suis Alyssia Noireau, j'ai 19 ans et je suis diplômée d'un BAC STMG (sciences et technologies du management et de la gestion) avec la spécialité mercatique.</p>
                         <p>Je suis actuellement étudiante en deuxième année de BTS SIO (Services Informatiques aux Organisations), option SISR (Solutions d'Infrastructures Systèmes et Réseaux).</p>
                         <p>J'effectue mon alternance au sein de l'entreprise ISTA, où je suis pleinement investie au support informatique. Très impliquée dans l'administration réseaux, je veille au quotidien à la gestion de l'infrastructure pour garantir la haute disponibilité et la sécurité des services informatiques.</p>
-                        <p class="text-blue-400 font-bold">L’année prochaine, je souhaite continuer mes études en informatique en intégrant la licence Chef de projet développement, sécurité et exploitation, et poursuivre avec un Master MIAGE, toujours en alternance.</p>
+                        <p class="text-blue-400 font-bold border-t border-blue-500/20 pt-4">L’année prochaine, je souhaite intégrer la licence Chef de projet développement, sécurité et exploitation, et poursuivre avec un Master MIAGE, toujours en alternance.</p>
                     </div>
                 </div>
             </section>
@@ -142,17 +147,15 @@
                         <div class="space-y-4">
                             <h4 class="text-blue-400 font-black text-xs uppercase tracking-[0.2em]">Missions Principales</h4>
                             <ul class="space-y-3 text-slate-300 text-sm">
-                                <li class="flex items-start gap-3"><i class="fa-solid fa-caret-right text-blue-500 mt-1"></i> [ Mission 1 à remplir ]</li>
-                                <li class="flex items-start gap-3"><i class="fa-solid fa-caret-right text-blue-500 mt-1"></i> [ Mission 2 à remplir ]</li>
-                                <li class="flex items-start gap-3"><i class="fa-solid fa-caret-right text-blue-500 mt-1"></i> [ Mission 3 à remplir ]</li>
+                                <li class="flex items-start gap-3"><i class="fa-solid fa-caret-right text-blue-500 mt-1"></i> Support informatique & ticketing</li>
+                                <li class="flex items-start gap-3"><i class="fa-solid fa-caret-right text-blue-500 mt-1"></i> Maintenance des serveurs & réseaux</li>
                             </ul>
                         </div>
                         <div class="space-y-4">
-                            <h4 class="text-blue-400 font-black text-xs uppercase tracking-[0.2em]">Outils & Environnement</h4>
+                            <h4 class="text-blue-400 font-black text-xs uppercase tracking-[0.2em]">Environnement</h4>
                             <div class="flex flex-wrap gap-2">
                                 <span class="px-3 py-1 bg-slate-800 border border-slate-700 rounded text-[10px] font-bold uppercase">Active Directory</span>
-                                <span class="px-3 py-1 bg-slate-800 border border-slate-700 rounded text-[10px] font-bold uppercase">Windows Server</span>
-                                <span class="px-3 py-1 bg-slate-800 border border-slate-700 rounded text-[10px] font-bold uppercase">GLPI</span>
+                                <span class="px-3 py-1 bg-slate-800 border border-slate-700 rounded text-[10px] font-bold uppercase">Office 365</span>
                             </div>
                         </div>
                     </div>
@@ -164,17 +167,17 @@
                     <h2 class="text-4xl font-black uppercase tracking-tighter inline-block border-b-4 border-blue-500 pb-2">Projets Techniques</h2>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <div class="glass-card p-6 rounded-2xl border border-blue-500/20 hover-card transition-all group">
+                    <div class="glass-card p-6 rounded-2xl border border-blue-500/20 hover-card transition-all group text-center">
                         <div class="h-40 bg-slate-900/50 rounded-xl mb-6 flex items-center justify-center border border-blue-500/10">
                             <i class="fa-solid fa-server text-5xl text-blue-500/20 group-hover:text-blue-400/40 transition"></i>
                         </div>
                         <h3 class="text-white font-black uppercase tracking-tighter text-lg mb-3">Titre du Projet</h3>
-                        <p class="text-slate-400 text-sm leading-relaxed mb-6">Description courte du TP, contexte et objectifs réalisés.</p>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-6">Description courte du projet technique.</p>
                         <a href="#" class="inline-flex items-center gap-2 text-blue-400 font-black text-[10px] uppercase tracking-widest hover:text-white transition">
                             Documentation PDF <i class="fa-solid fa-arrow-right text-xs"></i>
                         </a>
                     </div>
-                    </div>
+                </div>
             </section>
 
             <section id="competences" class="max-w-6xl mx-auto px-8 scroll-mt-24">
@@ -182,31 +185,28 @@
                     <h2 class="text-4xl font-black uppercase tracking-tighter inline-block border-b-4 border-blue-500 pb-2">Compétences</h2>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <div class="glass-card p-8 rounded-2xl border border-blue-500/20">
-                        <i class="fa-solid fa-network-wired text-blue-400 text-2xl mb-4"></i>
+                    <div class="glass-card p-8 rounded-2xl border border-blue-500/20 text-center">
+                        <i class="fa-solid fa-network-wired text-blue-400 text-3xl mb-4"></i>
                         <h3 class="text-white font-black uppercase text-sm mb-6 tracking-widest">Réseaux</h3>
                         <ul class="text-slate-400 text-sm space-y-2">
-                            <li>• Routage & Commutation</li>
                             <li>• VLANs & Adressage IP</li>
-                            <li>• VPN (OpenVPN/IPsec)</li>
+                            <li>• Routage Cisco</li>
                         </ul>
                     </div>
-                    <div class="glass-card p-8 rounded-2xl border border-blue-500/20">
-                        <i class="fa-solid fa-shield-halved text-blue-400 text-2xl mb-4"></i>
+                    <div class="glass-card p-8 rounded-2xl border border-blue-500/20 text-center">
+                        <i class="fa-solid fa-shield-halved text-blue-400 text-3xl mb-4"></i>
                         <h3 class="text-white font-black uppercase text-sm mb-6 tracking-widest">Sécurité</h3>
                         <ul class="text-slate-400 text-sm space-y-2">
-                            <li>• Administration Pare-feu</li>
-                            <li>• Droits Active Directory</li>
-                            <li>• Gestion des sauvegardes</li>
+                            <li>• Pare-feu (Pfsense)</li>
+                            <li>• VPN & Chiffrement</li>
                         </ul>
                     </div>
-                    <div class="glass-card p-8 rounded-2xl border border-blue-500/20">
-                        <i class="fa-solid fa-gears text-blue-400 text-2xl mb-4"></i>
+                    <div class="glass-card p-8 rounded-2xl border border-blue-500/20 text-center">
+                        <i class="fa-solid fa-gears text-blue-400 text-3xl mb-4"></i>
                         <h3 class="text-white font-black uppercase text-sm mb-6 tracking-widest">Systèmes</h3>
                         <ul class="text-slate-400 text-sm space-y-2">
                             <li>• Windows Server 2022</li>
-                            <li>• Virtualisation (ESXi)</li>
-                            <li>• Linux (Debian/Ubuntu)</li>
+                            <li>• Virtualisation</li>
                         </ul>
                     </div>
                 </div>
@@ -217,12 +217,12 @@
                     <h2 class="text-4xl font-black uppercase tracking-tighter inline-block border-b-4 border-blue-500 pb-2">Contact</h2>
                 </div>
                 <div class="glass-card p-12 rounded-[2rem] border border-blue-500/30 text-center shadow-2xl">
-                    <p class="text-slate-300 text-lg mb-10">Je reste à votre disposition pour discuter de mon parcours ou de futures opportunités en alternance.</p>
+                    <p class="text-slate-300 text-lg mb-10 italic">À la recherche d'une alternance pour Licence & Master MIAGE.</p>
                     <div class="flex flex-wrap justify-center gap-8">
-                        <a href="mailto:votre@mail.com" class="flex items-center gap-4 px-8 py-5 bg-blue-600/20 hover:bg-blue-600/40 text-blue-400 rounded-2xl border border-blue-500/30 transition-all hover:scale-105 shadow-xl font-black uppercase tracking-widest text-xs">
+                        <a href="mailto:tonmail@exemple.com" class="flex items-center gap-4 px-8 py-5 bg-blue-600/20 hover:bg-blue-600/40 text-blue-400 rounded-2xl border border-blue-500/30 transition shadow-xl font-black uppercase tracking-widest text-xs">
                             <i class="fa-solid fa-envelope text-xl"></i> Email
                         </a>
-                        <a href="tel:0600000000" class="flex items-center gap-4 px-8 py-5 bg-slate-700/30 hover:bg-slate-700/50 text-slate-300 rounded-2xl border border-slate-600/30 transition-all hover:scale-105 shadow-xl font-black uppercase tracking-widest text-xs">
+                        <a href="tel:0600000000" class="flex items-center gap-4 px-8 py-5 bg-slate-700/30 hover:bg-slate-700/50 text-slate-300 rounded-2xl border border-slate-600/30 transition shadow-xl font-black uppercase tracking-widest text-xs">
                             <i class="fa-solid fa-phone text-xl"></i> Téléphone
                         </a>
                     </div>
