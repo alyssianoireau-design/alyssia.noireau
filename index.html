@@ -1,113 +1,133 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - Alyssia Noireau</title>
+    <title>Portfolio | Alyssia Noireau</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        body { font-family: 'Segoe UI', sans-serif; margin: 0; padding: 0; background-color: #f0f2f5; color: #333; }
-        header { background: #333; color: white; padding: 20px; text-align: center; }
-        nav { display: flex; justify-content: center; background: #444; padding: 10px; }
-        nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: bold; }
-        section { padding: 40px 20px; max-width: 900px; margin: auto; }
-        .container { background: white; padding: 30px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        .neon-text { text-shadow: 0 0 15px rgba(59, 130, 246, 0.9); }
+        .neon-border { box-shadow: 0 0 20px rgba(59, 130, 246, 0.3); }
+        .glass-card { background: rgba(30, 41, 59, 0.6); backdrop-filter: blur(12px); }
+        .arial-text { font-family: Arial, Helvetica, sans-serif !important; }
         
-        /* Style des bulles de présentation */
-        .bubble-present {
-            background-color: #f4f4f4; 
-            border-radius: 20px; 
-            padding: 25px; 
-            margin-bottom: 25px; 
-            box-shadow: 4px 4px 10px rgba(0,0,0,0.1);
-            border-left: 6px solid #333;
+        .typing::after {
+            content: '|';
+            animation: blink 0.7s infinite;
         }
-        .bubble-future {
-            background-color: #e9f5ff; 
-            border-radius: 20px; 
-            padding: 25px; 
-            box-shadow: 4px 4px 10px rgba(0,0,0,0.05);
-            border-left: 6px solid #0078d7;
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
         }
-        h2 { color: #333; border-bottom: 2px solid #333; padding-bottom: 10px; }
-        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 20px; }
-        .skill-item { background: #eee; padding: 15px; border-radius: 8px; text-align: center; font-weight: bold; }
-        footer { text-align: center; padding: 20px; background: #333; color: white; margin-top: 40px; }
+
+        /* Style pour les bulles droites demandées */
+        .bubble-straight {
+            border-radius: 20px;
+            border-left-width: 6px;
+            transform: none !important; /* Force la bulle à rester droite */
+        }
     </style>
 </head>
-<body>
+<body class="bg-[#0f172a] text-slate-100 font-sans antialiased text-left arial-text">
 
-<header>
-    <h1>Alyssia Noireau</h1>
-    <p>Technicienne Support Informatique</p>
-</header>
-
-<nav>
-    <a href="#accueil">Accueil</a>
-    <a href="#profil-ista">Mon Expérience</a>
-    <a href="#competences">Compétences</a>
-    <a href="#contact">Contact</a>
-</nav>
-
-<section id="accueil">
-    <div class="container">
-        <h2>Bienvenue sur mon Portfolio</h2>
-        <p>Découvrez mon parcours, mes compétences techniques et mes projets professionnels dans le domaine de l'informatique.</p>
-        </div>
-</section>
-
-<section id="profil-ista">
-    <div class="container">
-        <h2>Présentation Ista</h2>
-        
-        <div class="bubble-present">
-            <p style="font-size: 1.1em; line-height: 1.6; margin: 0;">
-                Je m'appelle <strong>Alyssia Noireau</strong>, j'ai <strong>19 ans</strong> et je suis actuellement 
-                <strong>technicienne au support informatique chez Ista à Massy</strong> en deuxième année d'alternance. 
-                Véritable touche-à-tout, j'allie rigueur, autonomie et curiosité intellectuelle pour accompagner 
-                au mieux les utilisateurs. Dotée d'un fort esprit d'équipe et d'un sens de l'écoute développé, 
-                je m'efforce de transformer chaque défi technique en une solution fluide grâce à mon organisation 
-                et ma diplomatie.
-            </p>
+    <aside class="fixed top-0 left-0 h-screen w-64 bg-[#1e293b] border-r border-blue-500/30 hidden md:flex flex-col shadow-2xl z-50">
+        <div class="p-8 text-center border-b border-blue-500/20">
+            <div class="w-20 h-20 bg-slate-800 rounded-full mx-auto mb-4 border-2 border-blue-500 neon-border flex items-center justify-center overflow-hidden">
+                <i class="fa-solid fa-user text-3xl text-blue-400"></i>
+            </div>
+            <h1 class="text-xl font-black tracking-tighter neon-text uppercase text-blue-400 leading-tight">Alyssia<br>Noireau</h1>
+            <div class="flex justify-center gap-4 mt-4 text-slate-400 text-xl">
+                <a href="#" class="hover:text-blue-400 transition"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="#" class="hover:text-blue-400 transition"><i class="fa-brands fa-github"></i></a>
+            </div>
         </div>
 
-        <div class="bubble-future">
-            <p style="font-size: 1.1em; line-height: 1.6; color: #2c3e50; margin: 0;">
-                Véritablement motivée par l'évolution vers la gestion de projets informatiques, je souhaite 
-                poursuivre mon parcours par une <strong>Licence Chef de projet (Développement, Sécurité et Exploitation)</strong> 
-                puis un <strong>Master MIAGE</strong>, afin de mettre mon dynamisme et mon expertise terrain 
-                au service du pilotage de solutions innovantes, toujours en alternance.
-            </p>
-        </div>
+        <nav class="flex-1 flex flex-col justify-evenly p-6 text-sm uppercase font-bold tracking-widest text-slate-400">
+            <a href="#accueil" class="flex items-center gap-4 p-4 rounded-lg hover:bg-blue-500/10 hover:text-blue-400 transition">
+                <i class="fa-solid fa-house w-6 text-center text-blue-500"></i> Accueil
+            </a>
+            <a href="#profil-ista" class="flex items-center gap-4 p-4 rounded-lg hover:bg-blue-500/10 hover:text-blue-400 transition">
+                <i class="fa-solid fa-building w-6 text-center text-blue-500"></i> Présentation Ista
+            </a>
+            <a href="#competences" class="flex items-center gap-4 p-4 rounded-lg hover:bg-blue-500/10 hover:text-blue-400 transition">
+                <i class="fa-solid fa-layer-group w-6 text-center text-blue-500"></i> Compétences
+            </a>
+            <a href="#contact" class="flex items-center gap-4 p-4 rounded-lg hover:bg-blue-500/10 hover:text-blue-400 transition">
+                <i class="fa-solid fa-envelope w-6 text-center text-blue-500"></i> Contact
+            </a>
+        </nav>
+    </aside>
+
+    <div class="md:ml-64 min-h-screen">
+        <main class="space-y-20 pb-20">
+
+            <section id="accueil" class="h-screen flex flex-col justify-center items-center text-center px-8">
+                <h2 class="text-white text-6xl font-black tracking-tighter uppercase leading-none mb-4">Alyssia Noireau</h2>
+                <h3 id="typewriter" class="text-blue-400 text-2xl font-bold uppercase tracking-[0.2em] neon-text typing min-h-[1.5em]"></h3>
+            </section>
+
+            <section id="profil-ista" class="px-8 max-w-5xl mx-auto">
+                <h2 class="text-3xl font-black uppercase tracking-tighter text-blue-400 mb-12 flex items-center gap-4">
+                    <span class="h-1 w-12 bg-blue-500"></span> Présentation Ista
+                </h2>
+
+                <div class="space-y-8">
+                    <div class="glass-card bubble-straight p-8 border border-blue-500/20 shadow-2xl">
+                        <p class="text-lg leading-relaxed text-slate-200">
+                            Je m'appelle <strong>Alyssia Noireau</strong>, j'ai 19 ans et je suis actuellement 
+                            <strong>technicienne au support informatique chez Ista à Massy</strong> en deuxième année d'alternance. 
+                            Véritable touche-à-tout, j'allie rigueur, autonomie et curiosité intellectuelle pour accompagner 
+                            au mieux les utilisateurs. Dotée d'un fort esprit d'équipe et d'un sens de l'écoute développé, 
+                            je m'efforce de transformer chaque défi technique en une solution fluide grâce à mon organisation 
+                            et ma diplomatie.
+                        </p>
+                    </div>
+
+                    <div class="glass-card bubble-straight p-8 border border-blue-400/40 shadow-xl border-l-blue-400">
+                        <p class="text-lg leading-relaxed text-blue-100">
+                            Véritablement motivée par l'évolution vers la gestion de projets informatiques, je souhaite 
+                            poursuivre mon parcours par une <strong>Licence Chef de projet (Développement, Sécurité et Exploitation)</strong> 
+                            puis un <strong>Master MIAGE</strong>, afin de mettre mon dynamisme et mon expertise terrain 
+                            au service du pilotage de solutions innovantes, toujours en alternance.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="competences" class="px-8 max-w-5xl mx-auto">
+                <h2 class="text-3xl font-black uppercase tracking-tighter text-blue-400 mb-8 flex items-center gap-4">
+                    <span class="h-1 w-12 bg-blue-500"></span> Soft Skills
+                </h2>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div class="glass-card p-4 rounded-xl border border-blue-500/10 text-center hover:border-blue-500 transition">Rigueur</div>
+                    <div class="glass-card p-4 rounded-xl border border-blue-500/10 text-center hover:border-blue-500 transition">Autonomie</div>
+                    <div class="glass-card p-4 rounded-xl border border-blue-500/10 text-center hover:border-blue-500 transition">Esprit d'équipe</div>
+                    <div class="glass-card p-4 rounded-xl border border-blue-500/10 text-center hover:border-blue-500 transition">Diplomatie</div>
+                    <div class="glass-card p-4 rounded-xl border border-blue-500/10 text-center hover:border-blue-500 transition">Curiosité</div>
+                    <div class="glass-card p-4 rounded-xl border border-blue-500/10 text-center hover:border-blue-500 transition">Adaptabilité</div>
+                    <div class="glass-card p-4 rounded-xl border border-blue-500/10 text-center hover:border-blue-500 transition">Analyse</div>
+                    <div class="glass-card p-4 rounded-xl border border-blue-500/10 text-center hover:border-blue-500 transition">Écoute</div>
+                </div>
+            </section>
+
+        </main>
     </div>
-</section>
 
-<section id="competences">
-    <div class="container">
-        <h2>Mes Qualités Professionnelles</h2>
-        <div class="skills-grid">
-            <div class="skill-item">Esprit d'équipe</div>
-            <div class="skill-item">Adaptabilité</div>
-            <div class="skill-item">Sens de l'écoute</div>
-            <div class="skill-item">Curiosité intellectuelle</div>
-            <div class="skill-item">Autonomie</div>
-            <div class="skill-item">Rigueur</div>
-            <div class="skill-item">Analyse & Résolution</div>
-            <div class="skill-item">Diplomatie</div>
-        </div>
-    </div>
-</section>
+    <script>
+        const text = "Technicienne Support Informatique";
+        const speed = 100;
+        let i = 0;
+        const element = document.getElementById("typewriter");
 
-<section id="contact">
-    <div class="container" style="text-align: center;">
-        <h2>Contact</h2>
-        <p>Disponible pour échanger sur vos projets ou futures opportunités.</p>
-        <p><strong>Email :</strong> alyssia.noireau@exemple.com</p>
-    </div>
-</section>
-
-<footer>
-    <p>&copy; 2024 Alyssia Noireau - Tous droits réservés</p>
-</footer>
-
+        function typeWriter() {
+            if (i < text.length) {
+                element.innerHTML += text.charAt(i);
+                i++;
+                setTimeout(typeWriter, speed);
+            }
+        }
+        window.onload = typeWriter;
+    </script>
 </body>
 </html>
