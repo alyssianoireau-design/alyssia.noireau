@@ -34,7 +34,7 @@
             background-size: cover; background-position: center; background-attachment: fixed;
         }
 
-        .project-card:hover {
+        .project-card:hover, .cert-card:hover {
             background: rgba(59, 130, 246, 0.1);
             transform: translateY(-5px);
             transition: all 0.3s ease;
@@ -52,19 +52,20 @@
             <h1 class="text-xl font-black tracking-widest neon-text uppercase leading-tight text-white">Alyssia<br><span class="text-blue-500">Noireau</span></h1>
         </div>
 
-        <nav class="flex-1 flex flex-col justify-evenly py-8 text-xs font-bold uppercase tracking-widest text-slate-400">
-            <a href="#accueil" class="nav-link flex items-center gap-4 py-4 px-8"><i class="fa-solid fa-house-chimney w-5"></i> Accueil</a>
-            <a href="#profil" class="nav-link flex items-center gap-4 py-4 px-8"><i class="fa-solid fa-id-badge w-5"></i> Profil</a>
-            <a href="#entreprise" class="nav-link flex items-center gap-4 py-4 px-8"><i class="fa-solid fa-building-user w-5"></i> Entreprise</a>
-            <a href="#tp" class="nav-link flex items-center gap-4 py-4 px-8"><i class="fa-solid fa-diagram-project w-5"></i> Projets</a>
-            <a href="#competences" class="nav-link flex items-center gap-4 py-4 px-8"><i class="fa-solid fa-microchip w-5"></i> Compétences</a>
-            <a href="#contact" class="nav-link flex items-center gap-4 py-4 px-8"><i class="fa-solid fa-paper-plane w-5"></i> Contact</a>
+        <nav class="flex-1 flex flex-col justify-evenly py-4 text-xs font-bold uppercase tracking-widest text-slate-400">
+            <a href="#accueil" class="nav-link flex items-center gap-4 py-3 px-8"><i class="fa-solid fa-house-chimney w-5"></i> Accueil</a>
+            <a href="#profil" class="nav-link flex items-center gap-4 py-3 px-8"><i class="fa-solid fa-id-badge w-5"></i> Profil</a>
+            <a href="#entreprise" class="nav-link flex items-center gap-4 py-3 px-8"><i class="fa-solid fa-building-user w-5"></i> Entreprise</a>
+            <a href="#tp" class="nav-link flex items-center gap-4 py-3 px-8"><i class="fa-solid fa-diagram-project w-5"></i> Projets</a>
+            <a href="#certifications" class="nav-link flex items-center gap-4 py-3 px-8"><i class="fa-solid fa-certificate w-5"></i> Certifications</a>
+            <a href="#competences" class="nav-link flex items-center gap-4 py-3 px-8"><i class="fa-solid fa-microchip w-5"></i> Compétences</a>
+            <a href="#contact" class="nav-link flex items-center gap-4 py-3 px-8"><i class="fa-solid fa-paper-plane w-5"></i> Contact</a>
         </nav>
         <div class="p-8 border-t border-white/5 text-center text-[9px] font-black tracking-[0.3em] text-slate-600 uppercase">SISR Portfolio © 2026</div>
     </aside>
 
     <div class="md:ml-64 min-h-screen">
-        <main class="space-y-40">
+        <main class="space-y-40 pb-20">
             
             <section id="accueil" class="min-h-screen flex flex-col justify-center items-center text-center px-8 bg-nebula">
                 <div class="mb-12">
@@ -141,64 +142,110 @@
             <section id="tp" class="max-w-6xl mx-auto px-8 py-24 scroll-mt-24">
                 <div class="text-center mb-16">
                     <h2 class="text-3xl font-black uppercase tracking-widest inline-block border-b-2 border-blue-500 pb-2 text-white">Projets Techniques</h2>
-                    <p class="text-slate-400 text-sm mt-4 tracking-widest uppercase">Mes comptes rendus d'activité en BTS SIO SISR</p>
                 </div>
-
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    
                     <a href="TP1.pdf" target="_blank" class="glass-card white-border-card p-8 rounded-2xl project-card group text-center">
                         <i class="fa-solid fa-users-gear text-3xl text-blue-400 mb-4 group-hover:scale-110 transition"></i>
                         <h3 class="text-white font-black uppercase text-sm tracking-widest">Active Directory</h3>
                         <p class="text-slate-500 text-[10px] mt-4 uppercase font-bold group-hover:text-blue-400 transition">Voir le compte rendu</p>
                     </a>
-
                     <a href="TP2.pdf" target="_blank" class="glass-card white-border-card p-8 rounded-2xl project-card group text-center">
                         <i class="fa-solid fa-ticket text-3xl text-blue-400 mb-4 group-hover:scale-110 transition"></i>
                         <h3 class="text-white font-black uppercase text-sm tracking-widest">GLPI / Helpdesk</h3>
                         <p class="text-slate-500 text-[10px] mt-4 uppercase font-bold group-hover:text-blue-400 transition">Voir le compte rendu</p>
                     </a>
-
                     <a href="TP3.pdf" target="_blank" class="glass-card white-border-card p-8 rounded-2xl project-card group text-center">
                         <i class="fa-solid fa-network-wired text-3xl text-blue-400 mb-4 group-hover:scale-110 transition"></i>
                         <h3 class="text-white font-black uppercase text-sm tracking-widest">VLAN & Routing</h3>
                         <p class="text-slate-500 text-[10px] mt-4 uppercase font-bold group-hover:text-blue-400 transition">Voir le compte rendu</p>
                     </a>
-
                     <a href="TP4.pdf" target="_blank" class="glass-card white-border-card p-8 rounded-2xl project-card group text-center">
                         <i class="fa-solid fa-server text-3xl text-blue-400 mb-4 group-hover:scale-110 transition"></i>
                         <h3 class="text-white font-black uppercase text-sm tracking-widest">Windows Server</h3>
                         <p class="text-slate-500 text-[10px] mt-4 uppercase font-bold group-hover:text-blue-400 transition">Voir le compte rendu</p>
                     </a>
-
                     <a href="TP5.pdf" target="_blank" class="glass-card white-border-card p-8 rounded-2xl project-card group text-center">
                         <i class="fa-solid fa-eye text-3xl text-blue-400 mb-4 group-hover:scale-110 transition"></i>
                         <h3 class="text-white font-black uppercase text-sm tracking-widest">Supervision Zabbix</h3>
                         <p class="text-slate-500 text-[10px] mt-4 uppercase font-bold group-hover:text-blue-400 transition">Voir le compte rendu</p>
                     </a>
-
                     <a href="TP6.pdf" target="_blank" class="glass-card white-border-card p-8 rounded-2xl project-card group text-center">
                         <i class="fa-solid fa-shield-halved text-3xl text-blue-400 mb-4 group-hover:scale-110 transition"></i>
                         <h3 class="text-white font-black uppercase text-sm tracking-widest">Sécurité VPN</h3>
                         <p class="text-slate-500 text-[10px] mt-4 uppercase font-bold group-hover:text-blue-400 transition">Voir le compte rendu</p>
                     </a>
-
                     <a href="TP7.pdf" target="_blank" class="glass-card white-border-card p-8 rounded-2xl project-card group text-center">
                         <i class="fa-solid fa-linux text-3xl text-blue-400 mb-4 group-hover:scale-110 transition"></i>
                         <h3 class="text-white font-black uppercase text-sm tracking-widest">Linux Debian</h3>
                         <p class="text-slate-500 text-[10px] mt-4 uppercase font-bold group-hover:text-blue-400 transition">Voir le compte rendu</p>
                     </a>
-
                     <a href="TP8.pdf" target="_blank" class="glass-card white-border-card p-8 rounded-2xl project-card group text-center">
                         <i class="fa-solid fa-database text-3xl text-blue-400 mb-4 group-hover:scale-110 transition"></i>
                         <h3 class="text-white font-black uppercase text-sm tracking-widest">Bases de Données</h3>
                         <p class="text-slate-500 text-[10px] mt-4 uppercase font-bold group-hover:text-blue-400 transition">Voir le compte rendu</p>
                     </a>
-
                     <a href="TP9.pdf" target="_blank" class="glass-card white-border-card p-8 rounded-2xl project-card group text-center">
                         <i class="fa-solid fa-cloud text-3xl text-blue-400 mb-4 group-hover:scale-110 transition"></i>
                         <h3 class="text-white font-black uppercase text-sm tracking-widest">Services Cloud</h3>
                         <p class="text-slate-500 text-[10px] mt-4 uppercase font-bold group-hover:text-blue-400 transition">Voir le compte rendu</p>
                     </a>
+                </div>
+            </section>
+
+            <section id="certifications" class="max-w-6xl mx-auto px-8 py-24 scroll-mt-24">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl font-black uppercase tracking-widest inline-block border-b-2 border-blue-500 pb-2 text-white">Certifications</h2>
+                    <p class="text-slate-400 text-sm mt-4 tracking-widest uppercase">Mes validations de compétences officielles</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    
+                    <div class="glass-card white-border-card p-6 rounded-xl cert-card text-center border-t-4 border-t-blue-500">
+                        <i class="fa-solid fa-graduation-cap text-2xl text-blue-400 mb-3"></i>
+                        <h3 class="text-white font-black uppercase text-[11px] tracking-widest">Certification PIX</h3>
+                        <p class="text-slate-500 text-[9px] mt-2 uppercase font-bold">Compétences Numériques</p>
+                    </div>
+
+                    <div class="glass-card white-border-card p-6 rounded-xl cert-card text-center border-t-4 border-t-blue-500">
+                        <i class="fa-solid fa-user-lock text-2xl text-blue-400 mb-3"></i>
+                        <h3 class="text-white font-black uppercase text-[11px] tracking-widest">MOOC ANSSI</h3>
+                        <p class="text-slate-500 text-[9px] mt-2 uppercase font-bold">Cybersécurité</p>
+                    </div>
+
+                    <div class="glass-card white-border-card p-6 rounded-xl cert-card text-center border-t-4 border-t-blue-500">
+                        <i class="fa-solid fa-fingerprint text-2xl text-blue-400 mb-3"></i>
+                        <h3 class="text-white font-black uppercase text-[11px] tracking-widest">Atelier CNIL</h3>
+                        <p class="text-slate-500 text-[9px] mt-2 uppercase font-bold">Protection des données</p>
+                    </div>
+
+                    <div class="glass-card white-border-card p-6 rounded-xl cert-card text-center border-t-4 border-t-blue-500">
+                        <i class="fa-solid fa-diagram-project text-2xl text-blue-400 mb-3"></i>
+                        <h3 class="text-white font-black uppercase text-[11px] tracking-widest">Cisco CCNA 1</h3>
+                        <p class="text-slate-500 text-[9px] mt-2 uppercase font-bold">Introduction Networks</p>
+                    </div>
+
+                    <div class="glass-card white-border-card p-6 rounded-xl cert-card text-center border-t-4 border-t-blue-500">
+                        <i class="fa-solid fa-route text-2xl text-blue-400 mb-3"></i>
+                        <h3 class="text-white font-black uppercase text-[11px] tracking-widest">Cisco CCNA 2</h3>
+                        <p class="text-slate-500 text-[9px] mt-2 uppercase font-bold">Switching & Routing</p>
+                    </div>
+
+                    <div class="glass-card white-border-card p-6 rounded-xl cert-card text-center border-t-4 border-t-blue-500">
+                        <i class="fa-solid fa-cloud-arrow-up text-2xl text-blue-400 mb-3"></i>
+                        <h3 class="text-white font-black uppercase text-[11px] tracking-widest">Microsoft Azure</h3>
+                        <p class="text-slate-500 text-[9px] mt-2 uppercase font-bold">AZ-900 Fundamentals</p>
+                    </div>
+
+                    <div class="glass-card white-border-card p-6 rounded-xl cert-card text-center border-t-4 border-t-blue-500">
+                        <i class="fa-solid fa-gears text-2xl text-blue-400 mb-3"></i>
+                        <h3 class="text-white font-black uppercase text-[11px] tracking-widest">ITIL 4</h3>
+                        <p class="text-slate-500 text-[9px] mt-2 uppercase font-bold">Service Management</p>
+                    </div>
+
+                    <div class="glass-card white-border-card p-6 rounded-xl cert-card text-center border-t-4 border-t-blue-500">
+                        <i class="fa-solid fa-code text-2xl text-blue-400 mb-3"></i>
+                        <h3 class="text-white font-black uppercase text-[11px] tracking-widest">Python PCEP</h3>
+                        <p class="text-slate-500 text-[9px] mt-2 uppercase font-bold">Programming Essentials</p>
+                    </div>
 
                 </div>
             </section>
