@@ -33,6 +33,13 @@
             background: linear-gradient(rgba(15, 23, 42, 0.45), rgba(15, 23, 42, 0.65)), url('fond-accueil.jpg');
             background-size: cover; background-position: center; background-attachment: fixed;
         }
+
+        /* Effet de survol pour les projets */
+        .project-card:hover {
+            background: rgba(59, 130, 246, 0.1);
+            transform: translateY(-5px);
+            transition: all 0.3s ease;
+        }
     </style>
 </head>
 <body class="bg-[#0f172a] text-slate-100 arial-text">
@@ -77,7 +84,6 @@
                             <img src="maphoto.png" alt="Alyssia Noireau" class="w-full h-full object-cover rounded-2xl" onerror="this.style.display='none';">
                             <i class="fa-solid fa-user-tie text-7xl text-blue-400/20"></i>
                         </div>
-                        
                         <a href="CV_Alyssia_Noireau.pdf" target="_blank" class="w-72 flex items-center justify-center gap-4 px-6 py-4 bg-blue-600/20 hover:bg-blue-600/40 text-blue-400 rounded-xl border border-blue-500/30 transition-all shadow-xl group">
                             <i class="fa-solid fa-file-pdf text-xl"></i> 
                             <span class="font-black uppercase tracking-[0.4em] text-xs">CV</span>
@@ -103,44 +109,80 @@
                 <div class="text-center mb-16">
                     <h2 class="text-3xl font-black uppercase tracking-widest inline-block border-b-2 border-blue-500 pb-2 text-white">Expérience chez Ista</h2>
                 </div>
-                
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start mb-12">
                     <div class="space-y-6">
                         <div class="glass-card white-border-card p-8 rounded-2xl">
                             <h3 class="text-blue-400 font-black uppercase text-xs tracking-widest mb-4">Notre Activité</h3>
-                            <p class="text-slate-200 text-sm leading-relaxed text-justify">
-                                Ista installe des compteurs connectés pour mesurer précisément la consommation d'eau et de chauffage de chaque habitant. Elle permet ainsi de facturer les charges au réel plutôt qu'au forfait, encourageant les économies d'énergie dans les immeubles collectifs.
-                            </p>
+                            <p class="text-slate-200 text-sm leading-relaxed text-justify">Ista installe des compteurs connectés pour mesurer précisément la consommation d'eau et de chauffage. Elle permet de facturer les charges au réel, encourageant les économies d'énergie.</p>
                         </div>
                         <div class="glass-card white-border-card p-8 rounded-2xl">
                             <h3 class="text-blue-400 font-black uppercase text-xs tracking-widest mb-4">Dimension Internationale</h3>
-                            <p class="text-slate-200 text-sm leading-relaxed text-justify">
-                                L'entreprise est d'origine allemande et a son siège social à Essen. Elle est aujourd'hui présente dans 22 pays, principalement en Europe mais aussi en Chine et au Brésil. Au quotidien, notre équipe collabore particulièrement avec nos collègues roumains et allemands pour mener à bien nos projets.
-                            </p>
+                            <p class="text-slate-200 text-sm leading-relaxed text-justify">Siège en Allemagne (Essen), présente dans 22 pays. Collaboration quotidienne avec des équipes en Roumanie et en Allemagne.</p>
                         </div>
                         <div class="glass-card white-border-card p-8 rounded-2xl">
                             <h3 class="text-blue-400 font-black uppercase text-xs tracking-widest mb-4">Rôle du Support Informatique</h3>
-                            <p class="text-slate-200 text-sm leading-relaxed text-justify">
-                                Au quotidien, notre équipe assure la maintenance et le bon fonctionnement des outils numériques pour garantir la productivité de tous les collaborateurs. Nous intervenons rapidement pour résoudre les incidents techniques et accompagner les utilisateurs.
-                            </p>
+                            <p class="text-slate-200 text-sm leading-relaxed text-justify">Maintenance des outils numériques, résolution d'incidents techniques et accompagnement des collaborateurs au quotidien.</p>
                         </div>
                     </div>
-
                     <div class="flex flex-col gap-6">
                         <div class="glass-card white-border-card p-2 rounded-3xl overflow-hidden h-72 shadow-xl">
-                            <img src="ista-1.jpg" alt="Ista" class="w-full h-full object-cover rounded-2xl opacity-90 hover:opacity-100 transition duration-500">
+                            <img src="ista-1.jpg" alt="Ista" class="w-full h-full object-cover rounded-2xl opacity-90">
                         </div>
                         <div class="glass-card white-border-card p-2 rounded-3xl overflow-hidden h-72 shadow-xl">
-                            <img src="ista-2.jpg" alt="Support Technique" class="w-full h-full object-cover rounded-2xl opacity-90 hover:opacity-100 transition duration-500">
+                            <img src="ista-2.jpg" alt="Support" class="w-full h-full object-cover rounded-2xl opacity-90">
                         </div>
                     </div>
                 </div>
-
                 <div class="glass-card white-border-card p-8 rounded-2xl w-full">
                     <h3 class="text-blue-400 font-black uppercase text-xs tracking-widest mb-4">Expertise Technique</h3>
-                    <p class="text-slate-100 text-base leading-relaxed text-justify">
-                        Expert du support informatique, j'assure la gestion complète du parc via le déploiement automatisé avec Baramundi et l'administration des terminaux mobiles sous Microsoft Intune. Je garantis la sécurité des accès et des données à travers Active Directory et la configuration des VPN, tout en résolvant les incidents matériels et logiciels via Jira. Au-delà de l'assistance technique, j'optimise l'efficacité du service en rédigeant des procédures détaillées et en veillant à la mise en conformité des systèmes.
-                    </p>
+                    <p class="text-slate-100 text-base leading-relaxed text-justify">Expert du support informatique, j'assure la gestion complète du parc via le déploiement automatisé avec Baramundi et l'administration des terminaux mobiles sous Microsoft Intune. Je garantis la sécurité des accès via Active Directory et VPN, tout en résolvant les incidents via Jira.</p>
+                </div>
+            </section>
+
+            <section id="tp" class="max-w-6xl mx-auto px-8 py-24 scroll-mt-24">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl font-black uppercase tracking-widest inline-block border-b-2 border-blue-500 pb-2 text-white">Projets Techniques</h2>
+                    <p class="text-slate-400 text-sm mt-4 tracking-widest uppercase">Mes comptes rendus d'activité en BTS SIO SISR</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    
+                    <a href="TP_Active_Directory.pdf" target="_blank" class="glass-card white-border-card p-8 rounded-2xl project-card group text-center">
+                        <i class="fa-solid fa-users-gear text-3xl text-blue-400 mb-4 group-hover:scale-110 transition"></i>
+                        <h3 class="text-white font-black uppercase text-sm tracking-widest">Installation Active Directory</h3>
+                        <p class="text-slate-500 text-[10px] mt-4 uppercase font-bold group-hover:text-blue-400 transition">Voir le compte rendu</p>
+                    </a>
+
+                    <a href="TP_GLPI.pdf" target="_blank" class="glass-card white-border-card p-8 rounded-2xl project-card group text-center">
+                        <i class="fa-solid fa-ticket text-3xl text-blue-400 mb-4 group-hover:scale-110 transition"></i>
+                        <h3 class="text-white font-black uppercase text-sm tracking-widest">Mise en place GLPI</h3>
+                        <p class="text-slate-500 text-[10px] mt-4 uppercase font-bold group-hover:text-blue-400 transition">Voir le compte rendu</p>
+                    </a>
+
+                    <a href="TP_VLAN.pdf" target="_blank" class="glass-card white-border-card p-8 rounded-2xl project-card group text-center">
+                        <i class="fa-solid fa-network-wired text-3xl text-blue-400 mb-4 group-hover:scale-110 transition"></i>
+                        <h3 class="text-white font-black uppercase text-sm tracking-widest">Configuration VLAN Cisco</h3>
+                        <p class="text-slate-500 text-[10px] mt-4 uppercase font-bold group-hover:text-blue-400 transition">Voir le compte rendu</p>
+                    </a>
+
+                    <a href="TP_Windows_Server.pdf" target="_blank" class="glass-card white-border-card p-8 rounded-2xl project-card group text-center">
+                        <i class="fa-solid fa-server text-3xl text-blue-400 mb-4 group-hover:scale-110 transition"></i>
+                        <h3 class="text-white font-black uppercase text-sm tracking-widest">Administration Windows Server</h3>
+                        <p class="text-slate-500 text-[10px] mt-4 uppercase font-bold group-hover:text-blue-400 transition">Voir le compte rendu</p>
+                    </a>
+
+                    <a href="TP_Supervision.pdf" target="_blank" class="glass-card white-border-card p-8 rounded-2xl project-card group text-center">
+                        <i class="fa-solid fa-eye text-3xl text-blue-400 mb-4 group-hover:scale-110 transition"></i>
+                        <h3 class="text-white font-black uppercase text-sm tracking-widest">Supervision Réseau</h3>
+                        <p class="text-slate-500 text-[10px] mt-4 uppercase font-bold group-hover:text-blue-400 transition">Voir le compte rendu</p>
+                    </a>
+
+                    <a href="TP_VPN.pdf" target="_blank" class="glass-card white-border-card p-8 rounded-2xl project-card group text-center">
+                        <i class="fa-solid fa-shield-halved text-3xl text-blue-400 mb-4 group-hover:scale-110 transition"></i>
+                        <h3 class="text-white font-black uppercase text-sm tracking-widest">Mise en œuvre VPN</h3>
+                        <p class="text-slate-500 text-[10px] mt-4 uppercase font-bold group-hover:text-blue-400 transition">Voir le compte rendu</p>
+                    </a>
+
                 </div>
             </section>
         </main>
