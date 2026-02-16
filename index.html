@@ -8,22 +8,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         .neon-text { text-shadow: 0 0 15px rgba(59, 130, 246, 0.9); }
-        .neon-border { box-shadow: 0 0 20px rgba(59, 130, 246, 0.3); }
         .glass-sidebar { background: rgba(17, 24, 39, 0.85); backdrop-filter: blur(15px); }
         .glass-card { background: rgba(15, 23, 42, 0.75); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); }
-        .arial-text { font-family: Arial, Helvetica, sans-serif !important; font-style: normal !important; }
+        .arial-text { font-family: Arial, Helvetica, sans-serif !important; }
+        .white-border-card { border: 2px solid rgba(255, 255, 255, 0.9) !important; box-shadow: 0 4px 20px rgba(255, 255, 255, 0.05); }
         
-        .white-border-card { 
-            border: 2px solid rgba(255, 255, 255, 0.9) !important; 
-            box-shadow: 0 4px 20px rgba(255, 255, 255, 0.05);
-        }
-
         .nav-link { position: relative; transition: all 0.3s ease; }
         .nav-link:hover { color: #60a5fa; padding-left: 2rem; background: rgba(59, 130, 246, 0.1); }
-        .nav-link::before { 
-            content: ''; position: absolute; left: 0; top: 0; height: 100%; width: 0; 
-            background: #3b82f6; transition: width 0.3s ease; 
-        }
+        .nav-link::before { content: ''; position: absolute; left: 0; top: 0; height: 100%; width: 0; background: #3b82f6; transition: width 0.3s ease; }
         .nav-link:hover::before { width: 4px; }
 
         .typing::after { content: '|'; animation: blink 0.7s infinite; }
@@ -34,11 +26,10 @@
             background-size: cover; background-position: center; background-attachment: fixed;
         }
 
-        .project-card:hover, .cert-card:hover {
-            background: rgba(59, 130, 246, 0.1);
-            transform: translateY(-5px);
-            transition: all 0.3s ease;
-        }
+        .project-card:hover, .cert-card:hover { transform: translateY(-5px); transition: all 0.3s ease; background: rgba(59, 130, 246, 0.1); }
+        
+        /* Ajustement du cadrage photo pour ne pas couper le front */
+        .photo-frame { object-fit: cover; object-position: center 20%; }
     </style>
 </head>
 <body class="bg-[#0f172a] text-slate-100 arial-text">
@@ -46,19 +37,18 @@
     <aside class="fixed top-0 left-0 h-screen w-64 glass-sidebar border-r border-white/10 hidden md:flex flex-col z-50 shadow-2xl">
         <div class="p-10 text-center border-b border-white/5">
             <div class="w-24 h-24 bg-slate-800 rounded-2xl mx-auto mb-6 border border-blue-500/50 shadow-lg overflow-hidden">
-                <img src="photo line 2.jpg" alt="Alyssia Noireau" class="w-full h-full object-cover">
+                <img src="photo line 2.jpg" alt="Alyssia Noireau" class="w-full h-full photo-frame">
             </div>
             <h1 class="text-xl font-black tracking-widest neon-text uppercase leading-tight text-white">Alyssia<br><span class="text-blue-500">Noireau</span></h1>
         </div>
-
         <nav class="flex-1 flex flex-col justify-evenly py-4 text-xs font-bold uppercase tracking-widest text-slate-400">
-            <a href="#accueil" class="nav-link flex items-center gap-4 py-3 px-8"><i class="fa-solid fa-house-chimney w-5"></i> Accueil</a>
-            <a href="#profil" class="nav-link flex items-center gap-4 py-3 px-8"><i class="fa-solid fa-id-badge w-5"></i> Profil</a>
-            <a href="#entreprise" class="nav-link flex items-center gap-4 py-3 px-8"><i class="fa-solid fa-building-user w-5"></i> Entreprise</a>
-            <a href="#tp" class="nav-link flex items-center gap-4 py-3 px-8"><i class="fa-solid fa-diagram-project w-5"></i> Projets</a>
-            <a href="#certifications" class="nav-link flex items-center gap-4 py-3 px-8"><i class="fa-solid fa-certificate w-5"></i> Certifications</a>
-            <a href="#competences" class="nav-link flex items-center gap-4 py-3 px-8"><i class="fa-solid fa-microchip w-5"></i> Compétences</a>
-            <a href="#contact" class="nav-link flex items-center gap-4 py-3 px-8"><i class="fa-solid fa-paper-plane w-5"></i> Contact</a>
+            <a href="#accueil" class="nav-link py-3 px-8"><i class="fa-solid fa-house-chimney w-5"></i> Accueil</a>
+            <a href="#profil" class="nav-link py-3 px-8"><i class="fa-solid fa-id-badge w-5"></i> Profil</a>
+            <a href="#entreprise" class="nav-link py-3 px-8"><i class="fa-solid fa-building-user w-5"></i> Entreprise</a>
+            <a href="#tp" class="nav-link py-3 px-8"><i class="fa-solid fa-diagram-project w-5"></i> Projets</a>
+            <a href="#certifications" class="nav-link py-3 px-8"><i class="fa-solid fa-certificate w-5"></i> Certifications</a>
+            <a href="#competences" class="nav-link py-3 px-8"><i class="fa-solid fa-microchip w-5"></i> Compétences</a>
+            <a href="#contact" class="nav-link py-3 px-8"><i class="fa-solid fa-paper-plane w-5"></i> Contact</a>
         </nav>
         <div class="p-8 border-t border-white/5 text-center text-[9px] font-black tracking-[0.3em] text-slate-600 uppercase">SISR Portfolio © 2026</div>
     </aside>
@@ -67,99 +57,113 @@
         <main class="space-y-40 pb-20">
             
             <section id="accueil" class="min-h-screen flex flex-col justify-center items-center text-center px-8 bg-nebula">
-                <div class="mb-12">
-                    <h2 class="text-white text-7xl font-black tracking-tighter uppercase neon-text">Alyssia Noireau</h2>
-                    <h3 id="typewriter" class="text-blue-400 text-3xl font-bold uppercase tracking-[0.2em] mt-8 neon-text typing min-h-[1.5em]"></h3>
-                </div>
+                <h2 class="text-white text-7xl font-black tracking-tighter uppercase neon-text">Alyssia Noireau</h2>
+                <h3 id="typewriter" class="text-blue-400 text-3xl font-bold uppercase tracking-[0.2em] mt-8 neon-text typing min-h-[1.5em]"></h3>
             </section>
 
             <section id="profil" class="max-w-6xl mx-auto px-8 py-24 scroll-mt-24">
-                <div class="text-center mb-16">
-                    <h2 class="text-3xl font-black uppercase tracking-widest inline-block border-b-2 border-blue-500 pb-2 text-white">Présentation</h2>
-                </div>
+                <div class="text-center mb-16"><h2 class="text-3xl font-black uppercase tracking-widest inline-block border-b-2 border-blue-500 pb-2">Présentation</h2></div>
                 <div class="grid grid-cols-1 lg:grid-cols-5 gap-12 items-start">
                     <div class="lg:col-span-2 flex flex-col items-center space-y-8">
-                        <div class="glass-card w-72 h-72 p-2 rounded-3xl border border-blue-500/30 shadow-2xl overflow-hidden neon-border transition-transform hover:scale-105">
-                            <img src="photo line 2.jpg" alt="Alyssia Noireau" class="w-full h-full object-cover rounded-2xl">
+                        <div class="glass-card w-72 h-72 p-2 rounded-3xl border border-blue-500/30 overflow-hidden shadow-2xl">
+                            <img src="photo line 2.jpg" alt="Alyssia Noireau" class="w-full h-full photo-frame rounded-2xl">
                         </div>
-                        <a href="CV_Alyssia_Noireau.pdf" target="_blank" class="w-72 flex items-center justify-center gap-4 px-6 py-4 bg-blue-600/20 hover:bg-blue-600/40 text-blue-400 rounded-xl border border-blue-500/30 transition-all shadow-xl group">
-                            <i class="fa-solid fa-file-pdf text-xl"></i> 
-                            <span class="font-black uppercase tracking-[0.4em] text-xs">CV</span>
-                        </a>
+                        <a href="CV_Alyssia_Noireau.pdf" target="_blank" class="w-72 flex items-center justify-center gap-4 px-6 py-4 bg-blue-600/20 hover:bg-blue-600/40 text-blue-400 rounded-xl border border-blue-500/30 transition shadow-xl font-black uppercase tracking-[0.4em] text-xs">CV</a>
                     </div>
                     <div class="lg:col-span-3 space-y-6">
-                        <div class="glass-card white-border-card p-8 rounded-2xl">
-                            <div class="text-slate-100 text-lg leading-relaxed text-justify">
-                                <p>Je m'appelle Alyssia Noireau, j'ai 19 ans et je suis actuellement technicienne alternante en support informatique chez Ista (Massy).</p>
-                                <p class="mt-4">J'entame ma deuxième année avec une solide base de compétences humaines et techniques. Dotée d'un fort esprit d'équipe et d'une rigueur constante, je m'efforce de transformer chaque défi technique en une solution fluide grâce à mon sens de l'organisation et ma diplomatie.</p>
-                            </div>
+                        <div class="glass-card white-border-card p-8 rounded-2xl text-lg leading-relaxed text-justify">
+                            <p>Je m'appelle Alyssia Noireau, j'ai 19 ans et je suis actuellement technicienne alternante en support informatique chez Ista (Massy). J'entame ma deuxième année avec une solide base de compétences humaines et techniques.</p>
                         </div>
-                        <div class="glass-card white-border-card p-8 rounded-2xl">
-                            <div class="text-slate-100 text-lg leading-relaxed text-justify">
-                                <p>Véritablement motivée par l'évolution vers la gestion de projets informatiques, je souhaite poursuivre mon parcours par une Licence Chef de projet (Développement, Sécurité et Exploitation) puis un Master MIAGE, afin de mettre mon dynamisme et mon expertise terrain au service du pilotage de solutions innovantes, toujours en alternance.</p>
-                            </div>
+                        <div class="glass-card white-border-card p-8 rounded-2xl text-lg leading-relaxed text-justify">
+                            <p>Véritablement motivée par l'évolution vers la gestion de projets informatiques, je souhaite poursuivre par une Licence Chef de projet puis un Master MIAGE en alternance.</p>
                         </div>
                     </div>
                 </div>
             </section>
 
             <section id="entreprise" class="max-w-6xl mx-auto px-8 py-24 scroll-mt-24">
-                <div class="text-center mb-16">
-                    <h2 class="text-3xl font-black uppercase tracking-widest inline-block border-b-2 border-blue-500 pb-2 text-white">Expérience chez Ista</h2>
-                </div>
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start mb-12">
+                <div class="text-center mb-16"><h2 class="text-3xl font-black uppercase tracking-widest inline-block border-b-2 border-blue-500 pb-2">Expérience chez Ista</h2></div>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-12">
                     <div class="space-y-6">
                         <div class="glass-card white-border-card p-8 rounded-2xl">
                             <h3 class="text-blue-400 font-black uppercase text-xs tracking-widest mb-4">Notre Activité</h3>
-                            <p class="text-slate-200 text-sm leading-relaxed text-justify">Ista installe des compteurs connectés pour mesurer précisément la consommation d'eau et de chauffage.</p>
+                            <p class="text-sm">Ista installe des compteurs connectés pour mesurer la consommation d'eau et de chauffage, encourageant les économies d'énergie.</p>
                         </div>
                         <div class="glass-card white-border-card p-8 rounded-2xl">
-                            <h3 class="text-blue-400 font-black uppercase text-xs tracking-widest mb-4">Dimension Internationale</h3>
-                            <p class="text-slate-200 text-sm leading-relaxed text-justify">Siège en Allemagne, présente dans 22 pays. Collaboration avec des équipes internationales.</p>
-                        </div>
-                        <div class="glass-card white-border-card p-8 rounded-2xl">
-                            <h3 class="text-blue-400 font-black uppercase text-xs tracking-widest mb-4">Rôle du Support Informatique</h3>
-                            <p class="text-slate-200 text-sm leading-relaxed text-justify">Maintenance des outils numériques et résolution d'incidents techniques.</p>
+                            <h3 class="text-blue-400 font-black uppercase text-xs tracking-widest mb-4">Support Informatique</h3>
+                            <p class="text-sm">Maintenance des outils numériques, résolution d'incidents techniques et accompagnement des utilisateurs.</p>
                         </div>
                     </div>
                     <div class="flex flex-col gap-6">
-                        <div class="glass-card white-border-card p-2 rounded-3xl overflow-hidden h-72 shadow-xl">
-                            <img src="ista-1.jpg" alt="Ista" class="w-full h-full object-cover rounded-2xl opacity-90">
-                        </div>
-                        <div class="glass-card white-border-card p-2 rounded-3xl overflow-hidden h-72 shadow-xl">
-                            <img src="ista-2.jpg" alt="Support" class="w-full h-full object-cover rounded-2xl opacity-90">
+                        <div class="glass-card white-border-card p-2 rounded-3xl h-72 shadow-xl overflow-hidden">
+                            <img src="ista-1.jpg" class="w-full h-full object-cover rounded-2xl opacity-90">
                         </div>
                     </div>
                 </div>
                 <div class="glass-card white-border-card p-8 rounded-2xl w-full">
                     <h3 class="text-blue-400 font-black uppercase text-xs tracking-widest mb-4">Expertise Technique</h3>
-                    <p class="text-slate-100 text-base leading-relaxed text-justify">Expert du support informatique, j'assure la gestion complète du parc via Baramundi et Microsoft Intune. Je garantis la sécurité via Active Directory et VPN, tout en résolvant les incidents via Jira.</p>
+                    <p class="text-base leading-relaxed text-justify">Expert du support informatique, j'assure la gestion complète du parc via Baramundi et Microsoft Intune. Je garantis la sécurité via Active Directory et VPN, tout en résolvant les incidents via Jira.</p>
                 </div>
             </section>
 
             <section id="tp" class="max-w-6xl mx-auto px-8 py-24 scroll-mt-24">
-                <div class="text-center mb-16">
-                    <h2 class="text-3xl font-black uppercase tracking-widest inline-block border-b-2 border-blue-500 pb-2 text-white">Projets Techniques</h2>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-center">
+                <div class="text-center mb-16"><h2 class="text-3xl font-black uppercase tracking-widest inline-block border-b-2 border-blue-500 pb-2">Projets Techniques</h2></div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
                     <a href="TP1.pdf" target="_blank" class="glass-card white-border-card p-8 rounded-2xl project-card group">
-                        <i class="fa-solid fa-users-gear text-3xl text-blue-400 mb-4 group-hover:scale-110 transition"></i>
+                        <i class="fa-solid fa-users-gear text-3xl text-blue-400 mb-4"></i>
                         <h3 class="text-white font-black uppercase text-sm tracking-widest">Active Directory</h3>
-                        <p class="text-slate-500 text-[10px] mt-4 uppercase font-bold group-hover:text-blue-400 transition">Voir le compte rendu</p>
+                    </a>
+                    <a href="TP2.pdf" target="_blank" class="glass-card white-border-card p-8 rounded-2xl project-card group">
+                        <i class="fa-solid fa-ticket text-3xl text-blue-400 mb-4"></i>
+                        <h3 class="text-white font-black uppercase text-sm tracking-widest">GLPI / Helpdesk</h3>
+                    </a>
+                    <a href="TP3.pdf" target="_blank" class="glass-card white-border-card p-8 rounded-2xl project-card group">
+                        <i class="fa-solid fa-network-wired text-3xl text-blue-400 mb-4"></i>
+                        <h3 class="text-white font-black uppercase text-sm tracking-widest">VLAN & Routing</h3>
                     </a>
                     </div>
             </section>
 
             <section id="certifications" class="max-w-6xl mx-auto px-8 py-24 scroll-mt-24">
-                <div class="text-center mb-16">
-                    <h2 class="text-3xl font-black uppercase tracking-widest inline-block border-b-2 border-blue-500 pb-2 text-white">Certifications</h2>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 text-center">
+                <div class="text-center mb-16"><h2 class="text-3xl font-black uppercase tracking-widest inline-block border-b-2 border-blue-500 pb-2">Certifications</h2></div>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
                     <div class="glass-card white-border-card p-6 rounded-xl cert-card border-t-4 border-t-blue-500">
                         <i class="fa-solid fa-graduation-cap text-2xl text-blue-400 mb-3"></i>
                         <h3 class="text-white font-black uppercase text-[11px] tracking-widest">Certification PIX</h3>
                     </div>
+                    <div class="glass-card white-border-card p-6 rounded-xl cert-card border-t-4 border-t-blue-500">
+                        <i class="fa-solid fa-user-lock text-2xl text-blue-400 mb-3"></i>
+                        <h3 class="text-white font-black uppercase text-[11px] tracking-widest">MOOC ANSSI</h3>
                     </div>
+                </div>
+            </section>
+
+            <section id="competences" class="max-w-6xl mx-auto px-8 py-24 scroll-mt-24">
+                <div class="text-center mb-16"><h2 class="text-3xl font-black uppercase tracking-widest inline-block border-b-2 border-blue-500 pb-2">Compétences</h2></div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="glass-card white-border-card p-8 rounded-2xl">
+                        <h3 class="text-blue-400 font-black uppercase text-xs tracking-widest mb-6 border-b border-white/10 pb-2">Systèmes</h3>
+                        <ul class="space-y-2 text-sm"><li>Windows Server 2019/2022</li><li>Active Directory</li><li>Debian / Ubuntu Server</li></ul>
+                    </div>
+                    <div class="glass-card white-border-card p-8 rounded-2xl">
+                        <h3 class="text-blue-400 font-black uppercase text-xs tracking-widest mb-6 border-b border-white/10 pb-2">Réseaux</h3>
+                        <ul class="space-y-2 text-sm"><li>Cisco IOS (Switch/Router)</li><li>VPN (IPsec / OpenVPN)</li><li>Services (DNS, DHCP)</li></ul>
+                    </div>
+                    <div class="glass-card white-border-card p-8 rounded-2xl">
+                        <h3 class="text-blue-400 font-black uppercase text-xs tracking-widest mb-6 border-b border-white/10 pb-2">Outils Pro</h3>
+                        <ul class="space-y-2 text-sm"><li>Microsoft Intune</li><li>Baramundi</li><li>Jira / GLPI</li></ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="contact" class="max-w-6xl mx-auto px-8 py-24 scroll-mt-24">
+                <div class="text-center mb-16"><h2 class="text-3xl font-black uppercase tracking-widest inline-block border-b-2 border-blue-500 pb-2">Contact</h2></div>
+                <div class="glass-card white-border-card p-12 rounded-3xl max-w-2xl mx-auto text-center">
+                    <div class="flex flex-col gap-8">
+                        <a href="mailto:votre-email@exemple.com" class="text-xl font-bold hover:text-blue-400 transition italic"><i class="fa-solid fa-envelope mr-4"></i> alyssia.noireau@exemple.com</a>
+                        <a href="https://linkedin.com/in/alyssianoireau" target="_blank" class="text-xl font-bold hover:text-blue-400 transition italic"><i class="fa-brands fa-linkedin mr-4"></i> LinkedIn / Alyssia Noireau</a>
+                    </div>
+                </div>
             </section>
 
         </main>
@@ -168,17 +172,11 @@
     <script>
         const text = "Bienvenue sur mon Portfolio";
         const speed = 100;
-        const pause = 2000;
         let i = 0;
         const element = document.getElementById("typewriter");
         function typeWriter() {
-            if (i < text.length) {
-                element.innerHTML += text.charAt(i);
-                i++;
-                setTimeout(typeWriter, speed);
-            } else {
-                setTimeout(() => { element.innerHTML = ""; i = 0; typeWriter(); }, pause);
-            }
+            if (i < text.length) { element.innerHTML += text.charAt(i); i++; setTimeout(typeWriter, speed); }
+            else { setTimeout(() => { element.innerHTML = ""; i = 0; typeWriter(); }, 2000); }
         }
         window.onload = typeWriter;
     </script>
