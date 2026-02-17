@@ -27,9 +27,18 @@
         }
 
         .project-card:hover, .cert-card:hover { transform: translateY(-5px); transition: all 0.3s ease; background: rgba(59, 130, 246, 0.1); }
-        
-        /* Cadrage photo optimisé pour ne pas couper le front */
         .photo-frame { width: 100%; height: 100%; object-fit: cover; object-position: center 15%; }
+
+        /* Style pour l'overlay interactif (Bio au clic) */
+        .info-overlay {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background: #a855f7; /* Couleur violette comme sur ton image */
+            color: white; display: flex; flex-direction: column; justify-content: center;
+            align-items: center; padding: 20px; text-align: center;
+            opacity: 0; transition: opacity 0.3s ease; pointer-events: none;
+            border-radius: 1rem;
+        }
+        .info-card:focus .info-overlay, .info-card:active .info-overlay { opacity: 1; pointer-events: auto; }
     </style>
 </head>
 <body class="bg-[#0f172a] text-slate-100 arial-text">
@@ -49,6 +58,7 @@
             <a href="#tp" class="nav-link py-3 px-8"><i class="fa-solid fa-diagram-project w-5"></i> Projets</a>
             <a href="#certifications" class="nav-link py-3 px-8"><i class="fa-solid fa-certificate w-5"></i> Certifications</a>
             <a href="#competences" class="nav-link py-3 px-8"><i class="fa-solid fa-microchip w-5"></i> Compétences</a>
+            <a href="#veille" class="nav-link py-3 px-8"><i class="fa-solid fa-globe w-5"></i> 🌐 Veille Tech</a>
             <a href="#contact" class="nav-link py-3 px-8"><i class="fa-solid fa-paper-plane w-5"></i> Contact</a>
         </nav>
         <div class="p-8 border-t border-white/5"></div>
@@ -110,8 +120,8 @@
             </section>
 
             <section id="tp" class="max-w-6xl mx-auto px-8 py-24 scroll-mt-24">
-                <div class="text-center mb-16"><h2 class="text-3xl font-black uppercase tracking-widest inline-block border-b-2 border-blue-500 pb-2 text-white">Projets Techniques</h2></div>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-center">
+                <div class="text-center mb-16"><h2 class="text-3xl font-black uppercase tracking-widest inline-block border-b-2 border-blue-500 pb-2">Projets Techniques</h2></div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
                     <a href="TP1.pdf" target="_blank" class="glass-card white-border-card p-8 rounded-2xl project-card group"><i class="fa-solid fa-users-gear text-3xl text-blue-400 mb-4"></i><h3 class="text-white font-black uppercase text-sm">Active Directory</h3></a>
                     <a href="TP2.pdf" target="_blank" class="glass-card white-border-card p-8 rounded-2xl project-card group"><i class="fa-solid fa-ticket text-3xl text-blue-400 mb-4"></i><h3 class="text-white font-black uppercase text-sm">GLPI / Helpdesk</h3></a>
                     <a href="TP3.pdf" target="_blank" class="glass-card white-border-card p-8 rounded-2xl project-card group"><i class="fa-solid fa-network-wired text-3xl text-blue-400 mb-4"></i><h3 class="text-white font-black uppercase text-sm">VLAN & Routing</h3></a>
@@ -125,7 +135,7 @@
             </section>
 
             <section id="certifications" class="max-w-6xl mx-auto px-8 py-24 scroll-mt-24">
-                <div class="text-center mb-16"><h2 class="text-3xl font-black uppercase tracking-widest inline-block border-b-2 border-blue-500 pb-2 text-white">Certifications</h2></div>
+                <div class="text-center mb-16"><h2 class="text-3xl font-black uppercase tracking-widest inline-block border-b-2 border-blue-500 pb-2">Certifications</h2></div>
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
                     <div class="glass-card white-border-card p-6 rounded-xl cert-card border-t-4 border-t-blue-500"><i class="fa-solid fa-graduation-cap text-2xl text-blue-400 mb-3"></i><h3 class="text-white font-black uppercase text-[11px]">PIX</h3></div>
                     <div class="glass-card white-border-card p-6 rounded-xl cert-card border-t-4 border-t-blue-500"><i class="fa-solid fa-user-lock text-2xl text-blue-400 mb-3"></i><h3 class="text-white font-black uppercase text-[11px]">ANSSI</h3></div>
@@ -139,37 +149,49 @@
             </section>
 
             <section id="competences" class="max-w-6xl mx-auto px-8 py-24 scroll-mt-24">
-                <div class="text-center mb-16"><h2 class="text-3xl font-black uppercase tracking-widest inline-block border-b-2 border-blue-500 pb-2 text-white">Compétences</h2></div>
+                <div class="text-center mb-16"><h2 class="text-3xl font-black uppercase tracking-widest inline-block border-b-2 border-blue-500 pb-2">Compétences</h2></div>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <div class="glass-card white-border-card p-8 rounded-2xl">
-                        <ul class="space-y-4 text-sm font-bold uppercase tracking-wider">
-                            <li><i class="fa-solid fa-headset text-blue-400 mr-2"></i> Support & Ticketing</li>
-                            <li><i class="fa-solid fa-laptop-medical text-blue-400 mr-2"></i> Gestion Parc & Master</li>
-                            <li><i class="fa-solid fa-terminal text-blue-400 mr-2"></i> PowerShell / Bash</li>
-                            <li><i class="fa-solid fa-chart-line text-blue-400 mr-2"></i> Zabbix / PRTG</li>
-                        </ul>
+                    <div class="glass-card white-border-card p-8 rounded-2xl info-card relative cursor-pointer" tabindex="0">
+                        <div class="text-center space-y-4">
+                            <i class="fa-brands fa-python text-5xl text-blue-400"></i>
+                            <h3 class="text-white font-black uppercase text-sm">Python</h3>
+                        </div>
+                        <div class="info-overlay">
+                            <h3 class="font-black text-lg mb-2">Python</h3>
+                            <p class="italic text-sm mb-4">Intermédiaire</p>
+                            <ul class="text-xs space-y-2">
+                                <li>• Automatisation</li>
+                                <li>• Scripts Réseau</li>
+                                <li>• Parsing fichiers</li>
+                            </ul>
+                        </div>
                     </div>
                     <div class="glass-card white-border-card p-8 rounded-2xl">
                         <ul class="space-y-4 text-sm font-bold uppercase tracking-wider">
                             <li><i class="fa-solid fa-network-wired text-blue-400 mr-2"></i> Services Réseaux (SISR)</li>
                             <li><i class="fa-solid fa-user-shield text-blue-400 mr-2"></i> Active Directory</li>
                             <li><i class="fa-solid fa-box-archive text-blue-400 mr-2"></i> Virtualisation</li>
-                            <li><i class="fa-solid fa-shield-halved text-blue-400 mr-2"></i> Firewalling</li>
                         </ul>
                     </div>
                     <div class="glass-card white-border-card p-8 rounded-2xl">
                         <ul class="space-y-4 text-sm font-bold uppercase tracking-wider">
                             <li><i class="fa-solid fa-database text-blue-400 mr-2"></i> Backup / Sauvegarde</li>
                             <li><i class="fa-solid fa-cloud text-blue-400 mr-2"></i> Services Cloud</li>
-                            <li><i class="fa-solid fa-file-contract text-blue-400 mr-2"></i> Documentation Tech</li>
-                            <li><i class="fa-solid fa-microchip text-blue-400 mr-2"></i> Veille & Auto-formation</li>
+                            <li><i class="fa-solid fa-microchip text-blue-400 mr-2"></i> Veille Tech</li>
                         </ul>
                     </div>
                 </div>
             </section>
 
+            <section id="veille" class="max-w-6xl mx-auto px-8 py-24 scroll-mt-24">
+                <div class="text-center mb-16"><h2 class="text-3xl font-black uppercase tracking-widest inline-block border-b-2 border-blue-500 pb-2">Veille Technologique</h2></div>
+                <div class="glass-card white-border-card p-8 rounded-2xl">
+                    <p class="text-lg leading-relaxed text-center italic">"Se tenir informé pour anticiper les menaces et les innovations de demain."</p>
+                </div>
+            </section>
+
             <section id="contact" class="max-w-6xl mx-auto px-8 py-24 scroll-mt-24">
-                <div class="text-center mb-16"><h2 class="text-3xl font-black uppercase tracking-widest inline-block border-b-2 border-blue-500 pb-2 text-white">Contact</h2></div>
+                <div class="text-center mb-16"><h2 class="text-3xl font-black uppercase tracking-widest inline-block border-b-2 border-blue-500 pb-2">Contact</h2></div>
                 <div class="max-w-4xl mx-auto flex flex-col items-center gap-12 text-center">
                     <div class="space-y-6">
                         <p class="text-2xl font-bold">Alyssia.noireau@gmail.com</p>
