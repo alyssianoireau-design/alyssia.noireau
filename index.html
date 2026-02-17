@@ -27,6 +27,8 @@
         }
 
         .project-card:hover, .cert-card:hover { transform: translateY(-5px); transition: all 0.3s ease; background: rgba(59, 130, 246, 0.1); }
+        
+        /* Cadrage photo optimisé pour ne pas couper le front */
         .photo-frame { width: 100%; height: 100%; object-fit: cover; object-position: center 15%; }
     </style>
 </head>
@@ -38,6 +40,7 @@
                 <img src="photo line 2.jpg" alt="Alyssia Noireau" class="photo-frame">
             </div>
             <h1 class="text-xl font-black tracking-widest neon-text uppercase leading-tight text-white">Alyssia<br><span class="text-blue-500">Noireau</span></h1>
+            <p class="text-[10px] text-blue-400 font-bold mt-2 tracking-[0.2em] uppercase">BTS SIO SISR</p>
         </div>
         <nav class="flex-1 flex flex-col justify-evenly py-4 text-xs font-bold uppercase tracking-widest text-slate-400">
             <a href="#accueil" class="nav-link py-3 px-8"><i class="fa-solid fa-house-chimney w-5"></i> Accueil</a>
@@ -48,7 +51,7 @@
             <a href="#competences" class="nav-link py-3 px-8"><i class="fa-solid fa-microchip w-5"></i> Compétences</a>
             <a href="#contact" class="nav-link py-3 px-8"><i class="fa-solid fa-paper-plane w-5"></i> Contact</a>
         </nav>
-        <div class="p-8 border-t border-white/5 text-center text-[9px] font-black tracking-[0.3em] text-slate-600 uppercase">SISR Portfolio © 2026</div>
+        <div class="p-8 border-t border-white/5"></div>
     </aside>
 
     <div class="md:ml-64 min-h-screen">
@@ -69,55 +72,46 @@
                         <a href="Professional CV Resume.pdf" target="_blank" class="w-72 flex items-center justify-center gap-4 px-6 py-4 bg-blue-600/20 hover:bg-blue-600/40 text-blue-400 rounded-xl border border-blue-500/30 transition shadow-xl font-black uppercase tracking-[0.4em] text-xs">CV</a>
                         <a href="Tableau_de_Competences.pdf" target="_blank" class="w-72 flex items-center justify-center gap-4 px-6 py-4 bg-blue-600/20 hover:bg-blue-600/40 text-blue-400 rounded-xl border border-blue-500/30 transition shadow-xl font-black uppercase tracking-[0.1em] text-[10px]">Tableau de compétences</a>
                     </div>
-                    <div class="lg:col-span-3 space-y-6 text-lg text-justify">
-                        <div class="glass-card white-border-card p-8 rounded-2xl leading-relaxed">
-                            <p>Je m'appelle Alyssia Noireau, j'ai 19 ans et je suis actuellement technicienne alternante en support informatique chez Ista (Massy). J'entame ma deuxième année avec une solide base de compétences humaines et techniques.</p>
-                        </div>
-                        <div class="glass-card white-border-card p-8 rounded-2xl leading-relaxed">
-                            <p>Véritablement motivée par l'évolution vers la gestion de projets informatiques, je souhaite poursuivre par une Licence Chef de projet puis un Master MIAGE en alternance.</p>
+                    <div class="lg:col-span-3">
+                        <div class="glass-card white-border-card p-8 rounded-2xl text-lg leading-relaxed text-justify">
+                            <p>Diplômée d'un Bac STMG (Mercatique), j'ai choisi de spécialiser mon profil vers les systèmes d'information. Je combine ainsi une approche orientée client et une expertise technique en devenir. Actuellement en deuxième année de BTS SIO (option SISR) au sein de l'école ORT Daniel Mayer, j'effectue mon alternance chez Ista en tant que technicienne réseaux et systèmes.</p>
+                            <p class="mt-6">Animée par une réelle volonté d'évoluer vers la gestion de projets informatiques, je projette d'intégrer la licence Chef de projet développement, sécurité et exploitation au sein du CNAM en alternance. Mon objectif est de poursuivre ensuite mon cursus vers un Master MIAGE, afin de consolider mes compétences stratégiques et techniques.</p>
                         </div>
                     </div>
                 </div>
             </section>
 
             <section id="entreprise" class="max-w-6xl mx-auto px-8 py-24 scroll-mt-24">
-                <div class="text-center mb-16"><h2 class="text-3xl font-black uppercase tracking-widest inline-block border-b-2 border-blue-500 pb-2">Expérience chez Ista</h2></div>
-                
+                <div class="text-center mb-16"><h2 class="text-3xl font-black uppercase tracking-widest inline-block border-b-2 border-blue-500 pb-2 text-white">Expérience chez Ista</h2></div>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
                     <div class="glass-card white-border-card p-6 rounded-2xl">
                         <h3 class="text-blue-400 font-black uppercase text-xs tracking-widest mb-4">Notre Activité</h3>
-                        <p class="text-sm">Ista installe des compteurs connectés pour mesurer précisément la consommation d'eau et de chauffage de chaque habitant. Elle encourage les économies d'énergie.</p>
+                        <p class="text-sm">Ista installe des compteurs connectés pour mesurer précisément la consommation d'eau et de chauffage de chaque habitant.</p>
                     </div>
                     <div class="glass-card white-border-card p-6 rounded-2xl">
                         <h3 class="text-blue-400 font-black uppercase text-xs tracking-widest mb-4">Dimension Internationale</h3>
-                        <p class="text-sm">Siège en Allemagne, présente dans 22 pays. Collaboration quotidienne avec nos collègues roumains et allemands pour nos projets.</p>
+                        <p class="text-sm">Siège en Allemagne, présente dans 22 pays. Collaboration quotidienne avec des équipes internationales.</p>
                     </div>
                     <div class="glass-card white-border-card p-6 rounded-2xl">
                         <h3 class="text-blue-400 font-black uppercase text-xs tracking-widest mb-4">Rôle du Support</h3>
-                        <p class="text-sm">Maintenance des outils numériques pour garantir la productivité. Résolution rapide des incidents techniques et accompagnement utilisateurs.</p>
+                        <p class="text-sm">Maintenance des outils numériques, résolution d'incidents techniques et accompagnement utilisateurs.</p>
                     </div>
                 </div>
-
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-                    <div class="glass-card white-border-card p-2 rounded-3xl h-64 overflow-hidden shadow-xl">
-                        <img src="ista-1.jpg" alt="Logo Ista" class="w-full h-full object-contain bg-white rounded-2xl">
-                    </div>
-                    <div class="glass-card white-border-card p-2 rounded-3xl h-64 overflow-hidden shadow-xl">
-                        <img src="ista-2.jpg" alt="Ma photo d'intervention" class="w-full h-full object-cover rounded-2xl opacity-90">
-                    </div>
+                    <div class="glass-card white-border-card p-2 rounded-3xl h-64 overflow-hidden shadow-xl"><img src="ista-1.jpg" alt="Logo Ista" class="w-full h-full object-contain bg-white rounded-2xl"></div>
+                    <div class="glass-card white-border-card p-2 rounded-3xl h-64 overflow-hidden shadow-xl"><img src="ista-2.jpg" alt="Intervention" class="w-full h-full object-cover rounded-2xl opacity-90"></div>
                 </div>
-
                 <div class="text-center">
                     <h2 class="text-2xl font-black uppercase tracking-widest mb-8 text-blue-400">Mes Missions et Expertises</h2>
                     <div class="glass-card white-border-card p-8 rounded-2xl w-full text-base leading-relaxed text-justify">
-                        <p>Expert du support informatique, j'assure la gestion complète du parc via le déploiement automatisé avec Baramundi et l'administration des terminaux mobiles sous Microsoft Intune. Je garantis la sécurité des accès et des données à travers Active Directory et la configuration des VPN, tout en résolvant les incidents matériels et logiciels via Jira. Au-delà de l'assistance technique, j'optimise l'efficacité du service en rédigeant des procédures détaillées et en veillant à la mise en conformité des systèmes.</p>
+                        <p>Expert du support informatique, j'assure la gestion complète du parc via le déploiement automatisé avec Baramundi et l'administration des terminaux mobiles sous Microsoft Intune. Je garantis la sécurité des accès et des données à travers Active Directory et la configuration des VPN, tout en résolvant les incidents matériels et logiciels via Jira.</p>
                     </div>
                 </div>
             </section>
 
             <section id="tp" class="max-w-6xl mx-auto px-8 py-24 scroll-mt-24">
-                <div class="text-center mb-16"><h2 class="text-3xl font-black uppercase tracking-widest inline-block border-b-2 border-blue-500 pb-2">Projets Techniques</h2></div>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                <div class="text-center mb-16"><h2 class="text-3xl font-black uppercase tracking-widest inline-block border-b-2 border-blue-500 pb-2 text-white">Projets Techniques</h2></div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-center">
                     <a href="TP1.pdf" target="_blank" class="glass-card white-border-card p-8 rounded-2xl project-card group"><i class="fa-solid fa-users-gear text-3xl text-blue-400 mb-4"></i><h3 class="text-white font-black uppercase text-sm">Active Directory</h3></a>
                     <a href="TP2.pdf" target="_blank" class="glass-card white-border-card p-8 rounded-2xl project-card group"><i class="fa-solid fa-ticket text-3xl text-blue-400 mb-4"></i><h3 class="text-white font-black uppercase text-sm">GLPI / Helpdesk</h3></a>
                     <a href="TP3.pdf" target="_blank" class="glass-card white-border-card p-8 rounded-2xl project-card group"><i class="fa-solid fa-network-wired text-3xl text-blue-400 mb-4"></i><h3 class="text-white font-black uppercase text-sm">VLAN & Routing</h3></a>
@@ -131,7 +125,7 @@
             </section>
 
             <section id="certifications" class="max-w-6xl mx-auto px-8 py-24 scroll-mt-24">
-                <div class="text-center mb-16"><h2 class="text-3xl font-black uppercase tracking-widest inline-block border-b-2 border-blue-500 pb-2">Certifications</h2></div>
+                <div class="text-center mb-16"><h2 class="text-3xl font-black uppercase tracking-widest inline-block border-b-2 border-blue-500 pb-2 text-white">Certifications</h2></div>
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
                     <div class="glass-card white-border-card p-6 rounded-xl cert-card border-t-4 border-t-blue-500"><i class="fa-solid fa-graduation-cap text-2xl text-blue-400 mb-3"></i><h3 class="text-white font-black uppercase text-[11px]">PIX</h3></div>
                     <div class="glass-card white-border-card p-6 rounded-xl cert-card border-t-4 border-t-blue-500"><i class="fa-solid fa-user-lock text-2xl text-blue-400 mb-3"></i><h3 class="text-white font-black uppercase text-[11px]">ANSSI</h3></div>
@@ -145,7 +139,7 @@
             </section>
 
             <section id="competences" class="max-w-6xl mx-auto px-8 py-24 scroll-mt-24">
-                <div class="text-center mb-16"><h2 class="text-3xl font-black uppercase tracking-widest inline-block border-b-2 border-blue-500 pb-2">Compétences</h2></div>
+                <div class="text-center mb-16"><h2 class="text-3xl font-black uppercase tracking-widest inline-block border-b-2 border-blue-500 pb-2 text-white">Compétences</h2></div>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                     <div class="glass-card white-border-card p-8 rounded-2xl">
                         <ul class="space-y-4 text-sm font-bold uppercase tracking-wider">
@@ -175,7 +169,7 @@
             </section>
 
             <section id="contact" class="max-w-6xl mx-auto px-8 py-24 scroll-mt-24">
-                <div class="text-center mb-16"><h2 class="text-3xl font-black uppercase tracking-widest inline-block border-b-2 border-blue-500 pb-2">Contact</h2></div>
+                <div class="text-center mb-16"><h2 class="text-3xl font-black uppercase tracking-widest inline-block border-b-2 border-blue-500 pb-2 text-white">Contact</h2></div>
                 <div class="max-w-4xl mx-auto flex flex-col items-center gap-12 text-center">
                     <div class="space-y-6">
                         <p class="text-2xl font-bold">Alyssia.noireau@gmail.com</p>
