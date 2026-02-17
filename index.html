@@ -33,12 +33,11 @@
             transition: all 0.5s ease-in-out; 
             background: #a855f7; border-radius: 1rem; margin-top: 1rem;
         }
-        .comp-card.active .comp-detail { max-height: 400px; opacity: 1; padding: 1.5rem; }
+        .comp-card.active .comp-detail { max-height: 500px; opacity: 1; padding: 1.5rem; }
 
         /* ACCORDÉON VEILLE */
-        .veille-header { background: #a855f7; cursor: pointer; }
-        .veille-content { max-height: 0; overflow: hidden; transition: max-height 0.5s ease-out; background: rgba(168, 85, 247, 0.1); }
         .veille-item.active .veille-content { max-height: 500px; }
+        .veille-content { max-height: 0; overflow: hidden; transition: max-height 0.5s ease-out; background: rgba(168, 85, 247, 0.1); }
 
         .photo-frame { width: 100%; height: 100%; object-fit: cover; object-position: center 15%; }
     </style>
@@ -86,7 +85,7 @@
                     <div class="lg:col-span-3">
                         <div class="glass-card white-border-card p-8 rounded-2xl text-lg leading-relaxed text-justify">
                             <p>Diplômée d'un Bac STMG (Mercatique), j'ai choisi de spécialiser mon profil vers les systèmes d'information. Je combine ainsi une approche orientée client et une expertise technique en devenir. Actuellement en deuxième année de BTS SIO (option SISR) au sein de l'école ORT Daniel Mayer, j'effectue mon alternance chez Ista en tant que technicienne réseaux et systèmes.</p>
-                            <p class="mt-6">Animée par une réelle volonté d'évoluer vers la gestion de projets informatiques, je projette d'intégrer la licence Chef de projet développement, sécurité et exploitation au sein du CNAM en alternance. Mon objectif est de poursuivre ensuite mon cursus vers un Master MIAGE, afin de consolider mes compétences stratégiques et techniques.</p>
+                            <p class="mt-6">Animée par une réelle volonté d'évoluer vers la gestion de projets informatiques, je projette d'intégrer la licence Chef de projet développement, sécurité et exploitation au sein du CNAM en alternance. Mon objectif est de poursuivre ensuite mon cursus vers un Master MIAGE.</p>
                         </div>
                     </div>
                 </div>
@@ -97,26 +96,55 @@
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
                     <div class="glass-card white-border-card p-6 rounded-2xl">
                         <h3 class="text-blue-400 font-black uppercase text-xs tracking-widest mb-4">Notre Activité</h3>
-                        <p class="text-sm">Ista installe des compteurs connectés pour mesurer précisément la consommation d'eau et de chauffage de chaque habitant. Elle permet ainsi de facturer les charges au réel plutôt qu'au forfait, encourageant les économies d'énergie dans les immeubles collectifs.</p>
+                        <p class="text-sm">Ista installe des compteurs connectés pour mesurer précisément la consommation d'eau et de chauffage de chaque habitant.</p>
                     </div>
                     <div class="glass-card white-border-card p-6 rounded-2xl">
                         <h3 class="text-blue-400 font-black uppercase text-xs tracking-widest mb-4">Dimension Internationale</h3>
-                        <p class="text-sm">L'entreprise est d'origine allemande et a son siège social à Essen. Elle est aujourd'hui présente dans 22 pays, principalement en Europe mais aussi en Chine et au Brésil. Au quotidien, notre équipe collabore particulièrement avec nos collègues roumains et allemands.</p>
+                        <p class="text-sm">L'entreprise est d'origine allemande, présente dans 22 pays. Collaboration quotidienne avec des équipes internationales.</p>
                     </div>
                     <div class="glass-card white-border-card p-6 rounded-2xl">
                         <h3 class="text-blue-400 font-black uppercase text-xs tracking-widest mb-4">Rôle du Support</h3>
-                        <p class="text-sm">Au quotidien, notre équipe assure la maintenance et le bon fonctionnement des outils numériques pour garantir la productivité de tous les collaborateurs. Nous intervenons rapidement pour résoudre les incidents techniques et accompagner les utilisateurs.</p>
+                        <p class="text-sm">Maintenance des outils numériques, résolution d'incidents techniques et accompagnement utilisateurs.</p>
                     </div>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
                     <div class="glass-card white-border-card p-2 rounded-3xl h-64 overflow-hidden shadow-xl"><img src="ista-1.jpg" alt="Logo Ista" class="w-full h-full object-contain bg-white rounded-2xl"></div>
-                    <div class="glass-card white-border-card p-2 rounded-3xl h-64 overflow-hidden shadow-xl"><img src="ista-2.jpg" alt="Intervention" class="w-full h-full object-cover rounded-2xl opacity-90"></div>
+                    <div class="glass-card white-border-card p-2 rounded-3xl h-64 overflow-hidden shadow-xl"><img src="ista-2.jpg" class="w-full h-full object-cover rounded-2xl opacity-90"></div>
                 </div>
                 <div class="text-center">
                     <h2 class="text-2xl font-black uppercase tracking-widest mb-8 text-blue-400">Mes Missions et Expertises</h2>
                     <div class="glass-card white-border-card p-8 rounded-2xl w-full text-base leading-relaxed text-justify">
-                        <p>Expert du support informatique, j'assure la gestion complète du parc via le déploiement automatisé avec Baramundi et l'administration des terminaux mobiles sous Microsoft Intune. Je garantis la sécurité des accès et des données à travers Active Directory et la configuration des VPN, tout en résolvant les incidents matériels et logiciels via Jira. Au-delà de l'assistance technique, j'optimise l'efficacité du service en rédigeant des procédures détaillées et en veillant à la mise en conformité des systèmes.</p>
+                        <p>Expert du support informatique, j'assure la gestion complète du parc via Baramundi et Microsoft Intune. Je garantis la sécurité via AD et VPN.</p>
                     </div>
+                </div>
+            </section>
+
+            <section id="tp" class="max-w-6xl mx-auto px-8 py-24 scroll-mt-24">
+                <div class="text-center mb-16"><h2 class="text-3xl font-black uppercase tracking-widest inline-block border-b-2 border-blue-500 pb-2 text-white">Projets Techniques</h2></div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-center">
+                    <a href="TP1.pdf" target="_blank" class="glass-card white-border-card p-8 rounded-2xl project-card group"><i class="fa-solid fa-users-gear text-3xl text-blue-400 mb-4"></i><h3 class="text-white font-black uppercase text-sm">Active Directory</h3></a>
+                    <a href="TP2.pdf" target="_blank" class="glass-card white-border-card p-8 rounded-2xl project-card group"><i class="fa-solid fa-ticket text-3xl text-blue-400 mb-4"></i><h3 class="text-white font-black uppercase text-sm">GLPI / Helpdesk</h3></a>
+                    <a href="TP3.pdf" target="_blank" class="glass-card white-border-card p-8 rounded-2xl project-card group"><i class="fa-solid fa-network-wired text-3xl text-blue-400 mb-4"></i><h3 class="text-white font-black uppercase text-sm">VLAN & Routing</h3></a>
+                    <a href="TP4.pdf" target="_blank" class="glass-card white-border-card p-8 rounded-2xl project-card group"><i class="fa-solid fa-server text-3xl text-blue-400 mb-4"></i><h3 class="text-white font-black uppercase text-sm">Windows Server</h3></a>
+                    <a href="TP5.pdf" target="_blank" class="glass-card white-border-card p-8 rounded-2xl project-card group"><i class="fa-solid fa-eye text-3xl text-blue-400 mb-4"></i><h3 class="text-white font-black uppercase text-sm">Supervision Zabbix</h3></a>
+                    <a href="TP6.pdf" target="_blank" class="glass-card white-border-card p-8 rounded-2xl project-card group"><i class="fa-solid fa-shield-halved text-3xl text-blue-400 mb-4"></i><h3 class="text-white font-black uppercase text-sm">Sécurité VPN</h3></a>
+                    <a href="TP7.pdf" target="_blank" class="glass-card white-border-card p-8 rounded-2xl project-card group"><i class="fa-solid fa-linux text-3xl text-blue-400 mb-4"></i><h3 class="text-white font-black uppercase text-sm">Linux Debian</h3></a>
+                    <a href="TP8.pdf" target="_blank" class="glass-card white-border-card p-8 rounded-2xl project-card group"><i class="fa-solid fa-database text-3xl text-blue-400 mb-4"></i><h3 class="text-white font-black uppercase text-sm">Bases de Données</h3></a>
+                    <a href="TP9.pdf" target="_blank" class="glass-card white-border-card p-8 rounded-2xl project-card group"><i class="fa-solid fa-cloud text-3xl text-blue-400 mb-4"></i><h3 class="text-white font-black uppercase text-sm">Services Cloud</h3></a>
+                </div>
+            </section>
+
+            <section id="certifications" class="max-w-6xl mx-auto px-8 py-24 scroll-mt-24">
+                <div class="text-center mb-16"><h2 class="text-3xl font-black uppercase tracking-widest inline-block border-b-2 border-blue-500 pb-2 text-white">Certifications</h2></div>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                    <div class="glass-card white-border-card p-6 rounded-xl cert-card border-t-4 border-t-blue-500"><i class="fa-solid fa-graduation-cap text-2xl text-blue-400 mb-3"></i><h3 class="text-white font-black uppercase text-[11px]">PIX</h3></div>
+                    <div class="glass-card white-border-card p-6 rounded-xl cert-card border-t-4 border-t-blue-500"><i class="fa-solid fa-user-lock text-2xl text-blue-400 mb-3"></i><h3 class="text-white font-black uppercase text-[11px]">ANSSI</h3></div>
+                    <div class="glass-card white-border-card p-6 rounded-xl cert-card border-t-4 border-t-blue-500"><i class="fa-solid fa-fingerprint text-2xl text-blue-400 mb-3"></i><h3 class="text-white font-black uppercase text-[11px]">CNIL</h3></div>
+                    <div class="glass-card white-border-card p-6 rounded-xl cert-card border-t-4 border-t-blue-500"><i class="fa-solid fa-diagram-project text-2xl text-blue-400 mb-3"></i><h3 class="text-white font-black uppercase text-[11px]">CCNA 1</h3></div>
+                    <div class="glass-card white-border-card p-6 rounded-xl cert-card border-t-4 border-t-blue-500"><i class="fa-solid fa-route text-2xl text-blue-400 mb-3"></i><h3 class="text-white font-black uppercase text-[11px]">CCNA 2</h3></div>
+                    <div class="glass-card white-border-card p-6 rounded-xl cert-card border-t-4 border-t-blue-500"><i class="fa-solid fa-cloud-arrow-up text-2xl text-blue-400 mb-3"></i><h3 class="text-white font-black uppercase text-[11px]">AZURE</h3></div>
+                    <div class="glass-card white-border-card p-6 rounded-xl cert-card border-t-4 border-t-blue-500"><i class="fa-solid fa-gears text-2xl text-blue-400 mb-3"></i><h3 class="text-white font-black uppercase text-[11px]">ITIL 4</h3></div>
+                    <div class="glass-card white-border-card p-6 rounded-xl cert-card border-t-4 border-t-blue-500"><i class="fa-solid fa-code text-2xl text-blue-400 mb-3"></i><h3 class="text-white font-black uppercase text-[11px]">PCEP</h3></div>
                 </div>
             </section>
 
@@ -125,15 +153,15 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
                     
                     <div class="comp-card text-center" onclick="this.classList.toggle('active')">
-                        <img src="vmware-logo.png" class="h-24 mx-auto mb-4" alt="VMware">
+                        <i class="fa-solid fa-server text-7xl text-[#60a5fa] mb-4"></i>
                         <h3 class="text-white font-black uppercase text-sm">VMware</h3>
                         <div class="comp-detail text-left">
                             <h4 class="font-black text-xs uppercase mb-1">Gestion d'environnements virtualisés</h4>
                             <p class="text-[10px] font-bold underline mb-2 italic">Niveau : Maîtrisé</p>
                             <ul class="text-[11px] space-y-1">
-                                <li>• Installation d'hyperviseurs (ESXi, Workstation)</li>
-                                <li>• Gestion du cycle de vie des VMs (clonage, snapshots)</li>
-                                <li>• Optimisation des ressources (CPU, RAM, Stockage)</li>
+                                <li>• Installation/config hyperviseurs (ESXi)</li>
+                                <li>• Gestion cycle de vie VMs (snapshots)</li>
+                                <li>• Optimisation ressources serveurs</li>
                             </ul>
                         </div>
                     </div>
@@ -142,11 +170,11 @@
                         <i class="fa-brands fa-linux text-7xl text-[#f3ba1b] mb-4"></i>
                         <h3 class="text-white font-black uppercase text-sm">Linux</h3>
                         <div class="comp-detail text-left">
-                            <h4 class="font-black text-xs uppercase mb-1">Administration de serveurs Open Source</h4>
+                            <h4 class="font-black text-xs uppercase mb-1">Administration Open Source</h4>
                             <p class="text-[10px] font-bold underline mb-2 italic">Niveau : Intermédiaire</p>
                             <ul class="text-[11px] space-y-1">
-                                <li>• Gestion des droits et utilisateurs en CLI</li>
-                                <li>• Configuration services (Apache, SSH, Bind)</li>
+                                <li>• Droits/Utilisateurs via CLI</li>
+                                <li>• Config services (Apache, SSH, Bind)</li>
                                 <li>• Automatisation via scripts Bash</li>
                             </ul>
                         </div>
@@ -156,12 +184,12 @@
                         <i class="fa-brands fa-docker text-7xl text-[#2496ed] mb-4"></i>
                         <h3 class="text-white font-black uppercase text-sm">Docker</h3>
                         <div class="comp-detail text-left">
-                            <h4 class="font-black text-xs uppercase mb-1">Déploiement de micro-services</h4>
-                            <p class="text-[10px] font-bold underline mb-2 italic">Niveau : Débutant / Intermédiaire</p>
+                            <h4 class="font-black text-xs uppercase mb-1">Déploiement micro-services</h4>
+                            <p class="text-[10px] font-bold underline mb-2 italic">Débutant / Intermédiaire</p>
                             <ul class="text-[11px] space-y-1">
-                                <li>• Création et gestion de conteneurs</li>
+                                <li>• Création/gestion conteneurs</li>
                                 <li>• Orchestration via Docker-Compose</li>
-                                <li>• Gestion des volumes pour la persistance</li>
+                                <li>• Gestion volumes persistance</li>
                             </ul>
                         </div>
                     </div>
@@ -173,12 +201,12 @@
                         </div>
                         <h3 class="text-white font-black uppercase text-sm">Scripting</h3>
                         <div class="comp-detail text-left">
-                            <h4 class="font-black text-xs uppercase mb-1">Automatisation des processus (IaC)</h4>
+                            <h4 class="font-black text-xs uppercase mb-1">Automatisation processus (IaC)</h4>
                             <p class="text-[10px] font-bold underline mb-2 italic">Niveau : Intermédiaire</p>
                             <ul class="text-[11px] space-y-1">
-                                <li>• Scripts d'automatisation (Sauvegarde / Monitoring)</li>
-                                <li>• Utilisation d'IDE (IntelliJ / VS Code)</li>
-                                <li>• Notions de versioning avec Git</li>
+                                <li>• Scripts auto (Sauvegarde / Monitoring)</li>
+                                <li>• IDE (IntelliJ / VS Code)</li>
+                                <li>• Versioning avec Git</li>
                             </ul>
                         </div>
                     </div>
@@ -187,12 +215,12 @@
                         <i class="fa-solid fa-users-gear text-7xl text-[#00a4ef] mb-4"></i>
                         <h3 class="text-white font-black uppercase text-sm">Active Directory</h3>
                         <div class="comp-detail text-left">
-                            <h4 class="font-black text-xs uppercase mb-1">Gestion des identités et des accès (IAM)</h4>
+                            <h4 class="font-black text-xs uppercase mb-1">Gestion identités (IAM)</h4>
                             <p class="text-[10px] font-bold underline mb-2 italic">Niveau : Maîtrisé</p>
                             <ul class="text-[11px] space-y-1">
-                                <li>• Administration des rôles AD DS</li>
-                                <li>• Mise en place et déploiement de GPO</li>
-                                <li>• Gestion de la sécurité des partages réseau</li>
+                                <li>• Admin rôles AD DS</li>
+                                <li>• Déploiement stratégies GPO</li>
+                                <li>• Sécurité accès et partages</li>
                             </ul>
                         </div>
                     </div>
@@ -201,54 +229,12 @@
                         <i class="fa-solid fa-network-wired text-7xl text-[#00bceb] mb-4"></i>
                         <h3 class="text-white font-black uppercase text-sm">Cisco / Réseau</h3>
                         <div class="comp-detail text-left">
-                            <h4 class="font-black text-xs uppercase mb-1">Configuration d'équipements réseaux</h4>
+                            <h4 class="font-black text-xs uppercase mb-1">Configuration équipements</h4>
                             <p class="text-[10px] font-bold underline mb-2 italic">Niveau : Intermédiaire</p>
                             <ul class="text-[11px] space-y-1">
-                                <li>• Configuration Switch/Router (VLAN, Routage)</li>
-                                <li>• Filtrage Pare-feu (pfSense, Stormshield)</li>
-                                <li>• Diagnostic réseau (Wireshark, ICMP)</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="comp-card text-center" onclick="this.classList.toggle('active')">
-                        <i class="fa-brands fa-microsoft text-7xl text-[#0089d6] mb-4"></i>
-                        <h3 class="text-white font-black uppercase text-sm">Azure Cloud</h3>
-                        <div class="comp-detail text-left">
-                            <h4 class="font-black text-xs uppercase mb-1">Administration Cloud Azure</h4>
-                            <p class="text-[10px] font-bold underline mb-2 italic">Niveau : Débutant / Intermédiaire</p>
-                            <ul class="text-[11px] space-y-1">
-                                <li>• Gestion via Entra ID (Azure AD)</li>
-                                <li>• Administration ressources (VMs, Stockage)</li>
-                                <li>• Politiques d'accès conditionnel</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="comp-card text-center" onclick="this.classList.toggle('active')">
-                        <i class="fa-solid fa-eye text-7xl text-[#d40000] mb-4"></i>
-                        <h3 class="text-white font-black uppercase text-sm">Monitoring</h3>
-                        <div class="comp-detail text-left">
-                            <h4 class="font-black text-xs uppercase mb-1">Maintien en condition opérationnelle (MCO)</h4>
-                            <p class="text-[10px] font-bold underline mb-2 italic">Niveau : Débutant</p>
-                            <ul class="text-[11px] space-y-1">
-                                <li>• Surveillance santé serveurs et services</li>
-                                <li>• Analyse des logs pour résolution incidents</li>
-                                <li>• Mise en place d'alerting disponibilité SI</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="comp-card text-center" onclick="this.classList.toggle('active')">
-                        <i class="fa-solid fa-laptop-medical text-7xl text-[#28a745] mb-4"></i>
-                        <h3 class="text-white font-black uppercase text-sm">Baramundi</h3>
-                        <div class="comp-detail text-left">
-                            <h4 class="font-black text-xs uppercase mb-1">Unified Endpoint Management (UEM)</h4>
-                            <p class="text-[10px] font-bold underline mb-2 italic">Niveau : Intermédiaire</p>
-                            <ul class="text-[11px] space-y-1">
-                                <li>• Déploiement auto d'applications et MAJ</li>
-                                <li>• Inventaire matériel et logiciel</li>
-                                <li>• Gestion de conformité des postes de travail</li>
+                                <li>• VLAN / Routage Cisco</li>
+                                <li>• Pare-feu (pfSense, Stormshield)</li>
+                                <li>• Diagnostic Wireshark</li>
                             </ul>
                         </div>
                     </div>
@@ -261,25 +247,23 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div class="veille-item glass-card rounded-2xl overflow-hidden border border-white/10">
                         <div class="veille-header p-5 flex justify-between items-center font-black uppercase tracking-widest text-sm" onclick="this.parentElement.classList.toggle('active')">
-                            <span>La Cybersécurité</span><i class="fa-solid fa-plus"></i>
+                            <span>La Cybersécurité</span><i class="fa-solid fa-plus transition-transform duration-300"></i>
                         </div>
                         <div class="veille-content"><div class="p-6 space-y-4">
-                            <p class="text-sm text-slate-300">Nouvelles vulnérabilités, ransomwares, stratégies de défense (Zero Trust).</p>
+                            <p class="text-sm text-slate-300">Vulnérabilités, ransomwares, stratégies Zero Trust.</p>
                             <div class="grid grid-cols-1 gap-2">
-                                <a href="https://www.cert.ssi.gouv.fr/" target="_blank" class="bg-blue-900/50 p-3 rounded-lg text-xs font-bold text-center">ANSSI / CERT-FR</a>
-                                <a href="https://thehackernews.com/" target="_blank" class="bg-blue-900/50 p-3 rounded-lg text-xs font-bold text-center">The Hacker News</a>
+                                <a href="https://www.cert.ssi.gouv.fr/" target="_blank" class="bg-blue-900/50 p-3 rounded-lg text-xs font-bold text-center hover:bg-blue-600 transition">ANSSI / CERT-FR</a>
                             </div>
                         </div></div>
                     </div>
                     <div class="veille-item glass-card rounded-2xl overflow-hidden border border-white/10">
                         <div class="veille-header p-5 flex justify-between items-center font-black uppercase tracking-widest text-sm" onclick="this.parentElement.classList.toggle('active')">
-                            <span>Cloud Computing</span><i class="fa-solid fa-plus"></i>
+                            <span>Cloud Computing</span><i class="fa-solid fa-plus transition-transform duration-300"></i>
                         </div>
                         <div class="veille-content"><div class="p-6 space-y-4">
-                            <p class="text-sm text-slate-300">Azure/AWS, serveurs hybrides, conteneurisation (Docker, Kubernetes).</p>
+                            <p class="text-sm text-slate-300">Azure/AWS, serveurs hybrides, Docker/Kubernetes.</p>
                             <div class="grid grid-cols-1 gap-2">
-                                <a href="https://azure.microsoft.com/en-us/blog/" target="_blank" class="bg-blue-900/50 p-3 rounded-lg text-xs font-bold text-center">Azure Blog</a>
-                                <a href="https://www.veeam.com/blog/fr/" target="_blank" class="bg-blue-900/50 p-3 rounded-lg text-xs font-bold text-center">Veeam Blog</a>
+                                <a href="https://azure.microsoft.com/en-us/blog/" target="_blank" class="bg-blue-900/50 p-3 rounded-lg text-xs font-bold text-center hover:bg-blue-600 transition">Azure Blog</a>
                             </div>
                         </div></div>
                     </div>
