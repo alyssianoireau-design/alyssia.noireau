@@ -37,16 +37,13 @@
 
         .photo-frame { width: 100%; height: 100%; object-fit: cover; object-position: center 20%; }
 
-        /* Organigramme */
         .org-box { border-left: 3px solid #3b82f6; background: rgba(255,255,255,0.05); padding: 12px 20px; margin: 8px auto; width: 100%; max-width: 400px; border-radius: 2px 10px 10px 2px; }
         .org-connector { width: 1px; height: 20px; background: rgba(59, 130, 246, 0.4); margin: 0 auto; }
 
-        /* Accordéons */
         .details-content { max-height: 0; overflow: hidden; transition: all 0.5s ease-out; opacity: 0; }
         .details-item.active .details-content { max-height: 500px; opacity: 1; padding-top: 1rem; }
         .details-item.active .fa-plus { transform: rotate(45deg); color: #ef4444; }
 
-        /* Compétences */
         .comp-card { cursor: pointer; transition: all 0.4s ease; }
         .comp-detail { max-height: 0; overflow: hidden; transition: all 0.5s ease; opacity: 0; }
         .comp-card.active .comp-detail { max-height: 300px; opacity: 1; margin-top: 1.5rem; }
@@ -59,8 +56,7 @@
     <aside class="fixed top-0 left-0 h-screen w-64 glass-sidebar border-r border-white/10 hidden md:flex flex-col z-50">
         <div class="p-10 text-center border-b border-white/5">
             <div class="w-24 h-24 bg-slate-800 rounded-2xl mx-auto mb-6 border border-blue-500/50 shadow-lg overflow-hidden">
-                <img src="photo like.jpg" alt="Alyssia Noireau" class="photo-frame">
-            </div>
+                <img src="photo like.jpg" alt="Alyssia Noireau" class="photo-frame"> </div>
             <h1 class="text-xl font-black neon-text uppercase leading-tight text-white">Alyssia<br><span class="text-blue-500">Noireau</span></h1>
             <p class="text-[10px] text-blue-400 font-bold mt-2 tracking-widest uppercase">BTS SIO SISR</p>
         </div>
@@ -90,11 +86,8 @@
                 <div class="grid grid-cols-1 lg:grid-cols-5 gap-12">
                     <div class="lg:col-span-2 flex flex-col items-center space-y-4">
                         <div class="glass-card w-72 h-72 p-2 rounded-3xl border border-blue-500/30 overflow-hidden shadow-2xl">
-                            <img src="photo like.jpg" alt="Alyssia Noireau" class="photo-frame rounded-2xl">
-                        </div>
-                        <a href="Professional CV Resume (1).pdf" target="_blank" class="w-72 py-4 bg-blue-600/20 text-blue-400 rounded-xl border border-blue-500/30 text-center font-black uppercase text-xs hover:bg-blue-600/40 transition-all shadow-lg">CV</a>
-                        <a href="Professional CV Resume (1).pdf" download class="w-72 py-4 bg-blue-600/20 text-blue-400 rounded-xl border border-blue-500/30 text-center font-black uppercase text-xs hover:bg-blue-600/40 transition-all shadow-lg"><i class="fa-solid fa-download mr-2"></i> Télécharger CV</a>
-                        <a href="Tableau_de_Competences.pdf" target="_blank" class="w-72 py-4 bg-blue-600/20 text-blue-400 rounded-xl border border-blue-500/30 text-center font-black uppercase text-[10px] hover:bg-blue-600/40 transition-all shadow-lg">Tableau de compétences</a>
+                            <img src="photo like.jpg" alt="Alyssia Noireau" class="photo-frame rounded-2xl"> </div>
+                        <a href="Professional CV Resume (1).pdf" target="_blank" class="w-72 py-4 bg-blue-600/20 text-blue-400 rounded-xl border border-blue-500/30 text-center font-black uppercase text-xs hover:bg-blue-600/40 transition-all shadow-lg">CV</a> <a href="Professional CV Resume (1).pdf" download class="w-72 py-4 bg-blue-600/20 text-blue-400 rounded-xl border border-blue-500/30 text-center font-black uppercase text-xs hover:bg-blue-600/40 transition-all shadow-lg"><i class="fa-solid fa-download mr-2"></i> Télécharger CV</a> <a href="Tableau_de_Competences.pdf" target="_blank" class="w-72 py-4 bg-blue-600/20 text-blue-400 rounded-xl border border-blue-500/30 text-center font-black uppercase text-[10px] hover:bg-blue-600/40 transition-all shadow-lg">Tableau de compétences</a>
                         <a href="https://www.linkedin.com/in/alyssia-noireau" target="_blank" class="w-72 py-4 bg-blue-600/20 text-blue-400 rounded-xl border border-blue-500/30 text-center font-black uppercase text-xs hover:bg-blue-600/40 transition-all shadow-lg"><i class="fa-brands fa-linkedin mr-2"></i> LinkedIn</a>
                     </div>
                     <div class="lg:col-span-3 glass-card white-border-card p-8 rounded-2xl text-justify text-base leading-relaxed shadow-xl">
@@ -146,20 +139,20 @@
             <section id="formation" class="max-w-4xl mx-auto px-8 py-24 scroll-mt-24">
                 <div class="text-center mb-16"><h2 class="text-3xl font-black uppercase section-title text-white">Mon Parcours de Formation</h2></div>
                 <div class="space-y-12">
-                    <div class="border-l-4 border-blue-500 pl-8 relative py-2">
-                        <h3 class="text-xl font-black text-blue-400 uppercase">Master MIAGE (En projet) <span class="text-slate-500 text-sm ml-2">2027 - 2029</span></h3>
+                    <div class="border-l-4 border-blue-500 pl-8 relative py-2 transition-all hover:border-blue-400">
+                        <h3 class="text-xl font-black text-blue-400 uppercase">Master MIAGE (En projet) <span class="text-slate-500 text-sm ml-2">| 2027 - 2029</span></h3>
                         <p class="mt-2 text-slate-300">Objectif : Méthodes Informatiques Appliquées à la Gestion des Entreprises. Acquérir une double compétence en ingénierie des SI et en management.</p>
                     </div>
-                    <div class="border-l-4 border-blue-500 pl-8 relative py-2">
-                        <h3 class="text-xl font-black text-blue-400 uppercase">Licence Chef de Projet (CNAM) <span class="text-slate-500 text-sm ml-2">2026 - 2027</span></h3>
-                        <p class="mt-2 text-slate-300">Spécialité : Développement, sécurité et exploitation. Cursus en alternance axé sur la gestion des infrastructures et de la cybersécurité.</p>
+                    <div class="border-l-4 border-blue-500 pl-8 relative py-2 transition-all hover:border-blue-400">
+                        <h3 class="text-xl font-black text-blue-400 uppercase">Licence Chef de Projet (CNAM) <span class="text-slate-500 text-sm ml-2">| 2026 - 2027</span></h3>
+                        <p class="mt-2 text-slate-300">Spécialité : Développement, sécurité et exploitation. Cursus en alternance axé sur la maîtrise opérationnelle des infrastructures.</p>
                     </div>
-                    <div class="border-l-4 border-blue-500 pl-8 relative py-2">
-                        <h3 class="text-xl font-black text-blue-400 uppercase">BTS SIO option SISR (ORT Daniel Mayer) <span class="text-slate-500 text-sm ml-2">2024 - 2026</span></h3>
+                    <div class="border-l-4 border-blue-500 pl-8 relative py-2 transition-all hover:border-blue-400">
+                        <h3 class="text-xl font-black text-white uppercase">BTS SIO option SISR (ORT Daniel Mayer) <span class="text-slate-500 text-sm ml-2">| 2024 - 2026</span></h3>
                         <p class="mt-2 text-slate-300">Détails : Solutions d'Infrastructure, Systèmes et Réseaux. Apprentissage de l'administration système et de la sécurisation.</p>
                     </div>
-                    <div class="border-l-4 border-blue-500 pl-8 relative py-2">
-                        <h3 class="text-xl font-black text-blue-400 uppercase">Baccalauréat STMG option Mercatique <span class="text-slate-500 text-sm ml-2">Diplômée en 2024</span></h3>
+                    <div class="border-l-4 border-blue-500 pl-8 relative py-2 transition-all hover:border-blue-400">
+                        <h3 class="text-xl font-black text-white uppercase">Baccalauréat STMG option Mercatique <span class="text-slate-500 text-sm ml-2">| Diplômée en 2024</span></h3>
                         <p class="mt-2 text-slate-300">Bases solides en gestion, droit et stratégie commerciale. Compréhension des enjeux business des entreprises.</p>
                     </div>
                 </div>
@@ -169,29 +162,23 @@
                 <h2 class="text-3xl font-black uppercase section-title text-white mb-8">Expérience chez Ista</h2>
                 
                 <div class="flex flex-col items-center gap-4 mb-12">
-                    <a href="PowerPoint_Presentation.pdf" target="_blank" class="px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white font-black rounded-full transition-all uppercase text-xs shadow-lg inline-flex items-center gap-2">
+                    <a href="Presentation_Ista.pdf" target="_blank" class="px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white font-black rounded-full transition-all uppercase text-xs shadow-lg inline-flex items-center gap-2">
                         <i class="fa-solid fa-file-powerpoint"></i> Présentation de l'entreprise
                     </a>
-                    <a href="Details_Missions.pdf" target="_blank" class="px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white font-black rounded-full transition-all uppercase text-xs shadow-lg inline-flex items-center gap-2">
-                        <i class="fa-solid fa-file-pdf"></i> Détails des missions
+                    <a href="Missions.pdf" target="_blank" class="px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white font-black rounded-full transition-all uppercase text-xs shadow-lg inline-flex items-center gap-2"> <i class="fa-solid fa-file-pdf"></i> Détails des missions
                     </a>
                 </div>
 
                 <div class="mb-20">
                     <h3 class="text-xl font-black text-white uppercase mb-8">Organigramme</h3>
                     <div class="flex flex-col items-center">
-                        <div class="org-box"><p class="text-[10px] text-slate-400 uppercase font-bold">CEO - ista Group</p><p class="font-bold text-white">Lessing, Hagen</p></div>
-                        <div class="org-connector"></div>
-                        <div class="org-box"><p class="text-[10px] text-slate-400 uppercase font-bold">Président Directeur Général</p><p class="font-bold text-white">Sireix, Laurent</p></div>
-                        <div class="org-connector"></div>
-                        <div class="org-box"><p class="text-[10px] text-slate-400 uppercase font-bold">Directeur Opérations - ista France</p><p class="font-bold text-white">Nguyen, Hoai</p></div>
-                        <div class="org-connector"></div>
-                        <div class="org-box"><p class="text-[10px] text-slate-400 uppercase font-bold">Directeur SI Projets</p><p class="font-bold text-white">Martins, Carlos</p></div>
-                        <div class="org-connector"></div>
+                        <div class="org-box"><p class="text-[10px] text-slate-400 uppercase font-bold">CEO - ista Group</p><p class="font-bold text-white">Lessing, Hagen</p></div> <div class="org-connector"></div>
+                        <div class="org-box"><p class="text-[10px] text-slate-400 uppercase font-bold">Président Directeur Général</p><p class="font-bold text-white">Sireix, Laurent</p></div> <div class="org-connector"></div>
+                        <div class="org-box"><p class="text-[10px] text-slate-400 uppercase font-bold">Directeur Opérations - ista France</p><p class="font-bold text-white">Nguyen, Hoai</p></div> <div class="org-connector"></div>
+                        <div class="org-box"><p class="text-[10px] text-slate-400 uppercase font-bold">Directeur SI Projets</p><p class="font-bold text-white">Martins, Carlos</p></div> <div class="org-connector"></div>
                         <div class="org-box border-blue-500 bg-blue-500/5 shadow-[0_0_20px_rgba(59,130,246,0.2)]">
                             <p class="text-[10px] text-slate-400 uppercase font-bold">Apprenti</p>
-                            <p class="font-black text-white">Noireau, Alyssia</p>
-                        </div>
+                            <p class="font-black text-white text-blue-400">Noireau, Alyssia</p> </div>
                     </div>
                 </div>
 
@@ -216,10 +203,9 @@
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20">
                     <div class="glass-card white-border-card p-2 rounded-3xl h-80 shadow-2xl"><img src="ista-1.jpg" class="w-full h-full object-contain bg-white rounded-xl"></div>
-                    <div class="glass-card white-border-card p-2 rounded-3xl h-80 shadow-2xl"><img src="ista-2.jpg" class="w-full h-full object-cover rounded-xl opacity-80"></div>
-                </div>
+                    <div class="glass-card white-border-card p-2 rounded-3xl h-80 shadow-2xl"><img src="ista-2.jpg" class="w-full h-full object-cover rounded-xl opacity-80"></div> </div>
 
-                <h3 class="text-2xl font-black uppercase text-white section-title mb-12">Mes Missions et Expertises</h3>
+                <h3 class="text-2xl font-black uppercase text-white section-title mb-12 text-center">Mes Missions et Expertises</h3>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 px-4">
                     <div class="glass-card white-border-card p-12 rounded-3xl border-t-4 border-t-blue-500 flex flex-col justify-center items-center shadow-xl hover:scale-105 transition-all"><h4 class="font-black text-xs uppercase text-blue-400 text-center">Support Utilisateur (Jira)</h4></div>
                     <div class="glass-card white-border-card p-12 rounded-3xl border-t-4 border-t-blue-500 flex flex-col justify-center items-center shadow-xl hover:scale-105 transition-all"><h4 class="font-black text-xs uppercase text-blue-400 text-center">Déploiement (Baramundi)</h4></div>
@@ -290,52 +276,52 @@
                     <div class="comp-card group" onclick="this.classList.toggle('active')">
                         <i class="fa-solid fa-server text-8xl text-blue-400 mb-6 drop-shadow-lg group-hover:scale-110 transition-transform"></i>
                         <h3 class="font-black uppercase text-sm tracking-widest">Virtualisation</h3>
-                        <div class="comp-detail text-left text-xs">ESXi, snapshots, gestion de ressources serveurs et VMs.</div>
+                        <div class="comp-detail text-left text-xs leading-relaxed">Focus : ESXi, snapshots, gestion de ressources serveurs et VMs.</div>
                     </div>
                     <div class="comp-card group" onclick="this.classList.toggle('active')">
                         <i class="fa-brands fa-linux text-8xl text-yellow-500 mb-6 drop-shadow-lg group-hover:scale-110 transition-transform"></i>
                         <h3 class="font-black uppercase text-sm tracking-widest">Linux Debian</h3>
-                        <div class="comp-detail text-left text-xs">Administration CLI, Apache, SSH et scripts Bash.</div>
+                        <div class="comp-detail text-left text-xs leading-relaxed">Focus : Administration CLI, Apache, SSH et scripts Bash.</div>
                     </div>
                     <div class="comp-card group" onclick="this.classList.toggle('active')">
                         <i class="fa-brands fa-docker text-8xl text-blue-500 mb-6 drop-shadow-lg group-hover:scale-110 transition-transform"></i>
                         <h3 class="font-black uppercase text-sm tracking-widest">Conteneurisation</h3>
-                        <div class="comp-detail text-left text-xs">Gestion Docker-compose, orchestration micro-services.</div>
+                        <div class="comp-detail text-left text-xs leading-relaxed">Focus : Gestion Docker-compose, orchestration micro-services.</div>
                     </div>
                     <div class="comp-card group" onclick="this.classList.toggle('active')">
                         <i class="fa-brands fa-python text-8xl text-blue-300 mb-6 drop-shadow-lg group-hover:scale-110 transition-transform"></i>
                         <h3 class="font-black uppercase text-sm tracking-widest">Scripting</h3>
-                        <div class="comp-detail text-left text-xs">Automatisation tâches et monitoring via Python.</div>
+                        <div class="comp-detail text-left text-xs leading-relaxed">Focus : Automatisation tâches et monitoring via Python.</div>
                     </div>
                     <div class="comp-card group" onclick="this.classList.toggle('active')">
                         <i class="fa-solid fa-users-gear text-8xl text-blue-600 mb-6 drop-shadow-lg group-hover:scale-110 transition-transform"></i>
                         <h3 class="font-black uppercase text-sm tracking-widest">Active Directory</h3>
-                        <div class="comp-detail text-left text-xs">Gestion GPO, identités (IAM) et droits partages.</div>
+                        <div class="comp-detail text-left text-xs leading-relaxed">Focus : Gestion des GPO, identités (IAM) et droits partages.</div>
                     </div>
                     <div class="comp-card group" onclick="this.classList.toggle('active')">
                         <i class="fa-solid fa-network-wired text-8xl text-cyan-400 mb-6 drop-shadow-lg group-hover:scale-110 transition-transform"></i>
                         <h3 class="font-black uppercase text-sm tracking-widest">Réseaux Cisco</h3>
-                        <div class="comp-detail text-left text-xs">VLAN, routage et analyse Wireshark.</div>
+                        <div class="comp-detail text-left text-xs leading-relaxed">Focus : VLAN, routage et analyse Wireshark.</div>
                     </div>
                     <div class="comp-card group" onclick="this.classList.toggle('active')">
                         <i class="fa-solid fa-shield-halved text-8xl text-red-500 mb-6 drop-shadow-lg group-hover:scale-110 transition-transform"></i>
                         <h3 class="font-black uppercase text-sm tracking-widest">Cybersécurité</h3>
-                        <div class="comp-detail text-left text-xs">Firewall, VPN Site-to-Site et sécurisation endpoints.</div>
+                        <div class="comp-detail text-left text-xs leading-relaxed">Focus : Firewall, VPN Site-to-Site et sécurisation endpoints.</div>
                     </div>
                     <div class="comp-card group" onclick="this.classList.toggle('active')">
                         <i class="fa-brands fa-microsoft text-8xl text-blue-700 mb-6 drop-shadow-lg group-hover:scale-110 transition-transform"></i>
                         <h3 class="font-black uppercase text-sm tracking-widest">Azure Cloud</h3>
-                        <div class="comp-detail text-left text-xs">Entra ID (Azure AD), ressources VMs et stockage.</div>
+                        <div class="comp-detail text-left text-xs leading-relaxed">Focus : Entra ID (Azure AD), ressources VMs et stockage.</div>
                     </div>
                     <div class="comp-card group" onclick="this.classList.toggle('active')">
                         <i class="fa-solid fa-laptop-medical text-8xl text-green-500 mb-6 drop-shadow-lg group-hover:scale-110 transition-transform"></i>
                         <h3 class="font-black uppercase text-sm tracking-widest">Gestion Parc</h3>
-                        <div class="comp-detail text-left text-xs">Baramundi, Intune, inventaire hardware.</div>
+                        <div class="comp-detail text-left text-xs leading-relaxed">Baramundi, Intune, inventaire hardware.</div>
                     </div>
                 </div>
             </section>
 
-            <section id="veille" class="max-w-6xl mx-auto px-8 py-24 scroll-mt-24 text-center">
+            <section id="veille" class="max-w-6xl mx-auto px-8 py-24 scroll-mt-24">
                 <div class="text-center mb-16"><h2 class="text-3xl font-black uppercase section-title text-white">Veille Technologique</h2></div>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
                     <div class="veille-item glass-card rounded-2xl overflow-hidden shadow-2xl transition-all" onclick="this.classList.toggle('active')">
@@ -344,7 +330,6 @@
                             <a href="https://www.cert.ssi.gouv.fr/" target="_blank" class="block text-blue-400 font-bold underline text-xs">ANSSI / CERT-FR</a>
                             <a href="https://thehackernews.com/" target="_blank" class="block text-blue-400 font-bold underline text-xs">The Hacker News</a>
                             <a href="https://www.lemagit.fr/securite" target="_blank" class="block text-blue-400 font-bold underline text-xs">LeMagIT Sécurité</a>
-                            <p class="text-slate-400 italic text-[10px]">Vulnérabilités critiques et stratégies Zero Trust.</p>
                         </div>
                     </div>
                     <div class="veille-item glass-card rounded-2xl overflow-hidden shadow-2xl transition-all" onclick="this.classList.toggle('active')">
@@ -353,7 +338,6 @@
                             <a href="https://azure.microsoft.com/fr-fr/blog/" target="_blank" class="block text-blue-400 font-bold underline text-xs">Azure Blog</a>
                             <a href="https://aws.amazon.com/fr/blogs/aws/" target="_blank" class="block text-blue-400 font-bold underline text-xs">AWS Blog</a>
                             <a href="https://www.veeam.com/blog/fr" target="_blank" class="block text-blue-400 font-bold underline text-xs">Veeam Blog</a>
-                            <p class="text-slate-400 italic text-[10px]">Infrastructures hybrides et virtualisation.</p>
                         </div>
                     </div>
                     <div class="veille-item glass-card rounded-2xl overflow-hidden shadow-2xl transition-all" onclick="this.classList.toggle('active')">
@@ -362,7 +346,6 @@
                             <a href="https://www.it-connect.fr/" target="_blank" class="block text-blue-400 font-bold underline text-xs">IT Connect</a>
                             <a href="https://www.zdnet.fr/intelligence-artificielle/" target="_blank" class="block text-blue-400 font-bold underline text-xs">ZDNet IA</a>
                             <a href="https://openai.com/news/" target="_blank" class="block text-blue-400 font-bold underline text-xs">OpenAI News</a>
-                            <p class="text-slate-400 italic text-[10px]">Automatisation et supervision par l'IA.</p>
                         </div>
                     </div>
                     <div class="veille-item glass-card rounded-2xl overflow-hidden shadow-2xl transition-all" onclick="this.classList.toggle('active')">
@@ -371,7 +354,6 @@
                             <a href="https://blogs.cisco.com/networking" target="_blank" class="block text-blue-400 font-bold underline text-xs">Cisco Networking</a>
                             <a href="https://www.networkworld.com/" target="_blank" class="block text-blue-400 font-bold underline text-xs">Network World</a>
                             <a href="https://www.arubanetworks.com/blog/" target="_blank" class="block text-blue-400 font-bold underline text-xs">Aruba Blog</a>
-                            <p class="text-slate-400 italic text-[10px]">NetDevOps et déploiement WiFi 7.</p>
                         </div>
                     </div>
                 </div>
