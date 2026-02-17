@@ -26,19 +26,28 @@
             background-size: cover; background-position: center; background-attachment: fixed;
         }
 
-        .project-card:hover, .cert-card:hover { transform: translateY(-5px); transition: all 0.3s ease; background: rgba(59, 130, 246, 0.1); }
-        .photo-frame { width: 100%; height: 100%; object-fit: cover; object-position: center 15%; }
-
-        /* Style pour l'overlay interactif (Bio au clic) */
-        .info-overlay {
-            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            background: #a855f7; /* Couleur violette comme sur ton image */
-            color: white; display: flex; flex-direction: column; justify-content: center;
-            align-items: center; padding: 20px; text-align: center;
-            opacity: 0; transition: opacity 0.3s ease; pointer-events: none;
-            border-radius: 1rem;
+        /* ACCORDÉON VEILLE TECH */
+        .veille-header {
+            background: #a855f7; /* Violet demandé */
+            cursor: pointer;
+            transition: all 0.3s ease;
         }
-        .info-card:focus .info-overlay, .info-card:active .info-overlay { opacity: 1; pointer-events: auto; }
+        .veille-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out;
+            background: rgba(168, 85, 247, 0.1);
+        }
+        .veille-item.active .veille-content { max-height: 500px; }
+        .veille-item.active .fa-plus { transform: rotate(45deg); }
+
+        .source-link {
+            background: #1e40af; /* Bleu pour les liens sources */
+            transition: background 0.3s;
+        }
+        .source-link:hover { background: #1d4ed8; }
+
+        .photo-frame { width: 100%; height: 100%; object-fit: cover; object-position: center 15%; }
     </style>
 </head>
 <body class="bg-[#0f172a] text-slate-100 arial-text">
@@ -58,7 +67,7 @@
             <a href="#tp" class="nav-link py-3 px-8"><i class="fa-solid fa-diagram-project w-5"></i> Projets</a>
             <a href="#certifications" class="nav-link py-3 px-8"><i class="fa-solid fa-certificate w-5"></i> Certifications</a>
             <a href="#competences" class="nav-link py-3 px-8"><i class="fa-solid fa-microchip w-5"></i> Compétences</a>
-            <a href="#veille" class="nav-link py-3 px-8"><i class="fa-solid fa-globe w-5"></i> 🌐 Veille Tech</a>
+            <a href="#veille" class="nav-link py-3 px-8"><i class="fa-solid fa-globe w-5"></i> Veille Tech</a>
             <a href="#contact" class="nav-link py-3 px-8"><i class="fa-solid fa-paper-plane w-5"></i> Contact</a>
         </nav>
         <div class="p-8 border-t border-white/5"></div>
@@ -85,14 +94,14 @@
                     <div class="lg:col-span-3">
                         <div class="glass-card white-border-card p-8 rounded-2xl text-lg leading-relaxed text-justify">
                             <p>Diplômée d'un Bac STMG (Mercatique), j'ai choisi de spécialiser mon profil vers les systèmes d'information. Je combine ainsi une approche orientée client et une expertise technique en devenir. Actuellement en deuxième année de BTS SIO (option SISR) au sein de l'école ORT Daniel Mayer, j'effectue mon alternance chez Ista en tant que technicienne réseaux et systèmes.</p>
-                            <p class="mt-6">Animée par une réelle volonté d'évoluer vers la gestion de projets informatiques, je projette d'intégrer la licence Chef de projet développement, sécurité et exploitation au sein du CNAM en alternance. Mon objectif est de poursuivre ensuite mon cursus vers un Master MIAGE, afin de consolider mes compétences stratégiques et techniques.</p>
+                            <p class="mt-6">Animée par une réelle volonté d'évoluer vers la gestion de projets informatiques, je projette d'intégrer la licence Chef de projet développement, sécurité et exploitation au sein du CNAM en alternance. Mon objectif est de poursuivre ensuite mon cursus vers un Master MIAGE.</p>
                         </div>
                     </div>
                 </div>
             </section>
 
             <section id="entreprise" class="max-w-6xl mx-auto px-8 py-24 scroll-mt-24">
-                <div class="text-center mb-16"><h2 class="text-3xl font-black uppercase tracking-widest inline-block border-b-2 border-blue-500 pb-2 text-white">Expérience chez Ista</h2></div>
+                <div class="text-center mb-16"><h2 class="text-3xl font-black uppercase tracking-widest inline-block border-b-2 border-blue-500 pb-2">Expérience chez Ista</h2></div>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
                     <div class="glass-card white-border-card p-6 rounded-2xl">
                         <h3 class="text-blue-400 font-black uppercase text-xs tracking-widest mb-4">Notre Activité</h3>
@@ -111,11 +120,9 @@
                     <div class="glass-card white-border-card p-2 rounded-3xl h-64 overflow-hidden shadow-xl"><img src="ista-1.jpg" alt="Logo Ista" class="w-full h-full object-contain bg-white rounded-2xl"></div>
                     <div class="glass-card white-border-card p-2 rounded-3xl h-64 overflow-hidden shadow-xl"><img src="ista-2.jpg" alt="Intervention" class="w-full h-full object-cover rounded-2xl opacity-90"></div>
                 </div>
-                <div class="text-center">
-                    <h2 class="text-2xl font-black uppercase tracking-widest mb-8 text-blue-400">Mes Missions et Expertises</h2>
-                    <div class="glass-card white-border-card p-8 rounded-2xl w-full text-base leading-relaxed text-justify">
-                        <p>Expert du support informatique, j'assure la gestion complète du parc via le déploiement automatisé avec Baramundi et l'administration des terminaux mobiles sous Microsoft Intune. Je garantis la sécurité des accès et des données à travers Active Directory et la configuration des VPN, tout en résolvant les incidents matériels et logiciels via Jira.</p>
-                    </div>
+                <div class="glass-card white-border-card p-8 rounded-2xl w-full text-base leading-relaxed text-justify">
+                    <h3 class="text-blue-400 font-black uppercase text-xs tracking-widest mb-4">Expertise Technique</h3>
+                    <p>Expert du support informatique, j'assure la gestion complète du parc via le déploiement automatisé avec Baramundi et l'administration des terminaux mobiles sous Microsoft Intune. Je garantis la sécurité des accès et des données à travers Active Directory et la configuration des VPN.</p>
                 </div>
             </section>
 
@@ -151,20 +158,12 @@
             <section id="competences" class="max-w-6xl mx-auto px-8 py-24 scroll-mt-24">
                 <div class="text-center mb-16"><h2 class="text-3xl font-black uppercase tracking-widest inline-block border-b-2 border-blue-500 pb-2">Compétences</h2></div>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <div class="glass-card white-border-card p-8 rounded-2xl info-card relative cursor-pointer" tabindex="0">
-                        <div class="text-center space-y-4">
-                            <i class="fa-brands fa-python text-5xl text-blue-400"></i>
-                            <h3 class="text-white font-black uppercase text-sm">Python</h3>
-                        </div>
-                        <div class="info-overlay">
-                            <h3 class="font-black text-lg mb-2">Python</h3>
-                            <p class="italic text-sm mb-4">Intermédiaire</p>
-                            <ul class="text-xs space-y-2">
-                                <li>• Automatisation</li>
-                                <li>• Scripts Réseau</li>
-                                <li>• Parsing fichiers</li>
-                            </ul>
-                        </div>
+                    <div class="glass-card white-border-card p-8 rounded-2xl">
+                        <ul class="space-y-4 text-sm font-bold uppercase tracking-wider">
+                            <li><i class="fa-solid fa-headset text-blue-400 mr-2"></i> Support & Ticketing</li>
+                            <li><i class="fa-solid fa-laptop-medical text-blue-400 mr-2"></i> Gestion Parc & Master</li>
+                            <li><i class="fa-solid fa-terminal text-blue-400 mr-2"></i> PowerShell / Bash</li>
+                        </ul>
                     </div>
                     <div class="glass-card white-border-card p-8 rounded-2xl">
                         <ul class="space-y-4 text-sm font-bold uppercase tracking-wider">
@@ -184,14 +183,80 @@
             </section>
 
             <section id="veille" class="max-w-6xl mx-auto px-8 py-24 scroll-mt-24">
-                <div class="text-center mb-16"><h2 class="text-3xl font-black uppercase tracking-widest inline-block border-b-2 border-blue-500 pb-2">Veille Technologique</h2></div>
-                <div class="glass-card white-border-card p-8 rounded-2xl">
-                    <p class="text-lg leading-relaxed text-center italic">"Se tenir informé pour anticiper les menaces et les innovations de demain."</p>
+                <div class="text-center mb-16"><h2 class="text-3xl font-black uppercase tracking-widest inline-block border-b-2 border-blue-500 pb-2 text-white">Veille Technologique</h2></div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    
+                    <div class="veille-item glass-card rounded-2xl overflow-hidden border border-white/10">
+                        <div class="veille-header p-5 flex justify-between items-center font-black uppercase tracking-widest text-sm" onclick="toggleVeille(this)">
+                            <span>La Cybersécurité</span>
+                            <i class="fa-solid fa-plus transition-transform duration-300"></i>
+                        </div>
+                        <div class="veille-content">
+                            <div class="p-6 space-y-4">
+                                <p class="text-sm text-slate-300">Nouvelles vulnérabilités, ransomwares, stratégies de défense (Zero Trust).</p>
+                                <div class="grid grid-cols-1 gap-2">
+                                    <a href="https://www.cert.ssi.gouv.fr/" target="_blank" class="source-link p-3 rounded-lg text-xs font-bold text-center">ANSSI / CERT-FR</a>
+                                    <a href="https://www.lemagit.fr/actualites/Securite" target="_blank" class="source-link p-3 rounded-lg text-xs font-bold text-center">LeMagIT (Sécurité)</a>
+                                    <a href="https://thehackernews.com/" target="_blank" class="source-link p-3 rounded-lg text-xs font-bold text-center">The Hacker News</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="veille-item glass-card rounded-2xl overflow-hidden border border-white/10">
+                        <div class="veille-header p-5 flex justify-between items-center font-black uppercase tracking-widest text-sm" onclick="toggleVeille(this)">
+                            <span>Cloud Computing & Virtualisation</span>
+                            <i class="fa-solid fa-plus transition-transform duration-300"></i>
+                        </div>
+                        <div class="veille-content">
+                            <div class="p-6 space-y-4">
+                                <p class="text-sm text-slate-300">Évolutions Azure/AWS, serveurs hybrides, conteneurisation (Docker, Kubernetes).</p>
+                                <div class="grid grid-cols-1 gap-2">
+                                    <a href="https://www.linformaticien.com/actualites/categorie/cloud-datacenters.html" target="_blank" class="source-link p-3 rounded-lg text-xs font-bold text-center">L'Informaticien</a>
+                                    <a href="https://www.veeam.com/blog/fr/" target="_blank" class="source-link p-3 rounded-lg text-xs font-bold text-center">Veeam Blog</a>
+                                    <a href="https://azure.microsoft.com/en-us/blog/" target="_blank" class="source-link p-3 rounded-lg text-xs font-bold text-center">Azure Blog</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="veille-item glass-card rounded-2xl overflow-hidden border border-white/10">
+                        <div class="veille-header p-5 flex justify-between items-center font-black uppercase tracking-widest text-sm" onclick="toggleVeille(this)">
+                            <span>Infrastructures Réseaux (SD-WAN)</span>
+                            <i class="fa-solid fa-plus transition-transform duration-300"></i>
+                        </div>
+                        <div class="veille-content">
+                            <div class="p-6 space-y-4">
+                                <p class="text-sm text-slate-300">Déploiement du SD-WAN, normes WiFi 7, automatisation réseau (NetDevOps).</p>
+                                <div class="grid grid-cols-1 gap-2">
+                                    <a href="https://blogs.cisco.com/networking" target="_blank" class="source-link p-3 rounded-lg text-xs font-bold text-center">Cisco Blog</a>
+                                    <a href="https://www.zdnet.fr/actualites/networking-3900000005.htm" target="_blank" class="source-link p-3 rounded-lg text-xs font-bold text-center">ZDNet Networking</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="veille-item glass-card rounded-2xl overflow-hidden border border-white/10">
+                        <div class="veille-header p-5 flex justify-between items-center font-black uppercase tracking-widest text-sm" onclick="toggleVeille(this)">
+                            <span>IA & Administration (AIOps)</span>
+                            <i class="fa-solid fa-plus transition-transform duration-300"></i>
+                        </div>
+                        <div class="veille-content">
+                            <div class="p-6 space-y-4">
+                                <p class="text-sm text-slate-300">Détection de pannes ou d'intrusions prédictive via l'intelligence artificielle.</p>
+                                <div class="grid grid-cols-1 gap-2">
+                                    <a href="https://www.it-connect.fr/" target="_blank" class="source-link p-3 rounded-lg text-xs font-bold text-center">IT Connect</a>
+                                    <a href="https://www.gartner.com/en/information-technology/research/it-operations" target="_blank" class="source-link p-3 rounded-lg text-xs font-bold text-center">Gartner IT Operations</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </section>
 
             <section id="contact" class="max-w-6xl mx-auto px-8 py-24 scroll-mt-24">
-                <div class="text-center mb-16"><h2 class="text-3xl font-black uppercase tracking-widest inline-block border-b-2 border-blue-500 pb-2">Contact</h2></div>
+                <div class="text-center mb-16"><h2 class="text-3xl font-black uppercase tracking-widest inline-block border-b-2 border-blue-500 pb-2 text-white">Contact</h2></div>
                 <div class="max-w-4xl mx-auto flex flex-col items-center gap-12 text-center">
                     <div class="space-y-6">
                         <p class="text-2xl font-bold">Alyssia.noireau@gmail.com</p>
@@ -208,6 +273,7 @@
     </div>
 
     <script>
+        // TYPEWRITER
         const text = "Bienvenue sur mon Portfolio";
         const speed = 100;
         let i = 0;
@@ -217,6 +283,12 @@
             else { setTimeout(() => { element.innerHTML = ""; i = 0; typeWriter(); }, 2000); }
         }
         window.onload = typeWriter;
+
+        // ACCORDÉON VEILLE
+        function toggleVeille(element) {
+            const item = element.parentElement;
+            item.classList.toggle('active');
+        }
     </script>
 </body>
 </html>
