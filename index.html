@@ -37,21 +37,18 @@
 
         .photo-frame { width: 100%; height: 100%; object-fit: cover; object-position: center 20%; }
 
-        /* Organigramme */
         .org-box { border-left: 3px solid #3b82f6; background: rgba(255,255,255,0.05); padding: 12px 20px; margin: 8px auto; width: 100%; max-width: 400px; border-radius: 2px 10px 10px 2px; }
         .org-connector { width: 1px; height: 20px; background: rgba(59, 130, 246, 0.4); margin: 0 auto; }
 
-        /* Accordéons */
         .details-content { max-height: 0; overflow: hidden; transition: all 0.5s ease-out; opacity: 0; }
         .details-item.active .details-content { max-height: 500px; opacity: 1; padding-top: 1rem; }
         .details-item.active .fa-plus { transform: rotate(45deg); color: #ef4444; }
 
-        /* Compétences */
-        .comp-card { cursor: pointer; transition: all 0.4s ease; }
+        .comp-card { cursor: pointer; transition: all 0.4s ease; padding: 2rem; border-radius: 1.5rem; }
+        .comp-card:hover { transform: scale(1.05); border-color: rgba(255,255,255,0.4) !important; }
         .comp-detail { max-height: 0; overflow: hidden; transition: all 0.5s ease; opacity: 0; }
         .comp-card.active .comp-detail { max-height: 300px; opacity: 1; margin-top: 1.5rem; }
 
-        /* Veille Tech */
         .veille-item.active .veille-content { max-height: 1000px; opacity: 1; padding: 2rem; }
         .veille-header { cursor: pointer; background: #a855f7; border-radius: 0.5rem; height: 80px; display: flex; align-items: center; justify-content: space-between; padding: 0 2rem; }
         .veille-content { max-height: 0; overflow: hidden; opacity: 0; transition: all 0.5s ease; background: rgba(168, 85, 247, 0.05); }
@@ -151,19 +148,19 @@
                 <div class="space-y-12">
                     <div class="border-l-4 border-blue-500 pl-8 relative py-2">
                         <h3 class="text-xl font-black text-blue-400 uppercase">Master MIAGE (En projet) <span class="text-slate-500 text-sm ml-2">2027 - 2029</span></h3>
-                        <p class="mt-2 text-slate-300">Objectif : Méthodes Informatiques Appliquées à la Gestion des Entreprises.</p>
+                        <p class="mt-2 text-slate-300 text-white">Objectif : Méthodes Informatiques Appliquées à la Gestion des Entreprises. Acquérir une double compétence en ingénierie des SI et en management.</p>
                     </div>
                     <div class="border-l-4 border-blue-500 pl-8 relative py-2">
                         <h3 class="text-xl font-black text-blue-400 uppercase">Licence Chef de Projet (CNAM) <span class="text-slate-500 text-sm ml-2">2026 - 2027</span></h3>
-                        <p class="mt-2 text-slate-300">Spécialité : Développement, sécurité et exploitation.</p>
+                        <p class="mt-2 text-slate-300 text-white">Spécialité : Développement, sécurité et exploitation. Cursus en alternance axé sur la maîtrise opérationnelle des infrastructures.</p>
                     </div>
                     <div class="border-l-4 border-blue-500 pl-8 relative py-2">
                         <h3 class="text-xl font-black text-blue-400 uppercase">BTS SIO option SISR (ORT Daniel Mayer) <span class="text-slate-500 text-sm ml-2">2024 - 2026</span></h3>
-                        <p class="mt-2 text-slate-300">Détails : Solutions d'Infrastructure, Systèmes et Réseaux.</p>
+                        <p class="mt-2 text-slate-300 text-white">Détails : Solutions d'Infrastructure, Systèmes et Réseaux. Apprentissage de l'administration système et de la sécurisation.</p>
                     </div>
                     <div class="border-l-4 border-blue-500 pl-8 relative py-2">
                         <h3 class="text-xl font-black text-blue-400 uppercase">Baccalauréat STMG option Mercatique <span class="text-slate-500 text-sm ml-2">Diplômée en 2024</span></h3>
-                        <p class="mt-2 text-slate-300">Bases solides en gestion, droit et stratégie commerciale.</p>
+                        <p class="mt-2 text-slate-300 text-white">Bases solides en gestion, droit et stratégie commerciale. Compréhension des enjeux business des entreprises.</p>
                     </div>
                 </div>
             </section>
@@ -193,50 +190,50 @@
                         <div class="org-connector"></div>
                         <div class="org-box border-blue-500 bg-blue-500/5 shadow-[0_0_20px_rgba(59,130,246,0.2)]">
                             <p class="text-[10px] text-slate-400 uppercase font-bold">Apprenti</p>
-                            <p class="font-black text-white text-blue-400">Noireau, Alyssia</p>
+                            <p class="font-black text-white">Noireau, Alyssia</p>
                         </div>
                     </div>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-16 text-left text-white">
-                    <div class="details-item glass-card white-border-card p-6 rounded-2xl cursor-pointer hover:bg-white/5 text-white" onclick="this.classList.toggle('active')">
+                    <div class="details-item glass-card white-border-card p-6 rounded-2xl cursor-pointer hover:bg-white/5" onclick="this.classList.toggle('active')">
                         <div class="flex justify-between items-center font-black uppercase text-[11px]"><span>PRÉSENTATION DU GROUPE ISTA</span><i class="fa-solid fa-plus transition-transform"></i></div>
                         <div class="details-content text-sm text-slate-300 leading-relaxed text-justify text-white">
-                            ista est l'un des leaders mondiaux de la gestion des données énergétiques, spécialisé dans l'amélioration de l'efficacité énergétique des bâtiments. En France, la société est structurée sous le statut de SAS et s'appuie sur une force humaine d'environ 800 collaborateurs.
+                            ista est l'un des leaders mondiaux de la gestion des données énergétiques, spécialisé dans l'amélioration de l'efficacité énergétique des bâtiments. En France, la société est structurée sous le statut de SAS et s'appuie sur une force humaine d'environ 800 collaborateurs. Le groupe accompagne ses clients dans la transition durable grâce à des services innovants de comptage et de facturation. Cette expertise permet de répondre aux enjeux écologiques actuels tout en optimisant la consommation de ressources.
                         </div>
                     </div>
                     <div class="details-item glass-card white-border-card p-6 rounded-2xl cursor-pointer hover:bg-white/5" onclick="this.classList.toggle('active')">
                         <div class="flex justify-between items-center font-black uppercase text-[11px]"><span>RAYONNEMENT ET CHIFFRES CLÉS</span><i class="fa-solid fa-plus transition-transform"></i></div>
                         <div class="details-content text-sm text-slate-300 leading-relaxed text-justify text-white">
-                            Le groupe possède une envergure internationale majeure avec une présence active dans plus de 20 pays, principalement en Europe et en Asie. Avec un chiffre d'affaires annuel dépassant le milliard d'euros, ista s'impose comme un acteur économique solide et pérenne.
+                            Le groupe possède une envergure internationale majeure avec une présence active dans plus de 20 pays, principalement en Europe et en Asie. Avec un chiffre d'affaires annuel dépassant le milliard d'euros, ista s'impose comme un acteur économique solide et pérenne. Globalement, l'entreprise gère un parc impressionnant de plus de 45 millions d'appareils connectés. Ce réseau mondial permet de collecter et d'analyser les données de 14 millions de logements et locaux commerciaux.
                         </div>
                     </div>
-                    <div class="details-item glass-card white-border-card p-6 rounded-2xl cursor-pointer hover:bg-white/5 text-white" onclick="this.classList.toggle('active')">
+                    <div class="details-item glass-card white-border-card p-6 rounded-2xl cursor-pointer hover:bg-white/5" onclick="this.classList.toggle('active')">
                         <div class="flex justify-between items-center font-black uppercase text-[11px]"><span>NOTRE ACTIVITÉ ET MISSIONS</span><i class="fa-solid fa-plus transition-transform"></i></div>
-                        <div class="details-content text-sm text-white leading-relaxed text-justify text-white">
-                            Le cœur de métier d'ista repose sur l'individualisation des frais de chauffage et d'eau au sein des habitations collectives. Grâce à des solutions de télérelève performantes, l'entreprise permet une gestion précise et transparente des consommations énergétiques.
+                        <div class="details-content text-sm text-slate-300 leading-relaxed text-justify text-white">
+                            Le cœur de métier d'ista repose sur l'individualisation des frais de chauffage et d'eau au sein des habitations collectives. Grâce à des solutions de télérelève performantes, l'entreprise permet une gestion précise et transparente des consommations énergétiques. Ces services permettent aux résidents de devenir acteurs de leur consommation et de réduire leur impact environnemental. En digitalisant ces données, ista simplifie la gestion immobilière tout en garantissant une répartition équitable des charges.
                         </div>
                     </div>
-                    <div class="details-item glass-card white-border-card p-6 rounded-2xl cursor-pointer hover:bg-white/5 text-white" onclick="this.classList.toggle('active')">
+                    <div class="details-item glass-card white-border-card p-6 rounded-2xl cursor-pointer hover:bg-white/5" onclick="this.classList.toggle('active')">
                         <div class="flex justify-between items-center font-black uppercase text-[11px]"><span>MON RÔLE AU SEIN DE LA DSI</span><i class="fa-solid fa-plus transition-transform"></i></div>
-                        <div class="details-content text-sm text-white leading-relaxed text-justify text-white">
-                            En tant qu'apprentie Technicienne Réseaux et Systèmes, j'évolue au sein d'une DSI internationale aux enjeux technologiques élevés. Ma mission consiste à garantir le maintien en condition opérationnelle du parc informatique via des outils de pointe comme Baramundi et Microsoft Azure.
+                        <div class="details-content text-sm text-slate-300 leading-relaxed text-justify text-white">
+                            En tant qu'apprentie Technicienne Réseaux et Systèmes, j'évolue au sein d'une DSI internationale aux enjeux technologiques élevés. Ma mission consiste à garantir le maintien en condition opérationnelle du parc informatique via des outils de pointe comme Baramundi et Microsoft Azure. J'assure également le support utilisateur et la gestion des identités dans un environnement ITSM structuré. Ce rôle me permet de développer une polyvalence technique essentielle tout en participant activement à la transformation digitale du groupe.
                         </div>
                     </div>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20">
-                    <div class="glass-card white-border-card p-2 rounded-3xl h-96 shadow-2xl flex items-center justify-center bg-white">
-                        <img src="ista-2.jpg" class="w-full h-full object-contain rounded-xl opacity-80">
+                    <div class="glass-card white-border-card p-2 rounded-3xl h-96 shadow-2xl flex items-center justify-center bg-[#1e293b]">
+                        <img src="ista-relève.jpg" alt="Relève de compteurs" class="w-full h-full object-contain rounded-xl">
                     </div>
                     <div class="glass-card white-border-card p-2 rounded-3xl h-96 shadow-2xl flex items-center justify-center bg-[#1e293b]">
-                        <img src="ista-relève.jpg" class="w-full h-full object-contain rounded-xl">
+                        <img src="ISTA.jpeg" class="w-full h-full object-contain rounded-xl">
                     </div>
-                    <div class="glass-card white-border-card p-2 rounded-3xl h-96 shadow-2xl flex items-center justify-center bg-[#1e293b]">
+                    <div class="glass-card white-border-card p-2 rounded-3xl h-96 shadow-2xl flex items-center justify-center">
                         <img src="PDG.jpeg" class="w-full h-full object-contain rounded-xl">
                     </div>
                     <div class="glass-card white-border-card p-2 rounded-3xl h-96 shadow-2xl flex items-center justify-center bg-white">
-                        <img src="ISTA.jpeg" class="w-full h-full object-contain rounded-xl">
+                        <img src="ista-1.jpg" class="w-full h-full object-contain rounded-xl">
                     </div>
                 </div>
             </section>
@@ -286,14 +283,14 @@
             <section id="certifications" class="max-w-6xl mx-auto px-8 py-24 scroll-mt-24 text-white">
                 <div class="text-center mb-16"><h2 class="text-3xl font-black uppercase section-title text-white">Certifications</h2></div>
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-                    <div class="glass-card white-border-card p-10 rounded-2xl text-center border-t-4 border-t-blue-500 shadow-xl"><p class="font-black uppercase text-sm text-white">PIX</p></div>
-                    <div class="glass-card white-border-card p-10 rounded-2xl text-center border-t-4 border-t-blue-500 shadow-xl"><p class="font-black uppercase text-sm text-white">ANSSI</p></div>
-                    <div class="glass-card white-border-card p-10 rounded-2xl text-center border-t-4 border-t-blue-500 shadow-xl"><p class="font-black uppercase text-sm text-white">CNIL</p></div>
-                    <div class="glass-card white-border-card p-10 rounded-2xl text-center border-t-4 border-t-blue-500 shadow-xl"><p class="font-black uppercase text-sm text-white">CCNA 1</p></div>
-                    <div class="glass-card white-border-card p-10 rounded-2xl text-center border-t-4 border-t-blue-500 shadow-xl"><p class="font-black uppercase text-sm text-white">CCNA 2</p></div>
-                    <div class="glass-card white-border-card p-10 rounded-2xl text-center border-t-4 border-t-blue-500 shadow-xl"><p class="font-black uppercase text-sm text-white">AZURE</p></div>
-                    <div class="glass-card white-border-card p-10 rounded-2xl text-center border-t-4 border-t-blue-500 shadow-xl"><p class="font-black uppercase text-sm text-white">ITIL 4</p></div>
-                    <div class="glass-card white-border-card p-10 rounded-2xl text-center border-t-4 border-t-blue-500 shadow-xl"><p class="font-black uppercase text-sm text-white">PCEP</p></div>
+                    <div class="glass-card white-border-card p-12 rounded-2xl text-center border-t-4 border-t-blue-500 shadow-2xl flex items-center justify-center hover:bg-white/5 transition-all"><p class="font-black uppercase text-sm text-white">PIX</p></div>
+                    <div class="glass-card white-border-card p-12 rounded-2xl text-center border-t-4 border-t-blue-500 shadow-2xl flex items-center justify-center hover:bg-white/5 transition-all"><p class="font-black uppercase text-sm text-white">ANSSI</p></div>
+                    <div class="glass-card white-border-card p-12 rounded-2xl text-center border-t-4 border-t-blue-500 shadow-2xl flex items-center justify-center hover:bg-white/5 transition-all"><p class="font-black uppercase text-sm text-white">CNIL</p></div>
+                    <div class="glass-card white-border-card p-12 rounded-2xl text-center border-t-4 border-t-blue-500 shadow-2xl flex items-center justify-center hover:bg-white/5 transition-all"><p class="font-black uppercase text-sm text-white">CCNA 1</p></div>
+                    <div class="glass-card white-border-card p-12 rounded-2xl text-center border-t-4 border-t-blue-500 shadow-2xl flex items-center justify-center hover:bg-white/5 transition-all"><p class="font-black uppercase text-sm text-white">CCNA 2</p></div>
+                    <div class="glass-card white-border-card p-12 rounded-2xl text-center border-t-4 border-t-blue-500 shadow-2xl flex items-center justify-center hover:bg-white/5 transition-all"><p class="font-black uppercase text-sm text-white">AZURE</p></div>
+                    <div class="glass-card white-border-card p-12 rounded-2xl text-center border-t-4 border-t-blue-500 shadow-2xl flex items-center justify-center hover:bg-white/5 transition-all"><p class="font-black uppercase text-sm text-white">ITIL 4</p></div>
+                    <div class="glass-card white-border-card p-12 rounded-2xl text-center border-t-4 border-t-blue-500 shadow-2xl flex items-center justify-center hover:bg-white/5 transition-all"><p class="font-black uppercase text-sm text-white">PCEP</p></div>
                 </div>
             </section>
 
@@ -301,48 +298,48 @@
                 <h2 class="text-3xl font-black uppercase section-title text-white mb-16">Compétences</h2>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
                     <div class="comp-card group" onclick="this.classList.toggle('active')">
-                        <i class="fa-solid fa-server text-8xl text-blue-400 mb-6 drop-shadow-lg group-hover:scale-110 transition-transform"></i>
-                        <h3 class="font-black uppercase text-sm tracking-widest text-white">Virtualisation</h3>
+                        <i class="fa-solid fa-server text-8xl text-[#4285F4] mb-6 drop-shadow-lg group-hover:scale-110 transition-transform"></i>
+                        <h3 class="font-black uppercase text-sm tracking-widest">Virtualisation</h3>
                         <div class="comp-detail text-left text-xs leading-relaxed text-white">Focus : ESXi, snapshots, gestion de ressources serveurs et VMs.</div>
                     </div>
                     <div class="comp-card group" onclick="this.classList.toggle('active')">
-                        <i class="fa-brands fa-linux text-8xl text-yellow-500 mb-6 drop-shadow-lg group-hover:scale-110 transition-transform"></i>
+                        <i class="fa-brands fa-linux text-8xl text-[#FCC624] mb-6 drop-shadow-lg group-hover:scale-110 transition-transform"></i>
                         <h3 class="font-black uppercase text-sm tracking-widest text-white">Linux Debian</h3>
                         <div class="comp-detail text-left text-xs leading-relaxed text-white">Focus : Administration CLI, Apache, SSH et scripts Bash.</div>
                     </div>
                     <div class="comp-card group" onclick="this.classList.toggle('active')">
-                        <i class="fa-brands fa-docker text-8xl text-blue-500 mb-6 drop-shadow-lg group-hover:scale-110 transition-transform text-white"></i>
-                        <h3 class="font-black uppercase text-sm tracking-widest text-white">Conteneurisation</h3>
-                        <div class="comp-detail text-left text-xs leading-relaxed text-white">Focus : Gestion Docker-compose, orchestration micro-services.</div>
+                        <i class="fa-brands fa-docker text-8xl text-[#2496ED] mb-6 drop-shadow-lg group-hover:scale-110 transition-transform"></i>
+                        <h3 class="font-black uppercase text-sm tracking-widest text-white text-white">Conteneurisation</h3>
+                        <div class="comp-detail text-left text-xs leading-relaxed text-white text-white">Focus : Gestion Docker-compose, orchestration micro-services.</div>
                     </div>
                     <div class="comp-card group" onclick="this.classList.toggle('active')">
-                        <i class="fa-brands fa-python text-8xl text-blue-300 mb-6 drop-shadow-lg group-hover:scale-110 transition-transform text-white"></i>
-                        <h3 class="font-black uppercase text-sm tracking-widest text-white">Scripting</h3>
-                        <div class="comp-detail text-left text-xs leading-relaxed text-white">Focus : Automatisation tâches et monitoring via Python.</div>
+                        <i class="fa-brands fa-python text-8xl text-[#3776AB] mb-6 drop-shadow-lg group-hover:scale-110 transition-transform"></i>
+                        <h3 class="font-black uppercase text-sm tracking-widest text-white text-white">Scripting</h3>
+                        <div class="comp-detail text-left text-xs leading-relaxed text-white text-white">Focus : Automatisation tâches et monitoring via Python.</div>
                     </div>
                     <div class="comp-card group" onclick="this.classList.toggle('active')">
-                        <i class="fa-solid fa-users-gear text-8xl text-blue-600 mb-6 drop-shadow-lg group-hover:scale-110 transition-transform text-white"></i>
-                        <h3 class="font-black uppercase text-sm tracking-widest text-white">Active Directory</h3>
-                        <div class="comp-detail text-left text-xs leading-relaxed text-white">Focus : Gestion des GPO, identités (IAM) et droits partages.</div>
+                        <i class="fa-solid fa-users-gear text-8xl text-[#00A4EF] mb-6 drop-shadow-lg group-hover:scale-110 transition-transform"></i>
+                        <h3 class="font-black uppercase text-sm tracking-widest text-white text-white">Active Directory</h3>
+                        <div class="comp-detail text-left text-xs leading-relaxed text-white text-white text-white text-white">Focus : Gestion des GPO, identités (IAM) et droits partages.</div>
                     </div>
                     <div class="comp-card group" onclick="this.classList.toggle('active')">
-                        <i class="fa-solid fa-network-wired text-8xl text-cyan-400 mb-6 drop-shadow-lg group-hover:scale-110 transition-transform text-white"></i>
-                        <h3 class="font-black uppercase text-sm tracking-widest text-white">Réseaux Cisco</h3>
-                        <div class="comp-detail text-left text-xs leading-relaxed text-white">Focus : VLAN, routage et analyse Wireshark.</div>
+                        <i class="fa-solid fa-network-wired text-8xl text-[#00bceb] mb-6 drop-shadow-lg group-hover:scale-110 transition-transform text-white"></i>
+                        <h3 class="font-black uppercase text-sm tracking-widest text-white text-white">Réseaux Cisco</h3>
+                        <div class="comp-detail text-left text-xs leading-relaxed text-white text-white">Focus : VLAN, routage et analyse Wireshark.</div>
                     </div>
                     <div class="comp-card group" onclick="this.classList.toggle('active')">
-                        <i class="fa-solid fa-shield-halved text-8xl text-red-500 mb-6 drop-shadow-lg group-hover:scale-110 transition-transform text-white text-white"></i>
+                        <i class="fa-solid fa-shield-halved text-8xl text-[#E34F26] mb-6 drop-shadow-lg group-hover:scale-110 transition-transform"></i>
                         <h3 class="font-black uppercase text-sm tracking-widest text-white">Cybersécurité</h3>
                         <div class="comp-detail text-left text-xs leading-relaxed text-white">Focus : Firewall, VPN Site-to-Site et sécurisation endpoints.</div>
                     </div>
                     <div class="comp-card group" onclick="this.classList.toggle('active')">
-                        <i class="fa-brands fa-microsoft text-8xl text-blue-700 mb-6 drop-shadow-lg group-hover:scale-110 transition-transform text-white"></i>
-                        <h3 class="font-black uppercase text-sm tracking-widest text-white">Azure Cloud</h3>
-                        <div class="comp-detail text-left text-xs leading-relaxed text-white">Focus : Entra ID (Azure AD), ressources VMs et stockage.</div>
+                        <i class="fa-brands fa-microsoft text-8xl text-[#0078D4] mb-6 drop-shadow-lg group-hover:scale-110 transition-transform text-white"></i>
+                        <h3 class="font-black uppercase text-sm tracking-widest text-white text-white">Azure Cloud</h3>
+                        <div class="comp-detail text-left text-xs leading-relaxed text-white text-white">Focus : Entra ID (Azure AD), ressources VMs et stockage.</div>
                     </div>
                     <div class="comp-card group" onclick="this.classList.toggle('active')">
-                        <i class="fa-solid fa-laptop-medical text-8xl text-green-500 mb-6 drop-shadow-lg group-hover:scale-110 transition-transform text-white"></i>
-                        <h3 class="font-black uppercase text-sm tracking-widest text-white">Gestion Parc</h3>
+                        <i class="fa-solid fa-laptop-medical text-8xl text-[#4CAF50] mb-6 drop-shadow-lg group-hover:scale-110 transition-transform text-white"></i>
+                        <h3 class="font-black uppercase text-sm tracking-widest text-white text-white text-white">Gestion Parc</h3>
                         <div class="comp-detail text-left text-xs leading-relaxed text-white text-white">Baramundi, Intune, inventaire hardware.</div>
                     </div>
                 </div>
@@ -350,37 +347,37 @@
 
             <section id="veille" class="max-w-6xl mx-auto px-8 py-24 scroll-mt-24 text-center text-white">
                 <div class="text-center mb-16"><h2 class="text-3xl font-black uppercase section-title text-white">Veille Technologique</h2></div>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-left text-white">
-                    <div class="veille-item glass-card rounded-2xl overflow-hidden shadow-2xl transition-all text-white" onclick="this.classList.toggle('active')">
-                        <div class="veille-header text-white"><span>Cybersécurité</span><i class="fa-solid fa-plus text-white"></i></div>
-                        <div class="veille-content p-6 space-y-4 text-white">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-left text-white text-white text-white">
+                    <div class="veille-item glass-card rounded-2xl overflow-hidden shadow-2xl transition-all" onclick="this.classList.toggle('active')">
+                        <div class="veille-header"><span>Cybersécurité</span><i class="fa-solid fa-plus"></i></div>
+                        <div class="veille-content space-y-4">
                             <a href="https://www.cert.ssi.gouv.fr/" target="_blank" class="block text-blue-400 font-bold underline text-xs">ANSSI / CERT-FR</a>
                             <a href="https://thehackernews.com/" target="_blank" class="block text-blue-400 font-bold underline text-xs">The Hacker News</a>
                             <a href="https://www.lemagit.fr/securite" target="_blank" class="block text-blue-400 font-bold underline text-xs">LeMagIT Sécurité</a>
                             <p class="text-white italic text-xs">Vulnérabilités critiques et stratégies Zero Trust.</p>
                         </div>
                     </div>
-                    <div class="veille-item glass-card rounded-2xl overflow-hidden shadow-2xl transition-all text-white" onclick="this.classList.toggle('active')">
-                        <div class="veille-header text-white"><span>Cloud Computing</span><i class="fa-solid fa-plus text-white"></i></div>
-                        <div class="veille-content p-6 space-y-4 text-white">
+                    <div class="veille-item glass-card rounded-2xl overflow-hidden shadow-2xl transition-all" onclick="this.classList.toggle('active')">
+                        <div class="veille-header text-white"><span>Cloud Computing</span><i class="fa-solid fa-plus"></i></div>
+                        <div class="veille-content space-y-4">
                             <a href="https://azure.microsoft.com/fr-fr/blog/" target="_blank" class="block text-blue-400 font-bold underline text-xs">Azure Blog</a>
                             <a href="https://aws.amazon.com/fr/blogs/aws/" target="_blank" class="block text-blue-400 font-bold underline text-xs">AWS Blog</a>
                             <a href="https://www.veeam.com/blog/fr" target="_blank" class="block text-blue-400 font-bold underline text-xs">Veeam Blog</a>
                             <p class="text-white italic text-xs">Infrastructures hybrides et virtualisation.</p>
                         </div>
                     </div>
-                    <div class="veille-item glass-card rounded-2xl overflow-hidden shadow-2xl transition-all text-white" onclick="this.classList.toggle('active')">
-                        <div class="veille-header text-white"><span>IA & AIOps</span><i class="fa-solid fa-plus text-white"></i></div>
-                        <div class="veille-content p-6 space-y-4 text-white">
+                    <div class="veille-item glass-card rounded-2xl overflow-hidden shadow-2xl transition-all" onclick="this.classList.toggle('active')">
+                        <div class="veille-header text-white text-white"><span>IA & AIOps</span><i class="fa-solid fa-plus"></i></div>
+                        <div class="veille-content space-y-4">
                             <a href="https://www.it-connect.fr/" target="_blank" class="block text-blue-400 font-bold underline text-xs">IT Connect</a>
                             <a href="https://www.zdnet.fr/intelligence-artificielle/" target="_blank" class="block text-blue-400 font-bold underline text-xs">ZDNet IA</a>
                             <a href="https://openai.com/news/" target="_blank" class="block text-blue-400 font-bold underline text-xs">OpenAI News</a>
                             <p class="text-white italic text-xs">Automatisation et supervision par l'IA.</p>
                         </div>
                     </div>
-                    <div class="veille-item glass-card rounded-2xl overflow-hidden shadow-2xl transition-all text-white" onclick="this.classList.toggle('active')">
-                        <div class="veille-header text-white"><span>Réseaux SD-WAN</span><i class="fa-solid fa-plus text-white"></i></div>
-                        <div class="veille-content p-6 space-y-4 text-white">
+                    <div class="veille-item glass-card rounded-2xl overflow-hidden shadow-2xl transition-all" onclick="this.classList.toggle('active')">
+                        <div class="veille-header"><span>Réseaux SD-WAN</span><i class="fa-solid fa-plus text-white text-white text-white"></i></div>
+                        <div class="veille-content space-y-4">
                             <a href="https://blogs.cisco.com/networking" target="_blank" class="block text-blue-400 font-bold underline text-xs">Cisco Networking</a>
                             <a href="https://www.networkworld.com/" target="_blank" class="block text-blue-400 font-bold underline text-xs">Network World</a>
                             <a href="https://www.arubanetworks.com/blog/" target="_blank" class="block text-blue-400 font-bold underline text-xs">Aruba Blog</a>
@@ -390,33 +387,33 @@
                 </div>
             </section>
 
-            <section id="contact" class="max-w-6xl mx-auto px-8 py-24 scroll-mt-24 text-white">
-                <div class="text-center mb-16"><h2 class="text-3xl font-black uppercase section-title text-white">Contact</h2></div>
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 text-white">
-                    <div class="space-y-6 text-white">
+            <section id="contact" class="max-w-6xl mx-auto px-8 py-24 scroll-mt-24 text-white text-white text-white text-white text-white">
+                <div class="text-center mb-16"><h2 class="text-3xl font-black uppercase section-title text-white text-white text-white text-white text-white">Contact</h2></div>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 text-white text-white text-white text-white text-white">
+                    <div class="space-y-6 text-white text-white text-white text-white text-white">
                         <div class="glass-card white-border-card p-6 rounded-2xl flex items-center gap-6 shadow-lg text-white">
                             <div class="w-12 h-12 bg-blue-600/20 rounded-full flex items-center justify-center text-blue-400 text-white"><i class="fa-solid fa-envelope text-xl text-white"></i></div>
-                            <div><p class="text-[10px] text-white uppercase font-bold">E-mail</p><p class="text-lg font-black text-white">alyssia.noireau@gmail.com</p></div>
+                            <div><p class="text-[10px] text-white uppercase font-bold text-white">E-mail</p><p class="text-lg font-black text-white text-white">alyssia.noireau@gmail.com</p></div>
                         </div>
                         <div class="glass-card white-border-card p-6 rounded-2xl flex items-center gap-6 shadow-lg text-white">
-                            <div class="w-12 h-12 bg-blue-600/20 rounded-full flex items-center justify-center text-blue-400 text-white"><i class="fa-solid fa-phone text-xl text-white"></i></div>
-                            <div><p class="text-[10px] text-white uppercase font-bold">Téléphone</p><p class="text-lg font-black text-white">07 67 17 89 08</p></div>
+                            <div class="w-12 h-12 bg-blue-600/20 rounded-full flex items-center justify-center text-blue-400 text-white text-white"><i class="fa-solid fa-phone text-xl text-white"></i></div>
+                            <div><p class="text-[10px] text-white uppercase font-bold text-white text-white">Téléphone</p><p class="text-lg font-black text-white text-white text-white">07 67 17 89 08</p></div>
                         </div>
-                        <div class="glass-card white-border-card p-6 rounded-2xl flex items-center gap-6 shadow-lg text-white">
-                            <div class="w-12 h-12 bg-blue-600/20 rounded-full flex items-center justify-center text-blue-400 text-white"><i class="fa-solid fa-location-dot text-xl text-white"></i></div>
-                            <div><p class="text-[10px] text-white uppercase font-bold">Localisation</p><p class="text-lg font-black text-white">Île-de-France, France</p></div>
+                        <div class="glass-card white-border-card p-6 rounded-2xl flex items-center gap-6 shadow-lg text-white text-white">
+                            <div class="w-12 h-12 bg-blue-600/20 rounded-full flex items-center justify-center text-blue-400 text-white text-white text-white"><i class="fa-solid fa-location-dot text-xl text-white"></i></div>
+                            <div><p class="text-[10px] text-white uppercase font-bold text-white text-white text-white">Localisation</p><p class="text-lg font-black text-white text-white text-white">Île-de-France, France</p></div>
                         </div>
-                        <div class="flex gap-8 justify-center lg:justify-start pt-4 text-white">
-                            <a href="https://www.linkedin.com/in/alyssia-noireau" target="_blank" class="text-5xl hover:text-blue-400 transition-colors text-white"><i class="fa-brands fa-linkedin text-white"></i></a>
-                            <a href="https://github.com/AlyssiaNoireau" target="_blank" class="text-5xl hover:text-white transition-colors text-white"><i class="fa-brands fa-github text-white"></i></a>
+                        <div class="flex gap-8 justify-center lg:justify-start pt-4 text-white text-white text-white">
+                            <a href="https://www.linkedin.com/in/alyssia-noireau" target="_blank" class="text-5xl hover:text-blue-400 transition-colors text-white text-white text-white text-white"><i class="fa-brands fa-linkedin text-white text-white text-white text-white text-white text-white"></i></a>
+                            <a href="https://github.com/AlyssiaNoireau" target="_blank" class="text-5xl hover:text-white transition-colors text-white text-white text-white text-white"><i class="fa-brands fa-github text-white text-white text-white text-white text-white text-white"></i></a>
                         </div>
                     </div>
-                    <div class="glass-card white-border-card p-8 rounded-3xl shadow-2xl text-white">
-                        <form action="https://formspree.io/f/mdalzynp" method="POST" class="space-y-4 text-white">
-                            <input type="text" name="name" placeholder="Nom Complet" class="w-full form-input p-4 rounded-xl text-sm shadow-inner text-white" required>
-                            <input type="email" name="email" placeholder="Email" class="w-full form-input p-4 rounded-xl text-sm shadow-inner text-white" required>
-                            <textarea name="message" rows="6" placeholder="Votre message..." class="w-full form-input p-4 rounded-xl text-sm resize-none shadow-inner text-white" required></textarea>
-                            <button type="submit" class="w-full py-4 bg-blue-600 font-black uppercase text-xs rounded-xl hover:bg-blue-500 transition-all text-white shadow-lg">Envoyer le mail</button>
+                    <div class="glass-card white-border-card p-8 rounded-3xl shadow-2xl text-white text-white">
+                        <form action="https://formspree.io/f/mdalzynp" method="POST" class="space-y-4 text-white text-white text-white">
+                            <input type="text" name="name" placeholder="Nom Complet" class="w-full form-input p-4 rounded-xl text-sm shadow-inner text-white text-white" required>
+                            <input type="email" name="email" placeholder="Email" class="w-full form-input p-4 rounded-xl text-sm shadow-inner text-white text-white" required>
+                            <textarea name="message" rows="6" placeholder="Votre message..." class="w-full form-input p-4 rounded-xl text-sm resize-none shadow-inner text-white text-white" required></textarea>
+                            <button type="submit" class="w-full py-4 bg-blue-600 font-black uppercase text-xs rounded-xl hover:bg-blue-500 transition-all text-white shadow-lg text-white">Envoyer le mail</button>
                         </form>
                     </div>
                 </div>
