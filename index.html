@@ -18,11 +18,7 @@
         .nav-link::before { content: ''; position: absolute; left: 0; top: 0; height: 100%; width: 0; background: #3b82f6; transition: width 0.3s ease; }
         .nav-link:hover::before { width: 4px; }
 
-        .nav-link.active { 
-            color: #60a5fa; 
-            background: rgba(59, 130, 246, 0.15); 
-            padding-left: 2rem; 
-        }
+        .nav-link.active { color: #60a5fa; background: rgba(59, 130, 246, 0.15); padding-left: 2rem; }
         .nav-link.active::before { width: 4px; }
 
         .typing::after { content: '|'; animation: blink 0.7s infinite; }
@@ -39,7 +35,7 @@
             transition: all 0.5s ease-in-out; 
             background: #a855f7; border-radius: 1rem; margin-top: 1rem;
         }
-        .comp-card.active .comp-detail { max-height: 600px; opacity: 1; padding: 1.5rem; }
+        .comp-card.active .comp-detail { max-height: 800px; opacity: 1; padding: 1.5rem; }
 
         .veille-item.active .veille-content { max-height: 1000px; }
         .veille-header { background: #a855f7; cursor: pointer; transition: background 0.3s; border-radius: 0.5rem; }
@@ -77,6 +73,7 @@
         <nav id="sidebar-nav" class="flex-1 flex flex-col justify-evenly py-4 text-xs font-bold uppercase tracking-widest text-slate-400">
             <a href="#accueil" class="nav-link py-3 px-8"><i class="fa-solid fa-house-chimney w-5"></i> Accueil</a>
             <a href="#profil" class="nav-link py-3 px-8"><i class="fa-solid fa-id-badge w-5"></i> Profil</a>
+            <a href="#formation" class="nav-link py-3 px-8"><i class="fa-solid fa-graduation-cap w-5"></i> Formation</a>
             <a href="#entreprise" class="nav-link py-3 px-8"><i class="fa-solid fa-building w-5"></i> Entreprise</a>
             <a href="#tp" class="nav-link py-3 px-8"><i class="fa-solid fa-diagram-project w-5"></i> Projets</a>
             <a href="#certifications" class="nav-link py-3 px-8"><i class="fa-solid fa-certificate w-5"></i> Certifications</a>
@@ -95,7 +92,7 @@
             </section>
 
             <section id="profil" class="max-w-6xl mx-auto px-8 py-24 scroll-mt-24">
-                <div class="text-center mb-16"><h2 class="text-3xl font-black uppercase tracking-widest inline-block border-b-2 border-blue-500 pb-2">Présentation</h2></div>
+                <div class="text-center mb-16"><h2 class="text-3xl font-black uppercase tracking-widest inline-block border-b-2 border-blue-500 pb-2 text-white">Présentation</h2></div>
                 <div class="grid grid-cols-1 lg:grid-cols-5 gap-12 items-start">
                     <div class="lg:col-span-2 flex flex-col items-center space-y-4">
                         <div class="glass-card w-72 h-72 p-2 rounded-3xl border border-blue-500/30 overflow-hidden shadow-2xl">
@@ -113,22 +110,69 @@
                 </div>
             </section>
 
+            <section id="formation" class="max-w-6xl mx-auto px-8 py-24 scroll-mt-24">
+                <div class="text-center mb-16"><h2 class="text-3xl font-black uppercase tracking-widest inline-block border-b-2 border-blue-500 pb-2 text-white">Mon Parcours de Formation</h2></div>
+                <div class="grid grid-cols-1 gap-6">
+                    <div class="glass-card white-border-card p-8 rounded-2xl group hover:border-blue-500 transition-all">
+                        <div class="flex flex-col md:flex-row justify-between mb-4">
+                            <h3 class="text-xl font-black text-blue-400 uppercase">Master MIAGE (En projet)</h3>
+                            <span class="text-slate-400 font-bold">2027 - 2029</span>
+                        </div>
+                        <p class="text-slate-300"><strong>Objectif :</strong> Méthodes Informatiques Appliquées à la Gestion des Entreprises.</p>
+                        <p class="text-sm mt-2 text-slate-400 italic">Visée : Acquérir une double compétence en ingénierie des systèmes d'information et en management pour piloter des projets complexes.</p>
+                    </div>
+                    <div class="glass-card white-border-card p-8 rounded-2xl group hover:border-blue-500 transition-all">
+                        <div class="flex flex-col md:flex-row justify-between mb-4">
+                            <h3 class="text-xl font-black text-blue-400 uppercase">Licence Chef de Projet (CNAM)</h3>
+                            <span class="text-slate-400 font-bold">2026 - 2027</span>
+                        </div>
+                        <p class="text-slate-300"><strong>Spécialité :</strong> Développement, sécurité et exploitation.</p>
+                        <p class="text-sm mt-2 text-slate-400 italic">Format : Cursus en alternance, axé sur la maîtrise opérationnelle des infrastructures et la gestion de la cybersécurité.</p>
+                    </div>
+                    <div class="glass-card white-border-card p-8 rounded-2xl group hover:border-blue-400 transition-all">
+                        <div class="flex flex-col md:flex-row justify-between mb-4">
+                            <h3 class="text-xl font-black text-white uppercase">BTS SIO option SISR (ORT Daniel Mayer)</h3>
+                            <span class="text-slate-400 font-bold">2024 - 2026</span>
+                        </div>
+                        <p class="text-slate-300"><strong>Détails :</strong> Solutions d'Infrastructure, Systèmes et Réseaux.</p>
+                        <p class="text-sm mt-2 text-slate-400 italic">Format : Formation en alternance, apprentissage de l'administration système, de la configuration réseau et de la sécurisation des services.</p>
+                    </div>
+                    <div class="glass-card white-border-card p-8 rounded-2xl group hover:border-blue-400 transition-all">
+                        <div class="flex flex-col md:flex-row justify-between mb-4">
+                            <h3 class="text-xl font-black text-white uppercase">Baccalauréat STMG option Mercatique</h3>
+                            <span class="text-slate-400 font-bold">Diplômée en 2024</span>
+                        </div>
+                        <p class="text-slate-300"><strong>Détails :</strong> Bases solides en gestion, droit et stratégie commerciale.</p>
+                        <p class="text-sm mt-2 text-slate-400 italic">Atout : Cette formation initiale m'apporte une vision transverse et une compréhension des enjeux business des entreprises.</p>
+                    </div>
+                </div>
+            </section>
+
             <section id="entreprise" class="max-w-6xl mx-auto px-8 py-24 scroll-mt-24">
                 <div class="text-center mb-16"><h2 class="text-3xl font-black uppercase tracking-widest inline-block border-b-2 border-blue-500 pb-2 text-white">Expérience chez Ista</h2></div>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-                    <div class="glass-card white-border-card p-6 rounded-2xl"><h3 class="text-blue-400 font-black uppercase text-xs mb-4">Notre Activité</h3><p class="text-sm">Ista installe des compteurs connectés pour mesurer précisément la consommation d'eau et de chauffage de chaque habitant.</p></div>
-                    <div class="glass-card white-border-card p-6 rounded-2xl"><h3 class="text-blue-400 font-black uppercase text-xs mb-4">Dimension Internationale</h3><p class="text-sm">L'entreprise est d'origine allemande, présente dans 22 pays. Collaboration quotidienne avec des équipes internationales.</p></div>
-                    <div class="glass-card white-border-card p-6 rounded-2xl"><h3 class="text-blue-400 font-black uppercase text-xs mb-4">Rôle du Support</h3><p class="text-sm">Maintenance des outils numériques, résolution d'incidents techniques et accompagnement utilisateurs.</p></div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                    <div class="glass-card white-border-card p-8 rounded-2xl text-center group">
+                        <i class="fa-solid fa-chart-line text-3xl text-blue-400 mb-4 transition-transform group-hover:scale-110"></i>
+                        <h3 class="text-white font-black uppercase text-sm mb-4">Notre Activité</h3>
+                        <p class="text-sm text-slate-300">Ista installe des compteurs connectés pour mesurer précisément la consommation d'eau et de chauffage de chaque habitant, favorisant ainsi la transition énergétique.</p>
+                    </div>
+                    <div class="glass-card white-border-card p-8 rounded-2xl text-center group">
+                        <i class="fa-solid fa-earth-americas text-3xl text-blue-400 mb-4 transition-transform group-hover:scale-110"></i>
+                        <h3 class="text-white font-black uppercase text-sm mb-4">Dimension Internationale</h3>
+                        <p class="text-sm text-slate-300">Leader européen d'origine allemande, présent dans 22 pays. Collaboration quotidienne avec des équipes internationales pour l'harmonisation des SI.</p>
+                    </div>
                 </div>
+
+                <div class="mb-16">
+                    <div class="text-center mb-8"><h3 class="text-xl font-black text-blue-400 uppercase italic">Organigramme de la Direction Informatique</h3></div>
+                    <div class="glass-card white-border-card p-4 rounded-3xl shadow-2xl bg-slate-900/50">
+                        <img src="organigramme.jpg" alt="Organigramme Direction Informatique Ista" class="w-full h-auto rounded-xl filter drop-shadow-[0_0_10px_rgba(59,130,246,0.5)]">
+                    </div>
+                </div>
+
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-                    <div class="glass-card white-border-card p-2 rounded-3xl h-80 overflow-hidden shadow-xl">
-                        <p class="text-[10px] text-center text-blue-400 uppercase font-bold mb-1 tracking-widest">Organigramme</p>
-                        <img src="organigramme.jpg" alt="Organigramme Ista" class="w-full h-full object-contain bg-white rounded-2xl">
-                    </div>
-                    <div class="glass-card white-border-card p-2 rounded-3xl h-80 overflow-hidden shadow-xl">
-                        <p class="text-[10px] text-center text-blue-400 uppercase font-bold mb-1 tracking-widest">Locaux de l'entreprise</p>
-                        <img src="locaux-ista.jpg" alt="Locaux Ista" class="w-full h-full object-cover rounded-2xl opacity-90">
-                    </div>
+                    <div class="glass-card white-border-card p-2 rounded-3xl h-64 overflow-hidden shadow-xl"><img src="ista-1.jpg" alt="Logo Ista" class="w-full h-full object-contain bg-white rounded-2xl"></div>
+                    <div class="glass-card white-border-card p-2 rounded-3xl h-64 overflow-hidden shadow-xl"><img src="ista-2.jpg" alt="Support" class="w-full h-full object-cover rounded-2xl opacity-90"></div>
                 </div>
                 <div class="glass-card white-border-card p-8 rounded-2xl w-full text-base leading-relaxed text-justify">
                     <h2 class="text-2xl font-black uppercase tracking-widest mb-8 text-blue-400 text-center">Mes Missions et Expertises</h2>
@@ -168,7 +212,6 @@
             <section id="competences" class="max-w-6xl mx-auto px-8 py-24 scroll-mt-24">
                 <div class="text-center mb-16"><h2 class="text-3xl font-black uppercase tracking-widest inline-block border-b-2 border-blue-500 pb-2 text-white">Compétences Informatiques</h2></div>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
-                    
                     <div class="comp-card text-center" onclick="this.classList.toggle('active')">
                         <i class="fa-solid fa-server text-7xl text-[#60a5fa] mb-4"></i>
                         <h3 class="text-white font-black uppercase text-sm">Virtualisation VMware</h3>
@@ -182,7 +225,6 @@
                             </ul>
                         </div>
                     </div>
-
                     <div class="comp-card text-center" onclick="this.classList.toggle('active')">
                         <i class="fa-brands fa-linux text-7xl text-[#f3ba1b] mb-4"></i>
                         <h3 class="text-white font-black uppercase text-sm">Administration Linux</h3>
@@ -196,7 +238,6 @@
                             </ul>
                         </div>
                     </div>
-
                     <div class="comp-card text-center" onclick="this.classList.toggle('active')">
                         <i class="fa-brands fa-docker text-7xl text-[#2496ed] mb-4"></i>
                         <h3 class="text-white font-black uppercase text-sm">Conteneurisation</h3>
@@ -210,7 +251,6 @@
                             </ul>
                         </div>
                     </div>
-
                     <div class="comp-card text-center" onclick="this.classList.toggle('active')">
                         <div class="flex justify-center gap-4 mb-4"><i class="fa-brands fa-python text-7xl text-[#3776ab]"></i><i class="fa-solid fa-terminal text-7xl text-[#5391fe]"></i></div>
                         <h3 class="text-white font-black uppercase text-sm">Scripting (Python/PS)</h3>
@@ -224,7 +264,6 @@
                             </ul>
                         </div>
                     </div>
-
                     <div class="comp-card text-center" onclick="this.classList.toggle('active')">
                         <i class="fa-solid fa-users-gear text-7xl text-[#00a4ef] mb-4"></i>
                         <h3 class="text-white font-black uppercase text-sm">Active Directory</h3>
@@ -238,7 +277,6 @@
                             </ul>
                         </div>
                     </div>
-
                     <div class="comp-card text-center" onclick="this.classList.toggle('active')">
                         <i class="fa-solid fa-network-wired text-7xl text-[#00bceb] mb-4"></i>
                         <h3 class="text-white font-black uppercase text-sm">Réseau & Sécurité</h3>
@@ -249,48 +287,6 @@
                                 <li>• VLAN / Routage Cisco</li>
                                 <li>• Pare-feu (pfSense, Stormshield)</li>
                                 <li>• Diagnostic Wireshark</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="comp-card text-center" onclick="this.classList.toggle('active')">
-                        <i class="fa-solid fa-eye text-7xl text-[#d40000] mb-4"></i>
-                        <h3 class="text-white font-black uppercase text-sm">Supervision</h3>
-                        <div class="comp-detail text-left text-white">
-                            <h4 class="font-black text-xs uppercase mb-1">Maintien condition opérationnelle</h4>
-                            <p class="text-[10px] font-bold underline mb-2 italic">Niveau : Débutant</p>
-                            <ul class="text-[11px] space-y-1">
-                                <li>• Surveillance santé serveurs</li>
-                                <li>• Analyse logs résolution incidents</li>
-                                <li>• Alerting disponibilité SI</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="comp-card text-center" onclick="this.classList.toggle('active')">
-                        <i class="fa-solid fa-laptop-medical text-7xl text-[#28a745] mb-4"></i>
-                        <h3 class="text-white font-black uppercase text-sm">Gestion Parc</h3>
-                        <div class="comp-detail text-left text-white">
-                            <h4 class="font-black text-xs uppercase mb-1">Unified Endpoint Management</h4>
-                            <p class="text-[10px] font-bold underline mb-2 italic">Niveau : Intermédiaire</p>
-                            <ul class="text-[11px] space-y-1">
-                                <li>• Déploiement auto apps/MAJ</li>
-                                <li>• Inventaire matériel et logiciel</li>
-                                <li>• Conformité postes travail</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="comp-card text-center" onclick="this.classList.toggle('active')">
-                        <i class="fa-brands fa-microsoft text-7xl text-[#0089d6] mb-4"></i>
-                        <h3 class="text-white font-black uppercase text-sm">Azure Cloud</h3>
-                        <div class="comp-detail text-left text-white">
-                            <h4 class="font-black text-xs uppercase mb-1">Administration Cloud Azure</h4>
-                            <p class="text-[10px] font-bold underline mb-2 italic">Niveau : Débutant / Intermédiaire</p>
-                            <ul class="text-[11px] space-y-1">
-                                <li>• Gestion via Entra ID (Azure AD)</li>
-                                <li>• Admin ressources (VMs, Stockage)</li>
-                                <li>• Politiques accès conditionnel</li>
                             </ul>
                         </div>
                     </div>
@@ -315,38 +311,14 @@
                     </div>
                     <div class="veille-item glass-card rounded-2xl overflow-hidden border border-white/10">
                         <div class="veille-header p-5 flex justify-between items-center font-black uppercase tracking-widest text-sm" onclick="this.parentElement.classList.toggle('active')">
-                            <span>Le Cloud Computing & Virtualisation</span><i class="fa-solid fa-plus transition-transform duration-300"></i>
+                            <span>Le Cloud & Virtualisation</span><i class="fa-solid fa-plus transition-transform duration-300"></i>
                         </div>
                         <div class="veille-content"><div class="p-6 space-y-4">
                             <p class="text-sm text-slate-300">Évolutions Azure/AWS, serveurs hybrides, conteneurisation (Docker, Kubernetes).</p>
                             <div class="grid grid-cols-1 gap-2">
                                 <a href="https://azure.microsoft.com/en-us/blog/" target="_blank" class="source-btn">Azure Blog</a>
                                 <a href="https://www.veeam.com/blog/fr/" target="_blank" class="source-btn">Veeam Blog</a>
-                                <a href="https://www.linformaticien.com/actualites/categorie/cloud-datacenters.html" target="_blank" class="source-btn">L'Informaticien</a>
-                            </div>
-                        </div></div>
-                    </div>
-                    <div class="veille-item glass-card rounded-2xl overflow-hidden border border-white/10">
-                        <div class="veille-header p-5 flex justify-between items-center font-black uppercase tracking-widest text-sm" onclick="this.parentElement.classList.toggle('active')">
-                            <span>Infrastructures Réseaux (SD-WAN & WiFi 7)</span><i class="fa-solid fa-plus transition-transform duration-300"></i>
-                        </div>
-                        <div class="veille-content"><div class="p-6 space-y-4">
-                            <p class="text-sm text-slate-300">Déploiement du SD-WAN, WiFi 7, automatisation réseau (NetDevOps).</p>
-                            <div class="grid grid-cols-1 gap-2">
-                                <a href="https://blogs.cisco.com/networking" target="_blank" class="source-btn">Cisco Blog</a>
-                                <a href="https://www.zdnet.fr/actualites/networking-3900000005.htm" target="_blank" class="source-btn">ZDNet Networking</a>
-                            </div>
-                        </div></div>
-                    </div>
-                    <div class="veille-item glass-card rounded-2xl overflow-hidden border border-white/10">
-                        <div class="veille-header p-5 flex justify-between items-center font-black uppercase tracking-widest text-sm" onclick="this.parentElement.classList.toggle('active')">
-                            <span>IA appliquée à l'Administration (AIOps)</span><i class="fa-solid fa-plus transition-transform duration-300"></i>
-                        </div>
-                        <div class="veille-content"><div class="p-6 space-y-4">
-                            <p class="text-sm text-slate-300">Détection de pannes ou d'intrusions prédictive via l'intelligence artificielle.</p>
-                            <div class="grid grid-cols-1 gap-2">
                                 <a href="https://www.it-connect.fr/" target="_blank" class="source-btn">IT Connect</a>
-                                <a href="https://www.gartner.com/en/information-technology/research/it-operations" target="_blank" class="source-btn">Gartner IT Operations</a>
                             </div>
                         </div></div>
                     </div>
@@ -354,85 +326,48 @@
             </section>
 
             <section id="contact" class="max-w-6xl mx-auto px-8 py-24 scroll-mt-24">
-                <div class="text-center mb-16">
-                    <h2 class="text-3xl font-black uppercase tracking-widest inline-block border-b-2 border-blue-500 pb-2 text-white">Contact</h2>
-                    <p class="mt-6 text-slate-400 font-bold uppercase tracking-widest text-sm">Un projet, une question ou une opportunité d'alternance ? N'hésitez pas !</p>
-                </div>
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-                    <div class="space-y-10">
-                        <div class="glass-card white-border-card p-8 rounded-2xl flex items-center gap-6 group hover:border-blue-500 transition-colors duration-300">
-                            <div class="w-14 h-14 bg-blue-600/20 rounded-full flex items-center justify-center text-blue-400 group-hover:scale-110 transition-transform"><i class="fa-solid fa-envelope text-2xl"></i></div>
-                            <div><h4 class="text-[10px] font-black uppercase tracking-widest text-blue-400">E-mail</h4><p class="text-lg font-bold">Alyssia.noireau@gmail.com</p></div>
+                <div class="text-center mb-16"><h2 class="text-3xl font-black uppercase tracking-widest inline-block border-b-2 border-blue-500 pb-2 text-white">Me Contacter</h2></div>
+                <div class="glass-card white-border-card p-8 rounded-3xl shadow-2xl">
+                    <form action="https://formspree.io/f/mdalzynp" method="POST" class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="space-y-2"><label class="text-[10px] font-black uppercase text-slate-400 ml-1">Nom Complet</label><input type="text" name="name" class="w-full form-input p-4 rounded-xl text-sm" required></div>
+                            <div class="space-y-2"><label class="text-[10px] font-black uppercase text-slate-400 ml-1">E-mail</label><input type="email" name="email" class="w-full form-input p-4 rounded-xl text-sm" required></div>
                         </div>
-                        <div class="glass-card white-border-card p-8 rounded-2xl flex items-center gap-6 group hover:border-blue-500 transition-colors duration-300">
-                            <div class="w-14 h-14 bg-blue-600/20 rounded-full flex items-center justify-center text-blue-400 group-hover:scale-110 transition-transform"><i class="fa-solid fa-phone text-2xl"></i></div>
-                            <div><h4 class="text-[10px] font-black uppercase tracking-widest text-blue-400">Téléphone</h4><p class="text-lg font-bold">07 67 17 89 08</p></div>
-                        </div>
-                        <div class="flex justify-center gap-12 pt-4">
-                            <a href="https://www.linkedin.com/in/alyssia-noireau" target="_blank" class="text-5xl text-[#0077b5] hover:scale-125 transition duration-300"><i class="fa-brands fa-linkedin"></i></a>
-                            <a href="https://github.com/AlyssiaNoireau" target="_blank" class="text-5xl text-white hover:scale-125 transition duration-300"><i class="fa-brands fa-github"></i></a>
-                        </div>
-                    </div>
-                    <div class="glass-card white-border-card p-8 rounded-3xl shadow-2xl">
-                        <form action="https://formspree.io/f/mdalzynp" method="POST" class="space-y-6">
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                <div class="space-y-2">
-                                    <label class="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-1">Nom Complet</label>
-                                    <input type="text" name="name" placeholder="John Doe" class="w-full form-input p-4 rounded-xl text-sm" required>
-                                </div>
-                                <div class="space-y-2">
-                                    <label class="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-1">E-mail</label>
-                                    <input type="email" name="email" placeholder="votre@email.com" class="w-full form-input p-4 rounded-xl text-sm" required>
-                                </div>
-                            </div>
-                            <div class="space-y-2">
-                                <label class="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-1">Objet</label>
-                                <input type="text" name="subject" placeholder="Sujet" class="w-full form-input p-4 rounded-xl text-sm" required>
-                            </div>
-                            <div class="space-y-2">
-                                <label class="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-1">Message</label>
-                                <textarea name="message" rows="4" placeholder="Votre message..." class="w-full form-input p-4 rounded-xl text-sm resize-none" required></textarea>
-                            </div>
-                            <button type="submit" class="w-full py-4 bg-blue-600 hover:bg-blue-500 text-white font-black uppercase tracking-[0.3em] rounded-xl transition duration-300 shadow-lg flex items-center justify-center gap-3">
-                                Envoyer <i class="fa-solid fa-paper-plane text-xs"></i>
-                            </button>
-                        </form>
-                    </div>
+                        <div class="space-y-2"><label class="text-[10px] font-black uppercase text-slate-400 ml-1">Objet</label><input type="text" name="subject" class="w-full form-input p-4 rounded-xl text-sm" required></div>
+                        <div class="space-y-2"><label class="text-[10px] font-black uppercase text-slate-400 ml-1">Message</label><textarea name="message" rows="4" class="w-full form-input p-4 rounded-xl text-sm resize-none" required></textarea></div>
+                        <button type="submit" class="w-full py-4 bg-blue-600 hover:bg-blue-500 text-white font-black uppercase tracking-[0.3em] rounded-xl transition duration-300 shadow-lg flex items-center justify-center gap-3">Envoyer <i class="fa-solid fa-paper-plane text-xs"></i></button>
+                    </form>
                 </div>
             </section>
+
         </main>
     </div>
 
     <script>
-        const words = ["Technicienne Réseaux", "Étudiante BTS SIO SISR", "Alternante chez Ista"];
-        let i = 0, j = 0, current = "", isDeleting = false;
-        function type() {
-            current = words[i];
-            const el = document.getElementById('typewriter');
-            if(isDeleting) {
-                el.textContent = current.substring(0, j-1); j--;
-                if(j == 0) { isDeleting = false; i = (i+1) % words.length; }
-            } else {
-                el.textContent = current.substring(0, j+1); j++;
-                if(j == current.length) { isDeleting = true; setTimeout(type, 2000); return; }
-            }
-            setTimeout(type, isDeleting ? 100 : 200);
+        const textArray = "Bienvenue sur mon Portfolio";
+        const speed = 100;
+        let charIndex = 0;
+        const typewriterElement = document.getElementById("typewriter");
+        function typeWriterEffect() {
+            if (charIndex < textArray.length) { typewriterElement.innerHTML += textArray.charAt(charIndex); charIndex++; setTimeout(typeWriterEffect, speed); }
+            else { setTimeout(() => { typewriterElement.innerHTML = ""; charIndex = 0; typeWriterEffect(); }, 2000); }
         }
-        window.onload = type;
 
         const sections = document.querySelectorAll("section");
         const navLinks = document.querySelectorAll(".nav-link");
-        window.onscroll = () => {
-            sections.forEach(sec => {
-                let top = window.scrollY, offset = sec.offsetTop - 150, height = sec.offsetHeight, id = sec.getAttribute('id');
-                if(top >= offset && top < offset + height) {
-                    navLinks.forEach(links => {
-                        links.classList.remove('active');
-                        document.querySelector('#sidebar-nav a[href*=' + id + ']').classList.add('active');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const currentId = entry.target.getAttribute("id");
+                    navLinks.forEach(link => { 
+                        link.classList.remove("active"); 
+                        if (link.getAttribute("href") === `#${currentId}`) link.classList.add("active"); 
                     });
                 }
             });
-        };
+        }, { threshold: 0.6 });
+        sections.forEach(section => observer.observe(section));
+        window.onload = typeWriterEffect;
     </script>
 </body>
 </html>
