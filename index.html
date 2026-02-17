@@ -13,7 +13,6 @@
         .arial-text { font-family: Arial, Helvetica, sans-serif !important; }
         .white-border-card { border: 1px solid rgba(255, 255, 255, 0.2) !important; }
         
-        /* Soulignement dynamique adapté au texte */
         .section-title { display: inline-block; position: relative; padding-bottom: 12px; }
         .section-title::after { 
             content: ''; position: absolute; left: 0; bottom: 0; 
@@ -38,25 +37,20 @@
 
         .photo-frame { width: 100%; height: 100%; object-fit: cover; object-position: center 20%; }
 
-        /* Organigramme Unifié et Pro */
+        /* Organigramme Unifié */
         .org-box { border-left: 4px solid #3b82f6; background: rgba(255,255,255,0.05); padding: 15px 25px; margin: 10px auto; width: 100%; max-width: 450px; border-radius: 4px 15px 15px 4px; transition: all 0.3s; }
         .org-box:hover { background: rgba(59, 130, 246, 0.1); transform: translateX(5px); }
-        .org-connector { width: 2px; height: 25px; background: rgba(59, 130, 246, 0.3); margin: 0 auto; }
+        .org-connector { width: 2px; height: 25px; background: rgba(255, 255, 255, 0.1); margin: 0 auto; }
 
-        /* Accordéons Ista */
+        /* Accordéons */
         .details-content { max-height: 0; overflow: hidden; transition: all 0.5s ease-out; opacity: 0; }
         .details-item.active .details-content { max-height: 500px; opacity: 1; padding-top: 1rem; }
         .details-item.active .fa-plus { transform: rotate(45deg); color: #ef4444; }
 
-        /* Compétences épurées */
+        /* Compétences */
         .comp-card { cursor: pointer; transition: all 0.4s ease; }
         .comp-detail { max-height: 0; overflow: hidden; transition: all 0.5s ease; opacity: 0; }
         .comp-card.active .comp-detail { max-height: 300px; opacity: 1; margin-top: 1.5rem; }
-
-        /* Veille Tech Agrandie */
-        .veille-item.active .veille-content { max-height: 1000px; opacity: 1; padding: 2rem; }
-        .veille-header { cursor: pointer; background: #a855f7; border-radius: 0.5rem; height: 80px; display: flex; align-items: center; justify-content: space-between; padding: 0 2rem; }
-        .veille-content { max-height: 0; overflow: hidden; opacity: 0; transition: all 0.5s ease; background: rgba(168, 85, 247, 0.05); }
 
         .form-input { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); color: white; }
     </style>
@@ -88,7 +82,7 @@
         <main class="space-y-40 pb-20">
             
             <section id="accueil" class="min-h-screen flex flex-col justify-center items-center text-center px-8 bg-nebula">
-                <h2 class="text-white text-7xl font-black tracking-tighter uppercase neon-text">Alyssia Noireau</h2>
+                <h2 class="text-white text-7xl font-black uppercase neon-text">Alyssia Noireau</h2>
                 <h3 id="typewriter" class="text-blue-400 text-3xl font-bold uppercase mt-8 neon-text typing min-h-[1.5em]"></h3>
             </section>
 
@@ -99,12 +93,40 @@
                         <div class="glass-card w-72 h-72 p-2 rounded-3xl border border-blue-500/30 overflow-hidden shadow-2xl">
                             <img src="photo like.jpg" alt="Alyssia Noireau" class="photo-frame rounded-2xl">
                         </div>
-                        <a href="Professional CV Resume (1).pdf" target="_blank" class="w-72 py-4 bg-blue-600/20 text-blue-400 rounded-xl border border-blue-500/30 text-center font-black uppercase text-xs hover:bg-blue-600/40 transition-all shadow-lg">Mon CV</a>
+                        <a href="Professional CV Resume (1).pdf" download class="w-72 py-4 bg-white/10 text-white rounded-xl border border-white/20 text-center font-black uppercase text-xs hover:bg-white/20 transition-all shadow-lg"><i class="fa-solid fa-download mr-2"></i> Télécharger CV</a>
+                        <a href="Professional CV Resume (1).pdf" target="_blank" class="w-72 py-4 bg-blue-600/20 text-blue-400 rounded-xl border border-blue-500/30 text-center font-black uppercase text-xs hover:bg-blue-600/40 transition-all shadow-lg">Voir CV</a>
                         <a href="Tableau_de_Competences.pdf" target="_blank" class="w-72 py-4 bg-blue-600/20 text-blue-400 rounded-xl border border-blue-500/30 text-center font-black uppercase text-[10px] hover:bg-blue-600/40 transition-all shadow-lg">Tableau de compétences</a>
                     </div>
                     <div class="lg:col-span-3 glass-card white-border-card p-8 rounded-2xl text-justify text-lg leading-relaxed shadow-xl">
                         <p>Diplômée d'un Bac STMG (Mercatique), j'ai choisi de spécialiser mon profil vers les systèmes d'information. Je combine ainsi une approche orientée client et une expertise technique en devenir. Actuellement en deuxième année de BTS SIO (option SISR) au sein de l'école ORT Daniel Mayer, j'effectue mon alternance chez Ista en tant que technicienne réseaux et systèmes.</p>
                         <p class="mt-6">Animée par une réelle volonté d'évoluer vers la gestion de projets informatiques, je projette d'intégrer la licence Chef de projet développement, sécurité et exploitation au sein du CNAM en alternance. Mon objectif est de poursuivre ensuite mon cursus vers un Master MIAGE, afin de consolider mes compétences stratégiques et techniques.</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16 px-4">
+                    <div class="details-item glass-card white-border-card p-6 rounded-[2rem] cursor-pointer hover:bg-white/5 transition-all" onclick="this.classList.toggle('active')">
+                        <div class="flex justify-between items-center font-black uppercase text-xs text-blue-400">
+                            <span>Missions en entreprise</span><i class="fa-solid fa-plus transition-transform"></i>
+                        </div>
+                        <div class="details-content text-sm text-slate-300 italic">
+                            (Texte à définir pour vos missions quotidiennes chez Ista...)
+                        </div>
+                    </div>
+                    <div class="details-item glass-card white-border-card p-6 rounded-[2rem] cursor-pointer hover:bg-white/5 transition-all" onclick="this.classList.toggle('active')">
+                        <div class="flex justify-between items-center font-black uppercase text-xs text-blue-400">
+                            <span>Soft Skills</span><i class="fa-solid fa-plus transition-transform"></i>
+                        </div>
+                        <div class="details-content text-sm text-slate-300 italic">
+                            Communication, esprit d'équipe, adaptabilité, sens du service client...
+                        </div>
+                    </div>
+                    <div class="details-item glass-card white-border-card p-6 rounded-[2rem] cursor-pointer hover:bg-white/5 transition-all" onclick="this.classList.toggle('active')">
+                        <div class="flex justify-between items-center font-black uppercase text-xs text-blue-400">
+                            <span>Centres d'interêts</span><i class="fa-solid fa-plus transition-transform"></i>
+                        </div>
+                        <div class="details-content text-sm text-slate-300 italic">
+                            (Texte à définir : sports, passions, voyages...)
+                        </div>
                     </div>
                 </div>
             </section>
@@ -392,7 +414,7 @@
                         <form action="https://formspree.io/f/mdalzynp" method="POST" class="space-y-4">
                             <input type="text" name="name" placeholder="Nom Complet" class="w-full form-input p-4 rounded-xl text-sm" required>
                             <input type="email" name="email" placeholder="Email" class="w-full form-input p-4 rounded-xl text-sm" required>
-                            <textarea name="message" rows="5" placeholder="Votre message..." class="w-full form-input p-4 rounded-xl text-sm resize-none" required></textarea>
+                            <textarea name="message" rows="6" placeholder="Votre message..." class="w-full form-input p-4 rounded-xl text-sm resize-none" required></textarea>
                             <button type="submit" class="w-full py-4 bg-blue-600 font-black uppercase text-xs rounded-xl hover:bg-blue-500 transition-all text-white shadow-lg">Envoyer le mail</button>
                         </form>
                     </div>
@@ -407,6 +429,7 @@
         function type() {
             current = words[i];
             const el = document.getElementById("typewriter");
+            if(!el) return;
             if(isDeleting) {
                 el.textContent = current.substring(0, j-1); j--;
                 if(j == 0) { isDeleting = false; i = (i+1) % words.length; }
