@@ -52,7 +52,6 @@
 
         .photo-frame { width: 100%; height: 100%; object-fit: cover; object-position: center 15%; }
         
-        /* Style spécifique pour la timeline de formation */
         .timeline-item { position: relative; padding-left: 2rem; border-left: 2px solid #3b82f6; }
         .timeline-dot { position: absolute; left: -9px; top: 0; width: 16px; height: 16px; background: #3b82f6; border-radius: 50%; box-shadow: 0 0 10px #3b82f6; }
     </style>
@@ -143,14 +142,41 @@
             </section>
 
             <section id="entreprise" class="max-w-6xl mx-auto px-8 py-24 scroll-mt-24">
-                <div class="text-center mb-8">
-                    <h2 class="text-3xl font-black uppercase tracking-widest inline-block border-b-2 border-blue-500 pb-2 text-white">Ista Siège Social - Massy</h2>
-                </div>
-
+                <div class="text-center mb-8"><h2 class="text-3xl font-black uppercase tracking-widest inline-block border-b-2 border-blue-500 pb-2 text-white">Ista Siège Social - Technicienne Support Informatique</h2></div>
+                
                 <div class="flex justify-center mb-16">
                     <a href="Presentation_Ista.pdf" target="_blank" class="w-full md:w-auto flex items-center justify-center gap-4 px-10 py-4 bg-blue-600/20 hover:bg-blue-600/40 text-blue-400 rounded-xl border border-blue-500/30 transition shadow-xl font-black uppercase tracking-[0.2em] text-xs">
                         <i class="fa-solid fa-file-powerpoint text-xl"></i> Présentation de l'entreprise
                     </a>
+                </div>
+
+                <div class="max-w-4xl mx-auto mb-20 space-y-8">
+                    <div class="text-center mb-10"><h3 class="text-xl font-black uppercase tracking-widest text-blue-400 italic">Organigramme Hiérarchique</h3></div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <h4 class="text-lg font-black text-white uppercase">Hagen Lessing</h4>
+                        <p class="text-blue-400 text-xs font-bold uppercase">CEO | ista Group</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <h4 class="text-lg font-black text-white uppercase">Laurent Sireix</h4>
+                        <p class="text-blue-400 text-xs font-bold uppercase">Président Directeur Général | ista Group</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <h4 class="text-lg font-black text-white uppercase">Hoai Nguyen</h4>
+                        <p class="text-blue-400 text-xs font-bold uppercase">Directeur Opérations | ista France</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <h4 class="text-lg font-black text-white uppercase">Carlos Martins</h4>
+                        <p class="text-blue-400 text-xs font-bold uppercase">Directeur SI Projets | FR_Direction des Opérations</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <h4 class="text-lg font-black text-blue-500 uppercase">Alyssia Noireau</h4>
+                        <p class="text-blue-400 text-xs font-bold uppercase underline">Apprenti FAM4 | FR_Direction Informatique</p>
+                    </div>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
@@ -178,6 +204,7 @@
             <section id="competences" class="max-w-6xl mx-auto px-8 py-24 scroll-mt-24">
                 <div class="text-center mb-16"><h2 class="text-3xl font-black uppercase tracking-widest inline-block border-b-2 border-blue-500 pb-2 text-white">Compétences Informatiques</h2></div>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+                    
                     <div class="comp-card text-center" onclick="this.classList.toggle('active')">
                         <i class="fa-solid fa-server text-7xl text-[#60a5fa] mb-4"></i>
                         <h3 class="text-white font-black uppercase text-sm">Virtualisation VMware</h3>
@@ -191,6 +218,7 @@
                             </ul>
                         </div>
                     </div>
+
                     <div class="comp-card text-center" onclick="this.classList.toggle('active')">
                         <i class="fa-brands fa-linux text-7xl text-[#f3ba1b] mb-4"></i>
                         <h3 class="text-white font-black uppercase text-sm">Administration Linux</h3>
@@ -204,6 +232,7 @@
                             </ul>
                         </div>
                     </div>
+
                     <div class="comp-card text-center" onclick="this.classList.toggle('active')">
                         <i class="fa-brands fa-docker text-7xl text-[#2496ed] mb-4"></i>
                         <h3 class="text-white font-black uppercase text-sm">Conteneurisation</h3>
@@ -217,6 +246,7 @@
                             </ul>
                         </div>
                     </div>
+
                     <div class="comp-card text-center" onclick="this.classList.toggle('active')">
                         <div class="flex justify-center gap-4 mb-4"><i class="fa-brands fa-python text-7xl text-[#3776ab]"></i><i class="fa-solid fa-terminal text-7xl text-[#5391fe]"></i></div>
                         <h3 class="text-white font-black uppercase text-sm">Scripting (Python/PS)</h3>
@@ -230,6 +260,7 @@
                             </ul>
                         </div>
                     </div>
+
                     <div class="comp-card text-center" onclick="this.classList.toggle('active')">
                         <i class="fa-solid fa-users-gear text-7xl text-[#00a4ef] mb-4"></i>
                         <h3 class="text-white font-black uppercase text-sm">Active Directory</h3>
@@ -243,6 +274,7 @@
                             </ul>
                         </div>
                     </div>
+
                     <div class="comp-card text-center" onclick="this.classList.toggle('active')">
                         <i class="fa-solid fa-network-wired text-7xl text-[#00bceb] mb-4"></i>
                         <h3 class="text-white font-black uppercase text-sm">Réseau & Sécurité</h3>
@@ -256,6 +288,49 @@
                             </ul>
                         </div>
                     </div>
+
+                    <div class="comp-card text-center" onclick="this.classList.toggle('active')">
+                        <i class="fa-solid fa-eye text-7xl text-[#d40000] mb-4"></i>
+                        <h3 class="text-white font-black uppercase text-sm">Supervision</h3>
+                        <div class="comp-detail text-left text-white">
+                            <h4 class="font-black text-xs uppercase mb-1">Maintien condition opérationnelle</h4>
+                            <p class="text-[10px] font-bold underline mb-2 italic">Niveau : Débutant</p>
+                            <ul class="text-[11px] space-y-1">
+                                <li>• Surveillance santé serveurs</li>
+                                <li>• Analyse logs résolution incidents</li>
+                                <li>• Alerting disponibilité SI</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="comp-card text-center" onclick="this.classList.toggle('active')">
+                        <i class="fa-solid fa-laptop-medical text-7xl text-[#28a745] mb-4"></i>
+                        <h3 class="text-white font-black uppercase text-sm">Gestion Parc</h3>
+                        <div class="comp-detail text-left text-white">
+                            <h4 class="font-black text-xs uppercase mb-1">Unified Endpoint Management</h4>
+                            <p class="text-[10px] font-bold underline mb-2 italic">Niveau : Intermédiaire</p>
+                            <ul class="text-[11px] space-y-1">
+                                <li>• Déploiement auto apps/MAJ</li>
+                                <li>• Inventaire matériel et logiciel</li>
+                                <li>• Conformité postes travail</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="comp-card text-center" onclick="this.classList.toggle('active')">
+                        <i class="fa-brands fa-microsoft text-7xl text-[#0089d6] mb-4"></i>
+                        <h3 class="text-white font-black uppercase text-sm">Azure Cloud</h3>
+                        <div class="comp-detail text-left text-white">
+                            <h4 class="font-black text-xs uppercase mb-1">Administration Cloud Azure</h4>
+                            <p class="text-[10px] font-bold underline mb-2 italic">Niveau : Débutant / Intermédiaire</p>
+                            <ul class="text-[11px] space-y-1">
+                                <li>• Gestion via Entra ID (Azure AD)</li>
+                                <li>• Admin ressources (VMs, Stockage)</li>
+                                <li>• Politiques accès conditionnel</li>
+                            </ul>
+                        </div>
+                    </div>
+
                 </div>
             </section>
 
@@ -277,6 +352,7 @@
             <section id="veille" class="max-w-6xl mx-auto px-8 py-24 scroll-mt-24">
                 <div class="text-center mb-16"><h2 class="text-3xl font-black uppercase tracking-widest inline-block border-b-2 border-blue-500 pb-2 text-white">Veille Technologique</h2></div>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    
                     <div class="veille-item glass-card rounded-2xl overflow-hidden border border-white/10">
                         <div class="veille-header p-5 flex justify-between items-center font-black uppercase tracking-widest text-sm" onclick="this.parentElement.classList.toggle('active')">
                             <span>La Cybersécurité</span><i class="fa-solid fa-plus transition-transform duration-300"></i>
@@ -290,6 +366,7 @@
                             </div>
                         </div></div>
                     </div>
+
                     <div class="veille-item glass-card rounded-2xl overflow-hidden border border-white/10">
                         <div class="veille-header p-5 flex justify-between items-center font-black uppercase tracking-widest text-sm" onclick="this.parentElement.classList.toggle('active')">
                             <span>Le Cloud Computing & Virtualisation</span><i class="fa-solid fa-plus transition-transform duration-300"></i>
@@ -303,6 +380,33 @@
                             </div>
                         </div></div>
                     </div>
+
+                    <div class="veille-item glass-card rounded-2xl overflow-hidden border border-white/10">
+                        <div class="veille-header p-5 flex justify-between items-center font-black uppercase tracking-widest text-sm" onclick="this.parentElement.classList.toggle('active')">
+                            <span>Infrastructures Réseaux (SD-WAN & WiFi 7)</span><i class="fa-solid fa-plus transition-transform duration-300"></i>
+                        </div>
+                        <div class="veille-content"><div class="p-6 space-y-4">
+                            <p class="text-sm text-slate-300">Déploiement du SD-WAN, WiFi 7, automatisation réseau (NetDevOps).</p>
+                            <div class="grid grid-cols-1 gap-2">
+                                <a href="https://blogs.cisco.com/networking" target="_blank" class="source-btn">Cisco Blog</a>
+                                <a href="https://www.zdnet.fr/actualites/networking-3900000005.htm" target="_blank" class="source-btn">ZDNet Networking</a>
+                            </div>
+                        </div></div>
+                    </div>
+
+                    <div class="veille-item glass-card rounded-2xl overflow-hidden border border-white/10">
+                        <div class="veille-header p-5 flex justify-between items-center font-black uppercase tracking-widest text-sm" onclick="this.parentElement.classList.toggle('active')">
+                            <span>IA appliquée à l'Administration (AIOps)</span><i class="fa-solid fa-plus transition-transform duration-300"></i>
+                        </div>
+                        <div class="veille-content"><div class="p-6 space-y-4">
+                            <p class="text-sm text-slate-300">Détection de pannes ou d'intrusions prédictive via l'intelligence artificielle.</p>
+                            <div class="grid grid-cols-1 gap-2">
+                                <a href="https://www.it-connect.fr/" target="_blank" class="source-btn">IT Connect</a>
+                                <a href="https://www.gartner.com/en/information-technology/research/it-operations" target="_blank" class="source-btn">Gartner IT Operations</a>
+                            </div>
+                        </div></div>
+                    </div>
+
                 </div>
             </section>
 
