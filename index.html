@@ -18,7 +18,6 @@
         .nav-link::before { content: ''; position: absolute; left: 0; top: 0; height: 100%; width: 0; background: #3b82f6; transition: width 0.3s ease; }
         .nav-link:hover::before { width: 4px; }
 
-        /* --- AJOUT : STYLE POUR L'ONGLET ACTIF --- */
         .nav-link.active { 
             color: #60a5fa; 
             background: rgba(59, 130, 246, 0.15); 
@@ -105,11 +104,18 @@
 
             <section id="entreprise" class="max-w-6xl mx-auto px-8 py-24 scroll-mt-24">
                 <div class="text-center mb-16"><h2 class="text-3xl font-black uppercase tracking-widest inline-block border-b-2 border-blue-500 pb-2 text-white">Expérience chez Ista</h2></div>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-                    <div class="glass-card white-border-card p-6 rounded-2xl"><h3 class="text-blue-400 font-black uppercase text-xs mb-4">Notre Activité</h3><p class="text-sm">Ista installe des compteurs connectés pour mesurer précisément la consommation d'eau et de chauffage de chaque habitant.</p></div>
-                    <div class="glass-card white-border-card p-6 rounded-2xl"><h3 class="text-blue-400 font-black uppercase text-xs mb-4">Dimension Internationale</h3><p class="text-sm">L'entreprise est d'origine allemande, présente dans 22 pays. Collaboration quotidienne avec des équipes internationales.</p></div>
-                    <div class="glass-card white-border-card p-6 rounded-2xl"><h3 class="text-blue-400 font-black uppercase text-xs mb-4">Rôle du Support</h3><p class="text-sm">Maintenance des outils numériques, résolution d'incidents techniques et accompagnement utilisateurs.</p></div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                    <div class="glass-card white-border-card p-6 rounded-2xl"><h3 class="text-blue-400 font-black uppercase text-xs mb-4">Notre Activité</h3><p class="text-[13px] leading-relaxed">Ista est le leader mondial de l'individualisation des frais d'énergie et d'eau dans l'habitat collectif. L'entreprise installe et gère des solutions de comptage intelligent (compteurs d'eau, répartiteurs de chauffage) permettant aux résidents de payer uniquement ce qu'ils consomment. Elle s'appuie sur la télérelève et le traitement de données pour optimiser la performance énergétique des bâtiments.</p></div>
+                    <div class="glass-card white-border-card p-6 rounded-2xl"><h3 class="text-blue-400 font-black uppercase text-xs mb-4">Identité & Structure</h3><p class="text-[13px] leading-relaxed">Ista est une Grande Entreprise (GE) sous statut de SAS, évoluant dans le secteur tertiaire à l'échelle internationale. Sa finalité est lucrative, avec un chiffre d'affaires dépassant le milliard d'euros et un effectif de plus de 6 300 salariés. Son activité principale repose sur des ressources technologiques de pointe pour assurer la gestion et la télérelève des consommations énergétiques.</p></div>
+                    <div class="glass-card white-border-card p-6 rounded-2xl"><h3 class="text-blue-400 font-black uppercase text-xs mb-4">Rôle du Support</h3><p class="text-[13px] leading-relaxed">Maintenance des outils numériques, résolution d'incidents techniques et accompagnement utilisateurs.</p></div>
                 </div>
+
+                <div class="flex justify-center mb-12">
+                    <a href="Presentation_Ista.pdf" target="_blank" class="w-full md:w-auto flex items-center justify-center gap-4 px-10 py-4 bg-blue-600/20 hover:bg-blue-600/40 text-blue-400 rounded-xl border border-blue-500/30 transition shadow-xl font-black uppercase tracking-[0.2em] text-xs">
+                        <i class="fa-solid fa-file-powerpoint text-xl"></i> Présentation de l'entreprise (PPT)
+                    </a>
+                </div>
+
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
                     <div class="glass-card white-border-card p-2 rounded-3xl h-64 overflow-hidden shadow-xl"><img src="ista-1.jpg" alt="Logo Ista" class="w-full h-full object-contain bg-white rounded-2xl"></div>
                     <div class="glass-card white-border-card p-2 rounded-3xl h-64 overflow-hidden shadow-xl"><img src="ista-2.jpg" alt="Support" class="w-full h-full object-cover rounded-2xl opacity-90"></div>
@@ -361,7 +367,6 @@
     </div>
 
     <script>
-        // --- EFFET MACHINE A ECRIRE ---
         const textArray = "Bienvenue sur mon Portfolio";
         const speed = 100;
         let charIndex = 0;
@@ -382,13 +387,12 @@
             }
         }
 
-        // --- GESTION DES ONGLETS ACTIFS (SURVEILLANCE DU SCROLL) ---
         const sections = document.querySelectorAll("section");
         const navLinks = document.querySelectorAll(".nav-link");
 
         const observerOptions = {
             root: null,
-            threshold: 0.6 // La section doit être visible à 60% pour activer l'onglet
+            threshold: 0.6 
         };
 
         const observer = new IntersectionObserver((entries) => {
@@ -410,7 +414,6 @@
             observer.observe(section);
         });
 
-        // Lancement au chargement
         window.onload = typeWriterEffect;
     </script>
 </body>
