@@ -33,13 +33,15 @@
             transition: all 0.5s ease-in-out; 
             background: #a855f7; border-radius: 1rem; margin-top: 1rem;
         }
-        .comp-card.active .comp-detail { max-height: 500px; opacity: 1; padding: 1.5rem; }
+        .comp-card.active .comp-detail { max-height: 600px; opacity: 1; padding: 1.5rem; }
 
-        /* ACCORDÉON VEILLE */
-        .veille-item.active .veille-content { max-height: 800px; }
-        .veille-header { background: #a855f7; cursor: pointer; transition: background 0.3s; }
+        /* INTERFACE VEILLE TECHNOLOGIQUE */
+        .veille-item.active .veille-content { max-height: 1000px; }
+        .veille-header { background: #a855f7; cursor: pointer; transition: background 0.3s; border-radius: 0.5rem; }
         .veille-header:hover { background: #9333ea; }
-        .veille-content { max-height: 0; overflow: hidden; transition: max-height 0.5s ease-out; background: rgba(168, 85, 247, 0.05); }
+        .veille-content { max-height: 0; overflow: hidden; transition: all 0.5s ease-out; background: rgba(168, 85, 247, 0.05); border-radius: 0 0 0.5rem 0.5rem; }
+        .source-btn { background: #1e40af; transition: background 0.3s; width: 100%; text-align: center; padding: 0.75rem; border-radius: 0.5rem; font-weight: bold; font-size: 0.75rem; display: block; margin-top: 0.5rem; }
+        .source-btn:hover { background: #1d4ed8; }
 
         .photo-frame { width: 100%; height: 100%; object-fit: cover; object-position: center 15%; }
     </style>
@@ -87,7 +89,7 @@
                     <div class="lg:col-span-3">
                         <div class="glass-card white-border-card p-8 rounded-2xl text-lg leading-relaxed text-justify">
                             <p>Diplômée d'un Bac STMG (Mercatique), j'ai choisi de spécialiser mon profil vers les systèmes d'information. Je combine ainsi une approche orientée client et une expertise technique en devenir. Actuellement en deuxième année de BTS SIO (option SISR) au sein de l'école ORT Daniel Mayer, j'effectue mon alternance chez Ista en tant que technicienne réseaux et systèmes.</p>
-                            <p class="mt-6">Animée par une réelle volonté d'évoluer vers la gestion de projets informatiques, je projette d'intégrer la licence Chef de projet développement, sécurité et exploitation au sein du CNAM en alternance. Mon objectif est de poursuivre ensuite mon cursus vers un Master MIAGE.</p>
+                            <p class="mt-6">Animée par une réelle volonté d'évoluer vers la gestion de projets informatiques, je projette d'intégrer la licence Chef de projet développement, sécurité et exploitation au sein du CNAM en alternance. Mon objectif est de poursuivre ensuite mon cursus vers un Master MIAGE, afin de consolider mes compétences stratégiques et techniques.</p>
                         </div>
                     </div>
                 </div>
@@ -96,28 +98,17 @@
             <section id="entreprise" class="max-w-6xl mx-auto px-8 py-24 scroll-mt-24">
                 <div class="text-center mb-16"><h2 class="text-3xl font-black uppercase tracking-widest inline-block border-b-2 border-blue-500 pb-2 text-white">Expérience chez Ista</h2></div>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-                    <div class="glass-card white-border-card p-6 rounded-2xl">
-                        <h3 class="text-blue-400 font-black uppercase text-xs tracking-widest mb-4">Notre Activité</h3>
-                        <p class="text-sm">Ista installe des compteurs connectés pour mesurer précisément la consommation d'eau et de chauffage de chaque habitant. Elle permet ainsi de facturer les charges au réel plutôt qu'au forfait, encourageant les économies d'énergie.</p>
-                    </div>
-                    <div class="glass-card white-border-card p-6 rounded-2xl">
-                        <h3 class="text-blue-400 font-black uppercase text-xs tracking-widest mb-4">Dimension Internationale</h3>
-                        <p class="text-sm">L'entreprise est d'origine allemande, présente dans 22 pays. Au quotidien, notre équipe collabore particulièrement avec nos collègues roumains et allemands.</p>
-                    </div>
-                    <div class="glass-card white-border-card p-6 rounded-2xl">
-                        <h3 class="text-blue-400 font-black uppercase text-xs tracking-widest mb-4">Rôle du Support</h3>
-                        <p class="text-sm">Nous assurons la maintenance et le bon fonctionnement des outils numériques pour garantir la productivité de tous les collaborateurs (résolution d'incidents, accompagnement).</p>
-                    </div>
+                    <div class="glass-card white-border-card p-6 rounded-2xl"><h3 class="text-blue-400 font-black uppercase text-xs mb-4">Notre Activité</h3><p class="text-sm">Ista installe des compteurs connectés pour mesurer précisément la consommation d'eau et de chauffage de chaque habitant.</p></div>
+                    <div class="glass-card white-border-card p-6 rounded-2xl"><h3 class="text-blue-400 font-black uppercase text-xs mb-4">Dimension Internationale</h3><p class="text-sm">L'entreprise est d'origine allemande, présente dans 22 pays. Collaboration quotidienne avec des équipes internationales.</p></div>
+                    <div class="glass-card white-border-card p-6 rounded-2xl"><h3 class="text-blue-400 font-black uppercase text-xs mb-4">Rôle du Support</h3><p class="text-sm">Maintenance des outils numériques, résolution d'incidents techniques et accompagnement utilisateurs.</p></div>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
                     <div class="glass-card white-border-card p-2 rounded-3xl h-64 overflow-hidden shadow-xl"><img src="ista-1.jpg" alt="Logo Ista" class="w-full h-full object-contain bg-white rounded-2xl"></div>
                     <div class="glass-card white-border-card p-2 rounded-3xl h-64 overflow-hidden shadow-xl"><img src="ista-2.jpg" alt="Support" class="w-full h-full object-cover rounded-2xl opacity-90"></div>
                 </div>
-                <div class="text-center">
-                    <h2 class="text-2xl font-black uppercase tracking-widest mb-8 text-blue-400">Mes Missions et Expertises</h2>
-                    <div class="glass-card white-border-card p-8 rounded-2xl w-full text-base leading-relaxed text-justify">
-                        <p>Technicienne réseaux et systèmes, j'assure la gestion complète du parc via le déploiement automatisé avec Baramundi et l'administration des terminaux mobiles sous Microsoft Intune. Je garantis la sécurité des accès via Active Directory et la configuration des VPN, tout en résolvant les incidents via Jira.</p>
-                    </div>
+                <div class="glass-card white-border-card p-8 rounded-2xl w-full text-base leading-relaxed text-justify">
+                    <h2 class="text-2xl font-black uppercase tracking-widest mb-8 text-blue-400 text-center">Mes Missions et Expertises</h2>
+                    <p>Expert du support informatique, j'assure la gestion complète du parc via le déploiement automatisé avec Baramundi et l'administration des terminaux mobiles sous Microsoft Intune. Je garantis la sécurité des accès et des données à travers Active Directory et la configuration des VPN, tout en résolvant les incidents matériels et logiciels via Jira.</p>
                 </div>
             </section>
 
@@ -156,27 +147,27 @@
                     
                     <div class="comp-card text-center" onclick="this.classList.toggle('active')">
                         <i class="fa-solid fa-server text-7xl text-[#60a5fa] mb-4"></i>
-                        <h3 class="text-white font-black uppercase text-sm">VMware</h3>
-                        <div class="comp-detail text-left">
+                        <h3 class="text-white font-black uppercase text-sm">Virtualisation VMware</h3>
+                        <div class="comp-detail text-left text-white">
                             <h4 class="font-black text-xs uppercase mb-1">Gestion d'environnements virtualisés</h4>
                             <p class="text-[10px] font-bold underline mb-2 italic">Niveau : Maîtrisé</p>
                             <ul class="text-[11px] space-y-1">
                                 <li>• Installation d'hyperviseurs (ESXi, Workstation)</li>
-                                <li>• Gestion du cycle de vie des VMs (clonage, snapshots)</li>
-                                <li>• Optimisation des ressources (CPU, RAM, Stockage)</li>
+                                <li>• Gestion du cycle de vie des VMs (snapshots)</li>
+                                <li>• Optimisation des ressources serveurs</li>
                             </ul>
                         </div>
                     </div>
 
                     <div class="comp-card text-center" onclick="this.classList.toggle('active')">
                         <i class="fa-brands fa-linux text-7xl text-[#f3ba1b] mb-4"></i>
-                        <h3 class="text-white font-black uppercase text-sm">Linux</h3>
-                        <div class="comp-detail text-left">
+                        <h3 class="text-white font-black uppercase text-sm">Administration Linux</h3>
+                        <div class="comp-detail text-left text-white">
                             <h4 class="font-black text-xs uppercase mb-1">Administration de serveurs Open Source</h4>
                             <p class="text-[10px] font-bold underline mb-2 italic">Niveau : Intermédiaire</p>
                             <ul class="text-[11px] space-y-1">
                                 <li>• Gestion des droits et utilisateurs en CLI</li>
-                                <li>• Configuration services (Apache, SSH, Bind)</li>
+                                <li>• Config services (Apache, SSH, Bind)</li>
                                 <li>• Automatisation via scripts Bash</li>
                             </ul>
                         </div>
@@ -184,31 +175,28 @@
 
                     <div class="comp-card text-center" onclick="this.classList.toggle('active')">
                         <i class="fa-brands fa-docker text-7xl text-[#2496ed] mb-4"></i>
-                        <h3 class="text-white font-black uppercase text-sm">Docker</h3>
-                        <div class="comp-detail text-left">
+                        <h3 class="text-white font-black uppercase text-sm">Conteneurisation</h3>
+                        <div class="comp-detail text-left text-white">
                             <h4 class="font-black text-xs uppercase mb-1">Déploiement de micro-services</h4>
                             <p class="text-[10px] font-bold underline mb-2 italic">Niveau : Intermédiaire</p>
                             <ul class="text-[11px] space-y-1">
                                 <li>• Création et gestion de conteneurs</li>
                                 <li>• Orchestration via Docker-Compose</li>
-                                <li>• Gestion des volumes pour la persistance</li>
+                                <li>• Gestion des volumes persistance</li>
                             </ul>
                         </div>
                     </div>
 
                     <div class="comp-card text-center" onclick="this.classList.toggle('active')">
-                        <div class="flex justify-center gap-4 mb-4">
-                            <i class="fa-brands fa-python text-7xl text-[#3776ab]"></i>
-                            <i class="fa-solid fa-terminal text-7xl text-[#5391fe]"></i>
-                        </div>
-                        <h3 class="text-white font-black uppercase text-sm">Scripting</h3>
-                        <div class="comp-detail text-left">
+                        <div class="flex justify-center gap-4 mb-4"><i class="fa-brands fa-python text-7xl text-[#3776ab]"></i><i class="fa-solid fa-terminal text-7xl text-[#5391fe]"></i></div>
+                        <h3 class="text-white font-black uppercase text-sm">Scripting (Python/PS)</h3>
+                        <div class="comp-detail text-left text-white">
                             <h4 class="font-black text-xs uppercase mb-1">Automatisation des processus (IaC)</h4>
                             <p class="text-[10px] font-bold underline mb-2 italic">Niveau : Intermédiaire</p>
                             <ul class="text-[11px] space-y-1">
-                                <li>• Développement de scripts (Sauvegardes / Monitoring)</li>
-                                <li>• Utilisation d'IDE (IntelliJ / VS Code)</li>
-                                <li>• Notions de versioning de code avec Git</li>
+                                <li>• Scripts auto (Sauvegarde / Monitoring)</li>
+                                <li>• IDE (IntelliJ / VS Code)</li>
+                                <li>• Notions de versioning avec Git</li>
                             </ul>
                         </div>
                     </div>
@@ -216,104 +204,132 @@
                     <div class="comp-card text-center" onclick="this.classList.toggle('active')">
                         <i class="fa-solid fa-users-gear text-7xl text-[#00a4ef] mb-4"></i>
                         <h3 class="text-white font-black uppercase text-sm">Active Directory</h3>
-                        <div class="comp-detail text-left">
-                            <h4 class="font-black text-xs uppercase mb-1">Gestion des identités et des accès (IAM)</h4>
-                            <p class="text-[10px] font-bold underline mb-2 italic">Niveau : Maîtrisé</p>
-                            <ul class="text-[11px] space-y-1">
-                                <li>• Administration des rôles AD DS</li>
-                                <li>• Mise en place et déploiement de GPO</li>
-                                <li>• Gestion de la sécurité des partages réseau</li>
+                        <div class="comp-detail text-left text-white">
+                            <h4 class="font-black text-xs uppercase mb-1 text-white">Gestion identités (IAM)</h4>
+                            <p class="text-[10px] font-bold underline mb-2 italic text-white">Niveau : Maîtrisé</p>
+                            <ul class="text-[11px] space-y-1 text-white">
+                                <li>• Admin rôles AD DS</li>
+                                <li>• Déploiement stratégies GPO</li>
+                                <li>• Gestion de la sécurité des partages</li>
                             </ul>
                         </div>
                     </div>
 
                     <div class="comp-card text-center" onclick="this.classList.toggle('active')">
                         <i class="fa-solid fa-network-wired text-7xl text-[#00bceb] mb-4"></i>
-                        <h3 class="text-white font-black uppercase text-sm">Cisco / Réseau</h3>
-                        <div class="comp-detail text-left">
-                            <h4 class="font-black text-xs uppercase mb-1">Configuration d'équipements réseaux</h4>
+                        <h3 class="text-white font-black uppercase text-sm">Réseau & Sécurité</h3>
+                        <div class="comp-detail text-left text-white">
+                            <h4 class="font-black text-xs uppercase mb-1">Configuration équipements</h4>
                             <p class="text-[10px] font-bold underline mb-2 italic">Niveau : Intermédiaire</p>
                             <ul class="text-[11px] space-y-1">
-                                <li>• Configuration Switch/Router (VLAN, Routage)</li>
-                                <li>• Filtrage Pare-feu (pfSense, Stormshield)</li>
-                                <li>• Diagnostic réseau (Wireshark, ICMP)</li>
+                                <li>• VLAN / Routage Cisco</li>
+                                <li>• Pare-feu (pfSense, Stormshield)</li>
+                                <li>• Diagnostic Wireshark</li>
                             </ul>
                         </div>
                     </div>
+
+                    <div class="comp-card text-center" onclick="this.classList.toggle('active')">
+                        <i class="fa-solid fa-eye text-7xl text-[#d40000] mb-4"></i>
+                        <h3 class="text-white font-black uppercase text-sm">Supervision</h3>
+                        <div class="comp-detail text-left text-white">
+                            <h4 class="font-black text-xs uppercase mb-1">Maintien condition opérationnelle</h4>
+                            <p class="text-[10px] font-bold underline mb-2 italic">Niveau : Débutant</p>
+                            <ul class="text-[11px] space-y-1">
+                                <li>• Surveillance santé serveurs</li>
+                                <li>• Analyse logs résolution incidents</li>
+                                <li>• Alerting disponibilité SI</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="comp-card text-center" onclick="this.classList.toggle('active')">
+                        <i class="fa-solid fa-laptop-medical text-7xl text-[#28a745] mb-4"></i>
+                        <h3 class="text-white font-black uppercase text-sm">Gestion Parc</h3>
+                        <div class="comp-detail text-left text-white">
+                            <h4 class="font-black text-xs uppercase mb-1">Unified Endpoint Management</h4>
+                            <p class="text-[10px] font-bold underline mb-2 italic">Niveau : Intermédiaire</p>
+                            <ul class="text-[11px] space-y-1">
+                                <li>• Déploiement auto apps/MAJ</li>
+                                <li>• Inventaire matériel et logiciel</li>
+                                <li>• Conformité postes travail</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="comp-card text-center" onclick="this.classList.toggle('active')">
+                        <i class="fa-brands fa-microsoft text-7xl text-[#0089d6] mb-4"></i>
+                        <h3 class="text-white font-black uppercase text-sm">Azure Cloud</h3>
+                        <div class="comp-detail text-left text-white">
+                            <h4 class="font-black text-xs uppercase mb-1">Administration Cloud Azure</h4>
+                            <p class="text-[10px] font-bold underline mb-2 italic">Niveau : Débutant / Intermédiaire</p>
+                            <ul class="text-[11px] space-y-1">
+                                <li>• Gestion via Entra ID (Azure AD)</li>
+                                <li>• Admin ressources (VMs, Stockage)</li>
+                                <li>• Politiques accès conditionnel</li>
+                            </ul>
+                        </div>
+                    </div>
+
                 </div>
             </section>
 
             <section id="veille" class="max-w-6xl mx-auto px-8 py-24 scroll-mt-24">
                 <div class="text-center mb-16"><h2 class="text-3xl font-black uppercase tracking-widest inline-block border-b-2 border-blue-500 pb-2 text-white">Veille Technologique</h2></div>
-                
-                <div class="grid grid-cols-1 gap-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     
                     <div class="veille-item glass-card rounded-2xl overflow-hidden border border-white/10">
-                        <div class="veille-header p-6 flex justify-between items-center" onclick="this.parentElement.classList.toggle('active')">
-                            <div class="flex items-center gap-4">
-                                <i class="fa-solid fa-shield-virus text-2xl text-blue-400"></i>
-                                <span class="font-black uppercase tracking-widest text-sm">Thématique 1 : La Cybersécurité</span>
-                            </div>
-                            <i class="fa-solid fa-chevron-down transition-transform duration-300"></i>
+                        <div class="veille-header p-5 flex justify-between items-center font-black uppercase tracking-widest text-sm" onclick="this.parentElement.classList.toggle('active')">
+                            <span>La Cybersécurité</span><i class="fa-solid fa-plus transition-transform duration-300"></i>
                         </div>
-                        <div class="veille-content">
-                            <div class="p-8 space-y-6">
-                                <div class="space-y-4">
-                                    <h4 class="text-blue-400 font-bold uppercase text-xs underline">Sujets surveillés :</h4>
-                                    <p class="text-sm leading-relaxed text-slate-300">
-                                        Surveillance constante des nouvelles vulnérabilités critiques (CVE), des techniques de ransomwares et des stratégies de défense moderne comme le <strong>Zero Trust Architecture</strong>. Je m'intéresse particulièrement à la sécurisation des accès distants et à l'évolution des menaces sur les infrastructures hybrides.
-                                    </p>
-                                </div>
-                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                    <div class="bg-blue-900/20 p-4 rounded-xl border border-blue-500/20">
-                                        <h5 class="text-white font-bold text-xs mb-2 uppercase">Sources principales :</h5>
-                                        <ul class="text-xs space-y-2 text-slate-400">
-                                            <li><i class="fa-solid fa-link mr-2"></i>ANSSI / CERT-FR</li>
-                                            <li><i class="fa-solid fa-link mr-2"></i>The Hacker News</li>
-                                            <li><i class="fa-solid fa-link mr-2"></i>Le Monde Informatique (Section Sécu)</li>
-                                        </ul>
-                                    </div>
-                                    <div class="bg-blue-900/20 p-4 rounded-xl border border-blue-500/20 text-center flex flex-col justify-center">
-                                        <p class="text-[10px] uppercase font-bold text-blue-400 mb-2">Outils de veille :</p>
-                                        <p class="text-xs">Flux RSS (Feedly), Google Alerts, Newsletters spécialisées.</p>
-                                    </div>
-                                </div>
+                        <div class="veille-content"><div class="p-6 space-y-4">
+                            <p class="text-sm text-slate-300">Nouvelles vulnérabilités, ransomwares, stratégies de défense (Zero Trust).</p>
+                            <div class="grid grid-cols-1 gap-2">
+                                <a href="https://www.cert.ssi.gouv.fr/" target="_blank" class="source-btn">ANSSI / CERT-FR</a>
+                                <a href="https://thehackernews.com/" target="_blank" class="source-btn">The Hacker News</a>
+                                <a href="https://www.lemagit.fr/actualites/Securite" target="_blank" class="source-btn">LeMagIT (Sécurité)</a>
                             </div>
-                        </div>
+                        </div></div>
                     </div>
 
                     <div class="veille-item glass-card rounded-2xl overflow-hidden border border-white/10">
-                        <div class="veille-header p-6 flex justify-between items-center" onclick="this.parentElement.classList.toggle('active')">
-                            <div class="flex items-center gap-4">
-                                <i class="fa-solid fa-cloud text-2xl text-blue-400"></i>
-                                <span class="font-black uppercase tracking-widest text-sm">Thématique 2 : Cloud Computing & Virtualisation</span>
-                            </div>
-                            <i class="fa-solid fa-chevron-down transition-transform duration-300"></i>
+                        <div class="veille-header p-5 flex justify-between items-center font-black uppercase tracking-widest text-sm" onclick="this.parentElement.classList.toggle('active')">
+                            <span>Le Cloud Computing & Virtualisation</span><i class="fa-solid fa-plus transition-transform duration-300"></i>
                         </div>
-                        <div class="veille-content">
-                            <div class="p-8 space-y-6">
-                                <div class="space-y-4">
-                                    <h4 class="text-blue-400 font-bold uppercase text-xs underline">Sujets surveillés :</h4>
-                                    <p class="text-sm leading-relaxed text-slate-300">
-                                        Suivi des innovations sur <strong>Microsoft Azure</strong> (Entra ID, Azure Virtual Desktop) et des technologies de conteneurisation (Docker/Kubernetes). Je surveille également l'évolution des solutions de sauvegarde immuables pour protéger les environnements virtualisés contre les pertes de données.
-                                    </p>
-                                </div>
-                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                    <div class="bg-blue-900/20 p-4 rounded-xl border border-blue-500/20">
-                                        <h5 class="text-white font-bold text-xs mb-2 uppercase">Sources principales :</h5>
-                                        <ul class="text-xs space-y-2 text-slate-400">
-                                            <li><i class="fa-solid fa-link mr-2"></i>Microsoft Azure Blog</li>
-                                            <li><i class="fa-solid fa-link mr-2"></i>Veeam Software Blog</li>
-                                            <li><i class="fa-solid fa-link mr-2"></i>IT-Connect</li>
-                                        </ul>
-                                    </div>
-                                    <div class="bg-blue-900/20 p-4 rounded-xl border border-blue-500/20 text-center flex flex-col justify-center">
-                                        <p class="text-[10px] uppercase font-bold text-blue-400 mb-2">Méthodologie :</p>
-                                        <p class="text-xs">Tests en Lab (VMware), lecture de livres blancs, webinaires éditeurs.</p>
-                                    </div>
-                                </div>
+                        <div class="veille-content"><div class="p-6 space-y-4">
+                            <p class="text-sm text-slate-300">Évolutions Azure/AWS, serveurs hybrides, conteneurisation (Docker, Kubernetes).</p>
+                            <div class="grid grid-cols-1 gap-2">
+                                <a href="https://azure.microsoft.com/en-us/blog/" target="_blank" class="source-btn">Azure Blog</a>
+                                <a href="https://www.veeam.com/blog/fr/" target="_blank" class="source-btn">Veeam Blog</a>
+                                <a href="https://www.linformaticien.com/actualites/categorie/cloud-datacenters.html" target="_blank" class="source-btn">L'Informaticien</a>
                             </div>
+                        </div></div>
+                    </div>
+
+                    <div class="veille-item glass-card rounded-2xl overflow-hidden border border-white/10">
+                        <div class="veille-header p-5 flex justify-between items-center font-black uppercase tracking-widest text-sm" onclick="this.parentElement.classList.toggle('active')">
+                            <span>Infrastructures Réseaux (SD-WAN & WiFi 7)</span><i class="fa-solid fa-plus transition-transform duration-300"></i>
                         </div>
+                        <div class="veille-content"><div class="p-6 space-y-4">
+                            <p class="text-sm text-slate-300">Déploiement du SD-WAN, WiFi 7, automatisation réseau (NetDevOps).</p>
+                            <div class="grid grid-cols-1 gap-2">
+                                <a href="https://blogs.cisco.com/networking" target="_blank" class="source-btn">Cisco Blog</a>
+                                <a href="https://www.zdnet.fr/actualites/networking-3900000005.htm" target="_blank" class="source-btn">ZDNet Networking</a>
+                            </div>
+                        </div></div>
+                    </div>
+
+                    <div class="veille-item glass-card rounded-2xl overflow-hidden border border-white/10">
+                        <div class="veille-header p-5 flex justify-between items-center font-black uppercase tracking-widest text-sm" onclick="this.parentElement.classList.toggle('active')">
+                            <span>IA appliquée à l'Administration (AIOps)</span><i class="fa-solid fa-plus transition-transform duration-300"></i>
+                        </div>
+                        <div class="veille-content"><div class="p-6 space-y-4">
+                            <p class="text-sm text-slate-300">Détection de pannes ou d'intrusions prédictive via l'intelligence artificielle.</p>
+                            <div class="grid grid-cols-1 gap-2">
+                                <a href="https://www.it-connect.fr/" target="_blank" class="source-btn">IT Connect</a>
+                                <a href="https://www.gartner.com/en/information-technology/research/it-operations" target="_blank" class="source-btn">Gartner IT Operations</a>
+                            </div>
+                        </div></div>
                     </div>
 
                 </div>
