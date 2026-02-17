@@ -18,6 +18,16 @@
         .nav-link::before { content: ''; position: absolute; left: 0; top: 0; height: 100%; width: 0; background: #3b82f6; transition: width 0.3s ease; }
         .nav-link:hover::before { width: 4px; }
 
+        /* --- AJOUT : STYLE POUR L'ONGLET ACTIF --- */
+        .nav-link.active { 
+            color: #60a5fa; 
+            background: rgba(59, 130, 246, 0.15); 
+            padding-left: 2rem; 
+        }
+        .nav-link.active::before { 
+            width: 4px; 
+        }
+
         .typing::after { content: '|'; animation: blink 0.7s infinite; }
         @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
 
@@ -26,7 +36,6 @@
             background-size: cover; background-position: center; background-attachment: fixed;
         }
 
-        /* EFFET DESCENTE TEXTE COMPETENCES */
         .comp-card { cursor: pointer; transition: all 0.3s ease; }
         .comp-detail { 
             max-height: 0; opacity: 0; overflow: hidden; 
@@ -35,7 +44,6 @@
         }
         .comp-card.active .comp-detail { max-height: 600px; opacity: 1; padding: 1.5rem; }
 
-        /* INTERFACE VEILLE TECHNOLOGIQUE */
         .veille-item.active .veille-content { max-height: 1000px; }
         .veille-header { background: #a855f7; cursor: pointer; transition: background 0.3s; border-radius: 0.5rem; }
         .veille-header:hover { background: #9333ea; }
@@ -56,7 +64,7 @@
             <h1 class="text-xl font-black tracking-widest neon-text uppercase leading-tight text-white">Alyssia<br><span class="text-blue-500">Noireau</span></h1>
             <p class="text-[10px] text-blue-400 font-bold mt-2 tracking-[0.2em] uppercase">BTS SIO SISR</p>
         </div>
-        <nav class="flex-1 flex flex-col justify-evenly py-4 text-xs font-bold uppercase tracking-widest text-slate-400">
+        <nav id="sidebar-nav" class="flex-1 flex flex-col justify-evenly py-4 text-xs font-bold uppercase tracking-widest text-slate-400">
             <a href="#accueil" class="nav-link py-3 px-8"><i class="fa-solid fa-house-chimney w-5"></i> Accueil</a>
             <a href="#profil" class="nav-link py-3 px-8"><i class="fa-solid fa-id-badge w-5"></i> Profil</a>
             <a href="#entreprise" class="nav-link py-3 px-8"><i class="fa-solid fa-building w-5"></i> Entreprise</a>
@@ -353,15 +361,57 @@
     </div>
 
     <script>
-        const text = "Bienvenue sur mon Portfolio";
+        // --- EFFET MACHINE A ECRIRE ---
+        const textArray = "Bienvenue sur mon Portfolio";
         const speed = 100;
-        let i = 0;
-        const element = document.getElementById("typewriter");
-        function typeWriter() {
-            if (i < text.length) { element.innerHTML += text.charAt(i); i++; setTimeout(typeWriter, speed); }
-            else { setTimeout(() => { element.innerHTML = ""; i = 0; typeWriter(); }, 2000); }
+        let charIndex = 0;
+        const typewriterElement = document.getElementById("typewriter");
+        
+        function typeWriterEffect() {
+            if (charIndex < textArray.length) { 
+                typewriterElement.innerHTML += textArray.charAt(charIndex); 
+                charIndex++; 
+                setTimeout(typeWriterEffect, speed); 
+            }
+            else { 
+                setTimeout(() => { 
+                    typewriterElement.innerHTML = ""; 
+                    charIndex = 0; 
+                    typeWriterEffect(); 
+                }, 2000); 
+            }
         }
-        window.onload = typeWriter;
+
+        // --- GESTION DES ONGLETS ACTIFS (SURVEILLANCE DU SCROLL) ---
+        const sections = document.querySelectorAll("section");
+        const navLinks = document.querySelectorAll(".nav-link");
+
+        const observerOptions = {
+            root: null,
+            threshold: 0.6 // La section doit être visible à 60% pour activer l'onglet
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const currentId = entry.target.getAttribute("id");
+                    
+                    navLinks.forEach(link => {
+                        link.classList.remove("active");
+                        if (link.getAttribute("href") === `#${currentId}`) {
+                            link.classList.add("active");
+                        }
+                    });
+                }
+            });
+        }, observerOptions);
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+
+        // Lancement au chargement
+        window.onload = typeWriterEffect;
     </script>
 </body>
 </html>
