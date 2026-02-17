@@ -36,7 +36,8 @@
         .comp-card.active .comp-detail { max-height: 500px; opacity: 1; padding: 1.5rem; }
 
         /* ACCORDÉON VEILLE */
-        .veille-item.active .veille-content { max-height: 500px; }
+        .veille-item.active .veille-content { max-height: 600px; }
+        .veille-header { background: #a855f7; cursor: pointer; }
         .veille-content { max-height: 0; overflow: hidden; transition: max-height 0.5s ease-out; background: rgba(168, 85, 247, 0.1); }
 
         .photo-frame { width: 100%; height: 100%; object-fit: cover; object-position: center 15%; }
@@ -85,7 +86,7 @@
                     <div class="lg:col-span-3">
                         <div class="glass-card white-border-card p-8 rounded-2xl text-lg leading-relaxed text-justify">
                             <p>Diplômée d'un Bac STMG (Mercatique), j'ai choisi de spécialiser mon profil vers les systèmes d'information. Je combine ainsi une approche orientée client et une expertise technique en devenir. Actuellement en deuxième année de BTS SIO (option SISR) au sein de l'école ORT Daniel Mayer, j'effectue mon alternance chez Ista en tant que technicienne réseaux et systèmes.</p>
-                            <p class="mt-6">Animée par une réelle volonté d'évoluer vers la gestion de projets informatiques, je projette d'intégrer la licence Chef de projet développement, sécurité et exploitation au sein du CNAM en alternance. Mon objectif est de poursuivre ensuite mon cursus vers un Master MIAGE.</p>
+                            <p class="mt-6">Animée par une réelle volonté d'évoluer vers la gestion de projets informatiques, je projette d'intégrer la licence Chef de projet développement, sécurité et exploitation au sein du CNAM en alternance. Mon objectif est de poursuivre ensuite mon cursus vers un Master MIAGE, afin de consolider mes compétences stratégiques et techniques.</p>
                         </div>
                     </div>
                 </div>
@@ -100,7 +101,7 @@
                     </div>
                     <div class="glass-card white-border-card p-6 rounded-2xl">
                         <h3 class="text-blue-400 font-black uppercase text-xs tracking-widest mb-4">Dimension Internationale</h3>
-                        <p class="text-sm">L'entreprise est d'origine allemande, présente dans 22 pays. Collaboration quotidienne avec des équipes internationales.</p>
+                        <p class="text-sm">L'entreprise est d'origine allemande, présente dans 22 pays. Collaboration internationale quotidienne.</p>
                     </div>
                     <div class="glass-card white-border-card p-6 rounded-2xl">
                         <h3 class="text-blue-400 font-black uppercase text-xs tracking-widest mb-4">Rôle du Support</h3>
@@ -109,12 +110,12 @@
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
                     <div class="glass-card white-border-card p-2 rounded-3xl h-64 overflow-hidden shadow-xl"><img src="ista-1.jpg" alt="Logo Ista" class="w-full h-full object-contain bg-white rounded-2xl"></div>
-                    <div class="glass-card white-border-card p-2 rounded-3xl h-64 overflow-hidden shadow-xl"><img src="ista-2.jpg" class="w-full h-full object-cover rounded-2xl opacity-90"></div>
+                    <div class="glass-card white-border-card p-2 rounded-3xl h-64 overflow-hidden shadow-xl"><img src="ista-2.jpg" alt="Support" class="w-full h-full object-cover rounded-2xl opacity-90"></div>
                 </div>
                 <div class="text-center">
                     <h2 class="text-2xl font-black uppercase tracking-widest mb-8 text-blue-400">Mes Missions et Expertises</h2>
                     <div class="glass-card white-border-card p-8 rounded-2xl w-full text-base leading-relaxed text-justify">
-                        <p>Expert du support informatique, j'assure la gestion complète du parc via Baramundi et Microsoft Intune. Je garantis la sécurité via AD et VPN.</p>
+                        <p>Expert du support informatique, j'assure la gestion complète du parc via le déploiement automatisé avec Baramundi et l'administration des terminaux mobiles sous Microsoft Intune. Je garantis la sécurité des accès et des données à travers Active Directory et la configuration des VPN, tout en résolvant les incidents matériels et logiciels via Jira.</p>
                     </div>
                 </div>
             </section>
@@ -170,10 +171,10 @@
                         <i class="fa-brands fa-linux text-7xl text-[#f3ba1b] mb-4"></i>
                         <h3 class="text-white font-black uppercase text-sm">Linux</h3>
                         <div class="comp-detail text-left">
-                            <h4 class="font-black text-xs uppercase mb-1">Administration Open Source</h4>
+                            <h4 class="font-black text-xs uppercase mb-1">Administration de serveurs Open Source</h4>
                             <p class="text-[10px] font-bold underline mb-2 italic">Niveau : Intermédiaire</p>
                             <ul class="text-[11px] space-y-1">
-                                <li>• Droits/Utilisateurs via CLI</li>
+                                <li>• Gestion des droits et utilisateurs en CLI</li>
                                 <li>• Config services (Apache, SSH, Bind)</li>
                                 <li>• Automatisation via scripts Bash</li>
                             </ul>
@@ -184,12 +185,12 @@
                         <i class="fa-brands fa-docker text-7xl text-[#2496ed] mb-4"></i>
                         <h3 class="text-white font-black uppercase text-sm">Docker</h3>
                         <div class="comp-detail text-left">
-                            <h4 class="font-black text-xs uppercase mb-1">Déploiement micro-services</h4>
-                            <p class="text-[10px] font-bold underline mb-2 italic">Débutant / Intermédiaire</p>
+                            <h4 class="font-black text-xs uppercase mb-1">Déploiement de micro-services</h4>
+                            <p class="text-[10px] font-bold underline mb-2 italic">Niveau : Débutant / Intermédiaire</p>
                             <ul class="text-[11px] space-y-1">
-                                <li>• Création/gestion conteneurs</li>
+                                <li>• Création et gestion de conteneurs</li>
                                 <li>• Orchestration via Docker-Compose</li>
-                                <li>• Gestion volumes persistance</li>
+                                <li>• Gestion des volumes pour la persistance</li>
                             </ul>
                         </div>
                     </div>
@@ -201,12 +202,12 @@
                         </div>
                         <h3 class="text-white font-black uppercase text-sm">Scripting</h3>
                         <div class="comp-detail text-left">
-                            <h4 class="font-black text-xs uppercase mb-1">Automatisation processus (IaC)</h4>
+                            <h4 class="font-black text-xs uppercase mb-1">Automatisation des processus (IaC)</h4>
                             <p class="text-[10px] font-bold underline mb-2 italic">Niveau : Intermédiaire</p>
                             <ul class="text-[11px] space-y-1">
-                                <li>• Scripts auto (Sauvegarde / Monitoring)</li>
-                                <li>• IDE (IntelliJ / VS Code)</li>
-                                <li>• Versioning avec Git</li>
+                                <li>• Scripts d'automatisation (Sauvegarde / Monitoring)</li>
+                                <li>• Utilisation d'IDE (IntelliJ / VS Code)</li>
+                                <li>• Notions de versioning avec Git</li>
                             </ul>
                         </div>
                     </div>
@@ -215,12 +216,12 @@
                         <i class="fa-solid fa-users-gear text-7xl text-[#00a4ef] mb-4"></i>
                         <h3 class="text-white font-black uppercase text-sm">Active Directory</h3>
                         <div class="comp-detail text-left">
-                            <h4 class="font-black text-xs uppercase mb-1">Gestion identités (IAM)</h4>
+                            <h4 class="font-black text-xs uppercase mb-1">Gestion des identités et des accès (IAM)</h4>
                             <p class="text-[10px] font-bold underline mb-2 italic">Niveau : Maîtrisé</p>
                             <ul class="text-[11px] space-y-1">
-                                <li>• Admin rôles AD DS</li>
-                                <li>• Déploiement stratégies GPO</li>
-                                <li>• Sécurité accès et partages</li>
+                                <li>• Administration des rôles AD DS</li>
+                                <li>• Mise en place et déploiement de GPO</li>
+                                <li>• Gestion de la sécurité des partages réseau</li>
                             </ul>
                         </div>
                     </div>
@@ -229,12 +230,54 @@
                         <i class="fa-solid fa-network-wired text-7xl text-[#00bceb] mb-4"></i>
                         <h3 class="text-white font-black uppercase text-sm">Cisco / Réseau</h3>
                         <div class="comp-detail text-left">
-                            <h4 class="font-black text-xs uppercase mb-1">Configuration équipements</h4>
+                            <h4 class="font-black text-xs uppercase mb-1">Configuration d'équipements réseaux</h4>
                             <p class="text-[10px] font-bold underline mb-2 italic">Niveau : Intermédiaire</p>
                             <ul class="text-[11px] space-y-1">
-                                <li>• VLAN / Routage Cisco</li>
-                                <li>• Pare-feu (pfSense, Stormshield)</li>
-                                <li>• Diagnostic Wireshark</li>
+                                <li>• Configuration Switch/Router (VLAN, Routage)</li>
+                                <li>• Filtrage Pare-feu (pfSense, Stormshield)</li>
+                                <li>• Diagnostic réseau (Wireshark, ICMP)</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="comp-card text-center" onclick="this.classList.toggle('active')">
+                        <i class="fa-brands fa-microsoft text-7xl text-[#0089d6] mb-4"></i>
+                        <h3 class="text-white font-black uppercase text-sm">Azure Cloud</h3>
+                        <div class="comp-detail text-left">
+                            <h4 class="font-black text-xs uppercase mb-1">Administration Cloud Azure</h4>
+                            <p class="text-[10px] font-bold underline mb-2 italic">Niveau : Débutant / Intermédiaire</p>
+                            <ul class="text-[11px] space-y-1">
+                                <li>• Gestion via Entra ID (Azure AD)</li>
+                                <li>• Admin ressources (VMs, Stockage)</li>
+                                <li>• Politiques d'accès conditionnel</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="comp-card text-center" onclick="this.classList.toggle('active')">
+                        <i class="fa-solid fa-eye text-7xl text-[#d40000] mb-4"></i>
+                        <h3 class="text-white font-black uppercase text-sm">Monitoring</h3>
+                        <div class="comp-detail text-left">
+                            <h4 class="font-black text-xs uppercase mb-1">Maintien en condition opérationnelle (MCO)</h4>
+                            <p class="text-[10px] font-bold underline mb-2 italic">Niveau : Débutant</p>
+                            <ul class="text-[11px] space-y-1">
+                                <li>• Surveillance santé serveurs et services</li>
+                                <li>• Analyse des logs pour résolution incidents</li>
+                                <li>• Mise en place d'alerting disponibilité SI</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="comp-card text-center" onclick="this.classList.toggle('active')">
+                        <i class="fa-solid fa-laptop-medical text-7xl text-[#28a745] mb-4"></i>
+                        <h3 class="text-white font-black uppercase text-sm">Baramundi</h3>
+                        <div class="comp-detail text-left">
+                            <h4 class="font-black text-xs uppercase mb-1">Unified Endpoint Management (UEM)</h4>
+                            <p class="text-[10px] font-bold underline mb-2 italic">Niveau : Intermédiaire</p>
+                            <ul class="text-[11px] space-y-1">
+                                <li>• Déploiement auto d'applications et MAJ</li>
+                                <li>• Inventaire matériel et logiciel</li>
+                                <li>• Gestion de conformité des postes de travail</li>
                             </ul>
                         </div>
                     </div>
@@ -250,9 +293,10 @@
                             <span>La Cybersécurité</span><i class="fa-solid fa-plus transition-transform duration-300"></i>
                         </div>
                         <div class="veille-content"><div class="p-6 space-y-4">
-                            <p class="text-sm text-slate-300">Vulnérabilités, ransomwares, stratégies Zero Trust.</p>
+                            <p class="text-sm text-slate-300">Nouvelles vulnérabilités, ransomwares, stratégies de défense (Zero Trust).</p>
                             <div class="grid grid-cols-1 gap-2">
-                                <a href="https://www.cert.ssi.gouv.fr/" target="_blank" class="bg-blue-900/50 p-3 rounded-lg text-xs font-bold text-center hover:bg-blue-600 transition">ANSSI / CERT-FR</a>
+                                <a href="https://www.cert.ssi.gouv.fr/" target="_blank" class="bg-blue-900/50 p-3 rounded-lg text-xs font-bold text-center">ANSSI / CERT-FR</a>
+                                <a href="https://thehackernews.com/" target="_blank" class="bg-blue-900/50 p-3 rounded-lg text-xs font-bold text-center">The Hacker News</a>
                             </div>
                         </div></div>
                     </div>
@@ -261,9 +305,10 @@
                             <span>Cloud Computing</span><i class="fa-solid fa-plus transition-transform duration-300"></i>
                         </div>
                         <div class="veille-content"><div class="p-6 space-y-4">
-                            <p class="text-sm text-slate-300">Azure/AWS, serveurs hybrides, Docker/Kubernetes.</p>
+                            <p class="text-sm text-slate-300">Azure/AWS, serveurs hybrides, conteneurisation (Docker, Kubernetes).</p>
                             <div class="grid grid-cols-1 gap-2">
-                                <a href="https://azure.microsoft.com/en-us/blog/" target="_blank" class="bg-blue-900/50 p-3 rounded-lg text-xs font-bold text-center hover:bg-blue-600 transition">Azure Blog</a>
+                                <a href="https://azure.microsoft.com/en-us/blog/" target="_blank" class="bg-blue-900/50 p-3 rounded-lg text-xs font-bold text-center">Azure Blog</a>
+                                <a href="https://www.veeam.com/blog/fr/" target="_blank" class="bg-blue-900/50 p-3 rounded-lg text-xs font-bold text-center">Veeam Blog</a>
                             </div>
                         </div></div>
                     </div>
@@ -274,8 +319,8 @@
                 <div class="text-center mb-16"><h2 class="text-3xl font-black uppercase tracking-widest inline-block border-b-2 border-blue-500 pb-2 text-white">Contact</h2></div>
                 <div class="max-w-4xl mx-auto flex flex-col items-center gap-12 text-center">
                     <div class="space-y-6">
-                        <p class="text-2xl font-bold">Alyssia.noireau@gmail.com</p>
-                        <p class="text-2xl font-bold">07 67 17 89 08</p>
+                        <p class="text-2xl font-bold flex items-center gap-4"><i class="fa-solid fa-envelope text-blue-400"></i> Alyssia.noireau@gmail.com</p>
+                        <p class="text-2xl font-bold flex items-center gap-4"><i class="fa-solid fa-phone text-blue-400"></i> 07 67 17 89 08</p>
                     </div>
                     <div class="flex gap-16">
                         <a href="https://www.linkedin.com/in/alyssia-noireau" target="_blank" class="text-6xl text-[#0077b5] hover:scale-125 transition duration-300"><i class="fa-brands fa-linkedin"></i></a>
