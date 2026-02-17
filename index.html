@@ -28,7 +28,6 @@
 
         .project-card:hover, .cert-card:hover { transform: translateY(-5px); transition: all 0.3s ease; background: rgba(59, 130, 246, 0.1); }
         
-        /* Ajustement précis pour ne pas couper le front */
         .photo-frame { width: 100%; height: 100%; object-fit: cover; object-position: center 15%; }
     </style>
 </head>
@@ -64,11 +63,18 @@
             <section id="profil" class="max-w-6xl mx-auto px-8 py-24 scroll-mt-24">
                 <div class="text-center mb-16"><h2 class="text-3xl font-black uppercase tracking-widest inline-block border-b-2 border-blue-500 pb-2">Présentation</h2></div>
                 <div class="grid grid-cols-1 lg:grid-cols-5 gap-12 items-start">
-                    <div class="lg:col-span-2 flex flex-col items-center space-y-8">
+                    <div class="lg:col-span-2 flex flex-col items-center space-y-4">
                         <div class="glass-card w-72 h-72 p-2 rounded-3xl border border-blue-500/30 overflow-hidden shadow-2xl">
                             <img src="photo line 2.jpg" alt="Alyssia Noireau" class="photo-frame rounded-2xl">
                         </div>
-                        <a href="CV_Alyssia_Noireau.pdf" target="_blank" class="w-72 flex items-center justify-center gap-4 px-6 py-4 bg-blue-600/20 hover:bg-blue-600/40 text-blue-400 rounded-xl border border-blue-500/30 transition shadow-xl font-black uppercase tracking-[0.4em] text-xs">CV</a>
+                        
+                        <a href="Professional CV Resume.pdf" target="_blank" class="w-72 flex items-center justify-center gap-4 px-6 py-4 bg-blue-600/20 hover:bg-blue-600/40 text-blue-400 rounded-xl border border-blue-500/30 transition shadow-xl font-black uppercase tracking-[0.4em] text-xs">
+                            <i class="fa-solid fa-file-pdf"></i> CV
+                        </a>
+
+                        <a href="Tableau_de_Competences.pdf" target="_blank" class="w-72 flex items-center justify-center gap-4 px-6 py-4 bg-blue-600/20 hover:bg-blue-600/40 text-blue-400 rounded-xl border border-blue-500/30 transition shadow-xl font-black uppercase tracking-[0.1em] text-[10px]">
+                            <i class="fa-solid fa-table-list"></i> Tableau de compétences
+                        </a>
                     </div>
                     <div class="lg:col-span-3 space-y-6">
                         <div class="glass-card white-border-card p-8 rounded-2xl text-lg leading-relaxed text-justify">
@@ -116,29 +122,29 @@
             <section id="tp" class="max-w-6xl mx-auto px-8 py-24 scroll-mt-24">
                 <div class="text-center mb-16"><h2 class="text-3xl font-black uppercase tracking-widest inline-block border-b-2 border-blue-500 pb-2 text-white">Projets Techniques</h2></div>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-center">
-                    <a href="TP1.pdf" target="_blank" class="glass-card white-border-card p-8 rounded-2xl project-card group"><i class="fa-solid fa-users-gear text-3xl text-blue-400 mb-4"></i><h3 class="text-white font-black uppercase text-sm tracking-widest">Active Directory</h3></a>
-                    <a href="TP2.pdf" target="_blank" class="glass-card white-border-card p-8 rounded-2xl project-card group"><i class="fa-solid fa-ticket text-3xl text-blue-400 mb-4"></i><h3 class="text-white font-black uppercase text-sm tracking-widest">GLPI / Helpdesk</h3></a>
-                    <a href="TP3.pdf" target="_blank" class="glass-card white-border-card p-8 rounded-2xl project-card group"><i class="fa-solid fa-network-wired text-3xl text-blue-400 mb-4"></i><h3 class="text-white font-black uppercase text-sm tracking-widest">VLAN & Routing</h3></a>
-                    <a href="TP4.pdf" target="_blank" class="glass-card white-border-card p-8 rounded-2xl project-card group"><i class="fa-solid fa-server text-3xl text-blue-400 mb-4"></i><h3 class="text-white font-black uppercase text-sm tracking-widest">Windows Server</h3></a>
-                    <a href="TP5.pdf" target="_blank" class="glass-card white-border-card p-8 rounded-2xl project-card group"><i class="fa-solid fa-eye text-3xl text-blue-400 mb-4"></i><h3 class="text-white font-black uppercase text-sm tracking-widest">Supervision Zabbix</h3></a>
-                    <a href="TP6.pdf" target="_blank" class="glass-card white-border-card p-8 rounded-2xl project-card group"><i class="fa-solid fa-shield-halved text-3xl text-blue-400 mb-4"></i><h3 class="text-white font-black uppercase text-sm tracking-widest">Sécurité VPN</h3></a>
-                    <a href="TP7.pdf" target="_blank" class="glass-card white-border-card p-8 rounded-2xl project-card group"><i class="fa-solid fa-linux text-3xl text-blue-400 mb-4"></i><h3 class="text-white font-black uppercase text-sm tracking-widest">Linux Debian</h3></a>
-                    <a href="TP8.pdf" target="_blank" class="glass-card white-border-card p-8 rounded-2xl project-card group"><i class="fa-solid fa-database text-3xl text-blue-400 mb-4"></i><h3 class="text-white font-black uppercase text-sm tracking-widest">Bases de Données</h3></a>
-                    <a href="TP9.pdf" target="_blank" class="glass-card white-border-card p-8 rounded-2xl project-card group"><i class="fa-solid fa-cloud text-3xl text-blue-400 mb-4"></i><h3 class="text-white font-black uppercase text-sm tracking-widest">Services Cloud</h3></a>
+                    <a href="TP1.pdf" target="_blank" class="glass-card white-border-card p-8 rounded-2xl project-card group"><i class="fa-solid fa-users-gear text-3xl text-blue-400 mb-4"></i><h3 class="text-white font-black uppercase text-sm">Active Directory</h3></a>
+                    <a href="TP2.pdf" target="_blank" class="glass-card white-border-card p-8 rounded-2xl project-card group"><i class="fa-solid fa-ticket text-3xl text-blue-400 mb-4"></i><h3 class="text-white font-black uppercase text-sm">GLPI / Helpdesk</h3></a>
+                    <a href="TP3.pdf" target="_blank" class="glass-card white-border-card p-8 rounded-2xl project-card group"><i class="fa-solid fa-network-wired text-3xl text-blue-400 mb-4"></i><h3 class="text-white font-black uppercase text-sm">VLAN & Routing</h3></a>
+                    <a href="TP4.pdf" target="_blank" class="glass-card white-border-card p-8 rounded-2xl project-card group"><i class="fa-solid fa-server text-3xl text-blue-400 mb-4"></i><h3 class="text-white font-black uppercase text-sm">Windows Server</h3></a>
+                    <a href="TP5.pdf" target="_blank" class="glass-card white-border-card p-8 rounded-2xl project-card group"><i class="fa-solid fa-eye text-3xl text-blue-400 mb-4"></i><h3 class="text-white font-black uppercase text-sm">Supervision Zabbix</h3></a>
+                    <a href="TP6.pdf" target="_blank" class="glass-card white-border-card p-8 rounded-2xl project-card group"><i class="fa-solid fa-shield-halved text-3xl text-blue-400 mb-4"></i><h3 class="text-white font-black uppercase text-sm">Sécurité VPN</h3></a>
+                    <a href="TP7.pdf" target="_blank" class="glass-card white-border-card p-8 rounded-2xl project-card group"><i class="fa-solid fa-linux text-3xl text-blue-400 mb-4"></i><h3 class="text-white font-black uppercase text-sm">Linux Debian</h3></a>
+                    <a href="TP8.pdf" target="_blank" class="glass-card white-border-card p-8 rounded-2xl project-card group"><i class="fa-solid fa-database text-3xl text-blue-400 mb-4"></i><h3 class="text-white font-black uppercase text-sm">Bases de Données</h3></a>
+                    <a href="TP9.pdf" target="_blank" class="glass-card white-border-card p-8 rounded-2xl project-card group"><i class="fa-solid fa-cloud text-3xl text-blue-400 mb-4"></i><h3 class="text-white font-black uppercase text-sm">Services Cloud</h3></a>
                 </div>
             </section>
 
             <section id="certifications" class="max-w-6xl mx-auto px-8 py-24 scroll-mt-24">
                 <div class="text-center mb-16"><h2 class="text-3xl font-black uppercase tracking-widest inline-block border-b-2 border-blue-500 pb-2 text-white">Certifications</h2></div>
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-                    <div class="glass-card white-border-card p-6 rounded-xl cert-card border-t-4 border-t-blue-500"><i class="fa-solid fa-graduation-cap text-2xl text-blue-400 mb-3"></i><h3 class="text-white uppercase text-[11px] font-black tracking-widest">Certification PIX</h3></div>
-                    <div class="glass-card white-border-card p-6 rounded-xl cert-card border-t-4 border-t-blue-500"><i class="fa-solid fa-user-lock text-2xl text-blue-400 mb-3"></i><h3 class="text-white uppercase text-[11px] font-black tracking-widest">MOOC ANSSI</h3></div>
-                    <div class="glass-card white-border-card p-6 rounded-xl cert-card border-t-4 border-t-blue-500"><i class="fa-solid fa-fingerprint text-2xl text-blue-400 mb-3"></i><h3 class="text-white uppercase text-[11px] font-black tracking-widest">Atelier CNIL</h3></div>
-                    <div class="glass-card white-border-card p-6 rounded-xl cert-card border-t-4 border-t-blue-500"><i class="fa-solid fa-diagram-project text-2xl text-blue-400 mb-3"></i><h3 class="text-white uppercase text-[11px] font-black tracking-widest">Cisco CCNA 1</h3></div>
-                    <div class="glass-card white-border-card p-6 rounded-xl cert-card border-t-4 border-t-blue-500"><i class="fa-solid fa-route text-2xl text-blue-400 mb-3"></i><h3 class="text-white uppercase text-[11px] font-black tracking-widest">Cisco CCNA 2</h3></div>
-                    <div class="glass-card white-border-card p-6 rounded-xl cert-card border-t-4 border-t-blue-500"><i class="fa-solid fa-cloud-arrow-up text-2xl text-blue-400 mb-3"></i><h3 class="text-white uppercase text-[11px] font-black tracking-widest">Microsoft Azure</h3></div>
-                    <div class="glass-card white-border-card p-6 rounded-xl cert-card border-t-4 border-t-blue-500"><i class="fa-solid fa-gears text-2xl text-blue-400 mb-3"></i><h3 class="text-white uppercase text-[11px] font-black tracking-widest">ITIL 4</h3></div>
-                    <div class="glass-card white-border-card p-6 rounded-xl cert-card border-t-4 border-t-blue-500"><i class="fa-solid fa-code text-2xl text-blue-400 mb-3"></i><h3 class="text-white uppercase text-[11px] font-black tracking-widest">Python PCEP</h3></div>
+                    <div class="glass-card white-border-card p-6 rounded-xl cert-card border-t-4 border-t-blue-500"><i class="fa-solid fa-graduation-cap text-2xl text-blue-400 mb-3"></i><h3 class="text-white font-black uppercase text-[11px] tracking-widest">Certification PIX</h3></div>
+                    <div class="glass-card white-border-card p-6 rounded-xl cert-card border-t-4 border-t-blue-500"><i class="fa-solid fa-user-lock text-2xl text-blue-400 mb-3"></i><h3 class="text-white font-black uppercase text-[11px] tracking-widest">MOOC ANSSI</h3></div>
+                    <div class="glass-card white-border-card p-6 rounded-xl cert-card border-t-4 border-t-blue-500"><i class="fa-solid fa-fingerprint text-2xl text-blue-400 mb-3"></i><h3 class="text-white font-black uppercase text-[11px] tracking-widest">Atelier CNIL</h3></div>
+                    <div class="glass-card white-border-card p-6 rounded-xl cert-card border-t-4 border-t-blue-500"><i class="fa-solid fa-diagram-project text-2xl text-blue-400 mb-3"></i><h3 class="text-white font-black uppercase text-[11px] tracking-widest">Cisco CCNA 1</h3></div>
+                    <div class="glass-card white-border-card p-6 rounded-xl cert-card border-t-4 border-t-blue-500"><i class="fa-solid fa-route text-2xl text-blue-400 mb-3"></i><h3 class="text-white font-black uppercase text-[11px] tracking-widest">Cisco CCNA 2</h3></div>
+                    <div class="glass-card white-border-card p-6 rounded-xl cert-card border-t-4 border-t-blue-500"><i class="fa-solid fa-cloud-arrow-up text-2xl text-blue-400 mb-3"></i><h3 class="text-white font-black uppercase text-[11px] tracking-widest">Microsoft Azure</h3></div>
+                    <div class="glass-card white-border-card p-6 rounded-xl cert-card border-t-4 border-t-blue-500"><i class="fa-solid fa-gears text-2xl text-blue-400 mb-3"></i><h3 class="text-white font-black uppercase text-[11px] tracking-widest">ITIL 4</h3></div>
+                    <div class="glass-card white-border-card p-6 rounded-xl cert-card border-t-4 border-t-blue-500"><i class="fa-solid fa-code text-2xl text-blue-400 mb-3"></i><h3 class="text-white font-black uppercase text-[11px] tracking-widest">Python PCEP</h3></div>
                 </div>
             </section>
 
@@ -150,7 +156,7 @@
                             <li class="flex items-center gap-3"><i class="fa-solid fa-headset text-blue-400"></i> Support Utilisateur & Ticketing (Niv. 1 & 2)</li>
                             <li class="flex items-center gap-3"><i class="fa-solid fa-laptop-medical text-blue-400"></i> Gestion de Parc & Déploiement (Masterisation)</li>
                             <li class="flex items-center gap-3"><i class="fa-solid fa-terminal text-blue-400"></i> Automatisation et Scripting (PowerShell / Bash)</li>
-                            <li class="flex items-center gap-3"><i class="fa-solid fa-chart-line text-blue-400"></i> Supervision & Monitoring (Zabbix / Nagios / PRTG)</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-chart-line text-blue-400"></i> Supervision & Monitoring (Zabbix / PRTG)</li>
                         </ul>
                     </div>
                     <div class="glass-card white-border-card p-8 rounded-2xl">
