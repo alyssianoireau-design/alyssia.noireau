@@ -23,9 +23,7 @@
             background: rgba(59, 130, 246, 0.15); 
             padding-left: 2rem; 
         }
-        .nav-link.active::before { 
-            width: 4px; 
-        }
+        .nav-link.active::before { width: 4px; }
 
         .typing::after { content: '|'; animation: blink 0.7s infinite; }
         @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
@@ -56,6 +54,7 @@
             background: rgba(255, 255, 255, 0.05);
             border: 1px solid rgba(255, 255, 255, 0.1);
             transition: all 0.3s ease;
+            color: white;
         }
         .form-input:focus {
             background: rgba(59, 130, 246, 0.1);
@@ -122,12 +121,18 @@
                     <div class="glass-card white-border-card p-6 rounded-2xl"><h3 class="text-blue-400 font-black uppercase text-xs mb-4">Rôle du Support</h3><p class="text-sm">Maintenance des outils numériques, résolution d'incidents techniques et accompagnement utilisateurs.</p></div>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-                    <div class="glass-card white-border-card p-2 rounded-3xl h-64 overflow-hidden shadow-xl"><img src="ista-1.jpg" alt="Logo Ista" class="w-full h-full object-contain bg-white rounded-2xl"></div>
-                    <div class="glass-card white-border-card p-2 rounded-3xl h-64 overflow-hidden shadow-xl"><img src="ista-2.jpg" alt="Support" class="w-full h-full object-cover rounded-2xl opacity-90"></div>
+                    <div class="glass-card white-border-card p-2 rounded-3xl h-80 overflow-hidden shadow-xl">
+                        <p class="text-[10px] text-center text-blue-400 uppercase font-bold mb-1 tracking-widest">Organigramme</p>
+                        <img src="organigramme.jpg" alt="Organigramme Ista" class="w-full h-full object-contain bg-white rounded-2xl">
+                    </div>
+                    <div class="glass-card white-border-card p-2 rounded-3xl h-80 overflow-hidden shadow-xl">
+                        <p class="text-[10px] text-center text-blue-400 uppercase font-bold mb-1 tracking-widest">Locaux de l'entreprise</p>
+                        <img src="locaux-ista.jpg" alt="Locaux Ista" class="w-full h-full object-cover rounded-2xl opacity-90">
+                    </div>
                 </div>
                 <div class="glass-card white-border-card p-8 rounded-2xl w-full text-base leading-relaxed text-justify">
                     <h2 class="text-2xl font-black uppercase tracking-widest mb-8 text-blue-400 text-center">Mes Missions et Expertises</h2>
-                    <p>Expert du support informatique, j'assure la gestion complète du parc via le déploiement automatisé avec Baramundi et l'administration des terminaux mobiles sous Microsoft Intune. Je garantis la sécurité des accès et des données à travers Active Directory et la configuration des VPN, tout en résolvent les incidents matériels et logiciels via Jira.</p>
+                    <p>Expert du support informatique, j'assure la gestion complète du parc via le déploiement automatisé avec Baramundi et l'administration des terminaux mobiles sous Microsoft Intune. Je garantis la sécurité des accès et des données à travers Active Directory et la configuration des VPN, tout en résolvant les incidents matériels et logiciels via Jira.</p>
                 </div>
             </section>
 
@@ -289,14 +294,12 @@
                             </ul>
                         </div>
                     </div>
-
                 </div>
             </section>
 
             <section id="veille" class="max-w-6xl mx-auto px-8 py-24 scroll-mt-24">
                 <div class="text-center mb-16"><h2 class="text-3xl font-black uppercase tracking-widest inline-block border-b-2 border-blue-500 pb-2 text-white">Veille Technologique</h2></div>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    
                     <div class="veille-item glass-card rounded-2xl overflow-hidden border border-white/10">
                         <div class="veille-header p-5 flex justify-between items-center font-black uppercase tracking-widest text-sm" onclick="this.parentElement.classList.toggle('active')">
                             <span>La Cybersécurité</span><i class="fa-solid fa-plus transition-transform duration-300"></i>
@@ -310,7 +313,6 @@
                             </div>
                         </div></div>
                     </div>
-
                     <div class="veille-item glass-card rounded-2xl overflow-hidden border border-white/10">
                         <div class="veille-header p-5 flex justify-between items-center font-black uppercase tracking-widest text-sm" onclick="this.parentElement.classList.toggle('active')">
                             <span>Le Cloud Computing & Virtualisation</span><i class="fa-solid fa-plus transition-transform duration-300"></i>
@@ -324,7 +326,6 @@
                             </div>
                         </div></div>
                     </div>
-
                     <div class="veille-item glass-card rounded-2xl overflow-hidden border border-white/10">
                         <div class="veille-header p-5 flex justify-between items-center font-black uppercase tracking-widest text-sm" onclick="this.parentElement.classList.toggle('active')">
                             <span>Infrastructures Réseaux (SD-WAN & WiFi 7)</span><i class="fa-solid fa-plus transition-transform duration-300"></i>
@@ -337,7 +338,6 @@
                             </div>
                         </div></div>
                     </div>
-
                     <div class="veille-item glass-card rounded-2xl overflow-hidden border border-white/10">
                         <div class="veille-header p-5 flex justify-between items-center font-black uppercase tracking-widest text-sm" onclick="this.parentElement.classList.toggle('active')">
                             <span>IA appliquée à l'Administration (AIOps)</span><i class="fa-solid fa-plus transition-transform duration-300"></i>
@@ -350,140 +350,89 @@
                             </div>
                         </div></div>
                     </div>
-
                 </div>
             </section>
 
             <section id="contact" class="max-w-6xl mx-auto px-8 py-24 scroll-mt-24">
                 <div class="text-center mb-16">
                     <h2 class="text-3xl font-black uppercase tracking-widest inline-block border-b-2 border-blue-500 pb-2 text-white">Contact</h2>
-                    <p class="mt-6 text-slate-400 font-bold uppercase tracking-widest text-sm">
-                        Un projet, une question ou une opportunité d'alternance ? <br class="hidden md:block"> N'hésitez pas à me contacter via le formulaire ou sur mes réseaux sociaux.
-                    </p>
+                    <p class="mt-6 text-slate-400 font-bold uppercase tracking-widest text-sm">Un projet, une question ou une opportunité d'alternance ? N'hésitez pas !</p>
                 </div>
-
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-                    
                     <div class="space-y-10">
                         <div class="glass-card white-border-card p-8 rounded-2xl flex items-center gap-6 group hover:border-blue-500 transition-colors duration-300">
-                            <div class="w-14 h-14 bg-blue-600/20 rounded-full flex items-center justify-center text-blue-400 group-hover:scale-110 transition-transform">
-                                <i class="fa-solid fa-envelope text-2xl"></i>
-                            </div>
-                            <div>
-                                <h4 class="text-[10px] font-black uppercase tracking-widest text-blue-400">E-mail</h4>
-                                <p class="text-lg font-bold">Alyssia.noireau@gmail.com</p>
-                            </div>
+                            <div class="w-14 h-14 bg-blue-600/20 rounded-full flex items-center justify-center text-blue-400 group-hover:scale-110 transition-transform"><i class="fa-solid fa-envelope text-2xl"></i></div>
+                            <div><h4 class="text-[10px] font-black uppercase tracking-widest text-blue-400">E-mail</h4><p class="text-lg font-bold">Alyssia.noireau@gmail.com</p></div>
                         </div>
-
                         <div class="glass-card white-border-card p-8 rounded-2xl flex items-center gap-6 group hover:border-blue-500 transition-colors duration-300">
-                            <div class="w-14 h-14 bg-blue-600/20 rounded-full flex items-center justify-center text-blue-400 group-hover:scale-110 transition-transform">
-                                <i class="fa-solid fa-phone text-2xl"></i>
-                            </div>
-                            <div>
-                                <h4 class="text-[10px] font-black uppercase tracking-widest text-blue-400">Téléphone</h4>
-                                <p class="text-lg font-bold">07 67 17 89 08</p>
-                            </div>
+                            <div class="w-14 h-14 bg-blue-600/20 rounded-full flex items-center justify-center text-blue-400 group-hover:scale-110 transition-transform"><i class="fa-solid fa-phone text-2xl"></i></div>
+                            <div><h4 class="text-[10px] font-black uppercase tracking-widest text-blue-400">Téléphone</h4><p class="text-lg font-bold">07 67 17 89 08</p></div>
                         </div>
-
-                        <div class="glass-card white-border-card p-8 rounded-2xl flex items-center gap-6 group hover:border-blue-500 transition-colors duration-300">
-                            <div class="w-14 h-14 bg-blue-600/20 rounded-full flex items-center justify-center text-blue-400 group-hover:scale-110 transition-transform">
-                                <i class="fa-solid fa-location-dot text-2xl"></i>
-                            </div>
-                            <div>
-                                <h4 class="text-[10px] font-black uppercase tracking-widest text-blue-400">Localisation</h4>
-                                <p class="text-lg font-bold">Île-de-France, France</p>
-                            </div>
-                        </div>
-
                         <div class="flex justify-center gap-12 pt-4">
-                            <a href="https://www.linkedin.com/in/alyssia-noireau" target="_blank" class="text-5xl text-[#0077b5] hover:scale-125 transition duration-300 filter drop-shadow-[0_0_8px_rgba(0,119,181,0.5)]"><i class="fa-brands fa-linkedin"></i></a>
-                            <a href="https://github.com/AlyssiaNoireau" target="_blank" class="text-5xl text-white hover:scale-125 transition duration-300 filter drop-shadow-[0_0_8px_rgba(255,255,255,0.3)]"><i class="fa-brands fa-github"></i></a>
+                            <a href="https://www.linkedin.com/in/alyssia-noireau" target="_blank" class="text-5xl text-[#0077b5] hover:scale-125 transition duration-300"><i class="fa-brands fa-linkedin"></i></a>
+                            <a href="https://github.com/AlyssiaNoireau" target="_blank" class="text-5xl text-white hover:scale-125 transition duration-300"><i class="fa-brands fa-github"></i></a>
                         </div>
                     </div>
-
                     <div class="glass-card white-border-card p-8 rounded-3xl shadow-2xl">
-                        <form action="#" method="POST" class="space-y-6">
+                        <form action="https://formspree.io/f/mdalzynp" method="POST" class="space-y-6">
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div class="space-y-2">
                                     <label class="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-1">Nom Complet</label>
-                                    <input type="text" placeholder="John Doe" class="w-full form-input p-4 rounded-xl text-sm" required>
+                                    <input type="text" name="name" placeholder="John Doe" class="w-full form-input p-4 rounded-xl text-sm" required>
                                 </div>
                                 <div class="space-y-2">
                                     <label class="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-1">E-mail</label>
-                                    <input type="email" placeholder="votre@email.com" class="w-full form-input p-4 rounded-xl text-sm" required>
+                                    <input type="email" name="email" placeholder="votre@email.com" class="w-full form-input p-4 rounded-xl text-sm" required>
                                 </div>
                             </div>
                             <div class="space-y-2">
                                 <label class="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-1">Objet</label>
-                                <input type="text" placeholder="Sujet de votre message" class="w-full form-input p-4 rounded-xl text-sm" required>
+                                <input type="text" name="subject" placeholder="Sujet" class="w-full form-input p-4 rounded-xl text-sm" required>
                             </div>
                             <div class="space-y-2">
                                 <label class="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-1">Message</label>
-                                <textarea rows="4" placeholder="Bonjour Alyssia, j'aimerais échanger avec vous concernant..." class="w-full form-input p-4 rounded-xl text-sm resize-none" required></textarea>
+                                <textarea name="message" rows="4" placeholder="Votre message..." class="w-full form-input p-4 rounded-xl text-sm resize-none" required></textarea>
                             </div>
                             <button type="submit" class="w-full py-4 bg-blue-600 hover:bg-blue-500 text-white font-black uppercase tracking-[0.3em] rounded-xl transition duration-300 shadow-lg flex items-center justify-center gap-3">
                                 Envoyer <i class="fa-solid fa-paper-plane text-xs"></i>
                             </button>
                         </form>
                     </div>
-
                 </div>
             </section>
-
         </main>
     </div>
 
     <script>
-        // --- EFFET MACHINE A ECRIRE ---
-        const textArray = "Bienvenue sur mon Portfolio";
-        const speed = 100;
-        let charIndex = 0;
-        const typewriterElement = document.getElementById("typewriter");
-        
-        function typeWriterEffect() {
-            if (charIndex < textArray.length) { 
-                typewriterElement.innerHTML += textArray.charAt(charIndex); 
-                charIndex++; 
-                setTimeout(typeWriterEffect, speed); 
+        const words = ["Technicienne Réseaux", "Étudiante BTS SIO SISR", "Alternante chez Ista"];
+        let i = 0, j = 0, current = "", isDeleting = false;
+        function type() {
+            current = words[i];
+            const el = document.getElementById('typewriter');
+            if(isDeleting) {
+                el.textContent = current.substring(0, j-1); j--;
+                if(j == 0) { isDeleting = false; i = (i+1) % words.length; }
+            } else {
+                el.textContent = current.substring(0, j+1); j++;
+                if(j == current.length) { isDeleting = true; setTimeout(type, 2000); return; }
             }
-            else { 
-                setTimeout(() => { 
-                    typewriterElement.innerHTML = ""; 
-                    charIndex = 0; 
-                    typeWriterEffect(); 
-                }, 2000); 
-            }
+            setTimeout(type, isDeleting ? 100 : 200);
         }
+        window.onload = type;
 
-        // --- GESTION DES ONGLETS ACTIFS (SURVEILLANCE DU SCROLL) ---
         const sections = document.querySelectorAll("section");
         const navLinks = document.querySelectorAll(".nav-link");
-
-        const observerOptions = {
-            root: null,
-            threshold: 0.6 
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const currentId = entry.target.getAttribute("id");
-                    
-                    navLinks.forEach(link => {
-                        link.classList.remove("active");
-                        if (link.getAttribute("href") === `#${currentId}`) {
-                            link.classList.add("active");
-                        }
+        window.onscroll = () => {
+            sections.forEach(sec => {
+                let top = window.scrollY, offset = sec.offsetTop - 150, height = sec.offsetHeight, id = sec.getAttribute('id');
+                if(top >= offset && top < offset + height) {
+                    navLinks.forEach(links => {
+                        links.classList.remove('active');
+                        document.querySelector('#sidebar-nav a[href*=' + id + ']').classList.add('active');
                     });
                 }
             });
-        }, observerOptions);
-
-        sections.forEach(section => {
-            observer.observe(section);
-        });
-
-        window.onload = typeWriterEffect;
+        };
     </script>
 </body>
 </html>
