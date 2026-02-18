@@ -10,7 +10,10 @@
         .neon-text { text-shadow: 0 0 15px rgba(59, 130, 246, 0.9); }
         .glass-sidebar { background: rgba(17, 24, 39, 0.85); backdrop-filter: blur(15px); }
         .glass-card { background: rgba(15, 23, 42, 0.75); border: 1px solid rgba(255, 255, 255, 0.1); }
-        .arial-text { font-family: Arial, Helvetica, sans-serif !important; }
+        
+        /* Police Arial droite et homogène pour tout le site */
+        .arial-text { font-family: Arial, Helvetica, sans-serif !important; font-style: normal !important; }
+        
         .white-border-card { border: 1px solid rgba(255, 255, 255, 0.2) !important; }
         
         .section-title { display: inline-block; position: relative; padding-bottom: 12px; }
@@ -50,7 +53,7 @@
         .comp-detail-minimal { max-height: 0; overflow: hidden; transition: all 0.5s ease; opacity: 0; font-size: 0.75rem; color: #cbd5e1; margin-top: 1rem; text-align: center; line-height: 1.4; }
         .comp-card-minimal.active .comp-detail-minimal { max-height: 150px; opacity: 1; }
 
-        /* Certifications (Format Image) */
+        /* Certifications (Style Image grise) */
         .cert-card { background: white; border-radius: 12px; display: flex; overflow: hidden; color: #1e293b; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); transition: transform 0.3s; }
         .cert-card:hover { transform: translateY(-5px); }
         .cert-left { background: #bdbdbd; width: 140px; display: flex; align-items: center; justify-content: center; shrink-0; padding: 20px; }
@@ -120,7 +123,7 @@
                 <div class="glass-card white-border-card p-10 rounded-2xl text-justify text-base leading-relaxed shadow-xl text-white mb-10">
                     <p>Titulaire d'un Bac STMG avec une spécialité Mercatique, j'ai développé très tôt une vision transverse des enjeux de l'entreprise et du service client. Passionnée par l'innovation, j'ai fait le choix audacieux de pivoter vers les systèmes d'information pour maîtriser les leviers techniques qui soutiennent aujourd'hui toute stratégie business.</p>
                     <p class="mt-4">Actuellement en 2e année de BTS SIO (SISR) à l’école ORT Daniel Mayer, je consolide mes compétences en administration systèmes et réseaux. Mon alternance chez ista, leader international de la donnée énergétique, est un véritable accélérateur : j'y assure le maintien en condition opérationnelle d'un parc complexe en manipulant des solutions de pointe comme Baramundi, Azure et Jira.</p>
-                    <p class="italic mt-4">Déterminée à devenir une interface clé entre la technique et le management, je prépare activement mon intégration en Licence Chef de projet (Développement, Sécurité et Exploitation) au CNAM. Ce parcours, que je souhaite conclure par un Master MIAGE, reflète mon ambition : devenir une experte capable de piloter des projets IT d'envergure, en alliant rigueur technique, sécurité des infrastructures et vision stratégique.</p>
+                    <p class="mt-4">Déterminée à devenir une interface clé entre la technique et le management, je prépare activement mon intégration en Licence Chef de projet (Développement, Sécurité et Exploitation) au CNAM. Ce parcours, que je souhaite conclure par un Master MIAGE, reflète mon ambition : devenir une experte capable de piloter des projets IT d'envergure, en alliant rigueur technique, sécurité des infrastructures et vision stratégique.</p>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -164,19 +167,19 @@
                 <div class="space-y-12">
                     <div class="border-l-4 border-blue-500 pl-8 relative py-2">
                         <h3 class="text-xl font-black text-blue-400 uppercase">Master MIAGE (En projet) <span class="text-slate-500 text-sm ml-2">2027 - 2029</span></h3>
-                        <p class="mt-2 text-slate-300">Objectif : Méthodes Informatiques Appliquées à la Gestion des Entreprises. Acquérir une double compétence en ingénierie des SI et en management.</p>
+                        <p class="mt-2 text-slate-300">Ce diplôme d'excellence vise à parfaire ma maîtrise du pilotage des systèmes d'information en alliant expertise technique de pointe et stratégies de management organisationnel.</p>
                     </div>
                     <div class="border-l-4 border-blue-500 pl-8 relative py-2">
                         <h3 class="text-xl font-black text-blue-400 uppercase">Licence Chef de Projet (CNAM) <span class="text-slate-500 text-sm ml-2">2026 - 2027</span></h3>
-                        <p class="mt-2 text-slate-300">Spécialité : Développement, sécurité et exploitation. Cursus en alternance axé sur la maîtrise opérationnelle des infrastructures.</p>
+                        <p class="mt-2 text-slate-300">Une année de spécialisation intensive pour développer une vision 360° du cycle de vie d'un projet IT, de la conception sécurisée à l'exploitation opérationnelle.</p>
                     </div>
                     <div class="border-l-4 border-blue-500 pl-8 relative py-2">
                         <h3 class="text-xl font-black text-blue-400 uppercase">BTS SIO option SISR (ORT Daniel Mayer) <span class="text-slate-500 text-sm ml-2">2024 - 2026</span></h3>
-                        <p class="mt-2 text-slate-300">Détails : Solutions d'Infrastructure, Systèmes et Réseaux. Apprentissage de l'administration système et de la sécurisation.</p>
+                        <p class="mt-2 text-slate-300">Formation socle centrée sur l'administration des infrastructures réseaux, la gestion des services serveurs et la mise en œuvre de solutions de cybersécurité en environnement professionnel.</p>
                     </div>
                     <div class="border-l-4 border-blue-500 pl-8 relative py-2">
                         <h3 class="text-xl font-black text-blue-400 uppercase">Baccalauréat STMG option Mercatique <span class="text-slate-500 text-sm ml-2">Diplômée en 2024</span></h3>
-                        <p class="mt-2 text-slate-300">Bases solides en gestion, droit et stratégie commerciale. Compréhension des enjeux business des entreprises.</p>
+                        <p class="mt-2 text-slate-300">Ce cursus m'a permis d'acquérir une compréhension profonde des mécanismes de l'entreprise, du marketing digital et de l'importance cruciale de la relation client dans le business.</p>
                     </div>
                 </div>
             </section>
