@@ -46,11 +46,16 @@
         .details-item.active .details-content { max-height: 1000px; opacity: 1; padding-top: 1rem; }
         .details-item.active .fa-plus { transform: rotate(45deg); color: #ef4444; }
 
-        /* Compétences */
-        .comp-card-minimal { cursor: pointer; transition: all 0.3s ease; display: flex; flex-direction: column; align-items: center; padding: 1.5rem; }
-        .comp-card-minimal:hover { transform: scale(1.1); }
-        .comp-detail-minimal { max-height: 0; overflow: hidden; transition: all 0.5s ease; opacity: 0; font-size: 0.75rem; color: #cbd5e1; margin-top: 1rem; text-align: center; line-height: 1.5; }
-        .comp-card-minimal.active .comp-detail-minimal { max-height: 250px; opacity: 1; }
+        /* Compétences - Nouveau Style avec fond violet au clic */
+        .comp-card-minimal { cursor: pointer; transition: all 0.3s ease; display: flex; flex-direction: column; align-items: center; padding: 1.5rem; border-radius: 1rem; }
+        .comp-card-minimal:hover { transform: scale(1.1); background: rgba(255,255,255,0.05); }
+        .comp-detail-minimal { 
+            max-height: 0; overflow: hidden; transition: all 0.5s ease; opacity: 0; 
+            font-size: 0.75rem; color: white; text-align: center; line-height: 1.5;
+            border-radius: 0.5rem;
+        }
+        .comp-card-minimal.active { background: rgba(168, 85, 247, 0.1); border: 1px solid rgba(168, 85, 247, 0.3); }
+        .comp-card-minimal.active .comp-detail-minimal { max-height: 300px; opacity: 1; margin-top: 1rem; padding: 1rem; background: rgba(168, 85, 247, 0.2); }
 
         /* Certifications style Image */
         .cert-card { background: white; border-radius: 12px; display: flex; overflow: hidden; color: #1e293b; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); transition: transform 0.3s; height: 100%; }
@@ -156,7 +161,7 @@
                     <div class="details-item glass-card white-border-card p-6 rounded-[2rem] cursor-pointer hover:bg-white/5 transition-all" onclick="this.classList.toggle('active')">
                         <div class="flex justify-between items-center font-black uppercase text-xs text-blue-400"><span>Centres d'interêts</span><i class="fa-solid fa-plus transition-transform"></i></div>
                         <div class="details-content text-[11px] text-white leading-relaxed">
-                            • La Veille Technologique & Innovation<br>• Le Voyage et l'Ouverture Culturelle<br>• Les Activités Sportives<br>• La Créativité Digitale<br>• Lecture ou Podcasts<br>• Bénévolat ou Projets Collaboratifs
+                            • La Veille Technologique & Innovation<br>• Le Voyage et l'Ouverture Culturelle<br>• Les Activités Sportives<br>• La Créativité Digitale<br>• Lecture ou Podcasts<br>• Bénévolat ou Projets Collaboratifs<br>• Organisation d'Événements
                         </div>
                     </div>
                 </div>
@@ -167,19 +172,19 @@
                 <div class="space-y-12">
                     <div class="border-l-4 border-blue-500 pl-8 relative py-2">
                         <h3 class="text-xl font-black text-blue-400 uppercase">Master MIAGE (En projet) <span class="text-slate-500 text-sm ml-2">2027 - 2029</span></h3>
-                        <p class="mt-2 text-slate-300">Méthodes Informatiques Appliquées à la Gestion des Entreprises. Acquérir une double compétence en ingénierie des SI et en management.</p>
+                        <p class="mt-2 text-slate-300">Ce diplôme d'excellence vise à parfaire ma maîtrise du pilotage des systèmes d'information. Il allie expertise technique de pointe et stratégies de management organisationnel.</p>
                     </div>
                     <div class="border-l-4 border-blue-500 pl-8 relative py-2">
                         <h3 class="text-xl font-black text-blue-400 uppercase">Licence Chef de Projet (CNAM) <span class="text-slate-500 text-sm ml-2">2026 - 2027</span></h3>
-                        <p class="mt-2 text-slate-300">Spécialité : Développement, sécurité et exploitation. Cursus en alternance axé sur la maîtrise opérationnelle.</p>
+                        <p class="mt-2 text-slate-300">Une année de spécialisation intensive pour développer une vision 360° du cycle de vie d'un projet IT. Le focus est mis sur la conception sécurisée et l'exploitation opérationnelle.</p>
                     </div>
                     <div class="border-l-4 border-blue-500 pl-8 relative py-2">
                         <h3 class="text-xl font-black text-blue-400 uppercase">BTS SIO option SISR (ORT Daniel Mayer) <span class="text-slate-500 text-sm ml-2">2024 - 2026</span></h3>
-                        <p class="mt-2 text-slate-300">Solutions d'Infrastructure, Systèmes et Réseaux. Apprentissage de l'administration système et réseaux.</p>
+                        <p class="mt-2 text-slate-300">Formation socle centrée sur l'administration des infrastructures réseaux et la gestion des services serveurs. J'y apprends à mettre en œuvre des solutions de cybersécurité concrètes.</p>
                     </div>
                     <div class="border-l-4 border-blue-500 pl-8 relative py-2">
                         <h3 class="text-xl font-black text-blue-400 uppercase">Baccalauréat STMG (Jean Zay) <span class="text-slate-500 text-sm ml-2">Diplômée en 2024</span></h3>
-                        <p class="mt-2 text-slate-300">Spécialité Mercatique. Compréhension des enjeux business des entreprises. Bases en gestion et droit.</p>
+                        <p class="mt-2 text-slate-300">Ce cursus m'a permis d'acquérir une compréhension profonde des mécanismes économiques et juridiques de l'entreprise. La spécialité Mercatique a renforcé mon sens de la relation client.</p>
                     </div>
                 </div>
             </section>
@@ -212,14 +217,26 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-left text-white">
                     <div class="details-item glass-card white-border-card p-6 rounded-2xl cursor-pointer" onclick="this.classList.toggle('active')">
                         <div class="flex justify-between items-center font-black uppercase text-[11px]"><span>PRÉSENTATION DU GROUPE ISTA</span><i class="fa-solid fa-plus"></i></div>
-                        <div class="details-content text-sm text-slate-300 leading-relaxed">
-                            ista est l'un des leaders mondiaux de la gestion des données énergétiques, spécialisé dans l'amélioration de l'efficacité énergétique des bâtiments. En France, la société est structurée sous le statut de SAS et s'appuie sur une force humaine d'environ 800 collaborateurs. Le groupe accompagne ses clients dans la transition durable grâce à des services innovants de comptage et de facturation.
+                        <div class="details-content text-sm text-slate-300 leading-relaxed text-justify">
+                            ista est l'un des leaders mondiaux de la gestion des données énergétiques, spécialisé dans l'amélioration de l'efficacité énergétique des bâtiments. En France, la société est structurée sous le statut de SAS et s'appuie sur une force humaine d'environ 800 collaborateurs. Le groupe accompagne ses clients dans la transition durable grâce à des services innovants de comptage et de facturation. Cette expertise permet de répondre aux enjeux écologiques actuels tout en optimisant la consommation de ressources.
                         </div>
                     </div>
                     <div class="details-item glass-card white-border-card p-6 rounded-2xl cursor-pointer" onclick="this.classList.toggle('active')">
                         <div class="flex justify-between items-center font-black uppercase text-[11px]"><span>RAYONNEMENT ET CHIFFRES CLÉS</span><i class="fa-solid fa-plus"></i></div>
-                        <div class="details-content text-sm text-slate-300 leading-relaxed">
-                            Le groupe possède une envergure internationale majeure avec une présence active dans plus de 20 pays. Avec un chiffre d'affaires annuel dépassant le milliard d'euros, ista s'impose comme un acteur économique solide. Globalement, l'entreprise gère un parc impressionnant de plus de 45 millions d'appareils connectés.
+                        <div class="details-content text-sm text-slate-300 leading-relaxed text-justify">
+                            Le groupe possède une envergure internationale majeure avec une présence active dans plus de 20 pays, principalement en Europe et en Asie. Avec un chiffre d'affaires annuel dépassant le milliard d'euros, ista s'impose comme un acteur économique solide et pérenne. Globalement, l'entreprise gère un parc impressionnant de plus de 45 millions d'appareils connectés. Ce réseau mondial permet de collecter et d'analyser les données de 14 millions de logements et locaux commerciaux.
+                        </div>
+                    </div>
+                    <div class="details-item glass-card white-border-card p-6 rounded-2xl cursor-pointer" onclick="this.classList.toggle('active')">
+                        <div class="flex justify-between items-center font-black uppercase text-[11px]"><span>NOTRE ACTIVITÉ ET MISSIONS</span><i class="fa-solid fa-plus"></i></div>
+                        <div class="details-content text-sm text-slate-300 leading-relaxed text-justify">
+                            Le cœur de métier d'ista repose sur l'individualisation des frais de chauffage et d'eau au sein des habitations collectives. Grâce à des solutions de télérelève performantes, l'entreprise permet une gestion précise et transparente des consommations énergétiques. Ces services permettent aux résidents de devenir acteurs de leur consommation et de réduire leur impact environnemental. En digitalisant ces données, ista simplifie la gestion immobilière tout en garantissant une répartition équitable des charges.
+                        </div>
+                    </div>
+                    <div class="details-item glass-card white-border-card p-6 rounded-2xl cursor-pointer" onclick="this.classList.toggle('active')">
+                        <div class="flex justify-between items-center font-black uppercase text-[11px]"><span>MON RÔLE AU SEIN DE LA DSI</span><i class="fa-solid fa-plus"></i></div>
+                        <div class="details-content text-sm text-slate-300 leading-relaxed text-justify">
+                            En tant qu'apprentie Technicienne Réseaux et Systèmes, j'évolue au sein d'une DSI internationale aux enjeux technologiques élevés. Ma mission consiste à garantir le maintien en condition opérationnelle du parc informatique via des outils de pointe comme Baramundi et Microsoft Azure. J'assure également le support utilisateur et la gestion des identités dans un environnement ITSM structuré. Ce rôle me permet de développer une polyvalence technique essentielle tout en participant activement à la transformation digitale du groupe.
                         </div>
                     </div>
                 </div>
@@ -263,82 +280,52 @@
                     <div class="cert-card"><div class="cert-left"><i class="fa-solid fa-book text-4xl text-slate-700"></i></div><div class="cert-right"><h3 class="font-bold text-sm uppercase">ITIL 4 Foundation</h3><p class="text-[10px] text-slate-600 italic">Gestion des services IT.</p><a href="ITIL.pdf" target="_blank" class="cert-btn"><i class="fa-solid fa-paperclip"></i> Voir</a></div></div>
                     <div class="cert-card"><div class="cert-left"><i class="fa-brands fa-python text-4xl text-slate-700"></i></div><div class="cert-right"><h3 class="font-bold text-sm uppercase">PCEP (Python)</h3><p class="text-[10px] text-slate-600 italic">Python Certified Programmer.</p><a href="PCEP.pdf" target="_blank" class="cert-btn"><i class="fa-solid fa-paperclip"></i> Voir</a></div></div>
                     <div class="cert-card"><div class="cert-left"><i class="fa-solid fa-shield-halved text-4xl text-slate-700"></i></div><div class="cert-right"><h3 class="font-bold text-sm uppercase">DRSD Defense</h3><p class="text-[10px] text-slate-600 italic">Secret Défense.</p><a href="DRSD.pdf" target="_blank" class="cert-btn"><i class="fa-solid fa-paperclip"></i> Voir</a></div></div>
-                    <div class="cert-card"><div class="cert-left"><i class="fa-solid fa-cloud-arrow-up text-4xl text-slate-700"></i></div><div class="cert-right"><h3 class="font-bold text-sm uppercase">AWS Practitioner</h3><p class="text-[10px] text-slate-600 italic">AWS Cloud Basics.</p><a href="#" class="cert-btn"><i class="fa-solid fa-spinner"></i> Voir</a></div></div>
+                    <div class="cert-card"><div class="cert-left"><i class="fa-solid fa-cloud-arrow-up text-4xl text-slate-700"></i></div><div class="cert-right"><h3 class="font-bold text-sm uppercase">AWS Practitioner</h3><p class="text-[10px] text-slate-600 italic">AWS Cloud Basics (In progress).</p><a href="#" class="cert-btn"><i class="fa-solid fa-spinner"></i> Voir</a></div></div>
                 </div>
             </section>
 
             <section id="competences" class="max-w-6xl mx-auto px-8 py-24 scroll-mt-24 text-center text-white">
                 <h2 class="text-3xl font-black uppercase section-title text-white mb-16">Compétences</h2>
-                <div class="grid grid-cols-2 sm:grid-cols-5 gap-12">
+                <div class="grid grid-cols-2 sm:grid-cols-5 gap-8">
                     <div class="comp-card-minimal group" onclick="this.classList.toggle('active')">
                         <i class="fa-solid fa-server text-6xl text-[#4285F4] drop-shadow-lg"></i>
-                        <div class="comp-detail-minimal">
-                            <b>Virtualisation Serveur</b><br>
-                            Maîtrise de VMware ESXi et Workstation. Gestion du cycle de vie des VMs, snapshots, allocation de ressources dynamiques et isolation réseau.
-                        </div>
+                        <div class="comp-detail-minimal"><b>Virtualisation (VMware)</b><br>Expertise sur ESXi et vSphere. Je gère l'allocation des ressources serveurs, la création de snapshots et le maintien opérationnel des infrastructures virtuelles complexes.</div>
                     </div>
                     <div class="comp-card-minimal group" onclick="this.classList.toggle('active')">
                         <i class="fa-brands fa-linux text-6xl text-[#FCC624] drop-shadow-lg"></i>
-                        <div class="comp-detail-minimal">
-                            <b>Administration Linux</b><br>
-                            Gestion de systèmes Debian/Ubuntu. Configuration de serveurs Web (Apache), accès sécurisés SSH et gestion des permissions utilisateurs.
-                        </div>
+                        <div class="comp-detail-minimal"><b>Administration Linux</b><br>Maîtrise de Debian en ligne de commande. Je configure les services web (Apache), les accès SSH sécurisés et j'automatise la gestion des permissions systèmes.</div>
                     </div>
                     <div class="comp-card-minimal group" onclick="this.classList.toggle('active')">
                         <i class="fa-brands fa-docker text-6xl text-[#2496ED] drop-shadow-lg"></i>
-                        <div class="comp-detail-minimal">
-                            <b>Conteneurisation</b><br>
-                            Déploiement d'applications isolées via Docker. Utilisation de Docker-compose pour l'orchestration de services multi-conteneurs.
-                        </div>
+                        <div class="comp-detail-minimal"><b>Conteneurisation (Docker)</b><br>Déploiement d'environnements applicatifs isolés. J'utilise Docker-compose pour orchestrer des micro-services et garantir la portabilité des solutions IT.</div>
                     </div>
                     <div class="comp-card-minimal group" onclick="this.classList.toggle('active')">
                         <i class="fa-brands fa-python text-6xl text-[#3776AB] drop-shadow-lg"></i>
-                        <div class="comp-detail-minimal">
-                            <b>Scripting Python</b><br>
-                            Développement de scripts pour l'automatisation de tâches système répétitives et le monitoring basique d'infrastructures.
-                        </div>
+                        <div class="comp-detail-minimal"><b>Développement Python</b><br>Conception de scripts d'automatisation. J'optimise les flux de travail via des outils de monitoring et de traitement de données développés sur mesure.</div>
                     </div>
                     <div class="comp-card-minimal group" onclick="this.classList.toggle('active')">
                         <i class="fa-solid fa-users-gear text-6xl text-[#00A4EF] drop-shadow-lg"></i>
-                        <div class="comp-detail-minimal">
-                            <b>Active Directory</b><br>
-                            Gestion centralisée des utilisateurs et ordinateurs. Mise en place de GPO (Stratégies de groupe) et gestion des droits d'accès au domaine.
-                        </div>
+                        <div class="comp-detail-minimal"><b>Active Directory (AD DS)</b><br>Gestion centralisée du domaine. Je configure les GPO (stratégies de groupe), gère les identités IAM et administre les droits d'accès aux partages fichiers.</div>
                     </div>
                     <div class="comp-card-minimal group" onclick="this.classList.toggle('active')">
                         <i class="fa-solid fa-network-wired text-6xl text-[#00bceb] drop-shadow-lg"></i>
-                        <div class="comp-detail-minimal">
-                            <b>Réseaux Cisco</b><br>
-                            Configuration de switchs et routeurs. Segmentation réseau via VLANs, routage inter-VLAN et sécurisation des ports (Port Security).
-                        </div>
+                        <div class="comp-detail-minimal"><b>Réseaux Cisco</b><br>Configuration de switchs et routeurs (Cisco IOS). J'implémente la segmentation par VLAN, le routage inter-VLAN et l'analyse de flux avec Wireshark.</div>
                     </div>
                     <div class="comp-card-minimal group" onclick="this.classList.toggle('active')">
                         <i class="fa-brands fa-microsoft text-6xl text-[#0078D4] drop-shadow-lg"></i>
-                        <div class="comp-detail-minimal">
-                            <b>Microsoft Azure</b><br>
-                            Administration de l'environnement Entra ID (Azure AD). Gestion des identités cloud, des groupes et des ressources SaaS/PaaS.
-                        </div>
+                        <div class="comp-detail-minimal"><b>Microsoft Azure</b><br>Administration Cloud via Entra ID. Je déploie des VMs, gère les ressources de stockage cloud et assure l'interopérabilité entre l'AD local et le cloud.</div>
                     </div>
                     <div class="comp-card-minimal group" onclick="this.classList.toggle('active')">
                         <i class="fa-solid fa-laptop-medical text-6xl text-[#4CAF50] drop-shadow-lg"></i>
-                        <div class="comp-detail-minimal">
-                            <b>Baramundi (UEM)</b><br>
-                            Inventaire automatisé du parc informatique, déploiement massif de patchs de sécurité et gestion des configurations postes de travail.
-                        </div>
+                        <div class="comp-detail-minimal"><b>Gestion de Parc (UEM)</b><br>Maîtrise de Baramundi et Intune. J'assure l'inventaire matériel complet, le déploiement massif de patchs et le maintien en condition opérationnelle (MCO).</div>
                     </div>
                     <div class="comp-card-minimal group" onclick="this.classList.toggle('active')">
-                        <i class="fa-solid fa-magnifying-glass-chart text-6xl text-[#E34F26] drop-shadow-lg"></i>
-                        <div class="comp-detail-minimal">
-                            <b>Analyse Wireshark</b><br>
-                            Captures et analyses de trames réseaux pour le diagnostic de pannes et la détection d'anomalies sur les flux TCP/IP.
-                        </div>
+                        <i class="fa-solid fa-shield-halved text-6xl text-[#E34F26] drop-shadow-lg"></i>
+                        <div class="comp-detail-minimal"><b>Cybersécurité Appliquée</b><br>Configuration de Pare-feu et VPN (IPSec/SSL). J'applique les recommandations de l'ANSSI pour sécuriser les points d'accès et chiffrer les communications distantes.</div>
                     </div>
                     <div class="comp-card-minimal group" onclick="this.classList.toggle('active')">
                         <i class="fa-brands fa-windows text-6xl text-[#0078d7] drop-shadow-lg"></i>
-                        <div class="comp-detail-minimal">
-                            <b>Support Windows</b><br>
-                            Installation, configuration et troubleshooting avancé sur Windows 10 et 11 en environnement professionnel (Support N1/N2).
-                        </div>
+                        <div class="comp-detail-minimal"><b>Support Windows (N1/N2)</b><br>Expertise sur Windows 10/11 Pro. J'assure le dépannage hardware/software, le déploiement via Master et l'assistance technique quotidienne aux utilisateurs.</div>
                     </div>
                 </div>
             </section>
@@ -347,39 +334,39 @@
                 <div class="text-center mb-16"><h2 class="text-3xl font-black uppercase section-title text-white">Veille Technologique</h2></div>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
                     <div class="veille-item glass-card rounded-2xl overflow-hidden shadow-2xl transition-all" onclick="this.classList.toggle('active')">
-                        <div class="veille-header"><span>Cybersécurité</span><i class="fa-solid fa-plus"></i></div>
+                        <div class="veille-header"><span>Cybersécurité & CERT-FR</span><i class="fa-solid fa-plus"></i></div>
                         <div class="veille-content space-y-4 p-6">
-                            <a href="https://www.cert.ssi.gouv.fr/" target="_blank" class="block text-blue-400 font-bold underline text-xs">CERT-FR (ANSSI)</a>
-                            <a href="https://thehackernews.com/" target="_blank" class="block text-blue-400 font-bold underline text-xs">The Hacker News</a>
-                            <a href="https://www.zataz.com/" target="_blank" class="block text-blue-400 font-bold underline text-xs">Zataz News</a>
-                            <a href="https://www.lemagit.fr/securite" target="_blank" class="block text-blue-400 font-bold underline text-xs">LeMagIT Sécurité</a>
+                            <a href="https://www.cert.ssi.gouv.fr/" target="_blank" class="block text-blue-400 font-bold underline text-xs">CERT-FR (ANSSI) - Alertes Officielles</a>
+                            <a href="https://thehackernews.com/" target="_blank" class="block text-blue-400 font-bold underline text-xs">The Hacker News - Actu Internationale</a>
+                            <a href="https://www.zataz.com/" target="_blank" class="block text-blue-400 font-bold underline text-xs">Zataz News - Sécurité & Data</a>
+                            <a href="https://www.lemagit.fr/securite" target="_blank" class="block text-blue-400 font-bold underline text-xs">LeMagIT Sécurité - Analyses DSI</a>
                         </div>
                     </div>
                     <div class="veille-item glass-card rounded-2xl overflow-hidden shadow-2xl transition-all" onclick="this.classList.toggle('active')">
-                        <div class="veille-header"><span>Cloud & Azure</span><i class="fa-solid fa-plus"></i></div>
+                        <div class="veille-header"><span>Cloud Computing & Azure</span><i class="fa-solid fa-plus"></i></div>
                         <div class="veille-content space-y-4 p-6">
-                            <a href="https://azure.microsoft.com/fr-fr/blog/" target="_blank" class="block text-blue-400 font-bold underline text-xs">Azure Official Blog</a>
-                            <a href="https://www.lemondeinformatique.fr/cloud-computing-128.html" target="_blank" class="block text-blue-400 font-bold underline text-xs">Le Monde Informatique</a>
-                            <a href="https://aws.amazon.com/fr/blogs/aws/" target="_blank" class="block text-blue-400 font-bold underline text-xs">AWS Blog France</a>
-                            <a href="https://www.cloud-pourtous.fr/" target="_blank" class="block text-blue-400 font-bold underline text-xs">Cloud Pour Tous</a>
+                            <a href="https://azure.microsoft.com/fr-fr/blog/" target="_blank" class="block text-blue-400 font-bold underline text-xs">Azure Blog - Microsoft</a>
+                            <a href="https://aws.amazon.com/fr/blogs/aws/" target="_blank" class="block text-blue-400 font-bold underline text-xs">AWS Blog France - Amazon</a>
+                            <a href="https://www.veeam.com/blog/fr" target="_blank" class="block text-blue-400 font-bold underline text-xs">Veeam Blog - Backup & Cloud</a>
+                            <a href="https://www.lemondeinformatique.fr/cloud-computing-128.html" target="_blank" class="block text-blue-400 font-bold underline text-xs">Le Monde Informatique Cloud</a>
                         </div>
                     </div>
                     <div class="veille-item glass-card rounded-2xl overflow-hidden shadow-2xl transition-all" onclick="this.classList.toggle('active')">
-                        <div class="veille-header"><span>Administration Système</span><i class="fa-solid fa-plus"></i></div>
+                        <div class="veille-header"><span>Admin Système & DevOps</span><i class="fa-solid fa-plus"></i></div>
                         <div class="veille-content space-y-4 p-6">
-                            <a href="https://www.it-connect.fr/" target="_blank" class="block text-blue-400 font-bold underline text-xs">IT-Connect</a>
+                            <a href="https://www.it-connect.fr/" target="_blank" class="block text-blue-400 font-bold underline text-xs">IT-Connect - Tutoriels & News</a>
                             <a href="https://www.journaldunet.com/solutions/dsi/" target="_blank" class="block text-blue-400 font-bold underline text-xs">JDN Solutions DSI</a>
-                            <a href="https://linux.fr/" target="_blank" class="block text-blue-400 font-bold underline text-xs">Linux.fr</a>
-                            <a href="https://www.nextinpact.com/" target="_blank" class="block text-blue-400 font-bold underline text-xs">Next INpact</a>
+                            <a href="https://linux.fr/" target="_blank" class="block text-blue-400 font-bold underline text-xs">Linux.fr - Commu Open Source</a>
+                            <a href="https://www.nextinpact.com/" target="_blank" class="block text-blue-400 font-bold underline text-xs">Next INpact - Tech Ethique</a>
                         </div>
                     </div>
                     <div class="veille-item glass-card rounded-2xl overflow-hidden shadow-2xl transition-all" onclick="this.classList.toggle('active')">
                         <div class="veille-header"><span>IA & Automatisation</span><i class="fa-solid fa-plus"></i></div>
                         <div class="veille-content space-y-4 p-6">
-                            <a href="https://openai.com/news/" target="_blank" class="block text-blue-400 font-bold underline text-xs">OpenAI Blog</a>
-                            <a href="https://www.usine-digitale.fr/intelligence-artificielle/" target="_blank" class="block text-blue-400 font-bold underline text-xs">L'Usine Digitale</a>
-                            <a href="https://ia-france.fr/" target="_blank" class="block text-blue-400 font-bold underline text-xs">IA France</a>
-                            <a href="https://intelligence-artificielle.com/" target="_blank" class="block text-blue-400 font-bold underline text-xs">IA.com</a>
+                            <a href="https://openai.com/news/" target="_blank" class="block text-blue-400 font-bold underline text-xs">OpenAI News - ChatGPT</a>
+                            <a href="https://www.usine-digitale.fr/intelligence-artificielle/" target="_blank" class="block text-blue-400 font-bold underline text-xs">L'Usine Digitale - IA Business</a>
+                            <a href="https://ia-france.fr/" target="_blank" class="block text-blue-400 font-bold underline text-xs">IA France - Ecosystème FR</a>
+                            <a href="https://intelligence-artificielle.com/" target="_blank" class="block text-blue-400 font-bold underline text-xs">Intelligence-Artificielle.com</a>
                         </div>
                     </div>
                 </div>
@@ -387,7 +374,7 @@
 
             <section id="contact" class="max-w-6xl mx-auto px-8 py-24 scroll-mt-24 text-white">
                 <div class="text-center mb-16"><h2 class="text-3xl font-black uppercase section-title text-white">Contact</h2></div>
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 text-white">
                     <div class="space-y-6">
                         <div class="glass-card white-border-card p-6 rounded-2xl flex items-center gap-6 shadow-lg">
                             <i class="fa-solid fa-envelope text-blue-400 text-xl"></i>
@@ -398,12 +385,12 @@
                             <div><p class="text-[10px] uppercase font-bold text-slate-400">Téléphone</p><p class="text-lg font-black">07 67 17 89 08</p></div>
                         </div>
                         <div class="grid grid-cols-2 gap-4">
-                            <a href="https://www.linkedin.com/in/alyssia-noireau" target="_blank" class="glass-card white-border-card p-6 rounded-2xl flex flex-col items-center gap-2 hover:bg-blue-600/20 transition-all">
-                                <i class="fa-brands fa-linkedin text-3xl text-[#0077B5]"></i>
+                            <a href="https://www.linkedin.com/in/alyssia-noireau" target="_blank" class="glass-card white-border-card p-6 rounded-2xl flex flex-col items-center gap-2 hover:bg-blue-600/20 transition-all group">
+                                <i class="fa-brands fa-linkedin text-3xl text-[#0077B5] group-hover:scale-110 transition-transform"></i>
                                 <span class="text-[10px] font-black uppercase">LinkedIn</span>
                             </a>
-                            <a href="https://github.com/AlyssiaNoireau" target="_blank" class="glass-card white-border-card p-6 rounded-2xl flex flex-col items-center gap-2 hover:bg-white/10 transition-all">
-                                <i class="fa-brands fa-github text-3xl text-white"></i>
+                            <a href="https://github.com/AlyssiaNoireau" target="_blank" class="glass-card white-border-card p-6 rounded-2xl flex flex-col items-center gap-2 hover:bg-white/10 transition-all group">
+                                <i class="fa-brands fa-github text-3xl text-white group-hover:scale-110 transition-transform"></i>
                                 <span class="text-[10px] font-black uppercase">GitHub</span>
                             </a>
                         </div>
@@ -422,7 +409,11 @@
     </div>
 
     <script>
-        const words = ["Bienvenue sur mon Portfolio","Alternante Support IT & Future Chef de Projet","Résoudre aujourd'hui pour mieux piloter demain"];
+        const words = [
+            "Bienvenue sur mon Portfolio",
+            "Alternante Support IT & Future Chef de Projet",
+            "Résoudre aujourd'hui pour mieux piloter demain"
+        ];
         let i = 0, j = 0, current = "", isDeleting = false;
         function type() {
             current = words[i];
