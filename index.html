@@ -11,9 +11,7 @@
         .glass-sidebar { background: rgba(17, 24, 39, 0.85); backdrop-filter: blur(15px); }
         .glass-card { background: rgba(15, 23, 42, 0.75); border: 1px solid rgba(255, 255, 255, 0.1); }
         
-        /* Police Arial droite et homogène pour tout le site */
         .arial-text { font-family: Arial, Helvetica, sans-serif !important; font-style: normal !important; }
-        
         .white-border-card { border: 1px solid rgba(255, 255, 255, 0.2) !important; }
         
         .section-title { display: inline-block; position: relative; padding-bottom: 12px; }
@@ -44,16 +42,14 @@
         .org-connector { width: 1px; height: 20px; background: rgba(59, 130, 246, 0.4); margin: 0 auto; }
 
         .details-content { max-height: 0; overflow: hidden; transition: all 0.5s ease-out; opacity: 0; }
-        .details-item.active .details-content { max-height: 500px; opacity: 1; padding-top: 1rem; }
+        .details-item.active .details-content { max-height: 800px; opacity: 1; padding-top: 1rem; }
         .details-item.active .fa-plus { transform: rotate(45deg); color: #ef4444; }
 
-        /* Compétences */
         .comp-card-minimal { cursor: pointer; transition: all 0.3s ease; display: flex; flex-direction: column; align-items: center; padding: 1.5rem; }
         .comp-card-minimal:hover { transform: scale(1.1); }
         .comp-detail-minimal { max-height: 0; overflow: hidden; transition: all 0.5s ease; opacity: 0; font-size: 0.75rem; color: #cbd5e1; margin-top: 1rem; text-align: center; line-height: 1.4; }
         .comp-card-minimal.active .comp-detail-minimal { max-height: 150px; opacity: 1; }
 
-        /* Certifications (Style Image grise) */
         .cert-card { background: white; border-radius: 12px; display: flex; overflow: hidden; color: #1e293b; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); transition: transform 0.3s; }
         .cert-card:hover { transform: translateY(-5px); }
         .cert-left { background: #bdbdbd; width: 140px; display: flex; align-items: center; justify-content: center; shrink-0; padding: 20px; }
@@ -178,7 +174,7 @@
                         <p class="mt-2 text-slate-300">Formation socle centrée sur l'administration des infrastructures réseaux, la gestion des services serveurs et la mise en œuvre de solutions de cybersécurité en environnement professionnel.</p>
                     </div>
                     <div class="border-l-4 border-blue-500 pl-8 relative py-2">
-                        <h3 class="text-xl font-black text-blue-400 uppercase">Baccalauréat STMG option Mercatique <span class="text-slate-500 text-sm ml-2">Diplômée en 2024</span></h3>
+                        <h3 class="text-xl font-black text-blue-400 uppercase">Baccalauréat STMG au Lycée Jean-Zay <span class="text-slate-500 text-sm ml-2">Diplômée en 2024</span></h3>
                         <p class="mt-2 text-slate-300">Ce cursus m'a permis d'acquérir une compréhension profonde des mécanismes de l'entreprise, du marketing digital et de l'importance cruciale de la relation client dans le business.</p>
                     </div>
                 </div>
@@ -198,10 +194,6 @@
                         <div class="org-connector"></div>
                         <div class="org-box"><p class="text-[10px] text-slate-400 uppercase font-bold">Président Directeur Général</p><p class="font-bold text-white">Sireix, Laurent</p></div>
                         <div class="org-connector"></div>
-                        <div class="org-box"><p class="text-[10px] text-slate-400 uppercase font-bold">Directeur Opérations - ista France</p><p class="font-bold text-white">Nguyen, Hoai</p></div>
-                        <div class="org-connector"></div>
-                        <div class="org-box"><p class="text-[10px] text-slate-400 uppercase font-bold">Directeur SI Projets</p><p class="font-bold text-white">Martins, Carlos</p></div>
-                        <div class="org-connector"></div>
                         <div class="org-box border-blue-500 bg-blue-500/5 shadow-[0_0_20px_rgba(59,130,246,0.2)]">
                             <p class="text-[10px] text-slate-400 uppercase font-bold">Apprenti</p>
                             <p class="font-black text-white">Noireau, Alyssia</p>
@@ -213,32 +205,30 @@
                     <div class="details-item glass-card white-border-card p-6 rounded-2xl cursor-pointer" onclick="this.classList.toggle('active')">
                         <div class="flex justify-between items-center font-black uppercase text-[11px]"><span>PRÉSENTATION DU GROUPE ISTA</span><i class="fa-solid fa-plus"></i></div>
                         <div class="details-content text-sm text-slate-300 leading-relaxed">
-                            ista est l'un des leaders mondiaux de la gestion des données énergétiques, spécialisé dans l'amélioration de l'efficacité énergétique des bâtiments. En France, la société est structurée sous le statut de SAS et s'appuie sur une force humaine d'environ 800 collaborateurs.
+                            ista est l'un des leaders mondiaux de la gestion des données énergétiques, spécialisé dans l'amélioration de l'efficacité énergétique des bâtiments. En France, la société est structurée sous le statut de SAS et s'appuie sur une force humaine d'environ 800 collaborateurs. Le groupe accompagne ses clients dans la transition durable grâce à des services innovants de comptage et de facturation. Cette expertise permet de répondre aux enjeux écologiques actuels tout en optimisant la consommation de ressources.
                         </div>
                     </div>
                     <div class="details-item glass-card white-border-card p-6 rounded-2xl cursor-pointer" onclick="this.classList.toggle('active')">
                         <div class="flex justify-between items-center font-black uppercase text-[11px]"><span>RAYONNEMENT ET CHIFFRES CLÉS</span><i class="fa-solid fa-plus"></i></div>
                         <div class="details-content text-sm text-slate-300 leading-relaxed">
-                            Le groupe possède une envergure internationale majeure avec une présence active dans plus de 20 pays. Avec un chiffre d'affaires annuel dépassant le milliard d'euros, ista s'impose comme un acteur économique solide avec 45 millions d'appareils connectés.
+                            Le groupe possède une envergure internationale majeure avec une présence active dans plus de 20 pays, principalement en Europe et en Asie. Avec un chiffre d'affaires annuel dépassant le milliard d'euros, ista s'impose comme un acteur économique solide et pérenne. Globalement, l'entreprise gère un parc impressionnant de plus de 45 millions d'appareils connectés. Ce réseau mondial permet de collecter et d'analyser les données de 14 millions de logements et locaux commerciaux.
                         </div>
                     </div>
                     <div class="details-item glass-card white-border-card p-6 rounded-2xl cursor-pointer" onclick="this.classList.toggle('active')">
                         <div class="flex justify-between items-center font-black uppercase text-[11px]"><span>NOTRE ACTIVITÉ ET MISSIONS</span><i class="fa-solid fa-plus"></i></div>
                         <div class="details-content text-sm text-slate-300 leading-relaxed">
-                            Le cœur de métier d'ista repose sur l'individualisation des frais de chauffage et d'eau au sein des habitations collectives. Grâce à des solutions de télérelève performantes, l'entreprise permet une gestion précise et transparente des consommations.
+                            Le cœur de métier d'ista repose sur l'individualisation des frais de chauffage et d'eau au sein des habitations collectives. Grâce à des solutions de télérelève performantes, l'entreprise permet une gestion précise et transparente des consommations énergétiques. Ces services permettent aux résidents de devenir acteurs de leur consommation et de réduire leur impact environnemental. En digitalisant ces données, ista simplifie la gestion immobilière tout en garantissant une répartition équitable des charges.
                         </div>
                     </div>
                     <div class="details-item glass-card white-border-card p-6 rounded-2xl cursor-pointer" onclick="this.classList.toggle('active')">
                         <div class="flex justify-between items-center font-black uppercase text-[11px]"><span>MON RÔLE AU SEIN DE LA DSI</span><i class="fa-solid fa-plus"></i></div>
                         <div class="details-content text-sm text-slate-300 leading-relaxed">
-                            En tant qu'apprentie Technicienne Réseaux et Systèmes, j'évolue au sein d'une DSI internationale. Ma mission consiste à garantir le maintien en condition opérationnelle du parc informatique via Baramundi et Microsoft Azure.
+                            En tant qu'apprentie Technicienne Réseaux et Systèmes, j'évolue au sein d'une DSI internationale aux enjeux technologiques élevés. Ma mission consiste à garantir le maintien en condition opérationnelle du parc informatique via des outils de pointe comme Baramundi et Microsoft Azure. J'assure également le support utilisateur et la gestion des identités dans un environnement ITSM structuré. Ce rôle me permet de développer une polyvalence technique essentielle tout en participant activement à la transformation digitale du groupe.
                         </div>
                     </div>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
-                    <div class="glass-card h-80 bg-[#1e293b] flex items-center justify-center overflow-hidden rounded-3xl"><img src="ista-relève.jpg" class="w-full h-full object-contain"></div>
-                    <div class="glass-card h-80 bg-[#1e293b] flex items-center justify-center overflow-hidden rounded-3xl"><img src="ISTA.jpeg" class="w-full h-full object-contain"></div>
                     <div class="glass-card h-80 flex items-center justify-center overflow-hidden rounded-3xl"><img src="PDG.jpeg" class="w-full h-full object-contain"></div>
                     <div class="glass-card h-80 bg-white flex items-center justify-center overflow-hidden rounded-3xl"><img src="ista-1.jpg" class="w-full h-full object-contain"></div>
                 </div>
@@ -312,22 +302,6 @@
                             <a href="certif_pix.pdf" target="_blank" class="cert-btn"><i class="fa-solid fa-paperclip"></i> Voir l'attestation</a>
                         </div>
                     </div>
-                    <div class="cert-card">
-                        <div class="cert-left"><i class="fa-brands fa-microsoft text-5xl text-slate-700"></i></div>
-                        <div class="cert-right">
-                            <h3 class="font-bold text-lg mb-2 uppercase">Azure Fundamentals</h3>
-                            <p class="text-sm text-slate-600 italic">Certification Cloud Microsoft Azure.</p>
-                            <a href="certif_azure.pdf" target="_blank" class="cert-btn"><i class="fa-solid fa-paperclip"></i> Voir l'attestation</a>
-                        </div>
-                    </div>
-                    <div class="cert-card">
-                        <div class="cert-left"><i class="fa-solid fa-book text-5xl text-slate-700"></i></div>
-                        <div class="cert-right">
-                            <h3 class="font-bold text-lg mb-2 uppercase">ITIL 4 Foundation</h3>
-                            <p class="text-sm text-slate-600 italic">Gestion des services IT (ITSM).</p>
-                            <a href="certif_itil.pdf" target="_blank" class="cert-btn"><i class="fa-solid fa-paperclip"></i> Voir l'attestation</a>
-                        </div>
-                    </div>
                 </div>
             </section>
 
@@ -378,6 +352,7 @@
                             <a href="https://www.cert.ssi.gouv.fr/" target="_blank" class="block text-blue-400 font-bold underline text-xs">ANSSI / CERT-FR</a>
                             <a href="https://thehackernews.com/" target="_blank" class="block text-blue-400 font-bold underline text-xs">The Hacker News</a>
                             <a href="https://www.lemagit.fr/securite" target="_blank" class="block text-blue-400 font-bold underline text-xs">LeMagIT Sécurité</a>
+                            <p class="text-white italic text-xs">Vulnérabilités critiques et stratégies Zero Trust.</p>
                         </div>
                     </div>
                     <div class="veille-item glass-card rounded-2xl overflow-hidden shadow-2xl transition-all" onclick="this.classList.toggle('active')">
