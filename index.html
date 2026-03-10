@@ -1,9 +1,3 @@
-Voici exactement le même code, strictement inchangé sauf pour le retrait des deux photos de profil (les deux <img src="photo like.jpg">).  
-J’ai laissé les cadres et designs, j’ai juste retiré les balises <img> concernées.
-
-Code avec photos retirées :
-
-``html
 <!DOCTYPE html>
 <html lang="fr" class="scroll-smooth">
 <head>
@@ -41,18 +35,16 @@ Code avec photos retirées :
             background-size: cover; background-position: center; background-attachment: fixed;
         }
 
-        .photo-frame { width: 100%; height: 100%; object-fit: cover; object-position: center 20%; }
-
-        / Organigramme /
+        /* Organigramme */
         .org-box { border-left: 3px solid #3b82f6; background: rgba(255,255,255,0.05); padding: 12px 20px; margin: 8px auto; width: 100%; max-width: 450px; border-radius: 2px 10px 10px 2px; }
         .org-connector { width: 1px; height: 20px; background: rgba(59, 130, 246, 0.4); margin: 0 auto; }
 
-        / Accordéons /
+        /* Accordéons */
         .details-content { max-height: 0; overflow: hidden; transition: all 0.5s ease-out; opacity: 0; }
         .details-item.active .details-content { max-height: 1000px; opacity: 1; padding-top: 1rem; }
         .details-item.active .fa-plus { transform: rotate(45deg); color: #ef4444; }
 
-        / Compétences /
+        /* Compétences */
         .comp-card-minimal { cursor: pointer; transition: all 0.3s ease; display: flex; flex-direction: column; align-items: center; padding: 1.5rem; border-radius: 1rem; }
         .comp-card-minimal:hover { transform: scale(1.1); background: rgba(255,255,255,0.05); }
         .comp-detail-minimal { 
@@ -63,7 +55,7 @@ Code avec photos retirées :
         .comp-card-minimal.active { background: rgba(168, 85, 247, 0.1); border: 1px solid rgba(168, 85, 247, 0.3); }
         .comp-card-minimal.active .comp-detail-minimal { max-height: 300px; opacity: 1; margin-top: 1rem; padding: 1rem; background: rgba(168, 85, 247, 0.2); }
 
-        / Nouvelle Interface Certifications Professionnelle /
+        /* Nouvelle Interface Certifications Professionnelle */
         .cert-card-new { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 1.25rem; padding: 2rem; transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); text-align: center; position: relative; overflow: hidden; }
         .cert-card-new:hover { background: rgba(59, 130, 246, 0.1); border-color: #3b82f6; transform: translateY(-10px); }
         .cert-card-new i { font-size: 3rem; margin-bottom: 1.5rem; background: linear-gradient(to bottom, #60a5fa, #3b82f6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
@@ -72,11 +64,11 @@ Code avec photos retirées :
         .cert-btn-new { background: #3b82f6; color: white; padding: 0.6rem 1.2rem; border-radius: 9999px; font-size: 0.7rem; font-weight: 800; text-transform: uppercase; transition: all 0.3s; display: inline-flex; align-items: center; gap: 0.5rem; }
         .cert-btn-new:hover { background: #2563eb; box-shadow: 0 0 15px rgba(59, 130, 246, 0.5); }
 
-        / Bulle Ambition Pro Formation /
+        /* Bulle Ambition Pro Formation */
         .ambition-bubble { background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(139, 92, 246, 0.1)); border: 1px solid rgba(59, 130, 246, 0.3); padding: 2.5rem; border-radius: 2rem; margin-top: 4rem; position: relative; box-shadow: 0 15px 30px rgba(0,0,0,0.3); }
         .ambition-bubble::before { content: '\f12e'; font-family: 'Font Awesome 6 Free'; font-weight: 900; position: absolute; top: -20px; left: 40px; font-size: 2.5rem; color: #3b82f6; background: #0f172a; padding: 0 15px; }
 
-        / Veille Style /
+        /* Veille Style */
         .veille-item.active .veille-content { max-height: 1000px; opacity: 1; padding: 2rem; }
         .veille-header { cursor: pointer; background: #a855f7; border-radius: 0.5rem; height: 80px; display: flex; align-items: center; justify-content: space-between; padding: 0 2rem; transition: all 0.3s; }
         .veille-header:hover { background: #9333ea; }
@@ -90,13 +82,15 @@ Code avec photos retirées :
 
     <aside class="fixed top-0 left-0 h-screen w-64 glass-sidebar border-r border-white/10 hidden md:flex flex-col z-50">
         <div class="p-8 text-center border-b border-white/5">
-            <div class="w-24 h-24 bg-slate-800 rounded-2xl mx-auto mb-4 border border-blue-500/50 shadow-lg overflow-hidden"></div>
+            <div class="w-24 h-24 bg-slate-800 rounded-2xl mx-auto mb-4 border border-blue-500/50 shadow-lg flex items-center justify-center">
+                <i class="fa-solid fa-user text-4xl text-blue-500"></i>
+            </div>
             <h1 class="text-xl font-black neon-text uppercase leading-tight text-white">Alyssia<br><span class="text-blue-500">Noireau</span></h1>
             <p class="text-[10px] text-blue-400 font-bold mt-2 tracking-widest uppercase">BTS SIO SISR</p>
             
             <div class="flex justify-center gap-6 mt-4">
-                <a href="https://www.linkedin.com/in/alyssia-noireau" target="blank" class="text-blue-400 hover:text-white transition-all text-2xl"><i class="fa-brands fa-linkedin"></i></a>
-                <a href="https://github.com/AlyssiaNoireau" target="blank" class="text-slate-400 hover:text-white transition-all text-2xl"><i class="fa-brands fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/alyssia-noireau" target="_blank" class="text-blue-400 hover:text-white transition-all text-2xl"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://github.com/AlyssiaNoireau" target="_blank" class="text-slate-400 hover:text-white transition-all text-2xl"><i class="fa-brands fa-github"></i></a>
             </div>
         </div>
         <nav id="sidebar-nav" class="flex-1 flex flex-col justify-evenly py-4 text-[10px] font-bold uppercase text-slate-400">
@@ -125,13 +119,15 @@ Code avec photos retirées :
                 
                 <div class="flex flex-col md:flex-row gap-10 items-start mb-10">
                     <div class="w-full md:w-[450px]">
-                        <div class="glass-card w-full aspect-square p-2 rounded-3xl border border-blue-500/30 overflow-hidden shadow-2xl"></div>
+                        <div class="glass-card w-full aspect-square p-2 rounded-3xl border border-blue-500/30 overflow-hidden shadow-2xl flex items-center justify-center">
+                            <i class="fa-solid fa-user-circle text-[150px] text-slate-600"></i>
+                        </div>
                     </div>
                     <div class="w-full md:flex-1 flex flex-col gap-4 self-start">
-                        <a href="Professional CV Resume (1).pdf" target="blank" class="py-5 bg-blue-600/20 text-blue-400 rounded-xl border border-blue-500/30 text-center font-black uppercase text-xs hover:bg-blue-600/40 transition-all shadow-lg">Consulter CV</a>
+                        <a href="Professional CV Resume (1).pdf" target="_blank" class="py-5 bg-blue-600/20 text-blue-400 rounded-xl border border-blue-500/30 text-center font-black uppercase text-xs hover:bg-blue-600/40 transition-all shadow-lg">Consulter CV</a>
                         <a href="Professional CV Resume (1).pdf" download class="py-5 bg-blue-600/20 text-blue-400 rounded-xl border border-blue-500/30 text-center font-black uppercase text-xs hover:bg-blue-600/40 transition-all shadow-lg"><i class="fa-solid fa-download mr-2"></i> Télécharger CV</a>
-                        <a href="TableaudeCompetences.pdf" target="blank" class="py-5 bg-blue-600/20 text-blue-400 rounded-xl border border-blue-500/30 text-center font-black uppercase text-[10px] hover:bg-blue-600/40 transition-all shadow-lg">Tableau de compétences</a>
-                        <a href="https://www.linkedin.com/in/alyssia-noireau" target="blank" class="py-5 bg-blue-600/20 text-blue-400 rounded-xl border border-blue-500/30 text-center font-black uppercase text-xs hover:bg-blue-600/40 transition-all shadow-lg"><i class="fa-brands fa-linkedin mr-2"></i> LinkedIn</a>
+                        <a href="Tableau_de_Competences.pdf" target="_blank" class="py-5 bg-blue-600/20 text-blue-400 rounded-xl border border-blue-500/30 text-center font-black uppercase text-[10px] hover:bg-blue-600/40 transition-all shadow-lg">Tableau de compétences</a>
+                        <a href="https://www.linkedin.com/in/alyssia-noireau" target="_blank" class="py-5 bg-blue-600/20 text-blue-400 rounded-xl border border-blue-500/30 text-center font-black uppercase text-xs hover:bg-blue-600/40 transition-all shadow-lg"><i class="fa-brands fa-linkedin mr-2"></i> LinkedIn</a>
                     </div>
                 </div>
 
@@ -257,55 +253,55 @@ Code avec photos retirées :
                         <i class="fa-solid fa-network-wired"></i>
                         <h3>CCNA 1 : ITN</h3>
                         <p>Cisco Introduction to Networks</p>
-                        <a href="CCNA1.pdf" target="blank" class="cert-btn-new"><i class="fa-solid fa-file-pdf"></i> Voir Certificat</a>
+                        <a href="CCNA1.pdf" target="_blank" class="cert-btn-new"><i class="fa-solid fa-file-pdf"></i> Voir Certificat</a>
                     </div>
                     <div class="cert-card-new">
                         <i class="fa-solid fa-route"></i>
                         <h3>CCNA 2 : SRWE</h3>
                         <p>Switching and Routing Essentials</p>
-                        <a href="CCNA2.pdf" target="blank" class="cert-btn-new"><i class="fa-solid fa-file-pdf"></i> Voir Certificat</a>
+                        <a href="CCNA2.pdf" target="_blank" class="cert-btn-new"><i class="fa-solid fa-file-pdf"></i> Voir Certificat</a>
                     </div>
                     <div class="cert-card-new">
                         <i class="fa-solid fa-shield-virus"></i>
                         <h3>SecNumAcadémie</h3>
                         <p>Cybersécurité par l'ANSSI</p>
-                        <a href="ANSSI.pdf" target="blank" class="cert-btn-new"><i class="fa-solid fa-file-pdf"></i> Voir Certificat</a>
+                        <a href="ANSSI.pdf" target="_blank" class="cert-btn-new"><i class="fa-solid fa-file-pdf"></i> Voir Certificat</a>
                     </div>
                     <div class="cert-card-new">
                         <i class="fa-solid fa-user-lock"></i>
                         <h3>CNIL : RGPD</h3>
                         <p>Protection des données personnelles</p>
-                        <a href="CNIL.pdf" target="blank" class="cert-btn-new"><i class="fa-solid fa-file-pdf"></i> Voir Certificat</a>
+                        <a href="CNIL.pdf" target="_blank" class="cert-btn-new"><i class="fa-solid fa-file-pdf"></i> Voir Certificat</a>
                     </div>
                     <div class="cert-card-new">
                         <i class="fa-solid fa-desktop"></i>
                         <h3>PIX</h3>
                         <p>Maîtrise des Compétences Numériques</p>
-                        <a href="PIX.pdf" target="blank" class="cert-btn-new"><i class="fa-solid fa-file-pdf"></i> Voir Certificat</a>
+                        <a href="PIX.pdf" target="_blank" class="cert-btn-new"><i class="fa-solid fa-file-pdf"></i> Voir Certificat</a>
                     </div>
                     <div class="cert-card-new">
                         <i class="fa-brands fa-microsoft"></i>
                         <h3>Azure Fundamentals</h3>
                         <p>Cloud Microsoft (AZ-900)</p>
-                        <a href="AZURE.pdf" target="blank" class="cert-btn-new"><i class="fa-solid fa-file-pdf"></i> Voir Certificat</a>
+                        <a href="AZURE.pdf" target="_blank" class="cert-btn-new"><i class="fa-solid fa-file-pdf"></i> Voir Certificat</a>
                     </div>
                     <div class="cert-card-new">
                         <i class="fa-solid fa-book"></i>
                         <h3>ITIL 4 Foundation</h3>
                         <p>Gestion des services IT (ITSM)</p>
-                        <a href="ITIL.pdf" target="blank" class="cert-btn-new"><i class="fa-solid fa-file-pdf"></i> Voir Certificat</a>
+                        <a href="ITIL.pdf" target="_blank" class="cert-btn-new"><i class="fa-solid fa-file-pdf"></i> Voir Certificat</a>
                     </div>
                     <div class="cert-card-new">
                         <i class="fa-brands fa-python"></i>
                         <h3>PCEP (Python)</h3>
                         <p>Certified Associate Python Programmer</p>
-                        <a href="PCEP.pdf" target="blank" class="cert-btn-new"><i class="fa-solid fa-file-pdf"></i> Voir Certificat</a>
+                        <a href="PCEP.pdf" target="_blank" class="cert-btn-new"><i class="fa-solid fa-file-pdf"></i> Voir Certificat</a>
                     </div>
                     <div class="cert-card-new">
                         <i class="fa-solid fa-shield-halved"></i>
                         <h3>DRSD Defense</h3>
                         <p>Habilitation Secret Défense</p>
-                        <a href="DRSD.pdf" target="blank" class="cert-btn-new"><i class="fa-solid fa-file-pdf"></i> Voir Certificat</a>
+                        <a href="DRSD.pdf" target="_blank" class="cert-btn-new"><i class="fa-solid fa-file-pdf"></i> Voir Certificat</a>
                     </div>
                     <div class="cert-card-new">
                         <i class="fa-solid fa-cloud-arrow-up"></i>
@@ -319,29 +315,29 @@ Code avec photos retirées :
             <section id="tp" class="max-w-6xl mx-auto px-8 py-24 scroll-mt-24 text-white text-center">
                 <div class="text-center mb-16"><h2 class="text-3xl font-black uppercase section-title text-white">Projets Techniques</h2></div>
                 <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
-                    <a href="TP1.pdf" target="blank" class="glass-card p-6 rounded-xl hover:border-blue-500 transition-all group"><i class="fa-solid fa-users-gear text-2xl text-blue-400 mb-2"></i><p class="font-black uppercase text-[9px]">TP 1 : AD DS</p></a>
-                    <a href="TP2.pdf" target="blank" class="glass-card p-6 rounded-xl hover:border-blue-500 transition-all group"><i class="fa-solid fa-ticket text-2xl text-blue-400 mb-2"></i><p class="font-black uppercase text-[9px]">TP 2 : GLPI / Helpdesk</p></a>
-                    <a href="TP3.pdf" target="blank" class="glass-card p-6 rounded-xl hover:border-blue-500 transition-all group"><i class="fa-solid fa-network-wired text-2xl text-blue-400 mb-2"></i><p class="font-black uppercase text-[9px]">TP 3 : VLANs & Routing</p></a>
-                    <a href="TP4.pdf" target="blank" class="glass-card p-6 rounded-xl hover:border-blue-500 transition-all group"><i class="fa-solid fa-server text-2xl text-blue-400 mb-2"></i><p class="font-black uppercase text-[9px]">TP 4 : Windows Server</p></a>
-                    <a href="TP5.pdf" target="blank" class="glass-card p-6 rounded-xl hover:border-blue-500 transition-all group"><i class="fa-solid fa-eye text-2xl text-blue-400 mb-2"></i><p class="font-black uppercase text-[9px]">TP 5 : Supervision Zabbix</p></a>
-                    <a href="TP6.pdf" target="blank" class="glass-card p-6 rounded-xl hover:border-blue-500 transition-all group"><i class="fa-solid fa-shield-halved text-2xl text-blue-400 mb-2"></i><p class="font-black uppercase text-[9px]">TP 6 : Sécurité VPN</p></a>
-                    <a href="TP7.pdf" target="blank" class="glass-card p-6 rounded-xl hover:border-blue-500 transition-all group"><i class="fa-brands fa-linux text-2xl text-blue-400 mb-2"></i><p class="font-black uppercase text-[9px]">TP 7 : Linux Debian</p></a>
-                    <a href="TP8.pdf" target="blank" class="glass-card p-6 rounded-xl hover:border-blue-500 transition-all group"><i class="fa-solid fa-database text-2xl text-blue-400 mb-2"></i><p class="font-black uppercase text-[9px]">TP 8 : Bases de données</p></a>
-                    <a href="TP9.pdf" target="blank" class="glass-card p-6 rounded-xl hover:border-blue-500 transition-all group"><i class="fa-solid fa-cloud text-2xl text-blue-400 mb-2"></i><p class="font-black uppercase text-[9px]">TP 9 : Services Cloud</p></a>
-                    <a href="TP10.pdf" target="blank" class="glass-card p-6 rounded-xl hover:border-blue-500 transition-all group"><i class="fa-solid fa-terminal text-2xl text-blue-400 mb-2"></i><p class="font-black uppercase text-[9px]">TP 10 : Bash & Scripts</p></a>
-                    <a href="TP11.pdf" target="blank" class="glass-card p-6 rounded-xl hover:border-blue-500 transition-all group"><i class="fa-solid fa-microchip text-2xl text-blue-400 mb-2"></i><p class="font-black uppercase text-[9px]">TP 11 : Hardware & BIOS</p></a>
-                    <a href="TP12.pdf" target="blank" class="glass-card p-6 rounded-xl hover:border-blue-500 transition-all group"><i class="fa-solid fa-file-shield text-2xl text-blue-400 mb-2"></i><p class="font-black uppercase text-[9px]">TP 12 : Certificats SSL</p></a>
-                    <a href="TP13.pdf" target="blank" class="glass-card p-6 rounded-xl hover:border-blue-500 transition-all group"><i class="fa-solid fa-wifi text-2xl text-blue-400 mb-2"></i><p class="font-black uppercase text-[9px]">TP 13 : Bornes WiFi</p></a>
-                    <a href="TP14.pdf" target="blank" class="glass-card p-6 rounded-xl hover:border-blue-500 transition-all group"><i class="fa-solid fa-laptop-code text-2xl text-blue-400 mb-2"></i><p class="font-black uppercase text-[9px]">TP 14 : Python Dev</p></a>
-                    <a href="TP15.pdf" target="blank" class="glass-card p-6 rounded-xl hover:border-blue-500 transition-all group"><i class="fa-solid fa-folder-tree text-2xl text-blue-400 mb-2"></i><p class="font-black uppercase text-[9px]">TP 15 : Arborescence</p></a>
+                    <a href="TP1.pdf" target="_blank" class="glass-card p-6 rounded-xl hover:border-blue-500 transition-all group"><i class="fa-solid fa-users-gear text-2xl text-blue-400 mb-2"></i><p class="font-black uppercase text-[9px]">TP 1 : AD DS</p></a>
+                    <a href="TP2.pdf" target="_blank" class="glass-card p-6 rounded-xl hover:border-blue-500 transition-all group"><i class="fa-solid fa-ticket text-2xl text-blue-400 mb-2"></i><p class="font-black uppercase text-[9px]">TP 2 : GLPI / Helpdesk</p></a>
+                    <a href="TP3.pdf" target="_blank" class="glass-card p-6 rounded-xl hover:border-blue-500 transition-all group"><i class="fa-solid fa-network-wired text-2xl text-blue-400 mb-2"></i><p class="font-black uppercase text-[9px]">TP 3 : VLANs & Routing</p></a>
+                    <a href="TP4.pdf" target="_blank" class="glass-card p-6 rounded-xl hover:border-blue-500 transition-all group"><i class="fa-solid fa-server text-2xl text-blue-400 mb-2"></i><p class="font-black uppercase text-[9px]">TP 4 : Windows Server</p></a>
+                    <a href="TP5.pdf" target="_blank" class="glass-card p-6 rounded-xl hover:border-blue-500 transition-all group"><i class="fa-solid fa-eye text-2xl text-blue-400 mb-2"></i><p class="font-black uppercase text-[9px]">TP 5 : Supervision Zabbix</p></a>
+                    <a href="TP6.pdf" target="_blank" class="glass-card p-6 rounded-xl hover:border-blue-500 transition-all group"><i class="fa-solid fa-shield-halved text-2xl text-blue-400 mb-2"></i><p class="font-black uppercase text-[9px]">TP 6 : Sécurité VPN</p></a>
+                    <a href="TP7.pdf" target="_blank" class="glass-card p-6 rounded-xl hover:border-blue-500 transition-all group"><i class="fa-brands fa-linux text-2xl text-blue-400 mb-2"></i><p class="font-black uppercase text-[9px]">TP 7 : Linux Debian</p></a>
+                    <a href="TP8.pdf" target="_blank" class="glass-card p-6 rounded-xl hover:border-blue-500 transition-all group"><i class="fa-solid fa-database text-2xl text-blue-400 mb-2"></i><p class="font-black uppercase text-[9px]">TP 8 : Bases de données</p></a>
+                    <a href="TP9.pdf" target="_blank" class="glass-card p-6 rounded-xl hover:border-blue-500 transition-all group"><i class="fa-solid fa-cloud text-2xl text-blue-400 mb-2"></i><p class="font-black uppercase text-[9px]">TP 9 : Services Cloud</p></a>
+                    <a href="TP10.pdf" target="_blank" class="glass-card p-6 rounded-xl hover:border-blue-500 transition-all group"><i class="fa-solid fa-terminal text-2xl text-blue-400 mb-2"></i><p class="font-black uppercase text-[9px]">TP 10 : Bash & Scripts</p></a>
+                    <a href="TP11.pdf" target="_blank" class="glass-card p-6 rounded-xl hover:border-blue-500 transition-all group"><i class="fa-solid fa-microchip text-2xl text-blue-400 mb-2"></i><p class="font-black uppercase text-[9px]">TP 11 : Hardware & BIOS</p></a>
+                    <a href="TP12.pdf" target="_blank" class="glass-card p-6 rounded-xl hover:border-blue-500 transition-all group"><i class="fa-solid fa-file-shield text-2xl text-blue-400 mb-2"></i><p class="font-black uppercase text-[9px]">TP 12 : Certificats SSL</p></a>
+                    <a href="TP13.pdf" target="_blank" class="glass-card p-6 rounded-xl hover:border-blue-500 transition-all group"><i class="fa-solid fa-wifi text-2xl text-blue-400 mb-2"></i><p class="font-black uppercase text-[9px]">TP 13 : Bornes WiFi</p></a>
+                    <a href="TP14.pdf" target="_blank" class="glass-card p-6 rounded-xl hover:border-blue-500 transition-all group"><i class="fa-solid fa-laptop-code text-2xl text-blue-400 mb-2"></i><p class="font-black uppercase text-[9px]">TP 14 : Python Dev</p></a>
+                    <a href="TP15.pdf" target="_blank" class="glass-card p-6 rounded-xl hover:border-blue-500 transition-all group"><i class="fa-solid fa-folder-tree text-2xl text-blue-400 mb-2"></i><p class="font-black uppercase text-[9px]">TP 15 : Arborescence</p></a>
                 </div>
             </section>
 
             <section id="entreprise" class="max-w-6xl mx-auto px-8 py-24 scroll-mt-24 text-center">
                 <h2 class="text-3xl font-black uppercase section-title text-white mb-8">Expérience chez Ista</h2>
                 <div class="flex flex-col items-center gap-4 mb-12">
-                    <a href="PresentationIsta.pdf" target="blank" class="px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white font-black rounded-full transition-all uppercase text-xs shadow-lg inline-flex items-center gap-2"><i class="fa-solid fa-file-powerpoint"></i> Présentation Entreprise</a>
-                    <a href="Missions.pdf" target="blank" class="px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white font-black rounded-full transition-all uppercase text-xs shadow-lg inline-flex items-center gap-2"><i class="fa-solid fa-file-pdf"></i> Détails des Missions</a>
+                    <a href="Presentation_Ista.pdf" target="_blank" class="px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white font-black rounded-full transition-all uppercase text-xs shadow-lg inline-flex items-center gap-2"><i class="fa-solid fa-file-powerpoint"></i> Présentation Entreprise</a>
+                    <a href="Missions.pdf" target="_blank" class="px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white font-black rounded-full transition-all uppercase text-xs shadow-lg inline-flex items-center gap-2"><i class="fa-solid fa-file-pdf"></i> Détails des Missions</a>
                 </div>
 
                 <div class="mb-20">
@@ -352,10 +348,10 @@ Code avec photos retirées :
                         <div class="org-box"><p class="text-[10px] text-slate-400 uppercase font-bold">Président Directeur Général</p><p class="font-bold text-white">Sireix, Laurent</p></div>
                         <div class="org-connector"></div>
                         <div class="org-box"><p class="text-[10px] text-slate-400 uppercase font-bold">Directeur Opérations - ista France</p><p class="font-bold text-white">Nguyen, Hoai</p></div>
-                        <div<div class="org-connector"></div>
+                        <div class="org-connector"></div>
                         <div class="org-box"><p class="text-[10px] text-slate-400 uppercase font-bold">Directeur SI Projets</p><p class="font-bold text-white">Martins, Carlos</p></div>
                         <div class="org-connector"></div>
-                        <div class="org-box border-blue-500 bg-blue-500/5 shadow-[0020pxrgba(59,130,246,0.2)]">
+                        <div class="org-box border-blue-500 bg-blue-500/5 shadow-[0_0_20px_rgba(59,130,246,0.2)]">
                             <p class="text-[10px] text-slate-400 uppercase font-bold">Apprentie Technicienne Systèmes & Réseaux</p>
                             <p class="font-black text-white">Noireau, Alyssia</p>
                         </div>
@@ -390,8 +386,8 @@ Code avec photos retirées :
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
-                    <div class="glass-card h-80 flex items-center justify-center overflow-hidden rounded-3xl"><img src="PDG.jpeg" class="w-full h-full object-contain"></div>
-                    <div class="glass-card h-80 bg-white flex items-center justify-center overflow-hidden rounded-3xl"><img src="ista-1.jpg" class="w-full h-full object-contain"></div>
+                    <div class="glass-card h-80 flex items-center justify-center overflow-hidden rounded-3xl"><i class="fa-solid fa-building text-8xl text-slate-600"></i></div>
+                    <div class="glass-card h-80 bg-white flex items-center justify-center overflow-hidden rounded-3xl"><i class="fa-solid fa-industry text-8xl text-slate-300"></i></div>
                 </div>
             </section>
 
@@ -401,37 +397,37 @@ Code avec photos retirées :
                     <div class="veille-item glass-card rounded-2xl overflow-hidden shadow-2xl transition-all" onclick="this.classList.toggle('active')">
                         <div class="veille-header"><span>Cybersécurité & CERT-FR</span><i class="fa-solid fa-plus"></i></div>
                         <div class="veille-content space-y-4 p-6">
-                            <a href="https://www.cert.ssi.gouv.fr/" target="blank" class="block text-blue-400 font-bold underline text-xs">CERT-FR (ANSSI) - Alertes Officielles</a>
-                            <a href="https://thehackernews.com/" target="blank" class="block text-blue-400 font-bold underline text-xs">The Hacker News - Actu Internationale</a>
-                            <a href="https://www.zataz.com/" target="blank" class="block text-blue-400 font-bold underline text-xs">Zataz News - Sécurité & Data</a>
-                            <a href="https://www.lemagit.fr/securite" target="blank" class="block text-blue-400 font-bold underline text-xs">LeMagIT Sécurité - Analyses DSI</a>
+                            <a href="https://www.cert.ssi.gouv.fr/" target="_blank" class="block text-blue-400 font-bold underline text-xs">CERT-FR (ANSSI) - Alertes Officielles</a>
+                            <a href="https://thehackernews.com/" target="_blank" class="block text-blue-400 font-bold underline text-xs">The Hacker News - Actu Internationale</a>
+                            <a href="https://www.zataz.com/" target="_blank" class="block text-blue-400 font-bold underline text-xs">Zataz News - Sécurité & Data</a>
+                            <a href="https://www.lemagit.fr/securite" target="_blank" class="block text-blue-400 font-bold underline text-xs">LeMagIT Sécurité - Analyses DSI</a>
                         </div>
                     </div>
                     <div class="veille-item glass-card rounded-2xl overflow-hidden shadow-2xl transition-all" onclick="this.classList.toggle('active')">
                         <div class="veille-header"><span>Cloud Computing & Azure</span><i class="fa-solid fa-plus"></i></div>
                         <div class="veille-content space-y-4 p-6">
-                            <a href="https://azure.microsoft.com/fr-fr/blog/" target="blank" class="block text-blue-400 font-bold underline text-xs">Azure Blog - Microsoft</a>
-                            <a href="https://aws.amazon.com/fr/blogs/aws/" target="blank" class="block text-blue-400 font-bold underline text-xs">AWS Blog France - Amazon</a>
-                            <a href="https://www.veeam.com/blog/fr" target="blank" class="block text-blue-400 font-bold underline text-xs">Veeam Blog - Backup & Cloud</a>
-                            <a href="https://www.lemondeinformatique.fr/cloud-computing-128.html" target="blank" class="block text-blue-400 font-bold underline text-xs">Le Monde Informatique Cloud</a>
+                            <a href="https://azure.microsoft.com/fr-fr/blog/" target="_blank" class="block text-blue-400 font-bold underline text-xs">Azure Blog - Microsoft</a>
+                            <a href="https://aws.amazon.com/fr/blogs/aws/" target="_blank" class="block text-blue-400 font-bold underline text-xs">AWS Blog France - Amazon</a>
+                            <a href="https://www.veeam.com/blog/fr" target="_blank" class="block text-blue-400 font-bold underline text-xs">Veeam Blog - Backup & Cloud</a>
+                            <a href="https://www.lemondeinformatique.fr/cloud-computing-128.html" target="_blank" class="block text-blue-400 font-bold underline text-xs">Le Monde Informatique Cloud</a>
                         </div>
                     </div>
                     <div class="veille-item glass-card rounded-2xl overflow-hidden shadow-2xl transition-all" onclick="this.classList.toggle('active')">
                         <div class="veille-header"><span>Admin Système & DevOps</span><i class="fa-solid fa-plus"></i></div>
                         <div class="veille-content space-y-4 p-6">
-                            <a href="https://www.it-connect.fr/" target="blank" class="block text-blue-400 font-bold underline text-xs">IT-Connect - Tutoriels & News</a>
-                            <a href="https://www.journaldunet.com/solutions/dsi/" target="blank" class="block text-blue-400 font-bold underline text-xs">JDN Solutions DSI</a>
-                            <a href="https://linux.fr/" target="blank" class="block text-blue-400 font-bold underline text-xs">Linux.fr - Commu Open Source</a>
-                            <a href="https://www.nextinpact.com/" target="blank" class="block text-blue-400 font-bold underline text-xs">Next INpact - Tech Ethique</a>
+                            <a href="https://www.it-connect.fr/" target="_blank" class="block text-blue-400 font-bold underline text-xs">IT-Connect - Tutoriels & News</a>
+                            <a href="https://www.journaldunet.com/solutions/dsi/" target="_blank" class="block text-blue-400 font-bold underline text-xs">JDN Solutions DSI</a>
+                            <a href="https://linux.fr/" target="_blank" class="block text-blue-400 font-bold underline text-xs">Linux.fr - Commu Open Source</a>
+                            <a href="https://www.nextinpact.com/" target="_blank" class="block text-blue-400 font-bold underline text-xs">Next INpact - Tech Ethique</a>
                         </div>
                     </div>
                     <div class="veille-item glass-card rounded-2xl overflow-hidden shadow-2xl transition-all" onclick="this.classList.toggle('active')">
                         <div class="veille-header"><span>IA & Automatisation</span><i class="fa-solid fa-plus"></i></div>
                         <div class="veille-content space-y-4 p-6">
-                            <a href="https://openai.com/news/" target="blank" class="block text-blue-400 font-bold underline text-xs">OpenAI News - ChatGPT</a>
-                            <a href="https://www.usine-digitale.fr/intelligence-artificielle/" target="blank" class="block text-blue-400 font-bold underline text-xs">L'Usine Digitale - IA Business</a>
-                            <a href="https://ia-france.fr/" target="blank" class="block text-blue-400 font-bold underline text-xs">IA France - Ecosystème FR</a>
-                            <a href="https://intelligence-artificielle.com/" target="blank" class="block text-blue-400 font-bold underline text-xs">Intelligence-Artificielle.com</a>
+                            <a href="https://openai.com/news/" target="_blank" class="block text-blue-400 font-bold underline text-xs">OpenAI News - ChatGPT</a>
+                            <a href="https://www.usine-digitale.fr/intelligence-artificielle/" target="_blank" class="block text-blue-400 font-bold underline text-xs">L'Usine Digitale - IA Business</a>
+                            <a href="https://ia-france.fr/" target="_blank" class="block text-blue-400 font-bold underline text-xs">IA France - Ecosystème FR</a>
+                            <a href="https://intelligence-artificielle.com/" target="_blank" class="block text-blue-400 font-bold underline text-xs">Intelligence-Artificielle.com</a>
                         </div>
                     </div>
                 </div>
@@ -450,7 +446,7 @@ Code avec photos retirées :
                             <div><p class="text-[10px] uppercase font-bold text-slate-400">Téléphone</p><p class="text-lg font-black">07 67 17 89 08</p></div>
                         </div>
                         <div class="grid grid-cols-2 gap-4">
-                            <a href="https://www.linkedin.com/in/alyssia-noireau" target="blank" class="glass-card white-border-card p-6 rounded-2xl flex flex-col items-center gap-2 hover:bg-blue-600/20 transition-all group">
+                            <a href="https://www.linkedin.com/in/alyssia-noireau" target="_blank" class="glass-card white-border-card p-6 rounded-2xl flex flex-col items-center gap-2 hover:bg-blue-600/20 transition-all group">
                                 <i class="fa-brands fa-linkedin text-3xl text-[#0077B5] group-hover:scale-110 transition-transform"></i>
                                 <span class="text-[10px] font-black uppercase">LinkedIn</span>
                             </a>
@@ -514,6 +510,3 @@ Code avec photos retirées :
     </script>
 </body>
 </html>
-``
-
-Si tu veux que je remplace les photos par un avatar générique ou une icône, dis‑moi simplement.
