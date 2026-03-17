@@ -181,15 +181,9 @@
             transform: scale(1.08);
         }
 
-        .sidebar-controls {
-            display: flex;
-            gap: 0.6rem;
+        .theme-toggle {
+            width: 100%;
             margin-top: 1rem;
-        }
-
-        .theme-toggle,
-        .font-toggle {
-            flex: 1;
             padding: 0.85rem 0.8rem;
             border-radius: 1rem;
             background: linear-gradient(135deg, rgba(59,130,246,0.18), rgba(37,99,235,0.10));
@@ -206,10 +200,84 @@
             transition: all 0.3s ease;
         }
 
-        .theme-toggle:hover,
-        .font-toggle:hover {
+        .theme-toggle:hover {
             transform: translateY(-2px);
             box-shadow: 0 10px 22px var(--card-glow);
+        }
+
+        .font-slider-wrap {
+            margin-top: 0.8rem;
+            padding: 0.85rem 0.9rem;
+            border-radius: 1rem;
+            background: linear-gradient(135deg, rgba(59,130,246,0.14), rgba(37,99,235,0.08));
+            border: 1px solid rgba(96,165,250,0.18);
+        }
+
+        .font-slider-label {
+            font-size: 0.58rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--text-soft);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.45rem;
+            margin-bottom: 0.6rem;
+        }
+
+        .font-scale {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .font-scale span {
+            font-weight: 900;
+            color: var(--text-main);
+            line-height: 1;
+        }
+
+        .font-scale .small-a {
+            font-size: 0.7rem;
+        }
+
+        .font-scale .normal-a {
+            font-size: 0.9rem;
+        }
+
+        .font-scale .big-a {
+            font-size: 1.05rem;
+        }
+
+        .font-slider {
+            flex: 1;
+            appearance: none;
+            height: 4px;
+            border-radius: 999px;
+            background: linear-gradient(90deg, rgba(96,165,250,0.35), rgba(59,130,246,0.9), rgba(96,165,250,0.35));
+            outline: none;
+        }
+
+        .font-slider::-webkit-slider-thumb {
+            appearance: none;
+            width: 16px;
+            height: 16px;
+            border-radius: 999px;
+            background: white;
+            border: 2px solid var(--accent);
+            box-shadow: 0 0 0 4px rgba(59,130,246,0.15);
+            cursor: pointer;
+        }
+
+        .font-slider::-moz-range-thumb {
+            width: 16px;
+            height: 16px;
+            border-radius: 999px;
+            background: white;
+            border: 2px solid var(--accent);
+            box-shadow: 0 0 0 4px rgba(59,130,246,0.15);
+            cursor: pointer;
         }
 
         .nav-link {
@@ -400,105 +468,90 @@
             background: rgba(168, 85, 247, 0.12);
         }
 
-        .certifications-showcase {
+        .cert-list-pro {
             display: grid;
-            grid-template-columns: repeat(12, 1fr);
-            gap: 1.25rem;
+            gap: 1rem;
+            max-width: 980px;
+            margin: 0 auto;
         }
 
-        .certification-pro {
-            grid-column: span 4;
-            position: relative;
-            overflow: hidden;
-            border-radius: 1.4rem;
-            padding: 1.6rem;
+        .cert-row {
+            display: grid;
+            grid-template-columns: 74px 1fr auto;
+            align-items: center;
+            gap: 1.2rem;
+            padding: 1.2rem 1.35rem;
+            border-radius: 1.3rem;
             background: linear-gradient(180deg, rgba(30,41,59,0.88), rgba(15,23,42,0.88));
-            border: 1px solid rgba(96,165,250,0.16);
-            box-shadow: 0 16px 32px rgba(0,0,0,0.15);
+            border: 1px solid rgba(96,165,250,0.14);
+            box-shadow: 0 14px 28px rgba(0,0,0,0.14);
             transition: all 0.3s ease;
             text-align: left;
         }
 
-        body.light-mode .certification-pro {
+        body.light-mode .cert-row {
             background: linear-gradient(180deg, rgba(255,255,255,0.95), rgba(245,248,255,0.95));
             border: 1px solid rgba(37,99,235,0.10);
         }
 
-        .certification-pro:hover {
-            transform: translateY(-6px);
+        .cert-row:hover {
+            transform: translateY(-4px);
             border-color: rgba(96,165,250,0.34);
-            box-shadow: 0 22px 38px rgba(0,0,0,0.18);
+            box-shadow: 0 20px 34px rgba(0,0,0,0.16);
         }
 
-        .certification-pro::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(circle at top right, rgba(96,165,250,0.16), transparent 35%);
-            pointer-events: none;
-        }
-
-        .cert-top {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 1rem;
-        }
-
-        .cert-icon-badge {
-            width: 58px;
-            height: 58px;
-            min-width: 58px;
-            border-radius: 1rem;
+        .cert-row-icon {
+            width: 62px;
+            height: 62px;
+            border-radius: 1.1rem;
             display: flex;
             align-items: center;
             justify-content: center;
             background: rgba(59,130,246,0.12);
             border: 1px solid rgba(96,165,250,0.22);
-            box-shadow: inset 0 0 0 1px rgba(255,255,255,0.04);
         }
 
-        .cert-icon-badge i {
-            font-size: 1.7rem;
+        .cert-row-icon i {
+            font-size: 1.65rem;
             background: linear-gradient(to bottom, var(--accent-soft), var(--accent));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
-        .cert-meta h3 {
+        .cert-row-text h3 {
             font-size: 0.95rem;
             font-weight: 900;
             text-transform: uppercase;
-            letter-spacing: 0.05em;
+            letter-spacing: 0.04em;
             color: var(--text-main);
         }
 
-        .cert-meta p {
-            font-size: 0.76rem;
-            color: var(--text-muted);
-            margin-top: 0.25rem;
+        .cert-row-text p {
+            margin-top: 0.3rem;
+            font-size: 0.8rem;
+            color: var(--text-soft);
             line-height: 1.5;
         }
 
-        .cert-link-pro {
-            margin-top: 1.15rem;
+        .cert-row-link {
             display: inline-flex;
             align-items: center;
             gap: 0.55rem;
-            padding: 0.72rem 1.1rem;
+            padding: 0.8rem 1.1rem;
             border-radius: 999px;
             font-size: 0.68rem;
             font-weight: 900;
             text-transform: uppercase;
             background: linear-gradient(135deg, var(--accent), #1d4ed8);
             color: white;
-            box-shadow: 0 10px 20px rgba(59,130,246,0.20);
+            white-space: nowrap;
+            box-shadow: 0 10px 18px rgba(59,130,246,0.18);
             transition: all 0.3s ease;
         }
 
-        .cert-link-pro:hover {
+        .cert-row-link:hover {
             transform: translateY(-2px);
-            box-shadow: 0 14px 22px rgba(59,130,246,0.28);
+            box-shadow: 0 14px 22px rgba(59,130,246,0.26);
         }
 
         .veille-item.active .veille-content {
@@ -832,12 +885,6 @@
             font-size: 1.2rem;
         }
 
-        @media (max-width: 1100px) {
-            .certification-pro {
-                grid-column: span 6;
-            }
-        }
-
         @media (max-width: 900px) {
             .profile-layout {
                 grid-template-columns: 1fr;
@@ -853,6 +900,15 @@
 
             .contact-layout-pro {
                 grid-template-columns: 1fr;
+            }
+
+            .cert-row {
+                grid-template-columns: 62px 1fr;
+            }
+
+            .cert-row-link {
+                grid-column: 1 / -1;
+                justify-self: start;
             }
         }
 
@@ -870,14 +926,6 @@
                 width: 100%;
                 justify-content: center;
                 max-width: 340px;
-            }
-
-            .certification-pro {
-                grid-column: span 12;
-            }
-
-            .sidebar-controls {
-                flex-direction: column;
             }
         }
     </style>
@@ -907,16 +955,22 @@
                 </a>
             </div>
 
-            <div class="sidebar-controls">
-                <button id="themeToggle" class="theme-toggle">
-                    <i class="fa-solid fa-circle-half-stroke"></i>
-                    <span id="themeToggleText">Mode clair</span>
-                </button>
+            <button id="themeToggle" class="theme-toggle">
+                <i class="fa-solid fa-circle-half-stroke"></i>
+                <span id="themeToggleText">Mode clair</span>
+            </button>
 
-                <button id="fontToggle" class="font-toggle">
+            <div class="font-slider-wrap">
+                <div class="font-slider-label">
                     <i class="fa-solid fa-text-height"></i>
-                    <span id="fontToggleText">Police +</span>
-                </button>
+                    Taille du texte
+                </div>
+                <div class="font-scale">
+                    <span class="small-a">A</span>
+                    <input id="fontSlider" class="font-slider" type="range" min="0" max="2" step="1" value="1">
+                    <span class="normal-a">A</span>
+                    <span class="big-a">A</span>
+                </div>
             </div>
         </div>
 
@@ -1208,7 +1262,7 @@
                     </div>
 
                     <div class="comp-card-minimal group" onclick="this.classList.toggle('active')">
-                        <i class="fa-solid fa-shield-halved text-6xl text-[#ef4444] drop-shadow-lg"></i>
+                        <i class="fa-solid fa-lock text-6xl text-[#ef4444] drop-shadow-lg"></i>
                         <div class="comp-detail-minimal">
                             <b>Cybersécurité</b><br>
                             Très valorisée pour représenter la mise en place de pare-feux, de politiques de sécurité, de contrôle d’accès et de bonnes pratiques.
@@ -1238,84 +1292,74 @@
                     <h2 class="text-3xl font-black uppercase section-title text-main">Certifications</h2>
                 </div>
 
-                <div class="certifications-showcase">
-                    <div class="certification-pro">
-                        <div class="cert-top">
-                            <div class="cert-icon-badge">
-                                <i class="fa-solid fa-network-wired"></i>
-                            </div>
-                            <div class="cert-meta">
-                                <h3>CCNA 1</h3>
-                                <p>Cisco Introduction to Networks</p>
-                            </div>
+                <div class="cert-list-pro">
+                    <div class="cert-row">
+                        <div class="cert-row-icon">
+                            <i class="fa-solid fa-network-wired"></i>
                         </div>
-                        <a href="CCNA1.pdf" target="_blank" class="cert-link-pro">
+                        <div class="cert-row-text">
+                            <h3>CCNA 1</h3>
+                            <p>Cisco Introduction to Networks - validation des bases réseaux, équipements et architecture.</p>
+                        </div>
+                        <a href="CCNA1.pdf" target="_blank" class="cert-row-link">
                             <i class="fa-solid fa-file-pdf"></i>
-                            Voir le certificat
+                            Ouvrir
                         </a>
                     </div>
 
-                    <div class="certification-pro">
-                        <div class="cert-top">
-                            <div class="cert-icon-badge">
-                                <i class="fa-solid fa-route"></i>
-                            </div>
-                            <div class="cert-meta">
-                                <h3>CCNA 2</h3>
-                                <p>Switching and Routing Essentials</p>
-                            </div>
+                    <div class="cert-row">
+                        <div class="cert-row-icon">
+                            <i class="fa-solid fa-route"></i>
                         </div>
-                        <a href="CCNA2.pdf" target="_blank" class="cert-link-pro">
+                        <div class="cert-row-text">
+                            <h3>CCNA 2</h3>
+                            <p>Switching and Routing Essentials - approfondissement des réseaux, commutation et routage.</p>
+                        </div>
+                        <a href="CCNA2.pdf" target="_blank" class="cert-row-link">
                             <i class="fa-solid fa-file-pdf"></i>
-                            Voir le certificat
+                            Ouvrir
                         </a>
                     </div>
 
-                    <div class="certification-pro">
-                        <div class="cert-top">
-                            <div class="cert-icon-badge">
-                                <i class="fa-solid fa-scale-balanced"></i>
-                            </div>
-                            <div class="cert-meta">
-                                <h3>CNIL</h3>
-                                <p>Protection des données personnelles</p>
-                            </div>
+                    <div class="cert-row">
+                        <div class="cert-row-icon">
+                            <i class="fa-solid fa-scale-balanced"></i>
                         </div>
-                        <a href="CNIL.pdf" target="_blank" class="cert-link-pro">
+                        <div class="cert-row-text">
+                            <h3>CNIL</h3>
+                            <p>Protection des données personnelles et sensibilisation aux bonnes pratiques liées au RGPD.</p>
+                        </div>
+                        <a href="CNIL.pdf" target="_blank" class="cert-row-link">
                             <i class="fa-solid fa-file-pdf"></i>
-                            Voir le certificat
+                            Ouvrir
                         </a>
                     </div>
 
-                    <div class="certification-pro">
-                        <div class="cert-top">
-                            <div class="cert-icon-badge">
-                                <i class="fa-solid fa-shield-virus"></i>
-                            </div>
-                            <div class="cert-meta">
-                                <h3>ANSSI</h3>
-                                <p>SecNumAcadémie - Cybersécurité</p>
-                            </div>
+                    <div class="cert-row">
+                        <div class="cert-row-icon">
+                            <i class="fa-solid fa-shield-virus"></i>
                         </div>
-                        <a href="ANSSI.pdf" target="_blank" class="cert-link-pro">
+                        <div class="cert-row-text">
+                            <h3>ANSSI</h3>
+                            <p>SecNumAcadémie - fondamentaux de cybersécurité, menaces, protection et hygiène numérique.</p>
+                        </div>
+                        <a href="ANSSI.pdf" target="_blank" class="cert-row-link">
                             <i class="fa-solid fa-file-pdf"></i>
-                            Voir le certificat
+                            Ouvrir
                         </a>
                     </div>
 
-                    <div class="certification-pro">
-                        <div class="cert-top">
-                            <div class="cert-icon-badge">
-                                <i class="fa-solid fa-desktop"></i>
-                            </div>
-                            <div class="cert-meta">
-                                <h3>PIX</h3>
-                                <p>Compétences numériques</p>
-                            </div>
+                    <div class="cert-row">
+                        <div class="cert-row-icon">
+                            <i class="fa-solid fa-desktop"></i>
                         </div>
-                        <a href="PIX.pdf" target="_blank" class="cert-link-pro">
+                        <div class="cert-row-text">
+                            <h3>PIX</h3>
+                            <p>Évaluation et valorisation des compétences numériques dans un cadre académique et professionnel.</p>
+                        </div>
+                        <a href="PIX.pdf" target="_blank" class="cert-row-link">
                             <i class="fa-solid fa-file-pdf"></i>
-                            Voir le certificat
+                            Ouvrir
                         </a>
                     </div>
                 </div>
@@ -1640,42 +1684,29 @@
             updateThemeButton();
         });
 
-        const fontToggle = document.getElementById("fontToggle");
-        const fontToggleText = document.getElementById("fontToggleText");
-        const fontSizes = [16, 18, 14];
-        let currentFontIndex = 0;
+        const fontSlider = document.getElementById("fontSlider");
+        const fontMap = {
+            0: 14,
+            1: 16,
+            2: 18
+        };
 
-        function applyFontSize(size) {
+        function applyFontSizeFromSlider(value) {
+            const size = fontMap[value];
             document.documentElement.style.setProperty("--base-font-size", size + "px");
         }
 
-        function updateFontButton() {
-            const currentSize = fontSizes[currentFontIndex];
-            if (currentSize === 16) {
-                fontToggleText.textContent = "Police +";
-            } else if (currentSize === 18) {
-                fontToggleText.textContent = "Police -";
-            } else {
-                fontToggleText.textContent = "Police normale";
-            }
-        }
-
         function initFontSize() {
-            const savedFontSize = parseInt(localStorage.getItem("portfolio-font-size"), 10);
-            const foundIndex = fontSizes.indexOf(savedFontSize);
-            if (foundIndex !== -1) {
-                currentFontIndex = foundIndex;
-            }
-            applyFontSize(fontSizes[currentFontIndex]);
-            updateFontButton();
+            const savedFont = localStorage.getItem("portfolio-font-size-step");
+            const step = savedFont !== null ? savedFont : "1";
+            fontSlider.value = step;
+            applyFontSizeFromSlider(step);
         }
 
-        fontToggle.addEventListener("click", () => {
-            currentFontIndex = (currentFontIndex + 1) % fontSizes.length;
-            const newSize = fontSizes[currentFontIndex];
-            applyFontSize(newSize);
-            localStorage.setItem("portfolio-font-size", newSize);
-            updateFontButton();
+        fontSlider.addEventListener("input", (e) => {
+            const step = e.target.value;
+            applyFontSizeFromSlider(step);
+            localStorage.setItem("portfolio-font-size-step", step);
         });
     </script>
 </body>
