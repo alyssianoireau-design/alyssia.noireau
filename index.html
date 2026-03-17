@@ -232,22 +232,14 @@
             gap: 0.5rem;
         }
 
-        .font-scale span {
+        .font-scale .left-a,
+        .font-scale .right-a {
+            font-size: 0.9rem;
             font-weight: 900;
             color: var(--text-main);
             line-height: 1;
-        }
-
-        .font-scale .small-a {
-            font-size: 0.7rem;
-        }
-
-        .font-scale .normal-a {
-            font-size: 0.9rem;
-        }
-
-        .font-scale .big-a {
-            font-size: 1.05rem;
+            width: 10px;
+            text-align: center;
         }
 
         .font-slider {
@@ -737,7 +729,7 @@
             flex-wrap: wrap;
             justify-content: center;
             gap: 1rem;
-            margin-bottom: 3rem;
+            margin: 2.5rem 0 2.5rem 0;
         }
 
         .enterprise-btn {
@@ -801,6 +793,31 @@
             letter-spacing: 0.05em;
             color: var(--text-main);
             margin-bottom: 1.2rem;
+        }
+
+        .contact-intro {
+            max-width: 900px;
+            margin: 0 auto 2rem auto;
+            padding: 1.8rem 2rem;
+            border-radius: 1.8rem;
+            background: linear-gradient(135deg, rgba(59,130,246,0.10), rgba(168,85,247,0.10));
+            border: 1px solid rgba(96,165,250,0.22);
+            box-shadow: 0 14px 28px rgba(0,0,0,0.12);
+            text-align: left;
+        }
+
+        .contact-intro h3 {
+            font-size: 1.15rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            color: var(--text-main);
+            margin-bottom: 0.8rem;
+            letter-spacing: 0.04em;
+        }
+
+        .contact-intro p {
+            color: var(--text-soft);
+            line-height: 1.7;
         }
 
         .contact-info-stack {
@@ -966,10 +983,9 @@
                     Taille du texte
                 </div>
                 <div class="font-scale">
-                    <span class="small-a">A</span>
+                    <span class="left-a">A</span>
                     <input id="fontSlider" class="font-slider" type="range" min="0" max="2" step="1" value="1">
-                    <span class="normal-a">A</span>
-                    <span class="big-a">A</span>
+                    <span class="right-a">A</span>
                 </div>
             </div>
         </div>
@@ -1390,19 +1406,7 @@
             </section>
 
             <section id="entreprise" class="max-w-6xl mx-auto px-8 py-24 scroll-mt-24 text-center">
-                <h2 class="text-3xl font-black uppercase section-title text-main mb-8">Expérience chez Ista</h2>
-
-                <div class="enterprise-actions">
-                    <a href="Presentation_Ista.pdf" target="_blank" class="enterprise-btn">
-                        <i class="fa-solid fa-file-powerpoint"></i>
-                        Présentation entreprise
-                    </a>
-
-                    <a href="Missions.pdf" target="_blank" class="enterprise-btn">
-                        <i class="fa-solid fa-file-lines"></i>
-                        Missions détaillées
-                    </a>
-                </div>
+                <h2 class="text-3xl font-black uppercase section-title text-main mb-10">Expérience chez Ista</h2>
 
                 <div class="mb-20">
                     <h3 class="text-xl font-black text-main uppercase mb-8">Organigramme</h3>
@@ -1420,6 +1424,27 @@
                             <p class="font-black text-main">Noireau, Alyssia</p>
                         </div>
                     </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
+                    <div class="glass-card enterprise-photo-card">
+                        <img src="ista-1.jpg" alt="Photo entreprise ista" style="object-position:center center;">
+                    </div>
+                    <div class="glass-card enterprise-photo-card">
+                        <img src="PDG.jpeg" alt="Photo PDG" style="object-position:center 30%;">
+                    </div>
+                </div>
+
+                <div class="enterprise-actions">
+                    <a href="Presentation_Ista.pdf" target="_blank" class="enterprise-btn">
+                        <i class="fa-solid fa-file-powerpoint"></i>
+                        Présentation entreprise
+                    </a>
+
+                    <a href="Missions.pdf" target="_blank" class="enterprise-btn">
+                        <i class="fa-solid fa-file-lines"></i>
+                        Missions détaillées
+                    </a>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-left">
@@ -1461,15 +1486,6 @@
                         <div class="details-content text-sm text-soft leading-relaxed text-justify">
                             En tant qu'apprentie Technicienne Réseaux et Systèmes, j'évolue au sein d'une DSI internationale aux enjeux technologiques élevés. Ma mission consiste à garantir le maintien en condition opérationnelle du parc informatique via des outils de pointe comme Baramundi et Microsoft Azure. J'assure également le support utilisateur et la gestion des identités dans un environnement ITSM structuré. Ce rôle me permet de développer une polyvalence technique essentielle tout en participant activement à la transformation digitale du groupe.
                         </div>
-                    </div>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
-                    <div class="glass-card enterprise-photo-card">
-                        <img src="ista-1.jpg" alt="Photo entreprise ista" style="object-position:center center;">
-                    </div>
-                    <div class="glass-card enterprise-photo-card">
-                        <img src="PDG.jpeg" alt="Photo PDG" style="object-position:center 30%;">
                     </div>
                 </div>
             </section>
@@ -1537,6 +1553,14 @@
             <section id="contact" class="max-w-6xl mx-auto px-8 py-24 scroll-mt-24">
                 <div class="text-center mb-16">
                     <h2 class="text-3xl font-black uppercase section-title text-main">Contact</h2>
+                </div>
+
+                <div class="contact-intro">
+                    <h3>Et pour la suite ?</h3>
+                    <p>
+                        Dans la continuité de mon BTS SIO, je souhaite intégrer une licence Chef de projet en alternance afin de poursuivre ma progression dans le domaine des systèmes d’information.
+                        Curieuse, investie et motivée, je reste disponible pour échanger sur mon parcours, mes compétences et mes perspectives professionnelles.
+                    </p>
                 </div>
 
                 <div class="contact-layout-pro">
