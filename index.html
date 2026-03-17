@@ -133,18 +133,34 @@
         .section-title {
             display: inline-block;
             position: relative;
-            padding-bottom: 12px;
+            padding-bottom: 1.1rem;
+            letter-spacing: 0.04em;
+        }
+
+        .section-title::before {
+            content: "";
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translateX(-50%);
+            width: 135px;
+            height: 3px;
+            border-radius: 999px;
+            background: linear-gradient(90deg, transparent 0%, var(--accent) 18%, var(--accent-soft) 50%, var(--accent) 82%, transparent 100%);
+            box-shadow: 0 0 18px rgba(59, 130, 246, 0.20);
         }
 
         .section-title::after {
-            content: '';
+            content: "";
             position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 100%;
-            height: 4px;
-            background: linear-gradient(to right, var(--accent), transparent);
-            border-radius: 2px;
+            left: 50%;
+            bottom: -8px;
+            transform: translateX(-50%);
+            width: 44px;
+            height: 6px;
+            border-radius: 999px;
+            background: var(--accent-soft);
+            opacity: 0.95;
         }
 
         .sidebar-header {
@@ -594,47 +610,28 @@
 
         .formation-card {
             position: relative;
-            padding: 1.6rem 1.6rem 1.6rem 5.2rem;
+            padding: 1.8rem;
             border-radius: 1.5rem;
             background: var(--bg-secondary);
             border: 1px solid var(--border-soft);
+            transition: all 0.3s ease;
             overflow: hidden;
         }
 
         .formation-card::before {
             content: "";
             position: absolute;
-            left: 1.4rem;
-            top: 1.4rem;
-            width: 42px;
-            height: 42px;
-            border-radius: 999px;
-            background: linear-gradient(135deg, var(--accent-soft), var(--accent));
-            box-shadow: 0 0 0 6px rgba(59,130,246,0.10);
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent), var(--accent-soft), transparent);
         }
 
-        .formation-card::after {
-            content: "";
-            position: absolute;
-            left: 2.35rem;
-            top: 4.4rem;
-            bottom: -1.5rem;
-            width: 2px;
-            background: linear-gradient(to bottom, rgba(59,130,246,0.35), transparent);
-        }
-
-        .formation-card:last-child::after {
-            display: none;
-        }
-
-        .formation-icon {
-            position: absolute;
-            left: 1.95rem;
-            top: 1.95rem;
-            transform: translate(-50%, -50%);
-            color: white;
-            font-size: 0.9rem;
-            z-index: 2;
+        .formation-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(96,165,250,0.30);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
         }
 
         @media (max-width: 900px) {
@@ -653,13 +650,7 @@
 
         @media (max-width: 768px) {
             .formation-card {
-                padding-left: 1.4rem;
-            }
-
-            .formation-card::before,
-            .formation-card::after,
-            .formation-icon {
-                display: none;
+                padding: 1.4rem;
             }
         }
     </style>
@@ -753,7 +744,7 @@
 
                 <div class="glass-card white-border-card p-10 rounded-2xl text-justify text-base leading-relaxed shadow-xl text-main mb-10">
                     <p>
-                        Titulaire d'un Bac STMG avec une spécialité Mercatique, j'ai développé très tôt une vision transverse des enjeux de l'entreprise et du service client. Passionnée par l'innovation, j'ai fait le choix audacieux de pivoter vers les systèmes d'information pour maîtriser les leviers techniques qui soutiennent aujourd'hui toute stratégie business.
+                        Titulaire d'un Bac STMG avec une spécialité Mercatique, j'ai développé très tôt une vision transverse des enjeux de l'entreprise et du service client. Passionnée par l'innovation, j'ai fait le choix audacieux de m'orienter vers les systèmes d'information afin de maîtriser les leviers techniques qui soutiennent aujourd'hui toute stratégie d'entreprise.
                     </p>
 
                     <p class="mt-4">
@@ -800,18 +791,18 @@
 
                     <div class="details-item glass-card white-border-card p-6 rounded-[2rem] cursor-pointer hover:bg-white/5 transition-all" onclick="this.classList.toggle('active')">
                         <div class="flex justify-between items-center font-black uppercase text-xs text-blue-400">
-                            <span>Centres d'intérêts</span>
+                            <span>Centres d'intérêt</span>
                             <i class="fa-solid fa-plus transition-transform"></i>
                         </div>
 
                         <div class="details-content text-[11px] text-main leading-relaxed">
-                            • La veille technologique et l'innovation<br>
-                            • Le voyage et l'ouverture culturelle<br>
-                            • Les activités sportives<br>
-                            • La créativité digitale<br>
-                            • Lecture et podcasts<br>
-                            • Bénévolat ou projets collaboratifs<br>
-                            • Organisation d'événements
+                            La veille technologique et l'innovation<br>
+                            Le voyage et l'ouverture culturelle<br>
+                            Les activités sportives<br>
+                            La créativité digitale<br>
+                            La lecture et les podcasts<br>
+                            Le bénévolat et les projets collaboratifs<br>
+                            L'organisation d'événements
                         </div>
                     </div>
                 </div>
@@ -824,34 +815,30 @@
 
                 <div class="formation-grid">
                     <div class="formation-card shadow-xl">
-                        <i class="fa-solid fa-star formation-icon"></i>
                         <h3 class="text-xl font-black text-blue-400 uppercase">Master MIAGE (En projet) <span class="text-muted text-sm ml-2">2027 - 2029</span></h3>
-                        <p class="mt-2 text-soft">
+                        <p class="mt-3 text-soft">
                             Ce diplôme d'excellence vise à parfaire ma maîtrise du pilotage des systèmes d'information. Il allie expertise technique de pointe et stratégies de management organisationnel.
                         </p>
                     </div>
 
                     <div class="formation-card shadow-xl">
-                        <i class="fa-solid fa-briefcase formation-icon"></i>
                         <h3 class="text-xl font-black text-blue-400 uppercase">Licence Chef de Projet (CNAM) <span class="text-muted text-sm ml-2">2026 - 2027</span></h3>
-                        <p class="mt-2 text-soft">
-                            Une année de spécialisation intensive pour développer une vision 360° du cycle de vie d'un projet IT. Le focus est mis sur la conception sécurisée et l'exploitation opérationnelle.
+                        <p class="mt-3 text-soft">
+                            Une année de spécialisation intensive pour développer une vision à 360° du cycle de vie d'un projet informatique. L'accent est mis sur la conception sécurisée, l'organisation et l'exploitation opérationnelle.
                         </p>
                     </div>
 
                     <div class="formation-card shadow-xl">
-                        <i class="fa-solid fa-server formation-icon"></i>
                         <h3 class="text-xl font-black text-blue-400 uppercase">BTS SIO option SISR (ORT Daniel Mayer) <span class="text-muted text-sm ml-2">2024 - 2026</span></h3>
-                        <p class="mt-2 text-soft">
-                            Formation socle centrée sur l'administration des infrastructures réseaux et la gestion des services serveurs. J'y apprends à mettre en œuvre des solutions de cybersécurité concrètes.
+                        <p class="mt-3 text-soft">
+                            Formation spécialisée en systèmes et réseaux. J’y développe des compétences en administration, cybersécurité, support et gestion des infrastructures informatiques dans un cadre professionnalisant.
                         </p>
                     </div>
 
                     <div class="formation-card shadow-xl">
-                        <i class="fa-solid fa-building-columns formation-icon"></i>
                         <h3 class="text-xl font-black text-blue-400 uppercase">Baccalauréat STMG (Jean Zay) <span class="text-muted text-sm ml-2">Diplômée en 2024</span></h3>
-                        <p class="mt-2 text-soft">
-                            Ce cursus m'a permis d'acquérir une compréhension profonde des mécanismes économiques et juridiques de l'entreprise. La spécialité Mercatique a renforcé mon sens de la relation client.
+                        <p class="mt-3 text-soft">
+                            Ce cursus m'a permis d'acquérir une compréhension solide des mécanismes économiques, juridiques et organisationnels de l'entreprise. La spécialité Mercatique a renforcé mon sens de l'analyse et de la relation client.
                         </p>
                     </div>
                 </div>
@@ -876,7 +863,7 @@
                             Le BTS SIO est une formation en deux ans qui prépare aux métiers de l’informatique en entreprise. Elle permet d’acquérir des compétences techniques, organisationnelles et professionnelles dans les domaines du développement, de l’administration système, du réseau, de la cybersécurité et du support aux utilisateurs.
                         </p>
                         <p class="text-soft leading-relaxed text-justify mt-4">
-                            Cette formation s’adresse aux étudiants souhaitant évoluer dans un secteur en constante évolution, avec une forte dimension professionnelle grâce aux stages, projets, ateliers de professionnalisation et à l’alternance.
+                            Dans mon parcours, je suis l’option SISR (Solutions d’Infrastructure, Systèmes et Réseaux). La formation comprend également l’option espagnol ainsi qu’un parcours de certification, ce qui me permet de renforcer mes compétences techniques, professionnelles et mon ouverture à des environnements de travail plus larges.
                         </p>
                     </div>
 
@@ -906,7 +893,7 @@
                             <h3 class="font-black uppercase text-sm text-main">Pourquoi SISR ?</h3>
                         </div>
                         <p class="text-sm text-soft text-justify">
-                            J’ai choisi l’option SISR car elle correspond à mon attrait pour les infrastructures techniques, la résolution de problèmes, la sécurisation des environnements numériques et l’administration système et réseau.
+                            J’ai choisi l’option SISR car elle correspond à mon attrait pour les infrastructures techniques, la résolution de problèmes, la sécurisation des environnements numériques ainsi que l’administration système et réseau.
                         </p>
                     </div>
 
@@ -926,7 +913,7 @@
                             <h3 class="font-black uppercase text-sm text-main">Épreuve E5</h3>
                         </div>
                         <p class="text-sm text-soft text-justify">
-                            L’épreuve E5 valorise les compétences professionnelles acquises pendant la formation. Elle met en avant les projets, les réalisations techniques, les compétences mobilisées et la capacité à présenter un environnement professionnel cohérent et argumenté.
+                            L’épreuve E5 valorise les compétences professionnelles acquises pendant la formation. Elle met en avant les projets, les réalisations techniques, les compétences mobilisées ainsi que la capacité à présenter un environnement professionnel cohérent, structuré et argumenté.
                         </p>
                     </div>
                 </div>
@@ -956,7 +943,7 @@
                         <i class="fa-brands fa-docker text-6xl text-[#2496ED] drop-shadow-lg"></i>
                         <div class="comp-detail-minimal">
                             <b>Conteneurisation (Docker)</b><br>
-                            Déploiement d'environnements applicatifs isolés. J'utilise Docker-compose pour orchestrer des micro-services et garantir la portabilité des solutions IT.
+                            Déploiement d'environnements applicatifs isolés. J'utilise Docker Compose pour orchestrer des microservices et garantir la portabilité des solutions IT.
                         </div>
                     </div>
 
@@ -972,7 +959,7 @@
                         <i class="fa-solid fa-users-gear text-6xl text-[#00A4EF] drop-shadow-lg"></i>
                         <div class="comp-detail-minimal">
                             <b>Active Directory (AD DS)</b><br>
-                            Gestion centralisée du domaine. Je configure les GPO, gère les identités IAM et administre les droits d'accès aux partages fichiers.
+                            Gestion centralisée du domaine. Je configure les GPO, gère les identités IAM et administre les droits d'accès aux partages de fichiers.
                         </div>
                     </div>
 
@@ -988,7 +975,7 @@
                         <i class="fa-brands fa-microsoft text-6xl text-[#0078D4] drop-shadow-lg"></i>
                         <div class="comp-detail-minimal">
                             <b>Microsoft Azure</b><br>
-                            Administration Cloud via Entra ID. Je déploie des VMs, gère les ressources de stockage cloud et assure l'interopérabilité entre l'AD local et le cloud.
+                            Administration cloud via Entra ID. Je déploie des machines virtuelles, gère les ressources de stockage cloud et assure l'interopérabilité entre l'AD local et le cloud.
                         </div>
                     </div>
 
@@ -996,7 +983,7 @@
                         <i class="fa-solid fa-laptop-medical text-6xl text-[#4CAF50] drop-shadow-lg"></i>
                         <div class="comp-detail-minimal">
                             <b>Gestion de Parc (UEM)</b><br>
-                            Maîtrise de Baramundi et Intune. J'assure l'inventaire matériel complet, le déploiement massif de patchs et le maintien en condition opérationnelle.
+                            Maîtrise de Baramundi et Intune. J'assure l'inventaire matériel, le déploiement massif de correctifs et le maintien en condition opérationnelle du parc.
                         </div>
                     </div>
 
@@ -1012,7 +999,7 @@
                         <i class="fa-brands fa-windows text-6xl text-[#0078d7] drop-shadow-lg"></i>
                         <div class="comp-detail-minimal">
                             <b>Support Windows (N1/N2)</b><br>
-                            Expertise sur Windows 10/11 Pro. J'assure le dépannage hardware/software, le déploiement via master et l'assistance technique quotidienne aux utilisateurs.
+                            Expertise sur Windows 10/11 Pro. J'assure le dépannage matériel et logiciel, le déploiement via master et l'assistance technique quotidienne aux utilisateurs.
                         </div>
                     </div>
                 </div>
@@ -1301,7 +1288,7 @@
 
                     <div class="glass-card white-border-card p-8 rounded-3xl shadow-2xl">
                         <form action="https://formspree.io/f/mdalzynp" method="POST" class="space-y-4">
-                            <input type="text" name="name" placeholder="Nom Complet" class="w-full form-input p-4 rounded-xl text-sm" required>
+                            <input type="text" name="name" placeholder="Nom complet" class="w-full form-input p-4 rounded-xl text-sm" required>
                             <input type="email" name="email" placeholder="Email" class="w-full form-input p-4 rounded-xl text-sm" required>
                             <textarea name="message" rows="5" placeholder="Votre message..." class="w-full form-input p-4 rounded-xl text-sm resize-none" required></textarea>
                             <button type="submit" class="w-full py-4 bg-blue-600 font-black uppercase text-xs rounded-xl hover:bg-blue-500 transition-all text-white shadow-lg">
@@ -1317,8 +1304,8 @@
 
     <script>
         const words = [
-            "Bienvenue sur mon Portfolio",
-            "Alternante Support IT & Future Chef de Projet",
+            "Bienvenue sur mon portfolio",
+            "Alternante support IT & future cheffe de projet",
             "Résoudre aujourd'hui pour mieux piloter demain"
         ];
 
