@@ -21,6 +21,7 @@
             --border-soft: rgba(255, 255, 255, 0.10);
             --border-strong: rgba(255, 255, 255, 0.18);
             --card-glow: rgba(59, 130, 246, 0.18);
+            --base-font-size: 16px;
         }
 
         body.light-mode {
@@ -35,6 +36,10 @@
             --border-soft: rgba(15, 23, 42, 0.08);
             --border-strong: rgba(15, 23, 42, 0.12);
             --card-glow: rgba(37, 99, 235, 0.12);
+        }
+
+        html {
+            font-size: var(--base-font-size);
         }
 
         body {
@@ -176,6 +181,37 @@
             transform: scale(1.08);
         }
 
+        .sidebar-controls {
+            display: flex;
+            gap: 0.6rem;
+            margin-top: 1rem;
+        }
+
+        .theme-toggle,
+        .font-toggle {
+            flex: 1;
+            padding: 0.85rem 0.8rem;
+            border-radius: 1rem;
+            background: linear-gradient(135deg, rgba(59,130,246,0.18), rgba(37,99,235,0.10));
+            border: 1px solid rgba(96,165,250,0.22);
+            color: var(--text-main);
+            font-size: 0.66rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.45rem;
+            transition: all 0.3s ease;
+        }
+
+        .theme-toggle:hover,
+        .font-toggle:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 22px var(--card-glow);
+        }
+
         .nav-link {
             position: relative;
             transition: all 0.25s ease;
@@ -239,30 +275,6 @@
         .nav-link.active::before {
             height: 72%;
             opacity: 1;
-        }
-
-        .theme-toggle {
-            width: 100%;
-            margin-top: 1rem;
-            padding: 0.85rem 1rem;
-            border-radius: 1rem;
-            background: linear-gradient(135deg, rgba(59,130,246,0.18), rgba(37,99,235,0.10));
-            border: 1px solid rgba(96,165,250,0.22);
-            color: var(--text-main);
-            font-size: 0.72rem;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.65rem;
-            transition: all 0.3s ease;
-        }
-
-        .theme-toggle:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 22px var(--card-glow);
         }
 
         .typing::after { content: '|'; animation: blink 0.7s infinite; }
@@ -381,76 +393,112 @@
         }
 
         .comp-card-minimal.active .comp-detail-minimal {
-            max-height: 320px;
+            max-height: 340px;
             opacity: 1;
             margin-top: 1rem;
             padding: 1rem;
             background: rgba(168, 85, 247, 0.12);
         }
 
-        .cert-card-new {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid var(--border-soft);
-            border-radius: 1.35rem;
-            padding: 2rem;
-            transition: all 0.35s ease;
-            text-align: center;
+        .certifications-showcase {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 1.25rem;
+        }
+
+        .certification-pro {
+            grid-column: span 4;
             position: relative;
             overflow: hidden;
+            border-radius: 1.4rem;
+            padding: 1.6rem;
+            background: linear-gradient(180deg, rgba(30,41,59,0.88), rgba(15,23,42,0.88));
+            border: 1px solid rgba(96,165,250,0.16);
+            box-shadow: 0 16px 32px rgba(0,0,0,0.15);
+            transition: all 0.3s ease;
+            text-align: left;
         }
 
-        body.light-mode .cert-card-new {
-            background: rgba(255,255,255,0.82);
+        body.light-mode .certification-pro {
+            background: linear-gradient(180deg, rgba(255,255,255,0.95), rgba(245,248,255,0.95));
+            border: 1px solid rgba(37,99,235,0.10);
         }
 
-        .cert-card-new:hover {
-            background: rgba(59, 130, 246, 0.08);
-            border-color: var(--accent);
-            transform: translateY(-8px);
-            box-shadow: 0 18px 32px rgba(0,0,0,0.16);
+        .certification-pro:hover {
+            transform: translateY(-6px);
+            border-color: rgba(96,165,250,0.34);
+            box-shadow: 0 22px 38px rgba(0,0,0,0.18);
         }
 
-        .cert-card-new i {
-            font-size: 2.8rem;
-            margin-bottom: 1.2rem;
+        .certification-pro::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at top right, rgba(96,165,250,0.16), transparent 35%);
+            pointer-events: none;
+        }
+
+        .cert-top {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .cert-icon-badge {
+            width: 58px;
+            height: 58px;
+            min-width: 58px;
+            border-radius: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(59,130,246,0.12);
+            border: 1px solid rgba(96,165,250,0.22);
+            box-shadow: inset 0 0 0 1px rgba(255,255,255,0.04);
+        }
+
+        .cert-icon-badge i {
+            font-size: 1.7rem;
             background: linear-gradient(to bottom, var(--accent-soft), var(--accent));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
-        .cert-card-new h3 {
-            font-size: 0.92rem;
+        .cert-meta h3 {
+            font-size: 0.95rem;
             font-weight: 900;
             text-transform: uppercase;
             letter-spacing: 0.05em;
             color: var(--text-main);
         }
 
-        .cert-card-new p {
+        .cert-meta p {
             font-size: 0.76rem;
             color: var(--text-muted);
-            margin: 0.55rem 0 1.4rem 0;
-            font-style: italic;
+            margin-top: 0.25rem;
+            line-height: 1.5;
         }
 
-        .cert-btn-new {
-            background: linear-gradient(135deg, var(--accent), #1d4ed8);
-            color: white;
-            padding: 0.7rem 1.25rem;
-            border-radius: 9999px;
-            font-size: 0.7rem;
-            font-weight: 800;
-            text-transform: uppercase;
-            transition: all 0.3s;
+        .cert-link-pro {
+            margin-top: 1.15rem;
             display: inline-flex;
             align-items: center;
-            gap: 0.5rem;
-            box-shadow: 0 10px 20px rgba(59, 130, 246, 0.20);
+            gap: 0.55rem;
+            padding: 0.72rem 1.1rem;
+            border-radius: 999px;
+            font-size: 0.68rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            background: linear-gradient(135deg, var(--accent), #1d4ed8);
+            color: white;
+            box-shadow: 0 10px 20px rgba(59,130,246,0.20);
+            transition: all 0.3s ease;
         }
 
-        .cert-btn-new:hover {
+        .cert-link-pro:hover {
             transform: translateY(-2px);
-            box-shadow: 0 0 18px rgba(59, 130, 246, 0.30);
+            box-shadow: 0 14px 22px rgba(59,130,246,0.28);
         }
 
         .veille-item.active .veille-content {
@@ -681,20 +729,113 @@
             display: block;
         }
 
-        .enterprise-photo-label {
-            position: absolute;
-            left: 1rem;
-            bottom: 1rem;
-            padding: 0.45rem 0.8rem;
-            border-radius: 999px;
-            background: rgba(15,23,42,0.72);
-            border: 1px solid rgba(255,255,255,0.14);
-            color: white;
-            font-size: 0.68rem;
-            font-weight: 800;
+        .contact-layout-pro {
+            display: grid;
+            grid-template-columns: 1.05fr 1.35fr;
+            gap: 1.5rem;
+            align-items: start;
+        }
+
+        .contact-panel {
+            border-radius: 1.75rem;
+            padding: 1.7rem;
+        }
+
+        .contact-heading {
+            font-size: 1rem;
+            font-weight: 900;
             text-transform: uppercase;
-            letter-spacing: 0.04em;
-            backdrop-filter: blur(8px);
+            letter-spacing: 0.05em;
+            color: var(--text-main);
+            margin-bottom: 1.2rem;
+        }
+
+        .contact-info-stack {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .contact-info-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem 1.1rem;
+            border-radius: 1rem;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid var(--border-soft);
+        }
+
+        body.light-mode .contact-info-item {
+            background: rgba(37,99,235,0.03);
+        }
+
+        .contact-icon-box {
+            width: 48px;
+            height: 48px;
+            min-width: 48px;
+            border-radius: 0.9rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(59,130,246,0.14);
+            border: 1px solid rgba(96,165,250,0.18);
+            color: var(--accent-soft);
+            font-size: 1rem;
+        }
+
+        .contact-info-item p:first-child {
+            font-size: 0.68rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            font-weight: 800;
+            color: var(--text-muted);
+            margin-bottom: 0.25rem;
+        }
+
+        .contact-info-item p:last-child {
+            font-size: 1rem;
+            font-weight: 800;
+            color: var(--text-main);
+            word-break: break-word;
+        }
+
+        .contact-social-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 1rem;
+            margin-top: 1.2rem;
+        }
+
+        .contact-social-card {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.7rem;
+            min-height: 70px;
+            padding: 1rem;
+            border-radius: 1rem;
+            background: rgba(59,130,246,0.10);
+            border: 1px solid rgba(59,130,246,0.20);
+            color: var(--text-main);
+            font-weight: 900;
+            text-transform: uppercase;
+            font-size: 0.72rem;
+            transition: all 0.3s ease;
+        }
+
+        .contact-social-card:hover {
+            transform: translateY(-3px);
+            background: rgba(59,130,246,0.16);
+        }
+
+        .contact-social-card i {
+            font-size: 1.2rem;
+        }
+
+        @media (max-width: 1100px) {
+            .certification-pro {
+                grid-column: span 6;
+            }
         }
 
         @media (max-width: 900px) {
@@ -707,6 +848,10 @@
             }
 
             .profile-links-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-layout-pro {
                 grid-template-columns: 1fr;
             }
         }
@@ -725,6 +870,14 @@
                 width: 100%;
                 justify-content: center;
                 max-width: 340px;
+            }
+
+            .certification-pro {
+                grid-column: span 12;
+            }
+
+            .sidebar-controls {
+                flex-direction: column;
             }
         }
     </style>
@@ -754,10 +907,17 @@
                 </a>
             </div>
 
-            <button id="themeToggle" class="theme-toggle">
-                <i class="fa-solid fa-circle-half-stroke"></i>
-                <span id="themeToggleText">Mode clair</span>
-            </button>
+            <div class="sidebar-controls">
+                <button id="themeToggle" class="theme-toggle">
+                    <i class="fa-solid fa-circle-half-stroke"></i>
+                    <span id="themeToggleText">Mode clair</span>
+                </button>
+
+                <button id="fontToggle" class="font-toggle">
+                    <i class="fa-solid fa-text-height"></i>
+                    <span id="fontToggleText">Police +</span>
+                </button>
+            </div>
         </div>
 
         <nav id="sidebar-nav" class="flex-1 flex flex-col justify-center py-3 font-bold uppercase">
@@ -1078,40 +1238,85 @@
                     <h2 class="text-3xl font-black uppercase section-title text-main">Certifications</h2>
                 </div>
 
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <div class="cert-card-new">
-                        <i class="fa-solid fa-network-wired"></i>
-                        <h3>CCNA 1</h3>
-                        <p>Cisco Introduction to Networks</p>
-                        <a href="CCNA1.pdf" target="_blank" class="cert-btn-new"><i class="fa-solid fa-file-pdf"></i> Voir certificat</a>
+                <div class="certifications-showcase">
+                    <div class="certification-pro">
+                        <div class="cert-top">
+                            <div class="cert-icon-badge">
+                                <i class="fa-solid fa-network-wired"></i>
+                            </div>
+                            <div class="cert-meta">
+                                <h3>CCNA 1</h3>
+                                <p>Cisco Introduction to Networks</p>
+                            </div>
+                        </div>
+                        <a href="CCNA1.pdf" target="_blank" class="cert-link-pro">
+                            <i class="fa-solid fa-file-pdf"></i>
+                            Voir le certificat
+                        </a>
                     </div>
 
-                    <div class="cert-card-new">
-                        <i class="fa-solid fa-route"></i>
-                        <h3>CCNA 2</h3>
-                        <p>Switching and Routing Essentials</p>
-                        <a href="CCNA2.pdf" target="_blank" class="cert-btn-new"><i class="fa-solid fa-file-pdf"></i> Voir certificat</a>
+                    <div class="certification-pro">
+                        <div class="cert-top">
+                            <div class="cert-icon-badge">
+                                <i class="fa-solid fa-route"></i>
+                            </div>
+                            <div class="cert-meta">
+                                <h3>CCNA 2</h3>
+                                <p>Switching and Routing Essentials</p>
+                            </div>
+                        </div>
+                        <a href="CCNA2.pdf" target="_blank" class="cert-link-pro">
+                            <i class="fa-solid fa-file-pdf"></i>
+                            Voir le certificat
+                        </a>
                     </div>
 
-                    <div class="cert-card-new">
-                        <i class="fa-solid fa-scale-balanced"></i>
-                        <h3>CNIL</h3>
-                        <p>Protection des données personnelles</p>
-                        <a href="CNIL.pdf" target="_blank" class="cert-btn-new"><i class="fa-solid fa-file-pdf"></i> Voir certificat</a>
+                    <div class="certification-pro">
+                        <div class="cert-top">
+                            <div class="cert-icon-badge">
+                                <i class="fa-solid fa-scale-balanced"></i>
+                            </div>
+                            <div class="cert-meta">
+                                <h3>CNIL</h3>
+                                <p>Protection des données personnelles</p>
+                            </div>
+                        </div>
+                        <a href="CNIL.pdf" target="_blank" class="cert-link-pro">
+                            <i class="fa-solid fa-file-pdf"></i>
+                            Voir le certificat
+                        </a>
                     </div>
 
-                    <div class="cert-card-new">
-                        <i class="fa-solid fa-shield-virus"></i>
-                        <h3>ANSSI</h3>
-                        <p>SecNumAcadémie - Cybersécurité</p>
-                        <a href="ANSSI.pdf" target="_blank" class="cert-btn-new"><i class="fa-solid fa-file-pdf"></i> Voir certificat</a>
+                    <div class="certification-pro">
+                        <div class="cert-top">
+                            <div class="cert-icon-badge">
+                                <i class="fa-solid fa-shield-virus"></i>
+                            </div>
+                            <div class="cert-meta">
+                                <h3>ANSSI</h3>
+                                <p>SecNumAcadémie - Cybersécurité</p>
+                            </div>
+                        </div>
+                        <a href="ANSSI.pdf" target="_blank" class="cert-link-pro">
+                            <i class="fa-solid fa-file-pdf"></i>
+                            Voir le certificat
+                        </a>
                     </div>
 
-                    <div class="cert-card-new">
-                        <i class="fa-solid fa-desktop"></i>
-                        <h3>PIX</h3>
-                        <p>Compétences numériques</p>
-                        <a href="PIX.pdf" target="_blank" class="cert-btn-new"><i class="fa-solid fa-file-pdf"></i> Voir certificat</a>
+                    <div class="certification-pro">
+                        <div class="cert-top">
+                            <div class="cert-icon-badge">
+                                <i class="fa-solid fa-desktop"></i>
+                            </div>
+                            <div class="cert-meta">
+                                <h3>PIX</h3>
+                                <p>Compétences numériques</p>
+                            </div>
+                        </div>
+                        <a href="PIX.pdf" target="_blank" class="cert-link-pro">
+                            <i class="fa-solid fa-file-pdf"></i>
+                            Voir le certificat
+                        </a>
                     </div>
                 </div>
             </section>
@@ -1217,12 +1422,10 @@
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
                     <div class="glass-card enterprise-photo-card">
-                        <img src="ista-1.jpg" alt="Photo entreprise ista">
-                        <span class="enterprise-photo-label">Entreprise</span>
+                        <img src="ista-1.jpg" alt="Photo entreprise ista" style="object-position:center center;">
                     </div>
                     <div class="glass-card enterprise-photo-card">
-                        <img src="PDG.jpeg" alt="Photo dirigeant entreprise">
-                        <span class="enterprise-photo-label">Direction</span>
+                        <img src="PDG.jpeg" alt="Photo PDG" style="object-position:center 30%;">
                     </div>
                 </div>
             </section>
@@ -1292,44 +1495,54 @@
                     <h2 class="text-3xl font-black uppercase section-title text-main">Contact</h2>
                 </div>
 
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                    <div class="space-y-6">
-                        <div class="glass-card white-border-card p-6 rounded-2xl flex items-center gap-6 shadow-lg">
-                            <i class="fa-solid fa-envelope text-blue-400 text-xl"></i>
-                            <div>
-                                <p class="text-[10px] uppercase font-bold text-muted">E-mail</p>
-                                <p class="text-lg font-black text-main">alyssia.noireau@gmail.com</p>
+                <div class="contact-layout-pro">
+                    <div class="glass-card white-border-card contact-panel shadow-xl">
+                        <h3 class="contact-heading">Mes coordonnées</h3>
+
+                        <div class="contact-info-stack">
+                            <div class="contact-info-item">
+                                <div class="contact-icon-box">
+                                    <i class="fa-solid fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <p>Adresse e-mail</p>
+                                    <p>alyssia.noireau@gmail.com</p>
+                                </div>
+                            </div>
+
+                            <div class="contact-info-item">
+                                <div class="contact-icon-box">
+                                    <i class="fa-solid fa-phone"></i>
+                                </div>
+                                <div>
+                                    <p>Téléphone</p>
+                                    <p>07 67 17 89 08</p>
+                                </div>
                             </div>
                         </div>
 
-                        <div class="glass-card white-border-card p-6 rounded-2xl flex items-center gap-6 shadow-lg">
-                            <i class="fa-solid fa-phone text-blue-400 text-xl"></i>
-                            <div>
-                                <p class="text-[10px] uppercase font-bold text-muted">Téléphone</p>
-                                <p class="text-lg font-black text-main">07 67 17 89 08</p>
-                            </div>
-                        </div>
-
-                        <div class="grid grid-cols-2 gap-4">
-                            <a href="https://www.linkedin.com/in/alyssia-noireau" target="_blank" class="glass-card white-border-card p-6 rounded-2xl flex flex-col items-center gap-2 hover:bg-blue-600/20 transition-all group">
-                                <i class="fa-brands fa-linkedin text-3xl text-[#0077B5] group-hover:scale-110 transition-transform"></i>
-                                <span class="text-[10px] font-black uppercase text-main">LinkedIn</span>
+                        <div class="contact-social-grid">
+                            <a href="https://www.linkedin.com/in/alyssia-noireau" target="_blank" class="contact-social-card">
+                                <i class="fa-brands fa-linkedin text-[#0077B5]"></i>
+                                LinkedIn
                             </a>
 
-                            <a href="https://github.com/AlyssiaNoireau" target="_blank" class="glass-card white-border-card p-6 rounded-2xl flex flex-col items-center gap-2 hover:bg-white/10 transition-all group">
-                                <i class="fa-brands fa-github text-3xl text-main group-hover:scale-110 transition-transform"></i>
-                                <span class="text-[10px] font-black uppercase text-main">GitHub</span>
+                            <a href="https://github.com/AlyssiaNoireau" target="_blank" class="contact-social-card">
+                                <i class="fa-brands fa-github"></i>
+                                GitHub
                             </a>
                         </div>
                     </div>
 
-                    <div class="glass-card white-border-card p-8 rounded-3xl shadow-2xl">
+                    <div class="glass-card white-border-card contact-panel shadow-2xl">
+                        <h3 class="contact-heading">Envoyer un message</h3>
+
                         <form action="https://formspree.io/f/mdalzynp" method="POST" class="space-y-4">
                             <input type="text" name="name" placeholder="Nom complet" class="w-full form-input p-4 rounded-xl text-sm" required>
                             <input type="email" name="email" placeholder="Email" class="w-full form-input p-4 rounded-xl text-sm" required>
-                            <textarea name="message" rows="5" placeholder="Votre message..." class="w-full form-input p-4 rounded-xl text-sm resize-none" required></textarea>
+                            <textarea name="message" rows="7" placeholder="Votre message..." class="w-full form-input p-4 rounded-xl text-sm resize-none" required></textarea>
                             <button type="submit" class="w-full py-4 bg-blue-600 font-black uppercase text-xs rounded-xl hover:bg-blue-500 transition-all text-white shadow-lg">
-                                Envoyer le mail
+                                Envoyer le message
                             </button>
                         </form>
                     </div>
@@ -1376,6 +1589,7 @@
         window.onload = () => {
             type();
             initTheme();
+            initFontSize();
         };
 
         const sections = document.querySelectorAll("section");
@@ -1424,6 +1638,44 @@
             const isLight = document.body.classList.contains("light-mode");
             localStorage.setItem("portfolio-theme", isLight ? "light" : "dark");
             updateThemeButton();
+        });
+
+        const fontToggle = document.getElementById("fontToggle");
+        const fontToggleText = document.getElementById("fontToggleText");
+        const fontSizes = [16, 18, 14];
+        let currentFontIndex = 0;
+
+        function applyFontSize(size) {
+            document.documentElement.style.setProperty("--base-font-size", size + "px");
+        }
+
+        function updateFontButton() {
+            const currentSize = fontSizes[currentFontIndex];
+            if (currentSize === 16) {
+                fontToggleText.textContent = "Police +";
+            } else if (currentSize === 18) {
+                fontToggleText.textContent = "Police -";
+            } else {
+                fontToggleText.textContent = "Police normale";
+            }
+        }
+
+        function initFontSize() {
+            const savedFontSize = parseInt(localStorage.getItem("portfolio-font-size"), 10);
+            const foundIndex = fontSizes.indexOf(savedFontSize);
+            if (foundIndex !== -1) {
+                currentFontIndex = foundIndex;
+            }
+            applyFontSize(fontSizes[currentFontIndex]);
+            updateFontButton();
+        }
+
+        fontToggle.addEventListener("click", () => {
+            currentFontIndex = (currentFontIndex + 1) % fontSizes.length;
+            const newSize = fontSizes[currentFontIndex];
+            applyFontSize(newSize);
+            localStorage.setItem("portfolio-font-size", newSize);
+            updateFontButton();
         });
     </script>
 </body>
