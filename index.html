@@ -391,7 +391,7 @@
         .cert-card-new {
             background: rgba(255, 255, 255, 0.05);
             border: 1px solid var(--border-soft);
-            border-radius: 1.25rem;
+            border-radius: 1.35rem;
             padding: 2rem;
             transition: all 0.35s ease;
             text-align: center;
@@ -407,18 +407,19 @@
             background: rgba(59, 130, 246, 0.08);
             border-color: var(--accent);
             transform: translateY(-8px);
+            box-shadow: 0 18px 32px rgba(0,0,0,0.16);
         }
 
         .cert-card-new i {
-            font-size: 3rem;
-            margin-bottom: 1.5rem;
+            font-size: 2.8rem;
+            margin-bottom: 1.2rem;
             background: linear-gradient(to bottom, var(--accent-soft), var(--accent));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
         .cert-card-new h3 {
-            font-size: 0.875rem;
+            font-size: 0.92rem;
             font-weight: 900;
             text-transform: uppercase;
             letter-spacing: 0.05em;
@@ -426,16 +427,16 @@
         }
 
         .cert-card-new p {
-            font-size: 0.75rem;
+            font-size: 0.76rem;
             color: var(--text-muted);
-            margin: 0.5rem 0 1.5rem 0;
+            margin: 0.55rem 0 1.4rem 0;
             font-style: italic;
         }
 
         .cert-btn-new {
-            background: var(--accent);
+            background: linear-gradient(135deg, var(--accent), #1d4ed8);
             color: white;
-            padding: 0.6rem 1.2rem;
+            padding: 0.7rem 1.25rem;
             border-radius: 9999px;
             font-size: 0.7rem;
             font-weight: 800;
@@ -444,11 +445,12 @@
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
+            box-shadow: 0 10px 20px rgba(59, 130, 246, 0.20);
         }
 
         .cert-btn-new:hover {
-            background: #1d4ed8;
-            box-shadow: 0 0 15px rgba(59, 130, 246, 0.35);
+            transform: translateY(-2px);
+            box-shadow: 0 0 18px rgba(59, 130, 246, 0.30);
         }
 
         .veille-item.active .veille-content {
@@ -629,6 +631,72 @@
             box-shadow: 0 15px 30px rgba(0,0,0,0.15);
         }
 
+        .enterprise-actions {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+
+        .enterprise-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.95rem 1.5rem;
+            border-radius: 1rem;
+            font-size: 0.75rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            background: linear-gradient(135deg, rgba(59,130,246,0.22), rgba(37,99,235,0.12));
+            border: 1px solid rgba(96,165,250,0.28);
+            color: var(--text-main);
+            box-shadow: 0 12px 26px rgba(0,0,0,0.12);
+            transition: all 0.3s ease;
+        }
+
+        .enterprise-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 18px 30px rgba(59,130,246,0.18);
+            border-color: rgba(96,165,250,0.42);
+        }
+
+        .enterprise-btn i {
+            color: var(--accent-soft);
+            font-size: 1rem;
+        }
+
+        .enterprise-photo-card {
+            height: 20rem;
+            border-radius: 1.8rem;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .enterprise-photo-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .enterprise-photo-label {
+            position: absolute;
+            left: 1rem;
+            bottom: 1rem;
+            padding: 0.45rem 0.8rem;
+            border-radius: 999px;
+            background: rgba(15,23,42,0.72);
+            border: 1px solid rgba(255,255,255,0.14);
+            color: white;
+            font-size: 0.68rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            backdrop-filter: blur(8px);
+        }
+
         @media (max-width: 900px) {
             .profile-layout {
                 grid-template-columns: 1fr;
@@ -646,6 +714,17 @@
         @media (max-width: 768px) {
             .formation-card {
                 padding: 1.4rem;
+            }
+
+            .enterprise-actions {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .enterprise-btn {
+                width: 100%;
+                justify-content: center;
+                max-width: 340px;
             }
         }
     </style>
@@ -1002,72 +1081,37 @@
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                     <div class="cert-card-new">
                         <i class="fa-solid fa-network-wired"></i>
-                        <h3>CCNA 1 : ITN</h3>
+                        <h3>CCNA 1</h3>
                         <p>Cisco Introduction to Networks</p>
-                        <a href="CCNA1.pdf" target="_blank" class="cert-btn-new"><i class="fa-solid fa-file-pdf"></i> Voir Certificat</a>
+                        <a href="CCNA1.pdf" target="_blank" class="cert-btn-new"><i class="fa-solid fa-file-pdf"></i> Voir certificat</a>
                     </div>
 
                     <div class="cert-card-new">
                         <i class="fa-solid fa-route"></i>
-                        <h3>CCNA 2 : SRWE</h3>
+                        <h3>CCNA 2</h3>
                         <p>Switching and Routing Essentials</p>
-                        <a href="CCNA2.pdf" target="_blank" class="cert-btn-new"><i class="fa-solid fa-file-pdf"></i> Voir Certificat</a>
+                        <a href="CCNA2.pdf" target="_blank" class="cert-btn-new"><i class="fa-solid fa-file-pdf"></i> Voir certificat</a>
+                    </div>
+
+                    <div class="cert-card-new">
+                        <i class="fa-solid fa-scale-balanced"></i>
+                        <h3>CNIL</h3>
+                        <p>Protection des données personnelles</p>
+                        <a href="CNIL.pdf" target="_blank" class="cert-btn-new"><i class="fa-solid fa-file-pdf"></i> Voir certificat</a>
                     </div>
 
                     <div class="cert-card-new">
                         <i class="fa-solid fa-shield-virus"></i>
-                        <h3>SecNumAcadémie</h3>
-                        <p>Cybersécurité par l'ANSSI</p>
-                        <a href="ANSSI.pdf" target="_blank" class="cert-btn-new"><i class="fa-solid fa-file-pdf"></i> Voir Certificat</a>
-                    </div>
-
-                    <div class="cert-card-new">
-                        <i class="fa-solid fa-user-lock"></i>
-                        <h3>CNIL : RGPD</h3>
-                        <p>Protection des données personnelles</p>
-                        <a href="CNIL.pdf" target="_blank" class="cert-btn-new"><i class="fa-solid fa-file-pdf"></i> Voir Certificat</a>
+                        <h3>ANSSI</h3>
+                        <p>SecNumAcadémie - Cybersécurité</p>
+                        <a href="ANSSI.pdf" target="_blank" class="cert-btn-new"><i class="fa-solid fa-file-pdf"></i> Voir certificat</a>
                     </div>
 
                     <div class="cert-card-new">
                         <i class="fa-solid fa-desktop"></i>
                         <h3>PIX</h3>
-                        <p>Maîtrise des Compétences Numériques</p>
-                        <a href="PIX.pdf" target="_blank" class="cert-btn-new"><i class="fa-solid fa-file-pdf"></i> Voir Certificat</a>
-                    </div>
-
-                    <div class="cert-card-new">
-                        <i class="fa-brands fa-microsoft"></i>
-                        <h3>Azure Fundamentals</h3>
-                        <p>Cloud Microsoft (AZ-900)</p>
-                        <a href="AZURE.pdf" target="_blank" class="cert-btn-new"><i class="fa-solid fa-file-pdf"></i> Voir Certificat</a>
-                    </div>
-
-                    <div class="cert-card-new">
-                        <i class="fa-solid fa-book"></i>
-                        <h3>ITIL 4 Foundation</h3>
-                        <p>Gestion des services IT (ITSM)</p>
-                        <a href="ITIL.pdf" target="_blank" class="cert-btn-new"><i class="fa-solid fa-file-pdf"></i> Voir Certificat</a>
-                    </div>
-
-                    <div class="cert-card-new">
-                        <i class="fa-brands fa-python"></i>
-                        <h3>PCEP (Python)</h3>
-                        <p>Certified Associate Python Programmer</p>
-                        <a href="PCEP.pdf" target="_blank" class="cert-btn-new"><i class="fa-solid fa-file-pdf"></i> Voir Certificat</a>
-                    </div>
-
-                    <div class="cert-card-new">
-                        <i class="fa-solid fa-shield-halved"></i>
-                        <h3>DRSD Defense</h3>
-                        <p>Habilitation Secret Défense</p>
-                        <a href="DRSD.pdf" target="_blank" class="cert-btn-new"><i class="fa-solid fa-file-pdf"></i> Voir Certificat</a>
-                    </div>
-
-                    <div class="cert-card-new">
-                        <i class="fa-solid fa-cloud-arrow-up"></i>
-                        <h3>AWS Practitioner</h3>
-                        <p>AWS Cloud Fundamentals (In progress)</p>
-                        <a href="#" class="cert-btn-new opacity-50"><i class="fa-solid fa-spinner"></i> En cours</a>
+                        <p>Compétences numériques</p>
+                        <a href="PIX.pdf" target="_blank" class="cert-btn-new"><i class="fa-solid fa-file-pdf"></i> Voir certificat</a>
                     </div>
                 </div>
             </section>
@@ -1099,13 +1143,15 @@
             <section id="entreprise" class="max-w-6xl mx-auto px-8 py-24 scroll-mt-24 text-center">
                 <h2 class="text-3xl font-black uppercase section-title text-main mb-8">Expérience chez Ista</h2>
 
-                <div class="flex flex-col items-center gap-4 mb-12">
-                    <a href="Presentation_Ista.pdf" target="_blank" class="px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white font-black rounded-full transition-all uppercase text-xs shadow-lg inline-flex items-center gap-2">
-                        <i class="fa-solid fa-file-powerpoint"></i> Présentation Entreprise
+                <div class="enterprise-actions">
+                    <a href="Presentation_Ista.pdf" target="_blank" class="enterprise-btn">
+                        <i class="fa-solid fa-file-powerpoint"></i>
+                        Présentation entreprise
                     </a>
 
-                    <a href="Missions.pdf" target="_blank" class="px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white font-black rounded-full transition-all uppercase text-xs shadow-lg inline-flex items-center gap-2">
-                        <i class="fa-solid fa-file-pdf"></i> Détails des Missions
+                    <a href="Missions.pdf" target="_blank" class="enterprise-btn">
+                        <i class="fa-solid fa-file-lines"></i>
+                        Missions détaillées
                     </a>
                 </div>
 
@@ -1170,11 +1216,13 @@
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
-                    <div class="glass-card h-80 flex items-center justify-center overflow-hidden rounded-3xl">
-                        <i class="fa-solid fa-building text-8xl text-slate-500"></i>
+                    <div class="glass-card enterprise-photo-card">
+                        <img src="ista-1.jpg" alt="Photo entreprise ista">
+                        <span class="enterprise-photo-label">Entreprise</span>
                     </div>
-                    <div class="glass-card h-80 flex items-center justify-center overflow-hidden rounded-3xl">
-                        <i class="fa-solid fa-industry text-8xl text-slate-400"></i>
+                    <div class="glass-card enterprise-photo-card">
+                        <img src="PDG.jpeg" alt="Photo dirigeant entreprise">
+                        <span class="enterprise-photo-label">Direction</span>
                     </div>
                 </div>
             </section>
@@ -1213,14 +1261,14 @@
 
                     <div class="veille-item glass-card rounded-2xl overflow-hidden shadow-2xl transition-all" onclick="this.classList.toggle('active')">
                         <div class="veille-header">
-                            <span>Admin Système & DevOps</span>
+                            <span>Admin Système</span>
                             <i class="fa-solid fa-plus"></i>
                         </div>
                         <div class="veille-content space-y-4 p-6">
                             <a href="https://www.it-connect.fr/" target="_blank" class="block text-blue-400 font-bold underline text-xs">IT-Connect - Tutoriels & News</a>
                             <a href="https://www.journaldunet.com/solutions/dsi/" target="_blank" class="block text-blue-400 font-bold underline text-xs">JDN Solutions DSI</a>
                             <a href="https://linuxfr.org/" target="_blank" class="block text-blue-400 font-bold underline text-xs">LinuxFr - Communauté Open Source</a>
-                            <a href="https://www.nextinpact.com/" target="_blank" class="block text-blue-400 font-bold underline text-xs">Next INpact - Actualité Tech</a>
+                            <a href="https://n8n.io/" target="_blank" class="block text-blue-400 font-bold underline text-xs">n8n - Automatisation & workflows</a>
                         </div>
                     </div>
 
