@@ -133,40 +133,45 @@
         .section-title {
             display: inline-block;
             position: relative;
-            padding-bottom: 1.1rem;
-            letter-spacing: 0.04em;
-        }
-
-        .section-title::before {
-            content: "";
-            position: absolute;
-            left: 50%;
-            bottom: 0;
-            transform: translateX(-50%);
-            width: 135px;
-            height: 3px;
-            border-radius: 999px;
-            background: linear-gradient(90deg, transparent 0%, var(--accent) 18%, var(--accent-soft) 50%, var(--accent) 82%, transparent 100%);
-            box-shadow: 0 0 18px rgba(59, 130, 246, 0.20);
+            padding-bottom: 14px;
+            letter-spacing: 0.03em;
         }
 
         .section-title::after {
             content: "";
             position: absolute;
             left: 50%;
-            bottom: -8px;
+            bottom: 0;
             transform: translateX(-50%);
-            width: 44px;
-            height: 6px;
+            width: 120px;
+            height: 3px;
             border-radius: 999px;
-            background: var(--accent-soft);
-            opacity: 0.95;
+            background: linear-gradient(90deg, var(--accent), var(--accent-soft));
+            box-shadow: 0 0 14px rgba(59, 130, 246, 0.15);
         }
 
         .sidebar-header {
             padding: 1.4rem 1rem;
             text-align: center;
             border-bottom: 1px solid var(--border-soft);
+        }
+
+        .sidebar-avatar {
+            width: 84px;
+            height: 84px;
+            border-radius: 1rem;
+            margin: 0 auto 0.9rem auto;
+            border: 2px solid rgba(59, 130, 246, 0.45);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.18);
+            overflow: hidden;
+            background: rgba(255,255,255,0.06);
+        }
+
+        .sidebar-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
         }
 
         .nav-link {
@@ -444,29 +449,6 @@
             box-shadow: 0 0 15px rgba(59, 130, 246, 0.35);
         }
 
-        .ambition-bubble {
-            background: linear-gradient(135deg, rgba(59, 130, 246, 0.08), rgba(139, 92, 246, 0.08));
-            border: 1px solid rgba(59, 130, 246, 0.24);
-            padding: 2.5rem;
-            border-radius: 2rem;
-            margin-top: 4rem;
-            position: relative;
-            box-shadow: 0 15px 30px rgba(0,0,0,0.18);
-        }
-
-        .ambition-bubble::before {
-            content: '\f12e';
-            font-family: 'Font Awesome 6 Free';
-            font-weight: 900;
-            position: absolute;
-            top: -20px;
-            left: 40px;
-            font-size: 2.5rem;
-            color: var(--accent);
-            background: var(--bg-main);
-            padding: 0 15px;
-        }
-
         .veille-item.active .veille-content {
             max-height: 1000px;
             opacity: 1;
@@ -566,6 +548,15 @@
             align-items: center;
             justify-content: center;
             margin: 0 auto;
+            overflow: hidden;
+        }
+
+        .profile-photo-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 1.25rem;
+            display: block;
         }
 
         .profile-links-grid {
@@ -661,8 +652,8 @@
 
     <aside class="fixed top-0 left-0 h-screen w-64 glass-sidebar hidden md:flex flex-col z-50">
         <div class="sidebar-header">
-            <div class="w-20 h-20 bg-slate-800 rounded-2xl mx-auto mb-3 border border-blue-500/50 shadow-lg flex items-center justify-center">
-                <i class="fa-solid fa-user text-3xl text-blue-500"></i>
+            <div class="sidebar-avatar">
+                <img src="photo like.jpg" alt="Photo de profil Alyssia Noireau">
             </div>
 
             <h1 class="text-lg font-black neon-text uppercase leading-tight text-main">
@@ -718,8 +709,8 @@
 
                 <div class="profile-layout mb-10">
                     <div class="w-full">
-                        <div class="glass-card profile-photo-card border border-blue-500/30 overflow-hidden shadow-2xl">
-                            <i class="fa-solid fa-user-circle text-[120px] text-slate-500"></i>
+                        <div class="glass-card profile-photo-card border border-blue-500/30 shadow-2xl">
+                            <img src="photo like.jpg" alt="Photo de profil Alyssia Noireau">
                         </div>
                     </div>
 
@@ -842,12 +833,6 @@
                         </p>
                     </div>
                 </div>
-
-                <div class="ambition-bubble">
-                    <p class="text-lg italic leading-relaxed text-blue-100 text-justify font-medium">
-                        Déterminée à devenir une interface clé entre la technique et le management, je prépare activement mon intégration en Licence Chef de projet (Développement, Sécurité et Exploitation) au CNAM. Ce parcours, que je souhaite conclure par un Master MIAGE, reflète mon ambition : devenir une experte capable de piloter des projets IT d'envergure, en alliant rigueur technique, sécurité des infrastructures et vision stratégique.
-                    </p>
-                </div>
             </section>
 
             <section id="bts" class="max-w-6xl mx-auto px-8 py-24 scroll-mt-24">
@@ -863,7 +848,7 @@
                             Le BTS SIO est une formation en deux ans qui prépare aux métiers de l’informatique en entreprise. Elle permet d’acquérir des compétences techniques, organisationnelles et professionnelles dans les domaines du développement, de l’administration système, du réseau, de la cybersécurité et du support aux utilisateurs.
                         </p>
                         <p class="text-soft leading-relaxed text-justify mt-4">
-                            Dans mon parcours, je suis l’option SISR (Solutions d’Infrastructure, Systèmes et Réseaux). La formation comprend également l’option espagnol ainsi qu’un parcours de certification, ce qui me permet de renforcer mes compétences techniques, professionnelles et mon ouverture à des environnements de travail plus larges.
+                            Je prépare ce BTS dans l’option SISR (Solutions d’Infrastructure, Systèmes et Réseaux), avec un parcours incluant l’option espagnol ainsi qu’un parcours de certification. Cet ensemble renforce à la fois mes compétences techniques, ma professionnalisation et mon ouverture à des contextes de travail variés.
                         </p>
                     </div>
 
