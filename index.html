@@ -369,7 +369,8 @@
             padding-top: 1rem;
         }
 
-        .details-item.active .fa-plus {
+        .details-item.active .fa-plus,
+        .veille-item.active .fa-plus {
             transform: rotate(45deg);
             color: #ef4444;
         }
@@ -748,6 +749,53 @@
             color: white;
         }
 
+        .veille-item {
+            overflow: hidden;
+            border-radius: 1.4rem;
+        }
+
+        .veille-header {
+            cursor: pointer;
+            background: linear-gradient(135deg, #9333ea, #7e22ce);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            padding: 1.1rem 1.4rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 0.04em;
+        }
+
+        .veille-content {
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+            transition: all 0.45s ease;
+            background: rgba(168, 85, 247, 0.06);
+        }
+
+        .veille-item.active .veille-content {
+            max-height: 600px;
+            opacity: 1;
+            padding: 1.4rem;
+        }
+
+        .veille-links {
+            display: grid;
+            gap: 0.8rem;
+        }
+
+        .veille-links a {
+            display: block;
+            color: #60a5fa;
+            font-weight: 700;
+            text-decoration: underline;
+            font-size: 0.78rem;
+        }
+
         .contact-layout-pro {
             display: grid;
             grid-template-columns: 1.05fr 1.35fr;
@@ -863,6 +911,22 @@
 
         .contact-social-card:hover {
             transform: translateY(-3px);
+        }
+
+        .form-input {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid var(--border-soft);
+            color: var(--text-main);
+        }
+
+        body.light-mode .form-input {
+            background: rgba(255,255,255,0.82);
+        }
+
+        .form-input:focus {
+            border-color: var(--accent);
+            outline: none;
+            background: rgba(255,255,255,0.10);
         }
 
         @media (max-width: 1100px) {
@@ -1149,6 +1213,38 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10">
+                    <div class="glass-card white-border-card p-6 rounded-2xl">
+                        <div class="flex items-center gap-3 mb-3">
+                            <i class="fa-solid fa-user-shield text-blue-400 text-xl"></i>
+                            <h3 class="font-black uppercase text-sm text-main">Pourquoi SISR ?</h3>
+                        </div>
+                        <p class="text-sm text-soft text-justify">
+                            J’ai choisi l’option SISR car elle correspond à mon attrait pour les infrastructures techniques, la résolution de problèmes, la sécurisation des environnements numériques ainsi que l’administration système et réseau.
+                        </p>
+                    </div>
+
+                    <div class="glass-card white-border-card p-6 rounded-2xl">
+                        <div class="flex items-center gap-3 mb-3">
+                            <i class="fa-solid fa-briefcase text-blue-400 text-xl"></i>
+                            <h3 class="font-black uppercase text-sm text-main">Débouchés</h3>
+                        </div>
+                        <p class="text-sm text-soft text-justify">
+                            Le BTS SIO permet d’accéder à des postes comme technicien systèmes et réseaux, administrateur junior, technicien support, technicien cybersécurité, ou de poursuivre vers une licence, un bachelor ou un master spécialisé.
+                        </p>
+                    </div>
+
+                    <div class="glass-card white-border-card p-6 rounded-2xl">
+                        <div class="flex items-center gap-3 mb-3">
+                            <i class="fa-solid fa-file-lines text-blue-400 text-xl"></i>
+                            <h3 class="font-black uppercase text-sm text-main">Épreuve E5</h3>
+                        </div>
+                        <p class="text-sm text-soft text-justify">
+                            L’épreuve E5 valorise les compétences professionnelles acquises pendant la formation. Elle met en avant les projets, les réalisations techniques, les compétences mobilisées ainsi que la capacité à présenter un environnement professionnel cohérent, structuré et argumenté.
+                        </p>
+                    </div>
+                </div>
             </section>
 
             <section id="competences" class="max-w-6xl mx-auto px-8 py-24 scroll-mt-24 text-center">
@@ -1404,43 +1500,63 @@
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
-                    <div class="glass-card rounded-2xl p-6">
-                        <h3 class="font-black uppercase text-white bg-purple-500 rounded-lg px-5 py-4 mb-4">Cybersécurité & CERT-FR</h3>
-                        <div class="space-y-3">
-                            <a href="https://www.cert.ssi.gouv.fr/" target="_blank" class="block text-blue-400 font-bold underline text-xs">CERT-FR (ANSSI)</a>
-                            <a href="https://thehackernews.com/" target="_blank" class="block text-blue-400 font-bold underline text-xs">The Hacker News</a>
-                            <a href="https://www.zataz.com/" target="_blank" class="block text-blue-400 font-bold underline text-xs">Zataz</a>
-                            <a href="https://www.lemagit.fr/securite" target="_blank" class="block text-blue-400 font-bold underline text-xs">LeMagIT Sécurité</a>
+                    <div class="veille-item glass-card shadow-2xl" onclick="this.classList.toggle('active')">
+                        <div class="veille-header">
+                            <span>Cybersécurité & CERT-FR</span>
+                            <i class="fa-solid fa-plus transition-transform"></i>
+                        </div>
+                        <div class="veille-content">
+                            <div class="veille-links">
+                                <a href="https://www.cert.ssi.gouv.fr/" target="_blank">CERT-FR (ANSSI)</a>
+                                <a href="https://thehackernews.com/" target="_blank">The Hacker News</a>
+                                <a href="https://www.zataz.com/" target="_blank">Zataz</a>
+                                <a href="https://www.lemagit.fr/securite" target="_blank">LeMagIT Sécurité</a>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="glass-card rounded-2xl p-6">
-                        <h3 class="font-black uppercase text-white bg-purple-500 rounded-lg px-5 py-4 mb-4">Cloud Computing & Azure</h3>
-                        <div class="space-y-3">
-                            <a href="https://azure.microsoft.com/fr-fr/blog/" target="_blank" class="block text-blue-400 font-bold underline text-xs">Azure Blog</a>
-                            <a href="https://aws.amazon.com/fr/blogs/aws/" target="_blank" class="block text-blue-400 font-bold underline text-xs">AWS Blog</a>
-                            <a href="https://www.veeam.com/blog/fr" target="_blank" class="block text-blue-400 font-bold underline text-xs">Veeam Blog</a>
-                            <a href="https://www.lemondeinformatique.fr/cloud-computing-128.html" target="_blank" class="block text-blue-400 font-bold underline text-xs">Le Monde Informatique Cloud</a>
+                    <div class="veille-item glass-card shadow-2xl" onclick="this.classList.toggle('active')">
+                        <div class="veille-header">
+                            <span>Cloud Computing & Azure</span>
+                            <i class="fa-solid fa-plus transition-transform"></i>
+                        </div>
+                        <div class="veille-content">
+                            <div class="veille-links">
+                                <a href="https://azure.microsoft.com/fr-fr/blog/" target="_blank">Azure Blog</a>
+                                <a href="https://aws.amazon.com/fr/blogs/aws/" target="_blank">AWS Blog</a>
+                                <a href="https://www.veeam.com/blog/fr" target="_blank">Veeam Blog</a>
+                                <a href="https://www.lemondeinformatique.fr/cloud-computing-128.html" target="_blank">Le Monde Informatique Cloud</a>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="glass-card rounded-2xl p-6">
-                        <h3 class="font-black uppercase text-white bg-purple-500 rounded-lg px-5 py-4 mb-4">Admin Système</h3>
-                        <div class="space-y-3">
-                            <a href="https://www.it-connect.fr/" target="_blank" class="block text-blue-400 font-bold underline text-xs">IT-Connect</a>
-                            <a href="https://www.journaldunet.com/solutions/dsi/" target="_blank" class="block text-blue-400 font-bold underline text-xs">JDN Solutions DSI</a>
-                            <a href="https://linuxfr.org/" target="_blank" class="block text-blue-400 font-bold underline text-xs">LinuxFr</a>
-                            <a href="https://n8n.io/" target="_blank" class="block text-blue-400 font-bold underline text-xs">n8n</a>
+                    <div class="veille-item glass-card shadow-2xl" onclick="this.classList.toggle('active')">
+                        <div class="veille-header">
+                            <span>Admin Système</span>
+                            <i class="fa-solid fa-plus transition-transform"></i>
+                        </div>
+                        <div class="veille-content">
+                            <div class="veille-links">
+                                <a href="https://www.it-connect.fr/" target="_blank">IT-Connect</a>
+                                <a href="https://www.journaldunet.com/solutions/dsi/" target="_blank">JDN Solutions DSI</a>
+                                <a href="https://linuxfr.org/" target="_blank">LinuxFr</a>
+                                <a href="https://n8n.io/" target="_blank">n8n</a>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="glass-card rounded-2xl p-6">
-                        <h3 class="font-black uppercase text-white bg-purple-500 rounded-lg px-5 py-4 mb-4">IA & Automatisation</h3>
-                        <div class="space-y-3">
-                            <a href="https://openai.com/news/" target="_blank" class="block text-blue-400 font-bold underline text-xs">OpenAI News</a>
-                            <a href="https://www.usine-digitale.fr/intelligence-artificielle/" target="_blank" class="block text-blue-400 font-bold underline text-xs">L'Usine Digitale</a>
-                            <a href="https://www.lebigdata.fr/" target="_blank" class="block text-blue-400 font-bold underline text-xs">LeBigData</a>
-                            <a href="https://intelligence-artificielle.developpez.com/" target="_blank" class="block text-blue-400 font-bold underline text-xs">Developpez.com IA</a>
+                    <div class="veille-item glass-card shadow-2xl" onclick="this.classList.toggle('active')">
+                        <div class="veille-header">
+                            <span>IA & Automatisation</span>
+                            <i class="fa-solid fa-plus transition-transform"></i>
+                        </div>
+                        <div class="veille-content">
+                            <div class="veille-links">
+                                <a href="https://openai.com/news/" target="_blank">OpenAI News</a>
+                                <a href="https://www.usine-digitale.fr/intelligence-artificielle/" target="_blank">L'Usine Digitale</a>
+                                <a href="https://www.lebigdata.fr/" target="_blank">LeBigData</a>
+                                <a href="https://intelligence-artificielle.developpez.com/" target="_blank">Developpez.com IA</a>
+                            </div>
                         </div>
                     </div>
                 </div>
