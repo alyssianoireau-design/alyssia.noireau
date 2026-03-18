@@ -46,7 +46,6 @@
             background: var(--bg-main);
             color: var(--text-main);
             font-family: Arial, Helvetica, sans-serif !important;
-            font-style: normal !important;
             transition: background 0.35s ease, color 0.35s ease;
             overflow-x: hidden;
         }
@@ -101,19 +100,10 @@
             50% { transform: translate(30px, -20px) scale(1.08); }
         }
 
-        .neon-text {
-            text-shadow: 0 0 15px rgba(59, 130, 246, 0.35);
-        }
-
-        body.light-mode .neon-text {
-            text-shadow: 0 0 10px rgba(37, 99, 235, 0.12);
-        }
-
         .glass-sidebar {
             background: var(--bg-sidebar);
             backdrop-filter: blur(16px);
             border-right: 1px solid var(--border-soft);
-            transition: background 0.35s ease, border-color 0.35s ease;
         }
 
         .glass-card {
@@ -126,14 +116,10 @@
             box-shadow: 0 18px 35px rgba(0,0,0,0.18);
         }
 
-        .white-border-card {
-            border: 1px solid var(--border-strong) !important;
-        }
-
+        .white-border-card { border: 1px solid var(--border-strong) !important; }
         .text-main { color: var(--text-main) !important; }
         .text-soft { color: var(--text-soft) !important; }
         .text-muted { color: var(--text-muted) !important; }
-        .text-accent { color: var(--accent-soft) !important; }
 
         .section-title {
             display: inline-block;
@@ -152,7 +138,6 @@
             height: 3px;
             border-radius: 999px;
             background: linear-gradient(90deg, var(--accent), var(--accent-soft));
-            box-shadow: 0 0 14px rgba(59, 130, 246, 0.15);
         }
 
         .sidebar-header {
@@ -200,11 +185,6 @@
             transition: all 0.3s ease;
         }
 
-        .theme-toggle:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 22px var(--card-glow);
-        }
-
         .font-slider-wrap {
             margin-top: 0.8rem;
             padding: 0.85rem 0.9rem;
@@ -237,7 +217,6 @@
             font-size: 0.9rem;
             font-weight: 900;
             color: var(--text-main);
-            line-height: 1;
             width: 10px;
             text-align: center;
         }
@@ -258,7 +237,6 @@
             border-radius: 999px;
             background: white;
             border: 2px solid var(--accent);
-            box-shadow: 0 0 0 4px rgba(59,130,246,0.15);
             cursor: pointer;
         }
 
@@ -268,7 +246,6 @@
             border-radius: 999px;
             background: white;
             border: 2px solid var(--accent);
-            box-shadow: 0 0 0 4px rgba(59,130,246,0.15);
             cursor: pointer;
         }
 
@@ -298,43 +275,48 @@
             transform: translateX(4px);
         }
 
-        body.light-mode .nav-link:hover {
-            background: rgba(37, 99, 235, 0.08);
-        }
-
-        .nav-link::before {
-            content: '';
-            position: absolute;
-            left: -0.35rem;
-            top: 50%;
-            transform: translateY(-50%);
-            height: 0%;
-            width: 3px;
-            background: linear-gradient(to bottom, var(--accent-soft), var(--accent));
-            border-radius: 999px;
-            transition: all 0.25s ease;
-            opacity: 0;
-        }
-
-        .nav-link:hover::before {
-            height: 55%;
-            opacity: 1;
-        }
-
         .nav-link.active {
             color: var(--text-main);
             background: linear-gradient(90deg, rgba(59,130,246,0.18), rgba(59,130,246,0.06));
             box-shadow: inset 0 0 0 1px rgba(96, 165, 250, 0.18);
         }
 
-        body.light-mode .nav-link.active {
-            background: linear-gradient(90deg, rgba(37,99,235,0.10), rgba(37,99,235,0.03));
-            box-shadow: inset 0 0 0 1px rgba(37,99,235,0.12);
+        .mobile-topbar {
+            position: sticky;
+            top: 0;
+            z-index: 60;
+            display: none;
+            backdrop-filter: blur(14px);
+            background: rgba(15, 23, 42, 0.88);
+            border-bottom: 1px solid var(--border-soft);
         }
 
-        .nav-link.active::before {
-            height: 72%;
-            opacity: 1;
+        body.light-mode .mobile-topbar {
+            background: rgba(255,255,255,0.92);
+        }
+
+        .mobile-scroll-nav {
+            display: flex;
+            gap: 0.7rem;
+            overflow-x: auto;
+            padding: 0.9rem 1rem;
+            scrollbar-width: none;
+        }
+
+        .mobile-scroll-nav::-webkit-scrollbar {
+            display: none;
+        }
+
+        .mobile-scroll-nav a {
+            white-space: nowrap;
+            padding: 0.65rem 0.95rem;
+            border-radius: 999px;
+            font-size: 0.7rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            color: var(--text-main);
+            background: rgba(59,130,246,0.10);
+            border: 1px solid rgba(59,130,246,0.18);
         }
 
         .typing::after { content: '|'; animation: blink 0.7s infinite; }
@@ -369,33 +351,6 @@
                 radial-gradient(circle at 20% 20%, rgba(59,130,246,0.18), transparent 28%),
                 radial-gradient(circle at 75% 30%, rgba(168,85,247,0.14), transparent 24%),
                 radial-gradient(circle at 50% 80%, rgba(14,165,233,0.10), transparent 30%);
-            animation: pulseBg 12s ease-in-out infinite;
-        }
-
-        @keyframes pulseBg {
-            0%,100% { transform: scale(1); opacity: 0.95; }
-            50% { transform: scale(1.04); opacity: 1; }
-        }
-
-        .org-box {
-            border-left: 3px solid var(--accent);
-            background: rgba(255,255,255,0.05);
-            padding: 12px 20px;
-            margin: 8px auto;
-            width: 100%;
-            max-width: 450px;
-            border-radius: 2px 10px 10px 2px;
-        }
-
-        body.light-mode .org-box {
-            background: rgba(37, 99, 235, 0.04);
-        }
-
-        .org-connector {
-            width: 1px;
-            height: 20px;
-            background: rgba(59, 130, 246, 0.4);
-            margin: 0 auto;
         }
 
         .details-content {
@@ -431,10 +386,6 @@
             background: rgba(255,255,255,0.05);
         }
 
-        body.light-mode .comp-card-minimal:hover {
-            background: rgba(37,99,235,0.04);
-        }
-
         .comp-detail-minimal {
             max-height: 0;
             overflow: hidden;
@@ -460,139 +411,67 @@
             background: rgba(168, 85, 247, 0.12);
         }
 
-        .cert-list-pro {
+        .cert-grid-pro {
             display: grid;
-            gap: 1rem;
-            max-width: 980px;
-            margin: 0 auto;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 1.1rem;
         }
 
-        .cert-row {
-            display: grid;
-            grid-template-columns: 74px 1fr auto;
-            align-items: center;
-            gap: 1.2rem;
-            padding: 1.2rem 1.35rem;
-            border-radius: 1.3rem;
-            background: linear-gradient(180deg, rgba(30,41,59,0.88), rgba(15,23,42,0.88));
-            border: 1px solid rgba(96,165,250,0.14);
-            box-shadow: 0 14px 28px rgba(0,0,0,0.14);
+        .cert-box {
+            padding: 1.4rem 1rem;
+            border-radius: 1.4rem;
+            background: linear-gradient(180deg, rgba(30,41,59,0.90), rgba(15,23,42,0.90));
+            border: 1px solid rgba(96,165,250,0.15);
+            text-align: center;
             transition: all 0.3s ease;
-            text-align: left;
         }
 
-        body.light-mode .cert-row {
-            background: linear-gradient(180deg, rgba(255,255,255,0.95), rgba(245,248,255,0.95));
+        body.light-mode .cert-box {
+            background: linear-gradient(180deg, rgba(255,255,255,0.96), rgba(245,248,255,0.96));
             border: 1px solid rgba(37,99,235,0.10);
         }
 
-        .cert-row:hover {
-            transform: translateY(-4px);
-            border-color: rgba(96,165,250,0.34);
-            box-shadow: 0 20px 34px rgba(0,0,0,0.16);
+        .cert-box:hover {
+            transform: translateY(-5px);
+            border-color: rgba(96,165,250,0.30);
+            box-shadow: 0 16px 30px rgba(0,0,0,0.14);
         }
 
-        .cert-row-icon {
-            width: 62px;
-            height: 62px;
-            border-radius: 1.1rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: rgba(59,130,246,0.12);
-            border: 1px solid rgba(96,165,250,0.22);
-        }
-
-        .cert-row-icon i {
-            font-size: 1.65rem;
+        .cert-box i {
+            font-size: 2rem;
+            margin-bottom: 0.9rem;
             background: linear-gradient(to bottom, var(--accent-soft), var(--accent));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
-        .cert-row-text h3 {
-            font-size: 0.95rem;
+        .cert-box h3 {
+            font-size: 0.82rem;
             font-weight: 900;
             text-transform: uppercase;
-            letter-spacing: 0.04em;
             color: var(--text-main);
+            margin-bottom: 0.35rem;
         }
 
-        .cert-row-text p {
-            margin-top: 0.3rem;
-            font-size: 0.8rem;
+        .cert-box p {
+            font-size: 0.72rem;
             color: var(--text-soft);
-            line-height: 1.5;
+            min-height: 46px;
+            line-height: 1.45;
         }
 
-        .cert-row-link {
+        .cert-box a {
+            margin-top: 0.9rem;
             display: inline-flex;
             align-items: center;
-            gap: 0.55rem;
-            padding: 0.8rem 1.1rem;
+            gap: 0.45rem;
+            padding: 0.7rem 1rem;
             border-radius: 999px;
-            font-size: 0.68rem;
+            font-size: 0.65rem;
             font-weight: 900;
             text-transform: uppercase;
             background: linear-gradient(135deg, var(--accent), #1d4ed8);
             color: white;
-            white-space: nowrap;
-            box-shadow: 0 10px 18px rgba(59,130,246,0.18);
-            transition: all 0.3s ease;
-        }
-
-        .cert-row-link:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 14px 22px rgba(59,130,246,0.26);
-        }
-
-        .veille-item.active .veille-content {
-            max-height: 1000px;
-            opacity: 1;
-            padding: 2rem;
-        }
-
-        .veille-header {
-            cursor: pointer;
-            background: #a855f7;
-            color: white;
-            border-radius: 0.5rem;
-            min-height: 80px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0 2rem;
-            transition: all 0.3s;
-            font-weight: 800;
-            text-transform: uppercase;
-        }
-
-        .veille-header:hover {
-            background: #9333ea;
-        }
-
-        .veille-content {
-            max-height: 0;
-            overflow: hidden;
-            opacity: 0;
-            transition: all 0.5s ease;
-            background: rgba(168, 85, 247, 0.05);
-        }
-
-        .form-input {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid var(--border-soft);
-            color: var(--text-main);
-        }
-
-        body.light-mode .form-input {
-            background: rgba(255,255,255,0.82);
-        }
-
-        .form-input:focus {
-            border-color: var(--accent);
-            outline: none;
-            background: rgba(255,255,255,0.10);
         }
 
         .bts-card {
@@ -689,10 +568,6 @@
             color: var(--text-main);
         }
 
-        body.light-mode .profile-btn:hover {
-            color: #1e293b;
-        }
-
         .formation-grid {
             display: grid;
             gap: 1.5rem;
@@ -724,12 +599,29 @@
             box-shadow: 0 15px 30px rgba(0,0,0,0.15);
         }
 
+        .org-box {
+            border-left: 3px solid var(--accent);
+            background: rgba(255,255,255,0.05);
+            padding: 12px 20px;
+            margin: 8px auto;
+            width: 100%;
+            max-width: 450px;
+            border-radius: 2px 10px 10px 2px;
+        }
+
+        .org-connector {
+            width: 1px;
+            height: 20px;
+            background: rgba(59, 130, 246, 0.4);
+            margin: 0 auto;
+        }
+
         .enterprise-actions {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             gap: 1rem;
-            margin: 2.5rem 0 2.5rem 0;
+            margin: 2.5rem 0;
         }
 
         .enterprise-btn {
@@ -741,7 +633,6 @@
             font-size: 0.75rem;
             font-weight: 900;
             text-transform: uppercase;
-            letter-spacing: 0.04em;
             background: linear-gradient(135deg, rgba(59,130,246,0.22), rgba(37,99,235,0.12));
             border: 1px solid rgba(96,165,250,0.28);
             color: var(--text-main);
@@ -751,13 +642,6 @@
 
         .enterprise-btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 18px 30px rgba(59,130,246,0.18);
-            border-color: rgba(96,165,250,0.42);
-        }
-
-        .enterprise-btn i {
-            color: var(--accent-soft);
-            font-size: 1rem;
         }
 
         .enterprise-photo-card {
@@ -772,6 +656,93 @@
             height: 100%;
             object-fit: cover;
             display: block;
+        }
+
+        .project-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 0.8rem;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+
+        .project-tab {
+            padding: 0.85rem 1.25rem;
+            border-radius: 999px;
+            border: 1px solid rgba(96,165,250,0.20);
+            background: rgba(59,130,246,0.10);
+            color: var(--text-main);
+            font-size: 0.74rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+        }
+
+        .project-tab.active {
+            background: linear-gradient(135deg, rgba(59,130,246,0.24), rgba(37,99,235,0.18));
+            border-color: rgba(96,165,250,0.40);
+        }
+
+        .project-panel {
+            display: none;
+        }
+
+        .project-panel.active {
+            display: block;
+        }
+
+        .project-category-title {
+            font-size: 1rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            margin-bottom: 1.4rem;
+            color: var(--text-main);
+            letter-spacing: 0.04em;
+        }
+
+        .project-placeholder {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 2rem;
+            border-radius: 1.6rem;
+            background: rgba(255,255,255,0.04);
+            border: 1px dashed rgba(96,165,250,0.24);
+            color: var(--text-soft);
+            text-align: center;
+        }
+
+        .school-project-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 1rem;
+        }
+
+        .school-project-card {
+            padding: 1.2rem;
+            border-radius: 1.3rem;
+            text-align: left;
+        }
+
+        .school-project-card h3 {
+            font-size: 0.82rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            color: var(--text-main);
+            line-height: 1.5;
+            margin-bottom: 0.7rem;
+        }
+
+        .school-project-card a {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+            padding: 0.7rem 1rem;
+            border-radius: 999px;
+            font-size: 0.66rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            background: linear-gradient(135deg, var(--accent), #1d4ed8);
+            color: white;
         }
 
         .contact-layout-pro {
@@ -790,7 +761,6 @@
             font-size: 1rem;
             font-weight: 900;
             text-transform: uppercase;
-            letter-spacing: 0.05em;
             color: var(--text-main);
             margin-bottom: 1.2rem;
         }
@@ -812,7 +782,6 @@
             text-transform: uppercase;
             color: var(--text-main);
             margin-bottom: 0.8rem;
-            letter-spacing: 0.04em;
         }
 
         .contact-intro p {
@@ -833,10 +802,6 @@
             border-radius: 1rem;
             background: rgba(255,255,255,0.04);
             border: 1px solid var(--border-soft);
-        }
-
-        body.light-mode .contact-info-item {
-            background: rgba(37,99,235,0.03);
         }
 
         .contact-icon-box {
@@ -895,15 +860,18 @@
 
         .contact-social-card:hover {
             transform: translateY(-3px);
-            background: rgba(59,130,246,0.16);
         }
 
-        .contact-social-card i {
-            font-size: 1.2rem;
+        @media (max-width: 1100px) {
+            .cert-grid-pro {
+                grid-template-columns: repeat(3, 1fr);
+            }
         }
 
         @media (max-width: 900px) {
-            .profile-layout {
+            .profile-layout,
+            .contact-layout-pro,
+            .school-project-grid {
                 grid-template-columns: 1fr;
             }
 
@@ -915,23 +883,30 @@
                 grid-template-columns: 1fr;
             }
 
-            .contact-layout-pro {
-                grid-template-columns: 1fr;
-            }
-
-            .cert-row {
-                grid-template-columns: 62px 1fr;
-            }
-
-            .cert-row-link {
-                grid-column: 1 / -1;
-                justify-self: start;
+            .cert-grid-pro {
+                grid-template-columns: repeat(2, 1fr);
             }
         }
 
         @media (max-width: 768px) {
-            .formation-card {
-                padding: 1.4rem;
+            .glass-sidebar {
+                display: none !important;
+            }
+
+            .mobile-topbar {
+                display: block;
+            }
+
+            .md\:ml-64 {
+                margin-left: 0 !important;
+            }
+
+            .bg-nebula {
+                background-attachment: scroll;
+            }
+
+            .cert-grid-pro {
+                grid-template-columns: 1fr;
             }
 
             .enterprise-actions {
@@ -951,13 +926,28 @@
 <body class="text-slate-100">
     <div class="page-bg"></div>
 
+    <div class="mobile-topbar md:hidden">
+        <div class="mobile-scroll-nav">
+            <a href="#accueil">Accueil</a>
+            <a href="#profil">Profil</a>
+            <a href="#formation">Formation</a>
+            <a href="#bts">BTS</a>
+            <a href="#competences">Compétences</a>
+            <a href="#certifications">Certification</a>
+            <a href="#tp">Projet</a>
+            <a href="#entreprise">Entreprise</a>
+            <a href="#veille">Veille</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </div>
+
     <aside class="fixed top-0 left-0 h-screen w-64 glass-sidebar hidden md:flex flex-col z-50">
         <div class="sidebar-header">
             <div class="sidebar-avatar">
                 <img src="photo like.jpg" alt="Photo de profil Alyssia Noireau">
             </div>
 
-            <h1 class="text-lg font-black neon-text uppercase leading-tight text-main">
+            <h1 class="text-lg font-black uppercase leading-tight text-main">
                 Alyssia<br><span class="text-blue-500">Noireau</span>
             </h1>
 
@@ -1010,8 +1000,8 @@
             <section id="accueil" class="min-h-screen flex flex-col justify-center items-center text-center px-8 bg-nebula">
                 <div class="hero-overlay"></div>
                 <div class="relative z-10">
-                    <h2 class="text-main text-5xl md:text-7xl font-black tracking-tighter uppercase neon-text">Alyssia Noireau</h2>
-                    <h3 id="typewriter" class="text-blue-400 text-xl md:text-3xl font-bold uppercase mt-8 neon-text typing min-h-[1.5em]"></h3>
+                    <h2 class="text-main text-5xl md:text-7xl font-black tracking-tighter uppercase">Alyssia Noireau</h2>
+                    <h3 id="typewriter" class="text-blue-400 text-xl md:text-3xl font-bold uppercase mt-8 typing min-h-[1.5em]"></h3>
                 </div>
             </section>
 
@@ -1028,21 +1018,10 @@
                     </div>
 
                     <div class="profile-links-grid">
-                        <a href="Professional CV Resume (1).pdf" target="_blank" class="profile-btn">
-                            Consulter CV
-                        </a>
-
-                        <a href="Professional CV Resume (1).pdf" download class="profile-btn">
-                            <span><i class="fa-solid fa-download mr-2"></i> Télécharger CV</span>
-                        </a>
-
-                        <a href="Tableau_de_Competences.pdf" target="_blank" class="profile-btn">
-                            Tableau de compétences
-                        </a>
-
-                        <a href="https://www.linkedin.com/in/alyssia-noireau" target="_blank" class="profile-btn">
-                            <span><i class="fa-brands fa-linkedin mr-2"></i> LinkedIn</span>
-                        </a>
+                        <a href="Professional CV Resume (1).pdf" target="_blank" class="profile-btn">Consulter CV</a>
+                        <a href="Professional CV Resume (1).pdf" download class="profile-btn"><span><i class="fa-solid fa-download mr-2"></i> Télécharger CV</span></a>
+                        <a href="Tableau_de_Competences.pdf" target="_blank" class="profile-btn">Tableau de compétences</a>
+                        <a href="https://www.linkedin.com/in/alyssia-noireau" target="_blank" class="profile-btn"><span><i class="fa-brands fa-linkedin mr-2"></i> LinkedIn</span></a>
                     </div>
                 </div>
 
@@ -1050,65 +1029,9 @@
                     <p>
                         Titulaire d'un Bac STMG avec une spécialité Mercatique, j'ai développé très tôt une vision transverse des enjeux de l'entreprise et du service client. Passionnée par l'innovation, j'ai fait le choix audacieux de m'orienter vers les systèmes d'information afin de maîtriser les leviers techniques qui soutiennent aujourd'hui toute stratégie d'entreprise.
                     </p>
-
                     <p class="mt-4">
                         Actuellement en 2e année de BTS SIO option SISR à l’école ORT Daniel Mayer, je consolide mes compétences en administration systèmes et réseaux. Mon alternance chez ista, leader international de la donnée énergétique, est un véritable accélérateur : j'y assure le maintien en condition opérationnelle d'un parc complexe en manipulant des solutions de pointe comme Baramundi, Azure et Jira.
                     </p>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div class="details-item glass-card white-border-card p-6 rounded-[2rem] cursor-pointer hover:bg-white/5 transition-all" onclick="this.classList.toggle('active')">
-                        <div class="flex justify-between items-center font-black uppercase text-xs text-blue-400">
-                            <span>Missions en entreprise</span>
-                            <i class="fa-solid fa-plus transition-transform"></i>
-                        </div>
-
-                        <div class="details-content text-[11px] text-soft">
-                            <ul class="list-disc pl-4 space-y-1 text-main">
-                                <li>Gestion centralisée du parc informatique</li>
-                                <li>Administration hybride des identités (Entra ID / AD)</li>
-                                <li>Pilotage de l'activité et support ITSM via Jira</li>
-                                <li>Gestion de l'infrastructure de téléphonie (Snom)</li>
-                                <li>Sécurisation et maintenance du poste de travail</li>
-                                <li>Collaboration au sein d'une DSI internationale</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="details-item glass-card white-border-card p-6 rounded-[2rem] cursor-pointer hover:bg-white/5 transition-all" onclick="this.classList.toggle('active')">
-                        <div class="flex justify-between items-center font-black uppercase text-xs text-blue-400">
-                            <span>Soft Skills</span>
-                            <i class="fa-solid fa-plus transition-transform"></i>
-                        </div>
-
-                        <div class="details-content text-[11px] text-soft">
-                            <ul class="list-disc pl-4 space-y-1 text-main">
-                                <li>Organisation et gestion des priorités</li>
-                                <li>Esprit d'analyse et résolution de problèmes</li>
-                                <li>Adaptabilité et curiosité technologique</li>
-                                <li>Rigueur et sens du détail</li>
-                                <li>Esprit d'équipe et collaboration</li>
-                                <li>Capacité d'écoute et empathie</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="details-item glass-card white-border-card p-6 rounded-[2rem] cursor-pointer hover:bg-white/5 transition-all" onclick="this.classList.toggle('active')">
-                        <div class="flex justify-between items-center font-black uppercase text-xs text-blue-400">
-                            <span>Centres d'intérêt</span>
-                            <i class="fa-solid fa-plus transition-transform"></i>
-                        </div>
-
-                        <div class="details-content text-[11px] text-main leading-relaxed">
-                            La veille technologique et l'innovation<br>
-                            Le voyage et l'ouverture culturelle<br>
-                            Les activités sportives<br>
-                            La créativité digitale<br>
-                            La lecture et les podcasts<br>
-                            Le bénévolat et les projets collaboratifs<br>
-                            L'organisation d'événements
-                        </div>
-                    </div>
                 </div>
             </section>
 
@@ -1120,30 +1043,22 @@
                 <div class="formation-grid">
                     <div class="formation-card shadow-xl">
                         <h3 class="text-xl font-black text-blue-400 uppercase">Master MIAGE (En projet) <span class="text-muted text-sm ml-2">2027 - 2029</span></h3>
-                        <p class="mt-3 text-soft">
-                            Ce diplôme d'excellence vise à parfaire ma maîtrise du pilotage des systèmes d'information. Il allie expertise technique de pointe et stratégies de management organisationnel.
-                        </p>
+                        <p class="mt-3 text-soft">Ce diplôme d'excellence vise à parfaire ma maîtrise du pilotage des systèmes d'information. Il allie expertise technique de pointe et stratégies de management organisationnel.</p>
                     </div>
 
                     <div class="formation-card shadow-xl">
                         <h3 class="text-xl font-black text-blue-400 uppercase">Licence Chef de Projet (CNAM) <span class="text-muted text-sm ml-2">2026 - 2027</span></h3>
-                        <p class="mt-3 text-soft">
-                            Une année de spécialisation intensive pour développer une vision à 360° du cycle de vie d'un projet informatique. L'accent est mis sur la conception sécurisée, l'organisation et l'exploitation opérationnelle.
-                        </p>
+                        <p class="mt-3 text-soft">Une année de spécialisation intensive pour développer une vision à 360° du cycle de vie d'un projet informatique. L'accent est mis sur la conception sécurisée, l'organisation et l'exploitation opérationnelle.</p>
                     </div>
 
                     <div class="formation-card shadow-xl">
                         <h3 class="text-xl font-black text-blue-400 uppercase">BTS SIO option SISR (ORT Daniel Mayer) <span class="text-muted text-sm ml-2">2024 - 2026</span></h3>
-                        <p class="mt-3 text-soft">
-                            Formation spécialisée en systèmes et réseaux. J’y développe des compétences en administration, cybersécurité, support et gestion des infrastructures informatiques dans un cadre professionnalisant.
-                        </p>
+                        <p class="mt-3 text-soft">Formation spécialisée en systèmes et réseaux. J’y développe des compétences en administration, cybersécurité, support et gestion des infrastructures informatiques dans un cadre professionnalisant.</p>
                     </div>
 
                     <div class="formation-card shadow-xl">
                         <h3 class="text-xl font-black text-blue-400 uppercase">Baccalauréat STMG (Jean Zay) <span class="text-muted text-sm ml-2">Diplômée en 2024</span></h3>
-                        <p class="mt-3 text-soft">
-                            Ce cursus m'a permis d'acquérir une compréhension solide des mécanismes économiques, juridiques et organisationnels de l'entreprise. La spécialité Mercatique a renforcé mon sens de l'analyse et de la relation client.
-                        </p>
+                        <p class="mt-3 text-soft">Ce cursus m'a permis d'acquérir une compréhension solide des mécanismes économiques, juridiques et organisationnels de l'entreprise. La spécialité Mercatique a renforcé mon sens de l'analyse et de la relation client.</p>
                     </div>
                 </div>
             </section>
@@ -1161,7 +1076,7 @@
                             Le BTS SIO est une formation en deux ans qui prépare aux métiers de l’informatique en entreprise. Elle permet d’acquérir des compétences techniques, organisationnelles et professionnelles dans les domaines du développement, de l’administration système, du réseau, de la cybersécurité et du support aux utilisateurs.
                         </p>
                         <p class="text-soft leading-relaxed text-justify mt-4">
-                            Je prépare ce BTS dans l’option SISR (Solutions d’Infrastructure, Systèmes et Réseaux), avec un parcours incluant l’option espagnol ainsi qu’un parcours de certification. Cet ensemble renforce à la fois mes compétences techniques, ma professionnalisation et mon ouverture à des contextes de travail variés.
+                            Je prépare ce BTS dans l’option SISR (Solutions d’Infrastructure, Systèmes et Réseaux), avec un parcours incluant l’option espagnol ainsi qu’un parcours de certification.
                         </p>
                     </div>
 
@@ -1170,49 +1085,13 @@
                         <div class="space-y-6">
                             <div>
                                 <h4 class="text-lg font-black text-blue-400 uppercase">Option SLAM</h4>
-                                <p class="text-soft mt-2 text-justify">
-                                    L’option SLAM (Solutions Logicielles et Applications Métiers) forme aux métiers du développement logiciel, de la programmation, de la conception d’applications web et de la gestion des bases de données.
-                                </p>
+                                <p class="text-soft mt-2 text-justify">L’option SLAM forme aux métiers du développement logiciel, de la programmation, de la conception d’applications web et de la gestion des bases de données.</p>
                             </div>
                             <div>
                                 <h4 class="text-lg font-black text-blue-400 uppercase">Option SISR</h4>
-                                <p class="text-soft mt-2 text-justify">
-                                    L’option SISR (Solutions d’Infrastructure, Systèmes et Réseaux) est orientée vers l’administration des systèmes, la gestion des réseaux, la virtualisation, le cloud, la cybersécurité et le support informatique.
-                                </p>
+                                <p class="text-soft mt-2 text-justify">L’option SISR est orientée vers l’administration des systèmes, la gestion des réseaux, la virtualisation, le cloud, la cybersécurité et le support informatique.</p>
                             </div>
                         </div>
-                    </div>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10">
-                    <div class="glass-card white-border-card p-6 rounded-2xl">
-                        <div class="flex items-center gap-3 mb-3">
-                            <i class="fa-solid fa-user-shield text-blue-400 text-xl"></i>
-                            <h3 class="font-black uppercase text-sm text-main">Pourquoi SISR ?</h3>
-                        </div>
-                        <p class="text-sm text-soft text-justify">
-                            J’ai choisi l’option SISR car elle correspond à mon attrait pour les infrastructures techniques, la résolution de problèmes, la sécurisation des environnements numériques ainsi que l’administration système et réseau.
-                        </p>
-                    </div>
-
-                    <div class="glass-card white-border-card p-6 rounded-2xl">
-                        <div class="flex items-center gap-3 mb-3">
-                            <i class="fa-solid fa-briefcase text-blue-400 text-xl"></i>
-                            <h3 class="font-black uppercase text-sm text-main">Débouchés</h3>
-                        </div>
-                        <p class="text-sm text-soft text-justify">
-                            Le BTS SIO permet d’accéder à des postes comme technicien systèmes et réseaux, administrateur junior, technicien support, technicien cybersécurité, ou de poursuivre vers une licence, un bachelor ou un master spécialisé.
-                        </p>
-                    </div>
-
-                    <div class="glass-card white-border-card p-6 rounded-2xl">
-                        <div class="flex items-center gap-3 mb-3">
-                            <i class="fa-solid fa-file-lines text-blue-400 text-xl"></i>
-                            <h3 class="font-black uppercase text-sm text-main">Épreuve E5</h3>
-                        </div>
-                        <p class="text-sm text-soft text-justify">
-                            L’épreuve E5 valorise les compétences professionnelles acquises pendant la formation. Elle met en avant les projets, les réalisations techniques, les compétences mobilisées ainsi que la capacité à présenter un environnement professionnel cohérent, structuré et argumenté.
-                        </p>
                     </div>
                 </div>
             </section>
@@ -1223,82 +1102,52 @@
                 <div class="grid grid-cols-2 sm:grid-cols-5 gap-8">
                     <div class="comp-card-minimal group" onclick="this.classList.toggle('active')">
                         <i class="fa-brands fa-linux text-6xl text-[#FCC624] drop-shadow-lg"></i>
-                        <div class="comp-detail-minimal">
-                            <b>Linux</b><br>
-                            Indispensable pour montrer la maîtrise de l’administration système et de la ligne de commande dans un environnement professionnel.
-                        </div>
+                        <div class="comp-detail-minimal"><b>Linux</b><br>Indispensable pour montrer la maîtrise de l’administration système et de la ligne de commande dans un environnement professionnel.</div>
                     </div>
 
                     <div class="comp-card-minimal group" onclick="this.classList.toggle('active')">
                         <i class="fa-brands fa-docker text-6xl text-[#2496ED] drop-shadow-lg"></i>
-                        <div class="comp-detail-minimal">
-                            <b>Docker</b><br>
-                            Excellente compétence pour illustrer la conteneurisation, la modernisation des environnements et une vraie montée en niveau sur le profil technique.
-                        </div>
+                        <div class="comp-detail-minimal"><b>Docker</b><br>Excellente compétence pour illustrer la conteneurisation, la modernisation des environnements et une vraie montée en niveau sur le profil technique.</div>
                     </div>
 
                     <div class="comp-card-minimal group" onclick="this.classList.toggle('active')">
                         <i class="fa-brands fa-windows text-6xl text-[#0078d7] drop-shadow-lg"></i>
-                        <div class="comp-detail-minimal">
-                            <b>Windows</b><br>
-                            Essentiel en entreprise pour mettre en avant l’administration de postes, Active Directory, GPO et le support utilisateurs.
-                        </div>
+                        <div class="comp-detail-minimal"><b>Windows</b><br>Essentiel en entreprise pour mettre en avant l’administration de postes, Active Directory, GPO et le support utilisateurs.</div>
                     </div>
 
                     <div class="comp-card-minimal group" onclick="this.classList.toggle('active')">
                         <i class="fa-solid fa-server text-6xl text-[#60A5FA] drop-shadow-lg"></i>
-                        <div class="comp-detail-minimal">
-                            <b>Serveurs / Stockage</b><br>
-                            Compétence clé pour valoriser l’administration système, le stockage, les services serveurs et l’infrastructure globale.
-                        </div>
+                        <div class="comp-detail-minimal"><b>Serveurs / Stockage</b><br>Compétence clé pour valoriser l’administration système, le stockage, les services serveurs et l’infrastructure globale.</div>
                     </div>
 
                     <div class="comp-card-minimal group" onclick="this.classList.toggle('active')">
                         <i class="fa-solid fa-network-wired text-6xl text-[#22c55e] drop-shadow-lg"></i>
-                        <div class="comp-detail-minimal">
-                            <b>Réseau</b><br>
-                            Indispensable pour montrer la compréhension de l’architecture réseau, du routage, de la connectivité et des échanges entre équipements.
-                        </div>
+                        <div class="comp-detail-minimal"><b>Réseau</b><br>Indispensable pour montrer la compréhension de l’architecture réseau, du routage, de la connectivité et des échanges entre équipements.</div>
                     </div>
 
                     <div class="comp-card-minimal group" onclick="this.classList.toggle('active')">
                         <i class="fa-solid fa-ticket text-6xl text-[#f59e0b] drop-shadow-lg"></i>
-                        <div class="comp-detail-minimal">
-                            <b>Ticketing / Supervision</b><br>
-                            Avec des outils comme GLPI ou Zabbix, cette compétence montre la gestion des incidents, le suivi du parc et la supervision au quotidien.
-                        </div>
+                        <div class="comp-detail-minimal"><b>Ticketing / Supervision</b><br>Avec des outils comme GLPI ou Zabbix, cette compétence montre la gestion des incidents, le suivi du parc et la supervision au quotidien.</div>
                     </div>
 
                     <div class="comp-card-minimal group" onclick="this.classList.toggle('active')">
                         <i class="fa-solid fa-cloud text-6xl text-[#38bdf8] drop-shadow-lg"></i>
-                        <div class="comp-detail-minimal">
-                            <b>Cloud / Virtualisation</b><br>
-                            Que ce soit avec Azure, AWS ou VMware, cette compétence valorise les VM, les services cloud et une approche actuelle de l’infrastructure.
-                        </div>
+                        <div class="comp-detail-minimal"><b>Cloud / Virtualisation</b><br>Que ce soit avec Azure, AWS ou VMware, cette compétence valorise les VM, les services cloud et une approche actuelle de l’infrastructure.</div>
                     </div>
 
                     <div class="comp-card-minimal group" onclick="this.classList.toggle('active')">
                         <i class="fa-solid fa-lock text-6xl text-[#ef4444] drop-shadow-lg"></i>
-                        <div class="comp-detail-minimal">
-                            <b>Cybersécurité</b><br>
-                            Très valorisée pour représenter la mise en place de pare-feux, de politiques de sécurité, de contrôle d’accès et de bonnes pratiques.
-                        </div>
+                        <div class="comp-detail-minimal"><b>Cybersécurité</b><br>Très valorisée pour représenter la mise en place de pare-feux, de politiques de sécurité, de contrôle d’accès et de bonnes pratiques.</div>
                     </div>
 
                     <div class="comp-card-minimal group" onclick="this.classList.toggle('active')">
                         <i class="fa-brands fa-git-alt text-6xl text-[#f97316] drop-shadow-lg"></i>
-                        <div class="comp-detail-minimal">
-                            <b>Gestion de version (Git)</b><br>
-                            Un vrai marqueur de professionnalisme pour versionner ses scripts, suivre les évolutions d’un projet et structurer son travail.
-                        </div>
+                        <div class="comp-detail-minimal"><b>Gestion de version (Git)</b><br>Un vrai marqueur de professionnalisme pour versionner ses scripts, suivre les évolutions d’un projet et structurer son travail.</div>
                     </div>
 
                     <div class="comp-card-minimal group" onclick="this.classList.toggle('active')">
                         <i class="fa-solid fa-file-lines text-6xl text-[#a78bfa] drop-shadow-lg"></i>
-                        <div class="comp-detail-minimal">
-                            <b>Documentation</b><br>
-                            Montrer que l’on sait documenter ses procédures, ses interventions et ses projets est une compétence essentielle pour le jury.
-                        </div>
+                        <div class="comp-detail-minimal"><b>Documentation</b><br>Montrer que l’on sait documenter ses procédures, ses interventions et ses projets est une compétence essentielle pour le jury.</div>
                     </div>
                 </div>
             </section>
@@ -1308,100 +1157,112 @@
                     <h2 class="text-3xl font-black uppercase section-title text-main">Certifications</h2>
                 </div>
 
-                <div class="cert-list-pro">
-                    <div class="cert-row">
-                        <div class="cert-row-icon">
-                            <i class="fa-solid fa-network-wired"></i>
-                        </div>
-                        <div class="cert-row-text">
-                            <h3>CCNA 1</h3>
-                            <p>Cisco Introduction to Networks - validation des bases réseaux, équipements et architecture.</p>
-                        </div>
-                        <a href="CCNA1.pdf" target="_blank" class="cert-row-link">
-                            <i class="fa-solid fa-file-pdf"></i>
-                            Ouvrir
-                        </a>
+                <div class="cert-grid-pro">
+                    <div class="cert-box">
+                        <i class="fa-solid fa-network-wired"></i>
+                        <h3>CCNA 1</h3>
+                        <p>Introduction to Networks</p>
+                        <a href="CCNA1.pdf" target="_blank"><i class="fa-solid fa-file-pdf"></i> Ouvrir</a>
                     </div>
 
-                    <div class="cert-row">
-                        <div class="cert-row-icon">
-                            <i class="fa-solid fa-route"></i>
-                        </div>
-                        <div class="cert-row-text">
-                            <h3>CCNA 2</h3>
-                            <p>Switching and Routing Essentials - approfondissement des réseaux, commutation et routage.</p>
-                        </div>
-                        <a href="CCNA2.pdf" target="_blank" class="cert-row-link">
-                            <i class="fa-solid fa-file-pdf"></i>
-                            Ouvrir
-                        </a>
+                    <div class="cert-box">
+                        <i class="fa-solid fa-route"></i>
+                        <h3>CCNA 2</h3>
+                        <p>Switching and Routing Essentials</p>
+                        <a href="CCNA2.pdf" target="_blank"><i class="fa-solid fa-file-pdf"></i> Ouvrir</a>
                     </div>
 
-                    <div class="cert-row">
-                        <div class="cert-row-icon">
-                            <i class="fa-solid fa-scale-balanced"></i>
-                        </div>
-                        <div class="cert-row-text">
-                            <h3>CNIL</h3>
-                            <p>Protection des données personnelles et sensibilisation aux bonnes pratiques liées au RGPD.</p>
-                        </div>
-                        <a href="CNIL.pdf" target="_blank" class="cert-row-link">
-                            <i class="fa-solid fa-file-pdf"></i>
-                            Ouvrir
-                        </a>
+                    <div class="cert-box">
+                        <i class="fa-solid fa-scale-balanced"></i>
+                        <h3>CNIL</h3>
+                        <p>Protection des données personnelles</p>
+                        <a href="CNIL.pdf" target="_blank"><i class="fa-solid fa-file-pdf"></i> Ouvrir</a>
                     </div>
 
-                    <div class="cert-row">
-                        <div class="cert-row-icon">
-                            <i class="fa-solid fa-shield-virus"></i>
-                        </div>
-                        <div class="cert-row-text">
-                            <h3>ANSSI</h3>
-                            <p>SecNumAcadémie - fondamentaux de cybersécurité, menaces, protection et hygiène numérique.</p>
-                        </div>
-                        <a href="ANSSI.pdf" target="_blank" class="cert-row-link">
-                            <i class="fa-solid fa-file-pdf"></i>
-                            Ouvrir
-                        </a>
+                    <div class="cert-box">
+                        <i class="fa-solid fa-shield-virus"></i>
+                        <h3>ANSSI</h3>
+                        <p>SecNumAcadémie</p>
+                        <a href="ANSSI.pdf" target="_blank"><i class="fa-solid fa-file-pdf"></i> Ouvrir</a>
                     </div>
 
-                    <div class="cert-row">
-                        <div class="cert-row-icon">
-                            <i class="fa-solid fa-desktop"></i>
-                        </div>
-                        <div class="cert-row-text">
-                            <h3>PIX</h3>
-                            <p>Évaluation et valorisation des compétences numériques dans un cadre académique et professionnel.</p>
-                        </div>
-                        <a href="PIX.pdf" target="_blank" class="cert-row-link">
-                            <i class="fa-solid fa-file-pdf"></i>
-                            Ouvrir
-                        </a>
+                    <div class="cert-box">
+                        <i class="fa-solid fa-desktop"></i>
+                        <h3>PIX</h3>
+                        <p>Compétences numériques</p>
+                        <a href="PIX.pdf" target="_blank"><i class="fa-solid fa-file-pdf"></i> Ouvrir</a>
                     </div>
                 </div>
             </section>
 
             <section id="tp" class="max-w-6xl mx-auto px-8 py-24 scroll-mt-24 text-center">
                 <div class="text-center mb-16">
-                    <h2 class="text-3xl font-black uppercase section-title text-main">Projets Techniques</h2>
+                    <h2 class="text-3xl font-black uppercase section-title text-main">Projets</h2>
                 </div>
 
-                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
-                    <a href="TP1.pdf" target="_blank" class="glass-card p-6 rounded-xl hover:border-blue-500 transition-all group"><i class="fa-solid fa-users-gear text-2xl text-blue-400 mb-2"></i><p class="font-black uppercase text-[9px] text-main">TP 1 : AD DS</p></a>
-                    <a href="TP2.pdf" target="_blank" class="glass-card p-6 rounded-xl hover:border-blue-500 transition-all group"><i class="fa-solid fa-ticket text-2xl text-blue-400 mb-2"></i><p class="font-black uppercase text-[9px] text-main">TP 2 : GLPI / Helpdesk</p></a>
-                    <a href="TP3.pdf" target="_blank" class="glass-card p-6 rounded-xl hover:border-blue-500 transition-all group"><i class="fa-solid fa-network-wired text-2xl text-blue-400 mb-2"></i><p class="font-black uppercase text-[9px] text-main">TP 3 : VLANs & Routing</p></a>
-                    <a href="TP4.pdf" target="_blank" class="glass-card p-6 rounded-xl hover:border-blue-500 transition-all group"><i class="fa-solid fa-server text-2xl text-blue-400 mb-2"></i><p class="font-black uppercase text-[9px] text-main">TP 4 : Windows Server</p></a>
-                    <a href="TP5.pdf" target="_blank" class="glass-card p-6 rounded-xl hover:border-blue-500 transition-all group"><i class="fa-solid fa-eye text-2xl text-blue-400 mb-2"></i><p class="font-black uppercase text-[9px] text-main">TP 5 : Supervision Zabbix</p></a>
-                    <a href="TP6.pdf" target="_blank" class="glass-card p-6 rounded-xl hover:border-blue-500 transition-all group"><i class="fa-solid fa-shield-halved text-2xl text-blue-400 mb-2"></i><p class="font-black uppercase text-[9px] text-main">TP 6 : Sécurité VPN</p></a>
-                    <a href="TP7.pdf" target="_blank" class="glass-card p-6 rounded-xl hover:border-blue-500 transition-all group"><i class="fa-brands fa-linux text-2xl text-blue-400 mb-2"></i><p class="font-black uppercase text-[9px] text-main">TP 7 : Linux Debian</p></a>
-                    <a href="TP8.pdf" target="_blank" class="glass-card p-6 rounded-xl hover:border-blue-500 transition-all group"><i class="fa-solid fa-database text-2xl text-blue-400 mb-2"></i><p class="font-black uppercase text-[9px] text-main">TP 8 : Bases de données</p></a>
-                    <a href="TP9.pdf" target="_blank" class="glass-card p-6 rounded-xl hover:border-blue-500 transition-all group"><i class="fa-solid fa-cloud text-2xl text-blue-400 mb-2"></i><p class="font-black uppercase text-[9px] text-main">TP 9 : Services Cloud</p></a>
-                    <a href="TP10.pdf" target="_blank" class="glass-card p-6 rounded-xl hover:border-blue-500 transition-all group"><i class="fa-solid fa-terminal text-2xl text-blue-400 mb-2"></i><p class="font-black uppercase text-[9px] text-main">TP 10 : Bash & Scripts</p></a>
-                    <a href="TP11.pdf" target="_blank" class="glass-card p-6 rounded-xl hover:border-blue-500 transition-all group"><i class="fa-solid fa-microchip text-2xl text-blue-400 mb-2"></i><p class="font-black uppercase text-[9px] text-main">TP 11 : Hardware & BIOS</p></a>
-                    <a href="TP12.pdf" target="_blank" class="glass-card p-6 rounded-xl hover:border-blue-500 transition-all group"><i class="fa-solid fa-file-shield text-2xl text-blue-400 mb-2"></i><p class="font-black uppercase text-[9px] text-main">TP 12 : Certificats SSL</p></a>
-                    <a href="TP13.pdf" target="_blank" class="glass-card p-6 rounded-xl hover:border-blue-500 transition-all group"><i class="fa-solid fa-wifi text-2xl text-blue-400 mb-2"></i><p class="font-black uppercase text-[9px] text-main">TP 13 : Bornes WiFi</p></a>
-                    <a href="TP14.pdf" target="_blank" class="glass-card p-6 rounded-xl hover:border-blue-500 transition-all group"><i class="fa-solid fa-laptop-code text-2xl text-blue-400 mb-2"></i><p class="font-black uppercase text-[9px] text-main">TP 14 : Python Dev</p></a>
-                    <a href="TP15.pdf" target="_blank" class="glass-card p-6 rounded-xl hover:border-blue-500 transition-all group"><i class="fa-solid fa-folder-tree text-2xl text-blue-400 mb-2"></i><p class="font-black uppercase text-[9px] text-main">TP 15 : Arborescence</p></a>
+                <div class="project-tabs">
+                    <button class="project-tab active" data-tab="entreprise">Projets d'entreprise</button>
+                    <button class="project-tab" data-tab="cfa">Projets CFA</button>
+                    <button class="project-tab" data-tab="perso">Projets personnels</button>
+                </div>
+
+                <div id="project-entreprise" class="project-panel active">
+                    <h3 class="project-category-title">Projets d'entreprise</h3>
+                    <div class="project-placeholder glass-card">
+                        Cette rubrique est prête à accueillir tes projets réalisés en entreprise.
+                    </div>
+                </div>
+
+                <div id="project-cfa" class="project-panel">
+                    <h3 class="project-category-title">Projet CFA</h3>
+                    <div class="school-project-grid">
+                        <div class="school-project-card glass-card">
+                            <h3>Campagne de phishing avec GoPhish</h3>
+                            <a href="Campagne de phishing avec GoPish.pdf" target="_blank"><i class="fa-solid fa-file-pdf"></i> Compte rendu</a>
+                        </div>
+
+                        <div class="school-project-card glass-card">
+                            <h3>IPv6</h3>
+                            <a href="IPV6.pdf" target="_blank"><i class="fa-solid fa-file-pdf"></i> Compte rendu</a>
+                        </div>
+
+                        <div class="school-project-card glass-card">
+                            <h3>Mise en place des ACL</h3>
+                            <a href="Mise en place des ACL.pdf" target="_blank"><i class="fa-solid fa-file-pdf"></i> Compte rendu</a>
+                        </div>
+
+                        <div class="school-project-card glass-card">
+                            <h3>Projet routage dynamique OSPF réalité</h3>
+                            <a href="PROJET ROUTAGE DYNAMIQUE OSPF réalité.pdf" target="_blank"><i class="fa-solid fa-file-pdf"></i> Compte rendu</a>
+                        </div>
+
+                        <div class="school-project-card glass-card">
+                            <h3>Redondance de passerelle avec répartition de charge</h3>
+                            <a href="Redondance de passerelle avec répartition de charge.pdf" target="_blank"><i class="fa-solid fa-file-pdf"></i> Compte rendu</a>
+                        </div>
+
+                        <div class="school-project-card glass-card">
+                            <h3>Routage dynamique OSPF</h3>
+                            <a href="Routage dynamique OSFP.pdf" target="_blank"><i class="fa-solid fa-file-pdf"></i> Compte rendu</a>
+                        </div>
+
+                        <div class="school-project-card glass-card">
+                            <h3>Routage inter-VLAN et dynamique</h3>
+                            <a href="Routage inter-VLAN et Dynamique.pdf" target="_blank"><i class="fa-solid fa-file-pdf"></i> Compte rendu</a>
+                        </div>
+
+                        <div class="school-project-card glass-card">
+                            <h3>Service DHCP DNS</h3>
+                            <a href="Service DHCP DNS.pdf" target="_blank"><i class="fa-solid fa-file-pdf"></i> Compte rendu</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="project-perso" class="project-panel">
+                    <h3 class="project-category-title">Projets personnels</h3>
+                    <div class="project-placeholder glass-card">
+                        Cette rubrique est prête à accueillir tes projets personnels.
+                    </div>
                 </div>
             </section>
 
@@ -1436,7 +1297,7 @@
                 </div>
 
                 <div class="enterprise-actions">
-                    <a href="Presentation_Ista.pdf" target="_blank" class="enterprise-btn">
+                    <a href="Entreprise.pdf" target="_blank" class="enterprise-btn">
                         <i class="fa-solid fa-file-powerpoint"></i>
                         Présentation entreprise
                     </a>
@@ -1454,7 +1315,7 @@
                             <i class="fa-solid fa-plus"></i>
                         </div>
                         <div class="details-content text-sm text-soft leading-relaxed text-justify">
-                            ista est l'un des leaders mondiaux de la gestion des données énergétiques, spécialisé dans l'amélioration de l'efficacité énergétique des bâtiments. En France, la société est structurée sous le statut de SAS et s'appuie sur une force humaine d'environ 800 collaborateurs. Le groupe accompagne ses clients dans la transition durable grâce à des services innovants de comptage et de facturation. Cette expertise permet de répondre aux enjeux écologiques actuels tout en optimisant la consommation de ressources.
+                            ista est l'un des leaders mondiaux de la gestion des données énergétiques, spécialisé dans l'amélioration de l'efficacité énergétique des bâtiments.
                         </div>
                     </div>
 
@@ -1464,7 +1325,7 @@
                             <i class="fa-solid fa-plus"></i>
                         </div>
                         <div class="details-content text-sm text-soft leading-relaxed text-justify">
-                            Le groupe possède une envergure internationale majeure avec une présence active dans plus de 20 pays, principalement en Europe et en Asie. Avec un chiffre d'affaires annuel dépassant le milliard d'euros, ista s'impose comme un acteur économique solide et pérenne. Globalement, l'entreprise gère un parc impressionnant de plus de 45 millions d'appareils connectés. Ce réseau mondial permet de collecter et d'analyser les données de 14 millions de logements et locaux commerciaux.
+                            Le groupe possède une envergure internationale majeure avec une présence active dans plus de 20 pays.
                         </div>
                     </div>
 
@@ -1474,7 +1335,7 @@
                             <i class="fa-solid fa-plus"></i>
                         </div>
                         <div class="details-content text-sm text-soft leading-relaxed text-justify">
-                            Le cœur de métier d'ista repose sur l'individualisation des frais de chauffage et d'eau au sein des habitations collectives. Grâce à des solutions de télérelève performantes, l'entreprise permet une gestion précise et transparente des consommations énergétiques. Ces services permettent aux résidents de devenir acteurs de leur consommation et de réduire leur impact environnemental. En digitalisant ces données, ista simplifie la gestion immobilière tout en garantissant une répartition équitable des charges.
+                            Le cœur de métier d'ista repose sur l'individualisation des frais de chauffage et d'eau au sein des habitations collectives.
                         </div>
                     </div>
 
@@ -1484,7 +1345,7 @@
                             <i class="fa-solid fa-plus"></i>
                         </div>
                         <div class="details-content text-sm text-soft leading-relaxed text-justify">
-                            En tant qu'apprentie Technicienne Réseaux et Systèmes, j'évolue au sein d'une DSI internationale aux enjeux technologiques élevés. Ma mission consiste à garantir le maintien en condition opérationnelle du parc informatique via des outils de pointe comme Baramundi et Microsoft Azure. J'assure également le support utilisateur et la gestion des identités dans un environnement ITSM structuré. Ce rôle me permet de développer une polyvalence technique essentielle tout en participant activement à la transformation digitale du groupe.
+                            En tant qu'apprentie Technicienne Réseaux et Systèmes, j'évolue au sein d'une DSI internationale aux enjeux technologiques élevés.
                         </div>
                     </div>
                 </div>
@@ -1496,55 +1357,43 @@
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
-                    <div class="veille-item glass-card rounded-2xl overflow-hidden shadow-2xl transition-all" onclick="this.classList.toggle('active')">
-                        <div class="veille-header">
-                            <span>Cybersécurité & CERT-FR</span>
-                            <i class="fa-solid fa-plus"></i>
-                        </div>
-                        <div class="veille-content space-y-4 p-6">
-                            <a href="https://www.cert.ssi.gouv.fr/" target="_blank" class="block text-blue-400 font-bold underline text-xs">CERT-FR (ANSSI) - Alertes Officielles</a>
-                            <a href="https://thehackernews.com/" target="_blank" class="block text-blue-400 font-bold underline text-xs">The Hacker News - Actu Internationale</a>
-                            <a href="https://www.zataz.com/" target="_blank" class="block text-blue-400 font-bold underline text-xs">Zataz News - Sécurité & Data</a>
-                            <a href="https://www.lemagit.fr/securite" target="_blank" class="block text-blue-400 font-bold underline text-xs">LeMagIT Sécurité - Analyses DSI</a>
+                    <div class="glass-card rounded-2xl p-6">
+                        <h3 class="font-black uppercase text-white bg-purple-500 rounded-lg px-5 py-4 mb-4">Cybersécurité & CERT-FR</h3>
+                        <div class="space-y-3">
+                            <a href="https://www.cert.ssi.gouv.fr/" target="_blank" class="block text-blue-400 font-bold underline text-xs">CERT-FR (ANSSI)</a>
+                            <a href="https://thehackernews.com/" target="_blank" class="block text-blue-400 font-bold underline text-xs">The Hacker News</a>
+                            <a href="https://www.zataz.com/" target="_blank" class="block text-blue-400 font-bold underline text-xs">Zataz</a>
+                            <a href="https://www.lemagit.fr/securite" target="_blank" class="block text-blue-400 font-bold underline text-xs">LeMagIT Sécurité</a>
                         </div>
                     </div>
 
-                    <div class="veille-item glass-card rounded-2xl overflow-hidden shadow-2xl transition-all" onclick="this.classList.toggle('active')">
-                        <div class="veille-header">
-                            <span>Cloud Computing & Azure</span>
-                            <i class="fa-solid fa-plus"></i>
-                        </div>
-                        <div class="veille-content space-y-4 p-6">
-                            <a href="https://azure.microsoft.com/fr-fr/blog/" target="_blank" class="block text-blue-400 font-bold underline text-xs">Azure Blog - Microsoft</a>
-                            <a href="https://aws.amazon.com/fr/blogs/aws/" target="_blank" class="block text-blue-400 font-bold underline text-xs">AWS Blog France - Amazon</a>
-                            <a href="https://www.veeam.com/blog/fr" target="_blank" class="block text-blue-400 font-bold underline text-xs">Veeam Blog - Backup & Cloud</a>
+                    <div class="glass-card rounded-2xl p-6">
+                        <h3 class="font-black uppercase text-white bg-purple-500 rounded-lg px-5 py-4 mb-4">Cloud Computing & Azure</h3>
+                        <div class="space-y-3">
+                            <a href="https://azure.microsoft.com/fr-fr/blog/" target="_blank" class="block text-blue-400 font-bold underline text-xs">Azure Blog</a>
+                            <a href="https://aws.amazon.com/fr/blogs/aws/" target="_blank" class="block text-blue-400 font-bold underline text-xs">AWS Blog</a>
+                            <a href="https://www.veeam.com/blog/fr" target="_blank" class="block text-blue-400 font-bold underline text-xs">Veeam Blog</a>
                             <a href="https://www.lemondeinformatique.fr/cloud-computing-128.html" target="_blank" class="block text-blue-400 font-bold underline text-xs">Le Monde Informatique Cloud</a>
                         </div>
                     </div>
 
-                    <div class="veille-item glass-card rounded-2xl overflow-hidden shadow-2xl transition-all" onclick="this.classList.toggle('active')">
-                        <div class="veille-header">
-                            <span>Admin Système</span>
-                            <i class="fa-solid fa-plus"></i>
-                        </div>
-                        <div class="veille-content space-y-4 p-6">
-                            <a href="https://www.it-connect.fr/" target="_blank" class="block text-blue-400 font-bold underline text-xs">IT-Connect - Tutoriels & News</a>
+                    <div class="glass-card rounded-2xl p-6">
+                        <h3 class="font-black uppercase text-white bg-purple-500 rounded-lg px-5 py-4 mb-4">Admin Système</h3>
+                        <div class="space-y-3">
+                            <a href="https://www.it-connect.fr/" target="_blank" class="block text-blue-400 font-bold underline text-xs">IT-Connect</a>
                             <a href="https://www.journaldunet.com/solutions/dsi/" target="_blank" class="block text-blue-400 font-bold underline text-xs">JDN Solutions DSI</a>
-                            <a href="https://linuxfr.org/" target="_blank" class="block text-blue-400 font-bold underline text-xs">LinuxFr - Communauté Open Source</a>
-                            <a href="https://n8n.io/" target="_blank" class="block text-blue-400 font-bold underline text-xs">n8n - Automatisation & workflows</a>
+                            <a href="https://linuxfr.org/" target="_blank" class="block text-blue-400 font-bold underline text-xs">LinuxFr</a>
+                            <a href="https://n8n.io/" target="_blank" class="block text-blue-400 font-bold underline text-xs">n8n</a>
                         </div>
                     </div>
 
-                    <div class="veille-item glass-card rounded-2xl overflow-hidden shadow-2xl transition-all" onclick="this.classList.toggle('active')">
-                        <div class="veille-header">
-                            <span>IA & Automatisation</span>
-                            <i class="fa-solid fa-plus"></i>
-                        </div>
-                        <div class="veille-content space-y-4 p-6">
-                            <a href="https://openai.com/news/" target="_blank" class="block text-blue-400 font-bold underline text-xs">OpenAI News - ChatGPT</a>
-                            <a href="https://www.usine-digitale.fr/intelligence-artificielle/" target="_blank" class="block text-blue-400 font-bold underline text-xs">L'Usine Digitale - IA Business</a>
-                            <a href="https://www.lebigdata.fr/" target="_blank" class="block text-blue-400 font-bold underline text-xs">LeBigData - Intelligence Artificielle</a>
-                            <a href="https://intelligence-artificielle.developpez.com/" target="_blank" class="block text-blue-400 font-bold underline text-xs">Developpez.com - Rubrique IA</a>
+                    <div class="glass-card rounded-2xl p-6">
+                        <h3 class="font-black uppercase text-white bg-purple-500 rounded-lg px-5 py-4 mb-4">IA & Automatisation</h3>
+                        <div class="space-y-3">
+                            <a href="https://openai.com/news/" target="_blank" class="block text-blue-400 font-bold underline text-xs">OpenAI News</a>
+                            <a href="https://www.usine-digitale.fr/intelligence-artificielle/" target="_blank" class="block text-blue-400 font-bold underline text-xs">L'Usine Digitale</a>
+                            <a href="https://www.lebigdata.fr/" target="_blank" class="block text-blue-400 font-bold underline text-xs">LeBigData</a>
+                            <a href="https://intelligence-artificielle.developpez.com/" target="_blank" class="block text-blue-400 font-bold underline text-xs">Developpez.com IA</a>
                         </div>
                     </div>
                 </div>
@@ -1686,11 +1535,7 @@
         const themeToggleText = document.getElementById("themeToggleText");
 
         function updateThemeButton() {
-            if (document.body.classList.contains("light-mode")) {
-                themeToggleText.textContent = "Mode sombre";
-            } else {
-                themeToggleText.textContent = "Mode clair";
-            }
+            themeToggleText.textContent = document.body.classList.contains("light-mode") ? "Mode sombre" : "Mode clair";
         }
 
         function initTheme() {
@@ -1709,11 +1554,7 @@
         });
 
         const fontSlider = document.getElementById("fontSlider");
-        const fontMap = {
-            0: 14,
-            1: 16,
-            2: 18
-        };
+        const fontMap = { 0: 14, 1: 16, 2: 18 };
 
         function applyFontSizeFromSlider(value) {
             const size = fontMap[value];
@@ -1731,6 +1572,21 @@
             const step = e.target.value;
             applyFontSizeFromSlider(step);
             localStorage.setItem("portfolio-font-size-step", step);
+        });
+
+        const projectTabs = document.querySelectorAll(".project-tab");
+        const projectPanels = document.querySelectorAll(".project-panel");
+
+        projectTabs.forEach(tab => {
+            tab.addEventListener("click", () => {
+                const target = tab.dataset.tab;
+
+                projectTabs.forEach(t => t.classList.remove("active"));
+                tab.classList.add("active");
+
+                projectPanels.forEach(panel => panel.classList.remove("active"));
+                document.getElementById("project-" + target).classList.add("active");
+            });
         });
     </script>
 </body>
