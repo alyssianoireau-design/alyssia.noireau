@@ -116,7 +116,10 @@
             box-shadow: 0 18px 35px rgba(0,0,0,0.18);
         }
 
-        .white-border-card { border: 1px solid var(--border-strong) !important; }
+        .white-border-card {
+            border: 1px solid var(--border-strong) !important;
+        }
+
         .text-main { color: var(--text-main) !important; }
         .text-soft { color: var(--text-soft) !important; }
         .text-muted { color: var(--text-muted) !important; }
@@ -1033,6 +1036,58 @@
                         Actuellement en 2e année de BTS SIO option SISR à l’école ORT Daniel Mayer, je consolide mes compétences en administration systèmes et réseaux. Mon alternance chez ista, leader international de la donnée énergétique, est un véritable accélérateur : j'y assure le maintien en condition opérationnelle d'un parc complexe en manipulant des solutions de pointe comme Baramundi, Azure et Jira.
                     </p>
                 </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="details-item glass-card white-border-card p-6 rounded-[2rem] cursor-pointer hover:bg-white/5 transition-all" onclick="this.classList.toggle('active')">
+                        <div class="flex justify-between items-center font-black uppercase text-xs text-blue-400">
+                            <span>Missions en entreprise</span>
+                            <i class="fa-solid fa-plus transition-transform"></i>
+                        </div>
+                        <div class="details-content text-[11px] text-soft">
+                            <ul class="list-disc pl-4 space-y-1 text-main">
+                                <li>Gestion centralisée du parc informatique</li>
+                                <li>Administration hybride des identités (Entra ID / AD)</li>
+                                <li>Pilotage de l'activité et support ITSM via Jira</li>
+                                <li>Gestion de l'infrastructure de téléphonie (Snom)</li>
+                                <li>Sécurisation et maintenance du poste de travail</li>
+                                <li>Collaboration au sein d'une DSI internationale</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="details-item glass-card white-border-card p-6 rounded-[2rem] cursor-pointer hover:bg-white/5 transition-all" onclick="this.classList.toggle('active')">
+                        <div class="flex justify-between items-center font-black uppercase text-xs text-blue-400">
+                            <span>Soft Skills</span>
+                            <i class="fa-solid fa-plus transition-transform"></i>
+                        </div>
+                        <div class="details-content text-[11px] text-soft">
+                            <ul class="list-disc pl-4 space-y-1 text-main">
+                                <li>Organisation et gestion des priorités</li>
+                                <li>Esprit d'analyse et résolution de problèmes</li>
+                                <li>Adaptabilité et curiosité technologique</li>
+                                <li>Rigueur et sens du détail</li>
+                                <li>Esprit d'équipe et collaboration</li>
+                                <li>Capacité d'écoute et empathie</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="details-item glass-card white-border-card p-6 rounded-[2rem] cursor-pointer hover:bg-white/5 transition-all" onclick="this.classList.toggle('active')">
+                        <div class="flex justify-between items-center font-black uppercase text-xs text-blue-400">
+                            <span>Centres d'intérêt</span>
+                            <i class="fa-solid fa-plus transition-transform"></i>
+                        </div>
+                        <div class="details-content text-[11px] text-main leading-relaxed">
+                            La veille technologique et l'innovation<br>
+                            Le voyage et l'ouverture culturelle<br>
+                            Les activités sportives<br>
+                            La créativité digitale<br>
+                            La lecture et les podcasts<br>
+                            Le bénévolat et les projets collaboratifs<br>
+                            L'organisation d'événements
+                        </div>
+                    </div>
+                </div>
             </section>
 
             <section id="formation" class="max-w-4xl mx-auto px-8 py-24 scroll-mt-24">
@@ -1203,7 +1258,6 @@
                 <div class="project-tabs">
                     <button class="project-tab active" data-tab="entreprise">Projets d'entreprise</button>
                     <button class="project-tab" data-tab="cfa">Projets CFA</button>
-                    <button class="project-tab" data-tab="perso">Projets personnels</button>
                 </div>
 
                 <div id="project-entreprise" class="project-panel active">
@@ -1257,13 +1311,6 @@
                         </div>
                     </div>
                 </div>
-
-                <div id="project-perso" class="project-panel">
-                    <h3 class="project-category-title">Projets personnels</h3>
-                    <div class="project-placeholder glass-card">
-                        Cette rubrique est prête à accueillir tes projets personnels.
-                    </div>
-                </div>
             </section>
 
             <section id="entreprise" class="max-w-6xl mx-auto px-8 py-24 scroll-mt-24 text-center">
@@ -1315,7 +1362,7 @@
                             <i class="fa-solid fa-plus"></i>
                         </div>
                         <div class="details-content text-sm text-soft leading-relaxed text-justify">
-                            ista est l'un des leaders mondiaux de la gestion des données énergétiques, spécialisé dans l'amélioration de l'efficacité énergétique des bâtiments.
+                            ista est l'un des leaders mondiaux de la gestion des données énergétiques, spécialisé dans l'amélioration de l'efficacité énergétique des bâtiments. En France, la société est structurée sous le statut de SAS et s'appuie sur une force humaine d'environ 800 collaborateurs. Le groupe accompagne ses clients dans la transition durable grâce à des services innovants de comptage et de facturation. Cette expertise permet de répondre aux enjeux écologiques actuels tout en optimisant la consommation de ressources.
                         </div>
                     </div>
 
@@ -1325,7 +1372,7 @@
                             <i class="fa-solid fa-plus"></i>
                         </div>
                         <div class="details-content text-sm text-soft leading-relaxed text-justify">
-                            Le groupe possède une envergure internationale majeure avec une présence active dans plus de 20 pays.
+                            Le groupe possède une envergure internationale majeure avec une présence active dans plus de 20 pays, principalement en Europe et en Asie. Avec un chiffre d'affaires annuel dépassant le milliard d'euros, ista s'impose comme un acteur économique solide et pérenne. Globalement, l'entreprise gère un parc impressionnant de plus de 45 millions d'appareils connectés. Ce réseau mondial permet de collecter et d'analyser les données de 14 millions de logements et locaux commerciaux.
                         </div>
                     </div>
 
@@ -1335,7 +1382,7 @@
                             <i class="fa-solid fa-plus"></i>
                         </div>
                         <div class="details-content text-sm text-soft leading-relaxed text-justify">
-                            Le cœur de métier d'ista repose sur l'individualisation des frais de chauffage et d'eau au sein des habitations collectives.
+                            Le cœur de métier d'ista repose sur l'individualisation des frais de chauffage et d'eau au sein des habitations collectives. Grâce à des solutions de télérelève performantes, l'entreprise permet une gestion précise et transparente des consommations énergétiques. Ces services permettent aux résidents de devenir acteurs de leur consommation et de réduire leur impact environnemental. En digitalisant ces données, ista simplifie la gestion immobilière tout en garantissant une répartition équitable des charges.
                         </div>
                     </div>
 
@@ -1345,7 +1392,7 @@
                             <i class="fa-solid fa-plus"></i>
                         </div>
                         <div class="details-content text-sm text-soft leading-relaxed text-justify">
-                            En tant qu'apprentie Technicienne Réseaux et Systèmes, j'évolue au sein d'une DSI internationale aux enjeux technologiques élevés.
+                            En tant qu'apprentie Technicienne Réseaux et Systèmes, j'évolue au sein d'une DSI internationale aux enjeux technologiques élevés. Ma mission consiste à garantir le maintien en condition opérationnelle du parc informatique via des outils de pointe comme Baramundi et Microsoft Azure. J'assure également le support utilisateur et la gestion des identités dans un environnement ITSM structuré. Ce rôle me permet de développer une polyvalence technique essentielle tout en participant activement à la transformation digitale du groupe.
                         </div>
                     </div>
                 </div>
