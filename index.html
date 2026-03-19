@@ -143,6 +143,36 @@
             background: linear-gradient(90deg, var(--accent), var(--accent-soft));
         }
 
+        .section-header-flex {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .section-action-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.55rem;
+            padding: 0.72rem 1rem;
+            border-radius: 999px;
+            background: rgba(59,130,246,0.12);
+            border: 1px solid rgba(96,165,250,0.22);
+            color: var(--text-main);
+            font-size: 0.68rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 18px rgba(0,0,0,0.10);
+        }
+
+        .section-action-btn:hover {
+            transform: translateY(-2px);
+            background: rgba(59,130,246,0.18);
+        }
+
         .sidebar-header {
             padding: 1.4rem 1rem;
             text-align: center;
@@ -796,11 +826,11 @@
             font-size: 0.78rem;
         }
 
-        .contact-layout-pro {
+        .contact-layout-modern {
             display: grid;
             grid-template-columns: 1.05fr 1.35fr;
             gap: 1.5rem;
-            align-items: start;
+            align-items: stretch;
         }
 
         .contact-panel {
@@ -817,7 +847,7 @@
         }
 
         .contact-intro {
-            max-width: 900px;
+            max-width: 980px;
             margin: 0 auto 2rem auto;
             padding: 1.8rem 2rem;
             border-radius: 1.8rem;
@@ -913,6 +943,18 @@
             transform: translateY(-3px);
         }
 
+        .contact-form-panel {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .contact-form-top p {
+            color: var(--text-soft);
+            line-height: 1.7;
+            margin-bottom: 1.2rem;
+        }
+
         .form-input {
             background: rgba(255,255,255,0.05);
             border: 1px solid var(--border-soft);
@@ -937,7 +979,7 @@
 
         @media (max-width: 900px) {
             .profile-layout,
-            .contact-layout-pro,
+            .contact-layout-modern,
             .school-project-grid {
                 grid-template-columns: 1fr;
             }
@@ -985,6 +1027,10 @@
                 width: 100%;
                 justify-content: center;
                 max-width: 340px;
+            }
+
+            .section-header-flex {
+                flex-direction: column;
             }
         }
     </style>
@@ -1248,55 +1294,63 @@
             </section>
 
             <section id="competences" class="max-w-6xl mx-auto px-8 py-24 scroll-mt-24 text-center">
-                <h2 class="text-3xl font-black uppercase section-title text-main mb-16">Compétences</h2>
+                <div class="text-center mb-16">
+                    <div class="section-header-flex">
+                        <h2 class="text-3xl font-black uppercase section-title text-main">Compétences</h2>
+                        <button id="toggleAllCompetences" class="section-action-btn">
+                            <i class="fa-solid fa-align-left"></i>
+                            Descriptions
+                        </button>
+                    </div>
+                </div>
 
                 <div class="grid grid-cols-2 sm:grid-cols-5 gap-8">
-                    <div class="comp-card-minimal group" onclick="this.classList.toggle('active')">
+                    <div class="comp-card-minimal group competency-item" onclick="toggleCompetencyCard(this)">
                         <i class="fa-brands fa-linux text-6xl text-[#FCC624] drop-shadow-lg"></i>
                         <div class="comp-detail-minimal"><b>Linux</b><br>Indispensable pour montrer la maîtrise de l’administration système et de la ligne de commande dans un environnement professionnel.</div>
                     </div>
 
-                    <div class="comp-card-minimal group" onclick="this.classList.toggle('active')">
+                    <div class="comp-card-minimal group competency-item" onclick="toggleCompetencyCard(this)">
                         <i class="fa-brands fa-docker text-6xl text-[#2496ED] drop-shadow-lg"></i>
                         <div class="comp-detail-minimal"><b>Docker</b><br>Excellente compétence pour illustrer la conteneurisation, la modernisation des environnements et une vraie montée en niveau sur le profil technique.</div>
                     </div>
 
-                    <div class="comp-card-minimal group" onclick="this.classList.toggle('active')">
+                    <div class="comp-card-minimal group competency-item" onclick="toggleCompetencyCard(this)">
                         <i class="fa-brands fa-windows text-6xl text-[#0078d7] drop-shadow-lg"></i>
                         <div class="comp-detail-minimal"><b>Windows</b><br>Essentiel en entreprise pour mettre en avant l’administration de postes, Active Directory, GPO et le support utilisateurs.</div>
                     </div>
 
-                    <div class="comp-card-minimal group" onclick="this.classList.toggle('active')">
+                    <div class="comp-card-minimal group competency-item" onclick="toggleCompetencyCard(this)">
                         <i class="fa-solid fa-server text-6xl text-[#60A5FA] drop-shadow-lg"></i>
                         <div class="comp-detail-minimal"><b>Serveurs / Stockage</b><br>Compétence clé pour valoriser l’administration système, le stockage, les services serveurs et l’infrastructure globale.</div>
                     </div>
 
-                    <div class="comp-card-minimal group" onclick="this.classList.toggle('active')">
+                    <div class="comp-card-minimal group competency-item" onclick="toggleCompetencyCard(this)">
                         <i class="fa-solid fa-network-wired text-6xl text-[#22c55e] drop-shadow-lg"></i>
                         <div class="comp-detail-minimal"><b>Réseau</b><br>Indispensable pour montrer la compréhension de l’architecture réseau, du routage, de la connectivité et des échanges entre équipements.</div>
                     </div>
 
-                    <div class="comp-card-minimal group" onclick="this.classList.toggle('active')">
+                    <div class="comp-card-minimal group competency-item" onclick="toggleCompetencyCard(this)">
                         <i class="fa-solid fa-ticket text-6xl text-[#f59e0b] drop-shadow-lg"></i>
                         <div class="comp-detail-minimal"><b>Ticketing / Supervision</b><br>Avec des outils comme GLPI ou Zabbix, cette compétence montre la gestion des incidents, le suivi du parc et la supervision au quotidien.</div>
                     </div>
 
-                    <div class="comp-card-minimal group" onclick="this.classList.toggle('active')">
+                    <div class="comp-card-minimal group competency-item" onclick="toggleCompetencyCard(this)">
                         <i class="fa-solid fa-cloud text-6xl text-[#38bdf8] drop-shadow-lg"></i>
                         <div class="comp-detail-minimal"><b>Cloud / Virtualisation</b><br>Que ce soit avec Azure, AWS ou VMware, cette compétence valorise les VM, les services cloud et une approche actuelle de l’infrastructure.</div>
                     </div>
 
-                    <div class="comp-card-minimal group" onclick="this.classList.toggle('active')">
+                    <div class="comp-card-minimal group competency-item" onclick="toggleCompetencyCard(this)">
                         <i class="fa-solid fa-lock text-6xl text-[#ef4444] drop-shadow-lg"></i>
                         <div class="comp-detail-minimal"><b>Cybersécurité</b><br>Très valorisée pour représenter la mise en place de pare-feux, de politiques de sécurité, de contrôle d’accès et de bonnes pratiques.</div>
                     </div>
 
-                    <div class="comp-card-minimal group" onclick="this.classList.toggle('active')">
+                    <div class="comp-card-minimal group competency-item" onclick="toggleCompetencyCard(this)">
                         <i class="fa-brands fa-git-alt text-6xl text-[#f97316] drop-shadow-lg"></i>
                         <div class="comp-detail-minimal"><b>Gestion de version (Git)</b><br>Un vrai marqueur de professionnalisme pour versionner ses scripts, suivre les évolutions d’un projet et structurer son travail.</div>
                     </div>
 
-                    <div class="comp-card-minimal group" onclick="this.classList.toggle('active')">
+                    <div class="comp-card-minimal group competency-item" onclick="toggleCompetencyCard(this)">
                         <i class="fa-solid fa-file-lines text-6xl text-[#a78bfa] drop-shadow-lg"></i>
                         <div class="comp-detail-minimal"><b>Documentation</b><br>Montrer que l’on sait documenter ses procédures, ses interventions et ses projets est une compétence essentielle pour le jury.</div>
                     </div>
@@ -1352,18 +1406,11 @@
                 </div>
 
                 <div class="project-tabs">
-                    <button class="project-tab active" data-tab="entreprise">Projets d'entreprise</button>
-                    <button class="project-tab" data-tab="cfa">Projets CFA</button>
+                    <button class="project-tab active" data-tab="cfa">Projets CFA</button>
+                    <button class="project-tab" data-tab="entreprise">Projets d'entreprise</button>
                 </div>
 
-                <div id="project-entreprise" class="project-panel active">
-                    <h3 class="project-category-title">Projets d'entreprise</h3>
-                    <div class="project-placeholder glass-card">
-                        Cette rubrique est prête à accueillir tes projets réalisés en entreprise.
-                    </div>
-                </div>
-
-                <div id="project-cfa" class="project-panel">
+                <div id="project-cfa" class="project-panel active">
                     <h3 class="project-category-title">Projet CFA</h3>
                     <div class="school-project-grid">
                         <div class="school-project-card glass-card">
@@ -1407,10 +1454,25 @@
                         </div>
                     </div>
                 </div>
+
+                <div id="project-entreprise" class="project-panel">
+                    <h3 class="project-category-title">Projets d'entreprise</h3>
+                    <div class="project-placeholder glass-card">
+                        Cette rubrique est prête à accueillir tes projets réalisés en entreprise.
+                    </div>
+                </div>
             </section>
 
             <section id="entreprise" class="max-w-6xl mx-auto px-8 py-24 scroll-mt-24 text-center">
-                <h2 class="text-3xl font-black uppercase section-title text-main mb-10">Expérience chez Ista</h2>
+                <div class="text-center mb-10">
+                    <div class="section-header-flex">
+                        <h2 class="text-3xl font-black uppercase section-title text-main">Expérience chez Ista</h2>
+                        <button id="toggleAllEntreprise" class="section-action-btn">
+                            <i class="fa-solid fa-folder-open"></i>
+                            Tout afficher
+                        </button>
+                    </div>
+                </div>
 
                 <div class="mb-20">
                     <h3 class="text-xl font-black text-main uppercase mb-8">Organigramme</h3>
@@ -1452,7 +1514,7 @@
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-left">
-                    <div class="details-item glass-card white-border-card p-6 rounded-2xl cursor-pointer" onclick="this.classList.toggle('active')">
+                    <div class="details-item entreprise-item glass-card white-border-card p-6 rounded-2xl cursor-pointer" onclick="this.classList.toggle('active')">
                         <div class="flex justify-between items-center font-black uppercase text-[11px] text-main">
                             <span>PRÉSENTATION DU GROUPE ISTA</span>
                             <i class="fa-solid fa-plus"></i>
@@ -1462,7 +1524,7 @@
                         </div>
                     </div>
 
-                    <div class="details-item glass-card white-border-card p-6 rounded-2xl cursor-pointer" onclick="this.classList.toggle('active')">
+                    <div class="details-item entreprise-item glass-card white-border-card p-6 rounded-2xl cursor-pointer" onclick="this.classList.toggle('active')">
                         <div class="flex justify-between items-center font-black uppercase text-[11px] text-main">
                             <span>RAYONNEMENT ET CHIFFRES CLÉS</span>
                             <i class="fa-solid fa-plus"></i>
@@ -1472,7 +1534,7 @@
                         </div>
                     </div>
 
-                    <div class="details-item glass-card white-border-card p-6 rounded-2xl cursor-pointer" onclick="this.classList.toggle('active')">
+                    <div class="details-item entreprise-item glass-card white-border-card p-6 rounded-2xl cursor-pointer" onclick="this.classList.toggle('active')">
                         <div class="flex justify-between items-center font-black uppercase text-[11px] text-main">
                             <span>NOTRE ACTIVITÉ ET MISSIONS</span>
                             <i class="fa-solid fa-plus"></i>
@@ -1482,7 +1544,7 @@
                         </div>
                     </div>
 
-                    <div class="details-item glass-card white-border-card p-6 rounded-2xl cursor-pointer" onclick="this.classList.toggle('active')">
+                    <div class="details-item entreprise-item glass-card white-border-card p-6 rounded-2xl cursor-pointer" onclick="this.classList.toggle('active')">
                         <div class="flex justify-between items-center font-black uppercase text-[11px] text-main">
                             <span>MON RÔLE AU SEIN DE LA DSI</span>
                             <i class="fa-solid fa-plus"></i>
@@ -1575,7 +1637,7 @@
                     </p>
                 </div>
 
-                <div class="contact-layout-pro">
+                <div class="contact-layout-modern">
                     <div class="glass-card white-border-card contact-panel shadow-xl">
                         <h3 class="contact-heading">Mes coordonnées</h3>
 
@@ -1614,8 +1676,13 @@
                         </div>
                     </div>
 
-                    <div class="glass-card white-border-card contact-panel shadow-2xl">
-                        <h3 class="contact-heading">Envoyer un message</h3>
+                    <div class="glass-card white-border-card contact-panel contact-form-panel shadow-2xl">
+                        <div class="contact-form-top">
+                            <h3 class="contact-heading">Restons en contact</h3>
+                            <p>
+                                N’hésitez pas à me contacter pour échanger sur mon parcours, mon portfolio, une opportunité d’alternance ou un futur projet professionnel.
+                            </p>
+                        </div>
 
                         <form action="https://formspree.io/f/mdalzynp" method="POST" class="space-y-4">
                             <input type="text" name="name" placeholder="Nom complet" class="w-full form-input p-4 rounded-xl text-sm" required>
@@ -1749,6 +1816,38 @@
 
                 projectPanels.forEach(panel => panel.classList.remove("active"));
                 document.getElementById("project-" + target).classList.add("active");
+            });
+        });
+
+        function toggleCompetencyCard(card) {
+            card.classList.toggle("active");
+        }
+
+        const toggleAllCompetencesBtn = document.getElementById("toggleAllCompetences");
+        toggleAllCompetencesBtn.addEventListener("click", () => {
+            const cards = document.querySelectorAll(".competency-item");
+            const allOpen = Array.from(cards).every(card => card.classList.contains("active"));
+
+            cards.forEach(card => {
+                if (allOpen) {
+                    card.classList.remove("active");
+                } else {
+                    card.classList.add("active");
+                }
+            });
+        });
+
+        const toggleAllEntrepriseBtn = document.getElementById("toggleAllEntreprise");
+        toggleAllEntrepriseBtn.addEventListener("click", () => {
+            const items = document.querySelectorAll(".entreprise-item");
+            const allOpen = Array.from(items).every(item => item.classList.contains("active"));
+
+            items.forEach(item => {
+                if (allOpen) {
+                    item.classList.remove("active");
+                } else {
+                    item.classList.add("active");
+                }
             });
         });
     </script>
