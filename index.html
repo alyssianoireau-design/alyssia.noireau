@@ -10,39 +10,46 @@
 
     <style>
         :root {
-            --bg-main: #0f172a;
-            --bg-secondary: rgba(15, 23, 42, 0.75);
-            --bg-sidebar: rgba(17, 24, 39, 0.88);
+            --bg-main: #0b1120;
+            --bg-secondary: rgba(15, 23, 42, 0.78);
+            --bg-sidebar: rgba(10, 15, 28, 0.94);
             --text-main: #f8fafc;
             --text-soft: #cbd5e1;
             --text-muted: #94a3b8;
             --accent: #3b82f6;
             --accent-soft: #60a5fa;
-            --border-soft: rgba(255, 255, 255, 0.10);
-            --border-strong: rgba(255, 255, 255, 0.18);
-            --card-glow: rgba(59, 130, 246, 0.18);
-            --base-font-size: 16px;
+            --accent-2: #8b5cf6;
+            --border-soft: rgba(255, 255, 255, 0.08);
+            --border-strong: rgba(255, 255, 255, 0.16);
+            --shadow-soft: 0 18px 40px rgba(2, 8, 23, 0.28);
+            --content-font-scale: 1;
         }
 
         body.light-mode {
-            --bg-main: #eef4ff;
-            --bg-secondary: rgba(255, 255, 255, 0.88);
-            --bg-sidebar: rgba(255, 255, 255, 0.92);
+            --bg-main: #edf4ff;
+            --bg-secondary: rgba(255, 255, 255, 0.9);
+            --bg-sidebar: rgba(255, 255, 255, 0.95);
             --text-main: #0f172a;
             --text-soft: #334155;
             --text-muted: #64748b;
             --accent: #2563eb;
             --accent-soft: #3b82f6;
+            --accent-2: #7c3aed;
             --border-soft: rgba(15, 23, 42, 0.08);
             --border-strong: rgba(15, 23, 42, 0.12);
-            --card-glow: rgba(37, 99, 235, 0.12);
+            --shadow-soft: 0 18px 38px rgba(37, 99, 235, 0.10);
+        }
+
+        * {
+            box-sizing: border-box;
         }
 
         html {
-            font-size: var(--base-font-size);
+            scroll-behavior: smooth;
         }
 
         body {
+            margin: 0;
             background: var(--bg-main);
             color: var(--text-main);
             font-family: Arial, Helvetica, sans-serif !important;
@@ -53,141 +60,82 @@
         .page-bg {
             position: fixed;
             inset: 0;
-            z-index: -2;
+            z-index: -3;
             overflow: hidden;
             background:
-                radial-gradient(circle at 15% 20%, rgba(59,130,246,0.16), transparent 25%),
-                radial-gradient(circle at 85% 18%, rgba(168,85,247,0.14), transparent 22%),
-                radial-gradient(circle at 70% 75%, rgba(14,165,233,0.12), transparent 22%),
-                linear-gradient(135deg, rgba(2,6,23,0.96), rgba(15,23,42,0.98));
+                radial-gradient(circle at 12% 18%, rgba(59,130,246,0.16), transparent 24%),
+                radial-gradient(circle at 82% 20%, rgba(139,92,246,0.14), transparent 22%),
+                radial-gradient(circle at 72% 78%, rgba(14,165,233,0.12), transparent 20%),
+                linear-gradient(135deg, rgba(2,6,23,0.98), rgba(15,23,42,1));
         }
 
         body.light-mode .page-bg {
             background:
-                radial-gradient(circle at 15% 20%, rgba(59,130,246,0.12), transparent 25%),
-                radial-gradient(circle at 85% 18%, rgba(168,85,247,0.10), transparent 22%),
-                radial-gradient(circle at 70% 75%, rgba(14,165,233,0.08), transparent 22%),
-                linear-gradient(135deg, #f8fbff, #eaf2ff);
+                radial-gradient(circle at 12% 18%, rgba(59,130,246,0.10), transparent 24%),
+                radial-gradient(circle at 82% 20%, rgba(139,92,246,0.08), transparent 22%),
+                radial-gradient(circle at 72% 78%, rgba(14,165,233,0.07), transparent 20%),
+                linear-gradient(135deg, #f8fbff, #ebf3ff);
         }
 
         .page-bg::before,
         .page-bg::after {
             content: "";
             position: absolute;
-            width: 42vw;
-            height: 42vw;
             border-radius: 9999px;
-            filter: blur(70px);
+            filter: blur(80px);
             opacity: 0.45;
-            animation: floatGlow 16s ease-in-out infinite;
+            animation: glowFloat 16s ease-in-out infinite;
         }
 
         .page-bg::before {
+            width: 38vw;
+            height: 38vw;
             top: -8%;
             left: -8%;
             background: rgba(59, 130, 246, 0.20);
         }
 
         .page-bg::after {
-            bottom: -12%;
-            right: -10%;
-            background: rgba(168, 85, 247, 0.16);
+            width: 34vw;
+            height: 34vw;
+            right: -8%;
+            bottom: -10%;
+            background: rgba(139, 92, 246, 0.16);
             animation-delay: -7s;
         }
 
-        @keyframes floatGlow {
+        @keyframes glowFloat {
             0%, 100% { transform: translate(0, 0) scale(1); }
-            50% { transform: translate(30px, -20px) scale(1.08); }
+            50% { transform: translate(26px, -18px) scale(1.06); }
+        }
+
+        .sidebar-fixed-font,
+        .sidebar-fixed-font * {
+            font-size: inherit;
         }
 
         .glass-sidebar {
             background: var(--bg-sidebar);
-            backdrop-filter: blur(16px);
+            backdrop-filter: blur(18px);
             border-right: 1px solid var(--border-soft);
-        }
-
-        .glass-card {
-            background: var(--bg-secondary);
-            border: 1px solid var(--border-soft);
-            transition: background 0.35s ease, border-color 0.35s ease, transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .glass-card:hover {
-            box-shadow: 0 18px 35px rgba(0,0,0,0.18);
-        }
-
-        .white-border-card {
-            border: 1px solid var(--border-strong) !important;
-        }
-
-        .text-main { color: var(--text-main) !important; }
-        .text-soft { color: var(--text-soft) !important; }
-        .text-muted { color: var(--text-muted) !important; }
-
-        .section-title {
-            display: inline-block;
-            position: relative;
-            padding-bottom: 14px;
-            letter-spacing: 0.03em;
-        }
-
-        .section-title::after {
-            content: "";
-            position: absolute;
-            left: 50%;
-            bottom: 0;
-            transform: translateX(-50%);
-            width: 120px;
-            height: 3px;
-            border-radius: 999px;
-            background: linear-gradient(90deg, var(--accent), var(--accent-soft));
-        }
-
-        .section-header-flex {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
-
-        .section-action-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.55rem;
-            padding: 0.72rem 1rem;
-            border-radius: 999px;
-            background: rgba(59,130,246,0.12);
-            border: 1px solid rgba(96,165,250,0.22);
-            color: var(--text-main);
-            font-size: 0.68rem;
-            font-weight: 900;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            transition: all 0.3s ease;
-            box-shadow: 0 8px 18px rgba(0,0,0,0.10);
-        }
-
-        .section-action-btn:hover {
-            transform: translateY(-2px);
-            background: rgba(59,130,246,0.18);
+            box-shadow: 10px 0 30px rgba(2, 8, 23, 0.12);
         }
 
         .sidebar-header {
-            padding: 1.4rem 1rem;
+            padding: 1.35rem 1rem;
             text-align: center;
             border-bottom: 1px solid var(--border-soft);
         }
 
         .sidebar-avatar {
-            width: 84px;
-            height: 84px;
+            width: 86px;
+            height: 86px;
             border-radius: 1rem;
             margin: 0 auto 0.9rem auto;
-            border: 2px solid rgba(59, 130, 246, 0.45);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.18);
+            border: 2px solid rgba(59,130,246,0.40);
+            box-shadow: 0 10px 26px rgba(0,0,0,0.18);
             overflow: hidden;
-            background: rgba(255,255,255,0.06);
+            background: rgba(255,255,255,0.05);
         }
 
         .sidebar-avatar img {
@@ -195,8 +143,62 @@
             height: 100%;
             object-fit: cover;
             object-position: center 18%;
-            display: block;
             transform: scale(1.08);
+            display: block;
+        }
+
+        .nav-link {
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin: 0.18rem 0.65rem;
+            padding: 0.82rem 1rem;
+            border-radius: 1rem;
+            color: var(--text-muted);
+            transition: all 0.25s ease;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            font-size: 11px !important;
+            font-weight: 800;
+        }
+
+        .nav-link i {
+            width: 16px;
+            text-align: center;
+            font-size: 13px !important;
+        }
+
+        .nav-link:hover {
+            color: var(--text-main);
+            background: rgba(59,130,246,0.10);
+            transform: translateX(4px);
+        }
+
+        .nav-link.active {
+            color: var(--text-main);
+            background: linear-gradient(90deg, rgba(59,130,246,0.18), rgba(59,130,246,0.06));
+            box-shadow: inset 0 0 0 1px rgba(96,165,250,0.18);
+        }
+
+        .nav-link::before {
+            content: "";
+            position: absolute;
+            left: -0.35rem;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 3px;
+            height: 0%;
+            border-radius: 999px;
+            background: linear-gradient(to bottom, var(--accent-soft), var(--accent));
+            transition: all 0.25s ease;
+            opacity: 0;
+        }
+
+        .nav-link:hover::before,
+        .nav-link.active::before {
+            height: 68%;
+            opacity: 1;
         }
 
         .theme-toggle {
@@ -204,31 +206,36 @@
             margin-top: 1rem;
             padding: 0.85rem 0.8rem;
             border-radius: 1rem;
-            background: linear-gradient(135deg, rgba(59,130,246,0.18), rgba(37,99,235,0.10));
             border: 1px solid rgba(96,165,250,0.22);
+            background: linear-gradient(135deg, rgba(59,130,246,0.16), rgba(37,99,235,0.08));
             color: var(--text-main);
-            font-size: 0.66rem;
-            font-weight: 800;
+            font-size: 10px !important;
+            font-weight: 900;
             text-transform: uppercase;
             letter-spacing: 0.08em;
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 0.45rem;
+            gap: 0.5rem;
             transition: all 0.3s ease;
+        }
+
+        .theme-toggle:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(59,130,246,0.16);
         }
 
         .font-slider-wrap {
             margin-top: 0.8rem;
             padding: 0.85rem 0.9rem;
             border-radius: 1rem;
-            background: linear-gradient(135deg, rgba(59,130,246,0.14), rgba(37,99,235,0.08));
             border: 1px solid rgba(96,165,250,0.18);
+            background: linear-gradient(135deg, rgba(59,130,246,0.12), rgba(37,99,235,0.06));
         }
 
         .font-slider-label {
-            font-size: 0.58rem;
-            font-weight: 800;
+            font-size: 9px !important;
+            font-weight: 900;
             text-transform: uppercase;
             letter-spacing: 0.08em;
             color: var(--text-soft);
@@ -247,11 +254,11 @@
 
         .font-scale .left-a,
         .font-scale .right-a {
-            font-size: 0.9rem;
-            font-weight: 900;
-            color: var(--text-main);
             width: 10px;
             text-align: center;
+            color: var(--text-main);
+            font-size: 14px !important;
+            font-weight: 900;
         }
 
         .font-slider {
@@ -282,50 +289,18 @@
             cursor: pointer;
         }
 
-        .nav-link {
-            position: relative;
-            transition: all 0.25s ease;
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            margin: 0.18rem 0.6rem;
-            padding: 0.78rem 0.95rem;
-            border-radius: 0.95rem;
-            font-size: 0.66rem;
-            letter-spacing: 0.08em;
-            color: var(--text-muted);
-        }
-
-        .nav-link i {
-            width: 16px;
-            text-align: center;
-            font-size: 0.85rem;
-        }
-
-        .nav-link:hover {
-            color: var(--accent-soft);
-            background: rgba(59, 130, 246, 0.10);
-            transform: translateX(4px);
-        }
-
-        .nav-link.active {
-            color: var(--text-main);
-            background: linear-gradient(90deg, rgba(59,130,246,0.18), rgba(59,130,246,0.06));
-            box-shadow: inset 0 0 0 1px rgba(96, 165, 250, 0.18);
-        }
-
         .mobile-topbar {
             position: sticky;
             top: 0;
             z-index: 60;
             display: none;
-            backdrop-filter: blur(14px);
-            background: rgba(15, 23, 42, 0.88);
+            backdrop-filter: blur(16px);
+            background: rgba(11, 17, 32, 0.92);
             border-bottom: 1px solid var(--border-soft);
         }
 
         body.light-mode .mobile-topbar {
-            background: rgba(255,255,255,0.92);
+            background: rgba(255,255,255,0.94);
         }
 
         .mobile-scroll-nav {
@@ -342,24 +317,121 @@
 
         .mobile-scroll-nav a {
             white-space: nowrap;
-            padding: 0.65rem 0.95rem;
+            padding: 0.66rem 0.95rem;
             border-radius: 999px;
-            font-size: 0.7rem;
-            font-weight: 800;
+            font-size: 11px !important;
+            font-weight: 900;
             text-transform: uppercase;
             color: var(--text-main);
             background: rgba(59,130,246,0.10);
             border: 1px solid rgba(59,130,246,0.18);
         }
 
-        .typing::after { content: '|'; animation: blink 0.7s infinite; }
-        @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+        .content-scale {
+            font-size: calc(16px * var(--content-font-scale));
+        }
+
+        .content-scale p,
+        .content-scale li,
+        .content-scale a,
+        .content-scale span,
+        .content-scale div,
+        .content-scale input,
+        .content-scale textarea,
+        .content-scale button,
+        .content-scale h3,
+        .content-scale h4 {
+            font-size: inherit;
+        }
+
+        .glass-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-soft);
+            transition: background 0.35s ease, border-color 0.35s ease, transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .glass-card:hover {
+            box-shadow: 0 20px 40px rgba(2,8,23,0.24);
+        }
+
+        .white-border-card {
+            border: 1px solid var(--border-strong) !important;
+        }
+
+        .text-main { color: var(--text-main) !important; }
+        .text-soft { color: var(--text-soft) !important; }
+        .text-muted { color: var(--text-muted) !important; }
+
+        .section-title {
+            display: inline-block;
+            position: relative;
+            padding-bottom: 14px;
+            letter-spacing: 0.03em;
+        }
+
+        .section-title::after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translateX(-50%);
+            width: 110px;
+            height: 3px;
+            border-radius: 999px;
+            background: linear-gradient(90deg, var(--accent), var(--accent-soft));
+            box-shadow: 0 0 14px rgba(59,130,246,0.14);
+        }
+
+        .section-header-flex {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .section-action-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.55rem;
+            padding: 0.78rem 1.05rem;
+            border-radius: 999px;
+            background: rgba(59,130,246,0.12);
+            border: 1px solid rgba(96,165,250,0.22);
+            color: var(--text-main);
+            font-size: 11px;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 18px rgba(0,0,0,0.10);
+        }
+
+        .section-action-btn:hover {
+            transform: translateY(-2px);
+            background: rgba(59,130,246,0.18);
+        }
+
+        .hero-title {
+            text-shadow: 0 0 18px rgba(59,130,246,0.16);
+        }
+
+        .typing::after {
+            content: "|";
+            animation: blink 0.7s infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
 
         .bg-nebula {
             position: relative;
             overflow: hidden;
             background:
-                linear-gradient(rgba(15, 23, 42, 0.56), rgba(15, 23, 42, 0.72)),
+                linear-gradient(rgba(15, 23, 42, 0.58), rgba(15, 23, 42, 0.76)),
                 url('fond-accueil.jpg');
             background-size: cover;
             background-position: center;
@@ -369,7 +441,7 @@
 
         body.light-mode .bg-nebula {
             background:
-                linear-gradient(rgba(248, 250, 252, 0.70), rgba(234, 242, 255, 0.76)),
+                linear-gradient(rgba(248,250,252,0.72), rgba(235,243,255,0.78)),
                 url('fond-accueil.jpg');
             background-size: cover;
             background-position: center;
@@ -382,8 +454,83 @@
             pointer-events: none;
             background:
                 radial-gradient(circle at 20% 20%, rgba(59,130,246,0.18), transparent 28%),
-                radial-gradient(circle at 75% 30%, rgba(168,85,247,0.14), transparent 24%),
+                radial-gradient(circle at 75% 30%, rgba(139,92,246,0.14), transparent 24%),
                 radial-gradient(circle at 50% 80%, rgba(14,165,233,0.10), transparent 30%);
+        }
+
+        .profile-layout {
+            display: grid;
+            grid-template-columns: 290px 1fr;
+            gap: 2rem;
+            align-items: start;
+        }
+
+        .profile-photo-card {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            max-width: 290px;
+            padding: 0.8rem;
+            border-radius: 1.9rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .profile-photo-card::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border-radius: 1.9rem;
+            padding: 1px;
+            background: linear-gradient(135deg, rgba(96,165,250,0.35), rgba(139,92,246,0.22));
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+                    mask-composite: exclude;
+            pointer-events: none;
+        }
+
+        .profile-photo-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 18%;
+            transform: scale(1.08);
+            border-radius: 1.35rem;
+            display: block;
+        }
+
+        .profile-links-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(180px, 1fr));
+            gap: 1rem;
+            align-self: center;
+        }
+
+        .profile-btn {
+            min-height: 78px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 1rem;
+            border-radius: 1rem;
+            background: rgba(59,130,246,0.12);
+            border: 1px solid rgba(59,130,246,0.22);
+            color: var(--accent-soft);
+            font-weight: 900;
+            text-transform: uppercase;
+            font-size: 0.72rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 22px rgba(0,0,0,0.10);
+        }
+
+        .profile-btn:hover {
+            transform: translateY(-3px);
+            background: rgba(59,130,246,0.18);
+            color: var(--text-main);
         }
 
         .details-content {
@@ -405,18 +552,83 @@
             color: #ef4444;
         }
 
+        .formation-grid {
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .formation-card {
+            position: relative;
+            padding: 1.85rem;
+            border-radius: 1.55rem;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-soft);
+            transition: all 0.3s ease;
+            overflow: hidden;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .formation-card::before {
+            content: "";
+            position: absolute;
+            inset: 0 auto auto 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent), var(--accent-soft), transparent);
+        }
+
+        .formation-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(96,165,250,0.30);
+            box-shadow: 0 18px 34px rgba(0,0,0,0.16);
+        }
+
+        .bts-card {
+            background: linear-gradient(180deg, rgba(24,34,58,0.92), rgba(15,23,42,0.90));
+            border: 1px solid rgba(96,165,250,0.16);
+            border-radius: 1.7rem;
+            padding: 2rem;
+            transition: 0.3s ease;
+            box-shadow: var(--shadow-soft);
+        }
+
+        body.light-mode .bts-card {
+            background: linear-gradient(180deg, rgba(255,255,255,0.96), rgba(244,248,255,0.96));
+            border: 1px solid rgba(37,99,235,0.10);
+        }
+
+        .bts-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(96,165,250,0.35);
+        }
+
+        .bts-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.58rem 0.98rem;
+            border-radius: 999px;
+            font-size: 0.72rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            background: rgba(59,130,246,0.12);
+            border: 1px solid rgba(59,130,246,0.22);
+            color: var(--accent-soft);
+        }
+
         .comp-card-minimal {
             cursor: pointer;
             transition: all 0.3s ease;
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 1.5rem;
-            border-radius: 1rem;
+            padding: 1.55rem;
+            border-radius: 1.1rem;
+            position: relative;
         }
 
         .comp-card-minimal:hover {
-            transform: scale(1.05);
+            transform: translateY(-4px) scale(1.02);
             background: rgba(255,255,255,0.05);
         }
 
@@ -425,16 +637,16 @@
             overflow: hidden;
             transition: all 0.5s ease;
             opacity: 0;
-            font-size: 0.75rem;
+            font-size: 0.76rem;
             color: var(--text-main);
             text-align: center;
-            line-height: 1.5;
-            border-radius: 0.5rem;
+            line-height: 1.55;
+            border-radius: 0.7rem;
         }
 
         .comp-card-minimal.active {
-            background: rgba(168, 85, 247, 0.08);
-            border: 1px solid rgba(168, 85, 247, 0.22);
+            background: rgba(139, 92, 246, 0.08);
+            border: 1px solid rgba(139, 92, 246, 0.20);
         }
 
         .comp-card-minimal.active .comp-detail-minimal {
@@ -442,33 +654,33 @@
             opacity: 1;
             margin-top: 1rem;
             padding: 1rem;
-            background: rgba(168, 85, 247, 0.12);
+            background: rgba(139, 92, 246, 0.12);
         }
 
         .cert-grid-pro {
             display: grid;
             grid-template-columns: repeat(5, 1fr);
-            gap: 1.1rem;
+            gap: 1.15rem;
         }
 
         .cert-box {
-            padding: 1.4rem 1rem;
-            border-radius: 1.4rem;
-            background: linear-gradient(180deg, rgba(30,41,59,0.90), rgba(15,23,42,0.90));
-            border: 1px solid rgba(96,165,250,0.15);
+            padding: 1.45rem 1rem;
+            border-radius: 1.45rem;
+            background: linear-gradient(180deg, rgba(24,34,58,0.94), rgba(15,23,42,0.92));
+            border: 1px solid rgba(96,165,250,0.14);
             text-align: center;
             transition: all 0.3s ease;
+            box-shadow: var(--shadow-soft);
         }
 
         body.light-mode .cert-box {
-            background: linear-gradient(180deg, rgba(255,255,255,0.96), rgba(245,248,255,0.96));
+            background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(244,248,255,0.98));
             border: 1px solid rgba(37,99,235,0.10);
         }
 
         .cert-box:hover {
             transform: translateY(-5px);
             border-color: rgba(96,165,250,0.30);
-            box-shadow: 0 16px 30px rgba(0,0,0,0.14);
         }
 
         .cert-box i {
@@ -499,209 +711,26 @@
             display: inline-flex;
             align-items: center;
             gap: 0.45rem;
-            padding: 0.7rem 1rem;
+            padding: 0.72rem 1rem;
             border-radius: 999px;
             font-size: 0.65rem;
             font-weight: 900;
             text-transform: uppercase;
             background: linear-gradient(135deg, var(--accent), #1d4ed8);
             color: white;
-        }
-
-        .bts-card {
-            background: linear-gradient(180deg, rgba(30,41,59,0.85), rgba(15,23,42,0.85));
-            border: 1px solid rgba(96,165,250,0.15);
-            border-radius: 1.5rem;
-            padding: 2rem;
-            transition: 0.3s ease;
-        }
-
-        body.light-mode .bts-card {
-            background: linear-gradient(180deg, rgba(255,255,255,0.94), rgba(245,248,255,0.94));
-            border: 1px solid rgba(37,99,235,0.10);
-        }
-
-        .bts-card:hover {
-            transform: translateY(-6px);
-            border-color: rgba(96,165,250,0.35);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
-        }
-
-        .bts-pill {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.55rem 0.95rem;
-            border-radius: 999px;
-            font-size: 0.72rem;
-            font-weight: 800;
-            text-transform: uppercase;
-            background: rgba(59,130,246,0.12);
-            border: 1px solid rgba(59,130,246,0.22);
-            color: var(--accent-soft);
-        }
-
-        .profile-layout {
-            display: grid;
-            grid-template-columns: 280px 1fr;
-            gap: 2rem;
-            align-items: start;
-        }
-
-        .profile-photo-card {
-            width: 100%;
-            aspect-ratio: 1 / 1;
-            max-width: 280px;
-            padding: 0.75rem;
-            border-radius: 1.8rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto;
-            overflow: hidden;
-        }
-
-        .profile-photo-card img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center 18%;
-            transform: scale(1.08);
-            border-radius: 1.25rem;
-            display: block;
-        }
-
-        .profile-links-grid {
-            display: grid;
-            grid-template-columns: repeat(2, minmax(180px, 1fr));
-            gap: 1rem;
-            align-self: center;
-        }
-
-        .profile-btn {
-            min-height: 76px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 1rem;
-            border-radius: 1rem;
-            background: rgba(59,130,246,0.12);
-            border: 1px solid rgba(59,130,246,0.22);
-            color: var(--accent-soft);
-            font-weight: 900;
-            text-transform: uppercase;
-            font-size: 0.72rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 10px 22px rgba(0,0,0,0.10);
-        }
-
-        .profile-btn:hover {
-            transform: translateY(-3px);
-            background: rgba(59,130,246,0.18);
-            color: var(--text-main);
-        }
-
-        .formation-grid {
-            display: grid;
-            gap: 1.5rem;
-        }
-
-        .formation-card {
-            position: relative;
-            padding: 1.8rem;
-            border-radius: 1.5rem;
-            background: var(--bg-secondary);
-            border: 1px solid var(--border-soft);
-            transition: all 0.3s ease;
-            overflow: hidden;
-        }
-
-        .formation-card::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: linear-gradient(90deg, var(--accent), var(--accent-soft), transparent);
-        }
-
-        .formation-card:hover {
-            transform: translateY(-5px);
-            border-color: rgba(96,165,250,0.30);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
-        }
-
-        .org-box {
-            border-left: 3px solid var(--accent);
-            background: rgba(255,255,255,0.05);
-            padding: 12px 20px;
-            margin: 8px auto;
-            width: 100%;
-            max-width: 450px;
-            border-radius: 2px 10px 10px 2px;
-        }
-
-        .org-connector {
-            width: 1px;
-            height: 20px;
-            background: rgba(59, 130, 246, 0.4);
-            margin: 0 auto;
-        }
-
-        .enterprise-actions {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 1rem;
-            margin: 2.5rem 0;
-        }
-
-        .enterprise-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.75rem;
-            padding: 0.95rem 1.5rem;
-            border-radius: 1rem;
-            font-size: 0.75rem;
-            font-weight: 900;
-            text-transform: uppercase;
-            background: linear-gradient(135deg, rgba(59,130,246,0.22), rgba(37,99,235,0.12));
-            border: 1px solid rgba(96,165,250,0.28);
-            color: var(--text-main);
-            box-shadow: 0 12px 26px rgba(0,0,0,0.12);
-            transition: all 0.3s ease;
-        }
-
-        .enterprise-btn:hover {
-            transform: translateY(-3px);
-        }
-
-        .enterprise-photo-card {
-            height: 20rem;
-            border-radius: 1.8rem;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .enterprise-photo-card img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
+            box-shadow: 0 10px 18px rgba(59,130,246,0.18);
         }
 
         .project-tabs {
             display: flex;
             justify-content: center;
-            gap: 0.8rem;
+            gap: 0.85rem;
             flex-wrap: wrap;
             margin-bottom: 2rem;
         }
 
         .project-tab {
-            padding: 0.85rem 1.25rem;
+            padding: 0.88rem 1.28rem;
             border-radius: 999px;
             border: 1px solid rgba(96,165,250,0.20);
             background: rgba(59,130,246,0.10);
@@ -713,8 +742,9 @@
         }
 
         .project-tab.active {
-            background: linear-gradient(135deg, rgba(59,130,246,0.24), rgba(37,99,235,0.18));
+            background: linear-gradient(135deg, rgba(59,130,246,0.22), rgba(37,99,235,0.14));
             border-color: rgba(96,165,250,0.40);
+            box-shadow: 0 10px 18px rgba(59,130,246,0.14);
         }
 
         .project-panel {
@@ -743,6 +773,7 @@
             border: 1px dashed rgba(96,165,250,0.24);
             color: var(--text-soft);
             text-align: center;
+            box-shadow: var(--shadow-soft);
         }
 
         .school-project-grid {
@@ -752,9 +783,10 @@
         }
 
         .school-project-card {
-            padding: 1.2rem;
+            padding: 1.25rem;
             border-radius: 1.3rem;
             text-align: left;
+            box-shadow: var(--shadow-soft);
         }
 
         .school-project-card h3 {
@@ -770,7 +802,7 @@
             display: inline-flex;
             align-items: center;
             gap: 0.45rem;
-            padding: 0.7rem 1rem;
+            padding: 0.72rem 1rem;
             border-radius: 999px;
             font-size: 0.66rem;
             font-weight: 900;
@@ -779,9 +811,72 @@
             color: white;
         }
 
+        .org-box {
+            border-left: 3px solid var(--accent);
+            background: rgba(255,255,255,0.05);
+            padding: 12px 20px;
+            margin: 8px auto;
+            width: 100%;
+            max-width: 450px;
+            border-radius: 4px 12px 12px 4px;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .org-connector {
+            width: 1px;
+            height: 20px;
+            background: rgba(59, 130, 246, 0.4);
+            margin: 0 auto;
+        }
+
+        .enterprise-photo-card {
+            height: 20rem;
+            border-radius: 1.8rem;
+            overflow: hidden;
+            position: relative;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .enterprise-photo-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .enterprise-actions {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            margin: 2.5rem 0;
+        }
+
+        .enterprise-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem 1.55rem;
+            border-radius: 1rem;
+            font-size: 0.74rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            background: linear-gradient(135deg, rgba(59,130,246,0.22), rgba(37,99,235,0.12));
+            border: 1px solid rgba(96,165,250,0.28);
+            color: var(--text-main);
+            box-shadow: 0 12px 26px rgba(0,0,0,0.12);
+            transition: all 0.3s ease;
+        }
+
+        .enterprise-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 16px 28px rgba(59,130,246,0.14);
+        }
+
         .veille-item {
             overflow: hidden;
-            border-radius: 1.4rem;
+            border-radius: 1.45rem;
+            box-shadow: var(--shadow-soft);
         }
 
         .veille-header {
@@ -792,7 +887,7 @@
             align-items: center;
             justify-content: space-between;
             gap: 1rem;
-            padding: 1.1rem 1.4rem;
+            padding: 1.15rem 1.45rem;
             font-weight: 900;
             text-transform: uppercase;
             font-size: 0.8rem;
@@ -804,13 +899,13 @@
             overflow: hidden;
             opacity: 0;
             transition: all 0.45s ease;
-            background: rgba(168, 85, 247, 0.06);
+            background: rgba(139, 92, 246, 0.06);
         }
 
         .veille-item.active .veille-content {
             max-height: 600px;
             opacity: 1;
-            padding: 1.4rem;
+            padding: 1.45rem;
         }
 
         .veille-links {
@@ -821,21 +916,47 @@
         .veille-links a {
             display: block;
             color: #60a5fa;
-            font-weight: 700;
+            font-weight: 800;
             text-decoration: underline;
             font-size: 0.78rem;
         }
 
+        .contact-intro {
+            max-width: 980px;
+            margin: 0 auto 2rem auto;
+            padding: 1.9rem 2rem;
+            border-radius: 1.9rem;
+            background: linear-gradient(135deg, rgba(59,130,246,0.10), rgba(139,92,246,0.10));
+            border: 1px solid rgba(96,165,250,0.22);
+            box-shadow: var(--shadow-soft);
+            text-align: left;
+        }
+
+        .contact-intro h3 {
+            font-size: 1.18rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            color: var(--text-main);
+            margin-bottom: 0.8rem;
+            letter-spacing: 0.04em;
+        }
+
+        .contact-intro p {
+            color: var(--text-soft);
+            line-height: 1.7;
+        }
+
         .contact-layout-modern {
             display: grid;
-            grid-template-columns: 1.05fr 1.35fr;
+            grid-template-columns: 1fr 1.15fr;
             gap: 1.5rem;
             align-items: stretch;
         }
 
         .contact-panel {
-            border-radius: 1.75rem;
+            border-radius: 1.8rem;
             padding: 1.7rem;
+            box-shadow: var(--shadow-soft);
         }
 
         .contact-heading {
@@ -843,31 +964,8 @@
             font-weight: 900;
             text-transform: uppercase;
             color: var(--text-main);
-            margin-bottom: 1.2rem;
-        }
-
-        .contact-intro {
-            max-width: 980px;
-            margin: 0 auto 2rem auto;
-            padding: 1.8rem 2rem;
-            border-radius: 1.8rem;
-            background: linear-gradient(135deg, rgba(59,130,246,0.10), rgba(168,85,247,0.10));
-            border: 1px solid rgba(96,165,250,0.22);
-            box-shadow: 0 14px 28px rgba(0,0,0,0.12);
-            text-align: left;
-        }
-
-        .contact-intro h3 {
-            font-size: 1.15rem;
-            font-weight: 900;
-            text-transform: uppercase;
-            color: var(--text-main);
-            margin-bottom: 0.8rem;
-        }
-
-        .contact-intro p {
-            color: var(--text-soft);
-            line-height: 1.7;
+            margin-bottom: 1.25rem;
+            letter-spacing: 0.05em;
         }
 
         .contact-info-stack {
@@ -886,10 +984,10 @@
         }
 
         .contact-icon-box {
-            width: 48px;
-            height: 48px;
-            min-width: 48px;
-            border-radius: 0.9rem;
+            width: 50px;
+            height: 50px;
+            min-width: 50px;
+            border-radius: 1rem;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -903,14 +1001,14 @@
             font-size: 0.68rem;
             text-transform: uppercase;
             letter-spacing: 0.08em;
-            font-weight: 800;
+            font-weight: 900;
             color: var(--text-muted);
             margin-bottom: 0.25rem;
         }
 
         .contact-info-item p:last-child {
             font-size: 1rem;
-            font-weight: 800;
+            font-weight: 900;
             color: var(--text-main);
             word-break: break-word;
         }
@@ -927,7 +1025,7 @@
             align-items: center;
             justify-content: center;
             gap: 0.7rem;
-            min-height: 70px;
+            min-height: 72px;
             padding: 1rem;
             border-radius: 1rem;
             background: rgba(59,130,246,0.10);
@@ -941,6 +1039,7 @@
 
         .contact-social-card:hover {
             transform: translateY(-3px);
+            background: rgba(59,130,246,0.16);
         }
 
         .contact-form-panel {
@@ -969,6 +1068,26 @@
             border-color: var(--accent);
             outline: none;
             background: rgba(255,255,255,0.10);
+            box-shadow: 0 0 0 4px rgba(59,130,246,0.10);
+        }
+
+        .send-btn {
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(135deg, var(--accent), #1d4ed8);
+            color: white;
+            font-weight: 900;
+            text-transform: uppercase;
+            font-size: 0.74rem;
+            border-radius: 1rem;
+            border: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 12px 22px rgba(59,130,246,0.18);
+        }
+
+        .send-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 16px 28px rgba(59,130,246,0.24);
         }
 
         @media (max-width: 1100px) {
@@ -985,7 +1104,7 @@
             }
 
             .profile-photo-card {
-                max-width: 220px;
+                max-width: 230px;
             }
 
             .profile-links-grid {
@@ -1026,7 +1145,7 @@
             .enterprise-btn {
                 width: 100%;
                 justify-content: center;
-                max-width: 340px;
+                max-width: 360px;
             }
 
             .section-header-flex {
@@ -1036,7 +1155,7 @@
     </style>
 </head>
 
-<body class="text-slate-100">
+<body>
     <div class="page-bg"></div>
 
     <div class="mobile-topbar md:hidden">
@@ -1054,23 +1173,23 @@
         </div>
     </div>
 
-    <aside class="fixed top-0 left-0 h-screen w-64 glass-sidebar hidden md:flex flex-col z-50">
+    <aside class="fixed top-0 left-0 h-screen w-64 glass-sidebar hidden md:flex flex-col z-50 sidebar-fixed-font">
         <div class="sidebar-header">
             <div class="sidebar-avatar">
                 <img src="photo like.jpg" alt="Photo de profil Alyssia Noireau">
             </div>
 
-            <h1 class="text-lg font-black uppercase leading-tight text-main">
+            <h1 class="text-lg font-black uppercase leading-tight text-main" style="font-size:18px;">
                 Alyssia<br><span class="text-blue-500">Noireau</span>
             </h1>
 
-            <p class="text-[10px] text-blue-400 font-bold mt-2 tracking-[0.22em] uppercase">BTS SIO SISR</p>
+            <p class="text-blue-400 font-bold mt-2 tracking-[0.22em] uppercase" style="font-size:10px;">BTS SIO SISR</p>
 
             <div class="flex justify-center gap-5 mt-4">
-                <a href="https://www.linkedin.com/in/alyssia-noireau" target="_blank" class="text-blue-400 hover:text-white transition-all text-xl">
+                <a href="https://www.linkedin.com/in/alyssia-noireau" target="_blank" class="text-blue-400 hover:text-white transition-all" style="font-size:20px;">
                     <i class="fa-brands fa-linkedin"></i>
                 </a>
-                <a href="https://github.com/AlyssiaNoireau" target="_blank" class="text-slate-400 hover:text-white transition-all text-xl">
+                <a href="https://github.com/AlyssiaNoireau" target="_blank" class="text-slate-400 hover:text-white transition-all" style="font-size:20px;">
                     <i class="fa-brands fa-github"></i>
                 </a>
             </div>
@@ -1093,7 +1212,7 @@
             </div>
         </div>
 
-        <nav id="sidebar-nav" class="flex-1 flex flex-col justify-center py-3 font-bold uppercase">
+        <nav id="sidebar-nav" class="flex-1 flex flex-col justify-center py-3">
             <a href="#accueil" class="nav-link active"><i class="fa-solid fa-house-chimney"></i> Accueil</a>
             <a href="#profil" class="nav-link"><i class="fa-solid fa-id-badge"></i> Profil</a>
             <a href="#formation" class="nav-link"><i class="fa-solid fa-graduation-cap"></i> Formation</a>
@@ -1108,12 +1227,12 @@
     </aside>
 
     <div class="md:ml-64 min-h-screen">
-        <main class="space-y-40 pb-20">
+        <main class="space-y-40 pb-20 content-scale">
 
             <section id="accueil" class="min-h-screen flex flex-col justify-center items-center text-center px-8 bg-nebula">
                 <div class="hero-overlay"></div>
                 <div class="relative z-10">
-                    <h2 class="text-main text-5xl md:text-7xl font-black tracking-tighter uppercase">Alyssia Noireau</h2>
+                    <h2 class="hero-title text-main text-5xl md:text-7xl font-black tracking-tighter uppercase">Alyssia Noireau</h2>
                     <h3 id="typewriter" class="text-blue-400 text-xl md:text-3xl font-bold uppercase mt-8 typing min-h-[1.5em]"></h3>
                 </div>
             </section>
@@ -1125,7 +1244,7 @@
 
                 <div class="profile-layout mb-10">
                     <div class="w-full">
-                        <div class="glass-card profile-photo-card border border-blue-500/30 shadow-2xl">
+                        <div class="glass-card profile-photo-card border border-blue-500/30">
                             <img src="photo like.jpg" alt="Photo de profil Alyssia Noireau">
                         </div>
                     </div>
@@ -1138,7 +1257,7 @@
                     </div>
                 </div>
 
-                <div class="glass-card white-border-card p-10 rounded-2xl text-justify text-base leading-relaxed shadow-xl text-main mb-10">
+                <div class="glass-card white-border-card p-10 rounded-[2rem] text-justify leading-relaxed text-main mb-10">
                     <p>
                         Titulaire d'un Bac STMG avec une spécialité Mercatique, j'ai développé très tôt une vision transverse des enjeux de l'entreprise et du service client. Passionnée par l'innovation, j'ai fait le choix audacieux de m'orienter vers les systèmes d'information afin de maîtriser les leviers techniques qui soutiennent aujourd'hui toute stratégie d'entreprise.
                     </p>
@@ -1206,22 +1325,22 @@
                 </div>
 
                 <div class="formation-grid">
-                    <div class="formation-card shadow-xl">
+                    <div class="formation-card">
                         <h3 class="text-xl font-black text-blue-400 uppercase">Master MIAGE (En projet) <span class="text-muted text-sm ml-2">2027 - 2029</span></h3>
                         <p class="mt-3 text-soft">Ce diplôme d'excellence vise à parfaire ma maîtrise du pilotage des systèmes d'information. Il allie expertise technique de pointe et stratégies de management organisationnel.</p>
                     </div>
 
-                    <div class="formation-card shadow-xl">
+                    <div class="formation-card">
                         <h3 class="text-xl font-black text-blue-400 uppercase">Licence Chef de Projet (CNAM) <span class="text-muted text-sm ml-2">2026 - 2027</span></h3>
                         <p class="mt-3 text-soft">Une année de spécialisation intensive pour développer une vision à 360° du cycle de vie d'un projet informatique. L'accent est mis sur la conception sécurisée, l'organisation et l'exploitation opérationnelle.</p>
                     </div>
 
-                    <div class="formation-card shadow-xl">
+                    <div class="formation-card">
                         <h3 class="text-xl font-black text-blue-400 uppercase">BTS SIO option SISR (ORT Daniel Mayer) <span class="text-muted text-sm ml-2">2024 - 2026</span></h3>
                         <p class="mt-3 text-soft">Formation spécialisée en systèmes et réseaux. J’y développe des compétences en administration, cybersécurité, support et gestion des infrastructures informatiques dans un cadre professionnalisant.</p>
                     </div>
 
-                    <div class="formation-card shadow-xl">
+                    <div class="formation-card">
                         <h3 class="text-xl font-black text-blue-400 uppercase">Baccalauréat STMG (Jean Zay) <span class="text-muted text-sm ml-2">Diplômée en 2024</span></h3>
                         <p class="mt-3 text-soft">Ce cursus m'a permis d'acquérir une compréhension solide des mécanismes économiques, juridiques et organisationnels de l'entreprise. La spécialité Mercatique a renforcé mon sens de l'analyse et de la relation client.</p>
                     </div>
@@ -1261,7 +1380,7 @@
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10">
-                    <div class="glass-card white-border-card p-6 rounded-2xl">
+                    <div class="glass-card white-border-card p-6 rounded-[1.6rem]">
                         <div class="flex items-center gap-3 mb-3">
                             <i class="fa-solid fa-user-shield text-blue-400 text-xl"></i>
                             <h3 class="font-black uppercase text-sm text-main">Pourquoi SISR ?</h3>
@@ -1271,7 +1390,7 @@
                         </p>
                     </div>
 
-                    <div class="glass-card white-border-card p-6 rounded-2xl">
+                    <div class="glass-card white-border-card p-6 rounded-[1.6rem]">
                         <div class="flex items-center gap-3 mb-3">
                             <i class="fa-solid fa-briefcase text-blue-400 text-xl"></i>
                             <h3 class="font-black uppercase text-sm text-main">Débouchés</h3>
@@ -1281,7 +1400,7 @@
                         </p>
                     </div>
 
-                    <div class="glass-card white-border-card p-6 rounded-2xl">
+                    <div class="glass-card white-border-card p-6 rounded-[1.6rem]">
                         <div class="flex items-center gap-3 mb-3">
                             <i class="fa-solid fa-file-lines text-blue-400 text-xl"></i>
                             <h3 class="font-black uppercase text-sm text-main">Épreuve E5</h3>
@@ -1305,52 +1424,52 @@
                 </div>
 
                 <div class="grid grid-cols-2 sm:grid-cols-5 gap-8">
-                    <div class="comp-card-minimal group competency-item" onclick="toggleCompetencyCard(this)">
+                    <div class="comp-card-minimal glass-card competency-item" onclick="toggleCompetencyCard(this)">
                         <i class="fa-brands fa-linux text-6xl text-[#FCC624] drop-shadow-lg"></i>
                         <div class="comp-detail-minimal"><b>Linux</b><br>Indispensable pour montrer la maîtrise de l’administration système et de la ligne de commande dans un environnement professionnel.</div>
                     </div>
 
-                    <div class="comp-card-minimal group competency-item" onclick="toggleCompetencyCard(this)">
+                    <div class="comp-card-minimal glass-card competency-item" onclick="toggleCompetencyCard(this)">
                         <i class="fa-brands fa-docker text-6xl text-[#2496ED] drop-shadow-lg"></i>
                         <div class="comp-detail-minimal"><b>Docker</b><br>Excellente compétence pour illustrer la conteneurisation, la modernisation des environnements et une vraie montée en niveau sur le profil technique.</div>
                     </div>
 
-                    <div class="comp-card-minimal group competency-item" onclick="toggleCompetencyCard(this)">
+                    <div class="comp-card-minimal glass-card competency-item" onclick="toggleCompetencyCard(this)">
                         <i class="fa-brands fa-windows text-6xl text-[#0078d7] drop-shadow-lg"></i>
                         <div class="comp-detail-minimal"><b>Windows</b><br>Essentiel en entreprise pour mettre en avant l’administration de postes, Active Directory, GPO et le support utilisateurs.</div>
                     </div>
 
-                    <div class="comp-card-minimal group competency-item" onclick="toggleCompetencyCard(this)">
+                    <div class="comp-card-minimal glass-card competency-item" onclick="toggleCompetencyCard(this)">
                         <i class="fa-solid fa-server text-6xl text-[#60A5FA] drop-shadow-lg"></i>
                         <div class="comp-detail-minimal"><b>Serveurs / Stockage</b><br>Compétence clé pour valoriser l’administration système, le stockage, les services serveurs et l’infrastructure globale.</div>
                     </div>
 
-                    <div class="comp-card-minimal group competency-item" onclick="toggleCompetencyCard(this)">
+                    <div class="comp-card-minimal glass-card competency-item" onclick="toggleCompetencyCard(this)">
                         <i class="fa-solid fa-network-wired text-6xl text-[#22c55e] drop-shadow-lg"></i>
                         <div class="comp-detail-minimal"><b>Réseau</b><br>Indispensable pour montrer la compréhension de l’architecture réseau, du routage, de la connectivité et des échanges entre équipements.</div>
                     </div>
 
-                    <div class="comp-card-minimal group competency-item" onclick="toggleCompetencyCard(this)">
+                    <div class="comp-card-minimal glass-card competency-item" onclick="toggleCompetencyCard(this)">
                         <i class="fa-solid fa-ticket text-6xl text-[#f59e0b] drop-shadow-lg"></i>
                         <div class="comp-detail-minimal"><b>Ticketing / Supervision</b><br>Avec des outils comme GLPI ou Zabbix, cette compétence montre la gestion des incidents, le suivi du parc et la supervision au quotidien.</div>
                     </div>
 
-                    <div class="comp-card-minimal group competency-item" onclick="toggleCompetencyCard(this)">
+                    <div class="comp-card-minimal glass-card competency-item" onclick="toggleCompetencyCard(this)">
                         <i class="fa-solid fa-cloud text-6xl text-[#38bdf8] drop-shadow-lg"></i>
                         <div class="comp-detail-minimal"><b>Cloud / Virtualisation</b><br>Que ce soit avec Azure, AWS ou VMware, cette compétence valorise les VM, les services cloud et une approche actuelle de l’infrastructure.</div>
                     </div>
 
-                    <div class="comp-card-minimal group competency-item" onclick="toggleCompetencyCard(this)">
+                    <div class="comp-card-minimal glass-card competency-item" onclick="toggleCompetencyCard(this)">
                         <i class="fa-solid fa-lock text-6xl text-[#ef4444] drop-shadow-lg"></i>
                         <div class="comp-detail-minimal"><b>Cybersécurité</b><br>Très valorisée pour représenter la mise en place de pare-feux, de politiques de sécurité, de contrôle d’accès et de bonnes pratiques.</div>
                     </div>
 
-                    <div class="comp-card-minimal group competency-item" onclick="toggleCompetencyCard(this)">
+                    <div class="comp-card-minimal glass-card competency-item" onclick="toggleCompetencyCard(this)">
                         <i class="fa-brands fa-git-alt text-6xl text-[#f97316] drop-shadow-lg"></i>
                         <div class="comp-detail-minimal"><b>Gestion de version (Git)</b><br>Un vrai marqueur de professionnalisme pour versionner ses scripts, suivre les évolutions d’un projet et structurer son travail.</div>
                     </div>
 
-                    <div class="comp-card-minimal group competency-item" onclick="toggleCompetencyCard(this)">
+                    <div class="comp-card-minimal glass-card competency-item" onclick="toggleCompetencyCard(this)">
                         <i class="fa-solid fa-file-lines text-6xl text-[#a78bfa] drop-shadow-lg"></i>
                         <div class="comp-detail-minimal"><b>Documentation</b><br>Montrer que l’on sait documenter ses procédures, ses interventions et ses projets est une compétence essentielle pour le jury.</div>
                     </div>
@@ -1465,13 +1584,7 @@
 
             <section id="entreprise" class="max-w-6xl mx-auto px-8 py-24 scroll-mt-24 text-center">
                 <div class="text-center mb-10">
-                    <div class="section-header-flex">
-                        <h2 class="text-3xl font-black uppercase section-title text-main">Expérience chez Ista</h2>
-                        <button id="toggleAllEntreprise" class="section-action-btn">
-                            <i class="fa-solid fa-folder-open"></i>
-                            Tout afficher
-                        </button>
-                    </div>
+                    <h2 class="text-3xl font-black uppercase section-title text-main">Expérience chez Ista</h2>
                 </div>
 
                 <div class="mb-20">
@@ -1511,10 +1624,15 @@
                         <i class="fa-solid fa-file-lines"></i>
                         Missions détaillées
                     </a>
+
+                    <button id="toggleAllEntreprise" class="enterprise-btn" type="button">
+                        <i class="fa-solid fa-align-left"></i>
+                        Description
+                    </button>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-left">
-                    <div class="details-item entreprise-item glass-card white-border-card p-6 rounded-2xl cursor-pointer" onclick="this.classList.toggle('active')">
+                    <div class="details-item entreprise-item glass-card white-border-card p-6 rounded-[1.6rem] cursor-pointer" onclick="this.classList.toggle('active')">
                         <div class="flex justify-between items-center font-black uppercase text-[11px] text-main">
                             <span>PRÉSENTATION DU GROUPE ISTA</span>
                             <i class="fa-solid fa-plus"></i>
@@ -1524,7 +1642,7 @@
                         </div>
                     </div>
 
-                    <div class="details-item entreprise-item glass-card white-border-card p-6 rounded-2xl cursor-pointer" onclick="this.classList.toggle('active')">
+                    <div class="details-item entreprise-item glass-card white-border-card p-6 rounded-[1.6rem] cursor-pointer" onclick="this.classList.toggle('active')">
                         <div class="flex justify-between items-center font-black uppercase text-[11px] text-main">
                             <span>RAYONNEMENT ET CHIFFRES CLÉS</span>
                             <i class="fa-solid fa-plus"></i>
@@ -1534,7 +1652,7 @@
                         </div>
                     </div>
 
-                    <div class="details-item entreprise-item glass-card white-border-card p-6 rounded-2xl cursor-pointer" onclick="this.classList.toggle('active')">
+                    <div class="details-item entreprise-item glass-card white-border-card p-6 rounded-[1.6rem] cursor-pointer" onclick="this.classList.toggle('active')">
                         <div class="flex justify-between items-center font-black uppercase text-[11px] text-main">
                             <span>NOTRE ACTIVITÉ ET MISSIONS</span>
                             <i class="fa-solid fa-plus"></i>
@@ -1544,7 +1662,7 @@
                         </div>
                     </div>
 
-                    <div class="details-item entreprise-item glass-card white-border-card p-6 rounded-2xl cursor-pointer" onclick="this.classList.toggle('active')">
+                    <div class="details-item entreprise-item glass-card white-border-card p-6 rounded-[1.6rem] cursor-pointer" onclick="this.classList.toggle('active')">
                         <div class="flex justify-between items-center font-black uppercase text-[11px] text-main">
                             <span>MON RÔLE AU SEIN DE LA DSI</span>
                             <i class="fa-solid fa-plus"></i>
@@ -1562,7 +1680,7 @@
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
-                    <div class="veille-item glass-card shadow-2xl" onclick="this.classList.toggle('active')">
+                    <div class="veille-item glass-card" onclick="this.classList.toggle('active')">
                         <div class="veille-header">
                             <span>Cybersécurité & CERT-FR</span>
                             <i class="fa-solid fa-plus transition-transform"></i>
@@ -1577,7 +1695,7 @@
                         </div>
                     </div>
 
-                    <div class="veille-item glass-card shadow-2xl" onclick="this.classList.toggle('active')">
+                    <div class="veille-item glass-card" onclick="this.classList.toggle('active')">
                         <div class="veille-header">
                             <span>Cloud Computing & Azure</span>
                             <i class="fa-solid fa-plus transition-transform"></i>
@@ -1592,7 +1710,7 @@
                         </div>
                     </div>
 
-                    <div class="veille-item glass-card shadow-2xl" onclick="this.classList.toggle('active')">
+                    <div class="veille-item glass-card" onclick="this.classList.toggle('active')">
                         <div class="veille-header">
                             <span>Admin Système</span>
                             <i class="fa-solid fa-plus transition-transform"></i>
@@ -1607,7 +1725,7 @@
                         </div>
                     </div>
 
-                    <div class="veille-item glass-card shadow-2xl" onclick="this.classList.toggle('active')">
+                    <div class="veille-item glass-card" onclick="this.classList.toggle('active')">
                         <div class="veille-header">
                             <span>IA & Automatisation</span>
                             <i class="fa-solid fa-plus transition-transform"></i>
@@ -1632,13 +1750,12 @@
                 <div class="contact-intro">
                     <h3>Et pour la suite ?</h3>
                     <p>
-                        Dans la continuité de mon BTS SIO, je souhaite intégrer une licence Chef de projet en alternance afin de poursuivre ma progression dans le domaine des systèmes d’information.
-                        Curieuse, investie et motivée, je reste disponible pour échanger sur mon parcours, mes compétences et mes perspectives professionnelles.
+                        Dans la continuité de mon BTS SIO, je souhaite intégrer une licence Chef de projet en alternance afin de poursuivre ma progression dans le domaine des systèmes d’information. Curieuse, investie et motivée, je reste disponible pour échanger sur mon parcours, mes compétences et mes perspectives professionnelles.
                     </p>
                 </div>
 
                 <div class="contact-layout-modern">
-                    <div class="glass-card white-border-card contact-panel shadow-xl">
+                    <div class="glass-card white-border-card contact-panel">
                         <h3 class="contact-heading">Mes coordonnées</h3>
 
                         <div class="contact-info-stack">
@@ -1676,7 +1793,7 @@
                         </div>
                     </div>
 
-                    <div class="glass-card white-border-card contact-panel contact-form-panel shadow-2xl">
+                    <div class="glass-card white-border-card contact-panel contact-form-panel">
                         <div class="contact-form-top">
                             <h3 class="contact-heading">Restons en contact</h3>
                             <p>
@@ -1688,7 +1805,7 @@
                             <input type="text" name="name" placeholder="Nom complet" class="w-full form-input p-4 rounded-xl text-sm" required>
                             <input type="email" name="email" placeholder="Email" class="w-full form-input p-4 rounded-xl text-sm" required>
                             <textarea name="message" rows="7" placeholder="Votre message..." class="w-full form-input p-4 rounded-xl text-sm resize-none" required></textarea>
-                            <button type="submit" class="w-full py-4 bg-blue-600 font-black uppercase text-xs rounded-xl hover:bg-blue-500 transition-all text-white shadow-lg">
+                            <button type="submit" class="send-btn">
                                 Envoyer le message
                             </button>
                         </form>
@@ -1784,11 +1901,15 @@
         });
 
         const fontSlider = document.getElementById("fontSlider");
-        const fontMap = { 0: 14, 1: 16, 2: 18 };
+        const fontMap = {
+            0: 0.92,
+            1: 1,
+            2: 1.08
+        };
 
         function applyFontSizeFromSlider(value) {
-            const size = fontMap[value];
-            document.documentElement.style.setProperty("--base-font-size", size + "px");
+            const scale = fontMap[value];
+            document.documentElement.style.setProperty("--content-font-scale", scale);
         }
 
         function initFontSize() {
