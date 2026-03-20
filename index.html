@@ -111,7 +111,7 @@
 
         .sidebar-fixed-font,
         .sidebar-fixed-font * {
-            font-size: inherit;
+            font-size: 12px !important;
         }
 
         .glass-sidebar {
@@ -122,16 +122,16 @@
         }
 
         .sidebar-header {
-            padding: 1.35rem 1rem;
+            padding: 1.2rem 0.9rem 1rem 0.9rem;
             text-align: center;
             border-bottom: 1px solid var(--border-soft);
         }
 
         .sidebar-avatar {
-            width: 86px;
-            height: 86px;
+            width: 84px;
+            height: 84px;
             border-radius: 1rem;
-            margin: 0 auto 0.9rem auto;
+            margin: 0 auto 0.8rem auto;
             border: 2px solid rgba(59,130,246,0.40);
             box-shadow: 0 10px 26px rgba(0,0,0,0.18);
             overflow: hidden;
@@ -152,21 +152,19 @@
             display: flex;
             align-items: center;
             gap: 0.75rem;
-            margin: 0.18rem 0.65rem;
-            padding: 0.82rem 1rem;
-            border-radius: 1rem;
+            margin: 0.14rem 0.55rem;
+            padding: 0.72rem 0.9rem;
+            border-radius: 0.95rem;
             color: var(--text-muted);
             transition: all 0.25s ease;
             letter-spacing: 0.08em;
             text-transform: uppercase;
-            font-size: 11px !important;
             font-weight: 800;
         }
 
         .nav-link i {
             width: 16px;
             text-align: center;
-            font-size: 13px !important;
         }
 
         .nav-link:hover {
@@ -203,21 +201,21 @@
 
         .theme-toggle {
             width: 100%;
-            margin-top: 1rem;
-            padding: 0.85rem 0.8rem;
-            border-radius: 1rem;
-            border: 1px solid rgba(96,165,250,0.22);
-            background: linear-gradient(135deg, rgba(59,130,246,0.16), rgba(37,99,235,0.08));
+            margin-top: 0.8rem;
+            padding: 0.7rem 0.7rem;
+            border-radius: 0.95rem;
+            border: 1px solid rgba(96,165,250,0.20);
+            background: linear-gradient(135deg, rgba(59,130,246,0.14), rgba(37,99,235,0.07));
             color: var(--text-main);
-            font-size: 10px !important;
             font-weight: 900;
             text-transform: uppercase;
-            letter-spacing: 0.08em;
+            letter-spacing: 0.06em;
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 0.5rem;
+            gap: 0.45rem;
             transition: all 0.3s ease;
+            font-size: 10px !important;
         }
 
         .theme-toggle:hover {
@@ -226,15 +224,14 @@
         }
 
         .font-slider-wrap {
-            margin-top: 0.8rem;
-            padding: 0.85rem 0.9rem;
-            border-radius: 1rem;
-            border: 1px solid rgba(96,165,250,0.18);
-            background: linear-gradient(135deg, rgba(59,130,246,0.12), rgba(37,99,235,0.06));
+            margin-top: 0.65rem;
+            padding: 0.75rem 0.8rem;
+            border-radius: 0.95rem;
+            border: 1px solid rgba(96,165,250,0.16);
+            background: linear-gradient(135deg, rgba(59,130,246,0.10), rgba(37,99,235,0.05));
         }
 
         .font-slider-label {
-            font-size: 9px !important;
             font-weight: 900;
             text-transform: uppercase;
             letter-spacing: 0.08em;
@@ -243,7 +240,8 @@
             align-items: center;
             justify-content: center;
             gap: 0.45rem;
-            margin-bottom: 0.6rem;
+            margin-bottom: 0.55rem;
+            font-size: 9px !important;
         }
 
         .font-scale {
@@ -257,8 +255,8 @@
             width: 10px;
             text-align: center;
             color: var(--text-main);
-            font-size: 14px !important;
             font-weight: 900;
+            font-size: 13px !important;
         }
 
         .font-slider {
@@ -307,7 +305,7 @@
             display: flex;
             gap: 0.7rem;
             overflow-x: auto;
-            padding: 0.9rem 1rem;
+            padding: 0.8rem 1rem 0.7rem 1rem;
             scrollbar-width: none;
         }
 
@@ -319,29 +317,81 @@
             white-space: nowrap;
             padding: 0.66rem 0.95rem;
             border-radius: 999px;
-            font-size: 11px !important;
             font-weight: 900;
             text-transform: uppercase;
             color: var(--text-main);
             background: rgba(59,130,246,0.10);
             border: 1px solid rgba(59,130,246,0.18);
+            font-size: 11px !important;
+        }
+
+        .mobile-controls {
+            display: none;
+            gap: 0.7rem;
+            padding: 0 1rem 0.8rem 1rem;
+            align-items: center;
+        }
+
+        .mobile-theme-toggle {
+            flex: 0 0 auto;
+            padding: 0.68rem 0.9rem;
+            border-radius: 999px;
+            border: 1px solid rgba(96,165,250,0.18);
+            background: rgba(59,130,246,0.10);
+            color: var(--text-main);
+            font-size: 11px;
+            font-weight: 900;
+            text-transform: uppercase;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.45rem;
+        }
+
+        .mobile-font-wrap {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.6rem 0.8rem;
+            border-radius: 999px;
+            border: 1px solid rgba(96,165,250,0.18);
+            background: rgba(59,130,246,0.08);
+        }
+
+        .mobile-font-wrap span {
+            font-size: 12px;
+            font-weight: 900;
+        }
+
+        .mobile-font-slider {
+            flex: 1;
+            appearance: none;
+            height: 4px;
+            border-radius: 999px;
+            background: linear-gradient(90deg, rgba(96,165,250,0.35), rgba(59,130,246,0.9), rgba(96,165,250,0.35));
+            outline: none;
+        }
+
+        .mobile-font-slider::-webkit-slider-thumb {
+            appearance: none;
+            width: 16px;
+            height: 16px;
+            border-radius: 999px;
+            background: white;
+            border: 2px solid var(--accent);
+        }
+
+        .mobile-font-slider::-moz-range-thumb {
+            width: 16px;
+            height: 16px;
+            border-radius: 999px;
+            background: white;
+            border: 2px solid var(--accent);
         }
 
         .content-scale {
-            font-size: calc(16px * var(--content-font-scale));
-        }
-
-        .content-scale p,
-        .content-scale li,
-        .content-scale a,
-        .content-scale span,
-        .content-scale div,
-        .content-scale input,
-        .content-scale textarea,
-        .content-scale button,
-        .content-scale h3,
-        .content-scale h4 {
-            font-size: inherit;
+            font-size: calc(15px * var(--content-font-scale));
         }
 
         .glass-card {
@@ -415,6 +465,14 @@
 
         .hero-title {
             text-shadow: 0 0 18px rgba(59,130,246,0.16);
+        }
+
+        .hero-subtitle-fixed {
+            font-size: 30px !important;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+            min-height: 1.8em;
         }
 
         .typing::after {
@@ -1125,6 +1183,10 @@
                 display: block;
             }
 
+            .mobile-controls {
+                display: flex;
+            }
+
             .md\:ml-64 {
                 margin-left: 0 !important;
             }
@@ -1151,6 +1213,10 @@
             .section-header-flex {
                 flex-direction: column;
             }
+
+            .hero-subtitle-fixed {
+                font-size: 24px !important;
+            }
         }
     </style>
 </head>
@@ -1171,6 +1237,19 @@
             <a href="#veille">Veille</a>
             <a href="#contact">Contact</a>
         </div>
+
+        <div class="mobile-controls">
+            <button id="mobileThemeToggle" class="mobile-theme-toggle">
+                <i class="fa-solid fa-circle-half-stroke"></i>
+                <span id="mobileThemeToggleText">Mode clair</span>
+            </button>
+
+            <div class="mobile-font-wrap">
+                <span>A</span>
+                <input id="mobileFontSlider" class="mobile-font-slider" type="range" min="0" max="2" step="1" value="1">
+                <span>A</span>
+            </div>
+        </div>
     </div>
 
     <aside class="fixed top-0 left-0 h-screen w-64 glass-sidebar hidden md:flex flex-col z-50 sidebar-fixed-font">
@@ -1179,17 +1258,17 @@
                 <img src="photo like.jpg" alt="Photo de profil Alyssia Noireau">
             </div>
 
-            <h1 class="text-lg font-black uppercase leading-tight text-main" style="font-size:18px;">
+            <h1 class="text-lg font-black uppercase leading-tight text-main" style="font-size:18px !important;">
                 Alyssia<br><span class="text-blue-500">Noireau</span>
             </h1>
 
-            <p class="text-blue-400 font-bold mt-2 tracking-[0.22em] uppercase" style="font-size:10px;">BTS SIO SISR</p>
+            <p class="text-blue-400 font-bold mt-2 tracking-[0.22em] uppercase" style="font-size:10px !important;">BTS SIO SISR</p>
 
             <div class="flex justify-center gap-5 mt-4">
-                <a href="https://www.linkedin.com/in/alyssia-noireau" target="_blank" class="text-blue-400 hover:text-white transition-all" style="font-size:20px;">
+                <a href="https://www.linkedin.com/in/alyssia-noireau" target="_blank" class="text-blue-400 hover:text-white transition-all" style="font-size:20px !important;">
                     <i class="fa-brands fa-linkedin"></i>
                 </a>
-                <a href="https://github.com/AlyssiaNoireau" target="_blank" class="text-slate-400 hover:text-white transition-all" style="font-size:20px;">
+                <a href="https://github.com/AlyssiaNoireau" target="_blank" class="text-slate-400 hover:text-white transition-all" style="font-size:20px !important;">
                     <i class="fa-brands fa-github"></i>
                 </a>
             </div>
@@ -1233,7 +1312,7 @@
                 <div class="hero-overlay"></div>
                 <div class="relative z-10">
                     <h2 class="hero-title text-main text-5xl md:text-7xl font-black tracking-tighter uppercase">Alyssia Noireau</h2>
-                    <h3 id="typewriter" class="text-blue-400 text-xl md:text-3xl font-bold uppercase mt-8 typing min-h-[1.5em]"></h3>
+                    <h3 id="typewriter" class="hero-subtitle-fixed text-blue-400 font-bold mt-8 typing"></h3>
                 </div>
             </section>
 
@@ -1259,10 +1338,10 @@
 
                 <div class="glass-card white-border-card p-10 rounded-[2rem] text-justify leading-relaxed text-main mb-10">
                     <p>
-                        Titulaire d'un Bac STMG avec une spécialité Mercatique, j'ai développé très tôt une vision transverse des enjeux de l'entreprise et du service client. Passionnée par l'innovation, j'ai fait le choix audacieux de m'orienter vers les systèmes d'information afin de maîtriser les leviers techniques qui soutiennent aujourd'hui toute stratégie d'entreprise.
+                        Mon parcours m’a permis de développer une double compétence entre compréhension des enjeux de l’entreprise et maîtrise des outils numériques. Aujourd’hui, je m’oriente pleinement vers les systèmes et réseaux afin de devenir une professionnelle capable d’assurer la fiabilité, la sécurité et l’évolution des infrastructures informatiques.
                     </p>
                     <p class="mt-4">
-                        Actuellement en 2e année de BTS SIO option SISR à l’école ORT Daniel Mayer, je consolide mes compétences en administration systèmes et réseaux. Mon alternance chez ista, leader international de la donnée énergétique, est un véritable accélérateur : j'y assure le maintien en condition opérationnelle d'un parc complexe en manipulant des solutions de pointe comme Baramundi, Azure et Jira.
+                        Actuellement en deuxième année de BTS SIO option SISR à l’école ORT Daniel Mayer, je consolide mes compétences en administration systèmes et réseaux. Mon alternance chez ista, acteur international de la donnée énergétique, représente un véritable levier de professionnalisation : j’y participe au maintien en condition opérationnelle du parc informatique en utilisant notamment Baramundi, Azure et Jira.
                     </p>
                 </div>
 
@@ -1327,22 +1406,22 @@
                 <div class="formation-grid">
                     <div class="formation-card">
                         <h3 class="text-xl font-black text-blue-400 uppercase">Master MIAGE (En projet) <span class="text-muted text-sm ml-2">2027 - 2029</span></h3>
-                        <p class="mt-3 text-soft">Ce diplôme d'excellence vise à parfaire ma maîtrise du pilotage des systèmes d'information. Il allie expertise technique de pointe et stratégies de management organisationnel.</p>
+                        <p class="mt-3 text-soft">Ce diplôme d’excellence me permettrait de renforcer ma maîtrise du pilotage des systèmes d’information, en articulant expertise technique avancée et compétences en management organisationnel.</p>
                     </div>
 
                     <div class="formation-card">
                         <h3 class="text-xl font-black text-blue-400 uppercase">Licence Chef de Projet (CNAM) <span class="text-muted text-sm ml-2">2026 - 2027</span></h3>
-                        <p class="mt-3 text-soft">Une année de spécialisation intensive pour développer une vision à 360° du cycle de vie d'un projet informatique. L'accent est mis sur la conception sécurisée, l'organisation et l'exploitation opérationnelle.</p>
+                        <p class="mt-3 text-soft">Cette poursuite d’études vise à développer une vision globale du cycle de vie d’un projet informatique, avec un accent mis sur l’organisation, la sécurité et l’exploitation opérationnelle.</p>
                     </div>
 
                     <div class="formation-card">
                         <h3 class="text-xl font-black text-blue-400 uppercase">BTS SIO option SISR (ORT Daniel Mayer) <span class="text-muted text-sm ml-2">2024 - 2026</span></h3>
-                        <p class="mt-3 text-soft">Formation spécialisée en systèmes et réseaux. J’y développe des compétences en administration, cybersécurité, support et gestion des infrastructures informatiques dans un cadre professionnalisant.</p>
+                        <p class="mt-3 text-soft">Cette formation spécialisée en systèmes et réseaux me permet d’acquérir des compétences en administration, cybersécurité, support et gestion des infrastructures dans un cadre professionnalisant.</p>
                     </div>
 
                     <div class="formation-card">
                         <h3 class="text-xl font-black text-blue-400 uppercase">Baccalauréat STMG (Jean Zay) <span class="text-muted text-sm ml-2">Diplômée en 2024</span></h3>
-                        <p class="mt-3 text-soft">Ce cursus m'a permis d'acquérir une compréhension solide des mécanismes économiques, juridiques et organisationnels de l'entreprise. La spécialité Mercatique a renforcé mon sens de l'analyse et de la relation client.</p>
+                        <p class="mt-3 text-soft">Ce cursus m’a apporté une compréhension solide des mécanismes économiques, juridiques et organisationnels de l’entreprise. La spécialité Mercatique a renforcé mon sens de l’analyse et de la relation client.</p>
                     </div>
                 </div>
             </section>
@@ -1357,10 +1436,10 @@
                         <span class="bts-pill mb-4"><i class="fa-solid fa-graduation-cap"></i> Présentation</span>
                         <h3 class="text-2xl font-black uppercase text-blue-400 mb-4">Brevet de Technicien Supérieur Services Informatiques aux Organisations</h3>
                         <p class="text-soft leading-relaxed text-justify">
-                            Le BTS SIO est une formation en deux ans qui prépare aux métiers de l’informatique en entreprise. Elle permet d’acquérir des compétences techniques, organisationnelles et professionnelles dans les domaines du développement, de l’administration système, du réseau, de la cybersécurité et du support aux utilisateurs.
+                            Le BTS SIO est une formation en deux ans qui prépare aux métiers de l’informatique en entreprise. Il permet d’acquérir des compétences techniques, organisationnelles et professionnelles dans les domaines du développement, de l’administration système, du réseau, de la cybersécurité et du support aux utilisateurs.
                         </p>
                         <p class="text-soft leading-relaxed text-justify mt-4">
-                            Je prépare ce BTS dans l’option SISR (Solutions d’Infrastructure, Systèmes et Réseaux), avec un parcours incluant l’option espagnol ainsi qu’un parcours de certification.
+                            Je prépare ce BTS dans l’option SISR (Solutions d’Infrastructure, Systèmes et Réseaux), avec un parcours incluant l’option espagnol ainsi qu’un parcours de certification, ce qui enrichit à la fois mon profil technique et mon ouverture professionnelle.
                         </p>
                     </div>
 
@@ -1369,7 +1448,7 @@
                         <div class="space-y-6">
                             <div>
                                 <h4 class="text-lg font-black text-blue-400 uppercase">Option SLAM</h4>
-                                <p class="text-soft mt-2 text-justify">L’option SLAM forme aux métiers du développement logiciel, de la programmation, de la conception d’applications web et de la gestion des bases de données.</p>
+                                <p class="text-soft mt-2 text-justify">L’option SLAM forme aux métiers du développement logiciel, à la programmation, à la conception d’applications web et à la gestion des bases de données.</p>
                             </div>
                             <div>
                                 <h4 class="text-lg font-black text-blue-400 uppercase">Option SISR</h4>
@@ -1386,7 +1465,7 @@
                             <h3 class="font-black uppercase text-sm text-main">Pourquoi SISR ?</h3>
                         </div>
                         <p class="text-sm text-soft text-justify">
-                            J’ai choisi l’option SISR car elle correspond à mon attrait pour les infrastructures techniques, la résolution de problèmes, la sécurisation des environnements numériques ainsi que l’administration système et réseau.
+                            J’ai choisi l’option SISR car elle correspond à mon intérêt pour les infrastructures techniques, la résolution de problèmes, la sécurisation des environnements numériques ainsi que l’administration système et réseau.
                         </p>
                     </div>
 
@@ -1426,22 +1505,22 @@
                 <div class="grid grid-cols-2 sm:grid-cols-5 gap-8">
                     <div class="comp-card-minimal glass-card competency-item" onclick="toggleCompetencyCard(this)">
                         <i class="fa-brands fa-linux text-6xl text-[#FCC624] drop-shadow-lg"></i>
-                        <div class="comp-detail-minimal"><b>Linux</b><br>Indispensable pour montrer la maîtrise de l’administration système et de la ligne de commande dans un environnement professionnel.</div>
+                        <div class="comp-detail-minimal"><b>Linux</b><br>Indispensable pour démontrer la maîtrise de l’administration système et de la ligne de commande dans un environnement professionnel.</div>
                     </div>
 
                     <div class="comp-card-minimal glass-card competency-item" onclick="toggleCompetencyCard(this)">
                         <i class="fa-brands fa-docker text-6xl text-[#2496ED] drop-shadow-lg"></i>
-                        <div class="comp-detail-minimal"><b>Docker</b><br>Excellente compétence pour illustrer la conteneurisation, la modernisation des environnements et une vraie montée en niveau sur le profil technique.</div>
+                        <div class="comp-detail-minimal"><b>Docker</b><br>Compétence valorisante pour illustrer la conteneurisation, la modernisation des environnements et l’adaptabilité aux pratiques actuelles.</div>
                     </div>
 
                     <div class="comp-card-minimal glass-card competency-item" onclick="toggleCompetencyCard(this)">
                         <i class="fa-brands fa-windows text-6xl text-[#0078d7] drop-shadow-lg"></i>
-                        <div class="comp-detail-minimal"><b>Windows</b><br>Essentiel en entreprise pour mettre en avant l’administration de postes, Active Directory, GPO et le support utilisateurs.</div>
+                        <div class="comp-detail-minimal"><b>Windows</b><br>Essentiel pour mettre en avant l’administration de postes, l’Active Directory, les GPO et le support aux utilisateurs.</div>
                     </div>
 
                     <div class="comp-card-minimal glass-card competency-item" onclick="toggleCompetencyCard(this)">
                         <i class="fa-solid fa-server text-6xl text-[#60A5FA] drop-shadow-lg"></i>
-                        <div class="comp-detail-minimal"><b>Serveurs / Stockage</b><br>Compétence clé pour valoriser l’administration système, le stockage, les services serveurs et l’infrastructure globale.</div>
+                        <div class="comp-detail-minimal"><b>Serveurs / Stockage</b><br>Compétence clé pour valoriser l’administration des services serveurs, le stockage et la gestion globale de l’infrastructure.</div>
                     </div>
 
                     <div class="comp-card-minimal glass-card competency-item" onclick="toggleCompetencyCard(this)">
@@ -1451,27 +1530,27 @@
 
                     <div class="comp-card-minimal glass-card competency-item" onclick="toggleCompetencyCard(this)">
                         <i class="fa-solid fa-ticket text-6xl text-[#f59e0b] drop-shadow-lg"></i>
-                        <div class="comp-detail-minimal"><b>Ticketing / Supervision</b><br>Avec des outils comme GLPI ou Zabbix, cette compétence montre la gestion des incidents, le suivi du parc et la supervision au quotidien.</div>
+                        <div class="comp-detail-minimal"><b>Ticketing / Supervision</b><br>Avec des outils comme GLPI ou Zabbix, cette compétence illustre la gestion des incidents, le suivi du parc et la supervision quotidienne.</div>
                     </div>
 
                     <div class="comp-card-minimal glass-card competency-item" onclick="toggleCompetencyCard(this)">
                         <i class="fa-solid fa-cloud text-6xl text-[#38bdf8] drop-shadow-lg"></i>
-                        <div class="comp-detail-minimal"><b>Cloud / Virtualisation</b><br>Que ce soit avec Azure, AWS ou VMware, cette compétence valorise les VM, les services cloud et une approche actuelle de l’infrastructure.</div>
+                        <div class="comp-detail-minimal"><b>Cloud / Virtualisation</b><br>Que ce soit avec Azure, AWS ou VMware, cette compétence valorise la gestion des machines virtuelles et des services cloud.</div>
                     </div>
 
                     <div class="comp-card-minimal glass-card competency-item" onclick="toggleCompetencyCard(this)">
                         <i class="fa-solid fa-lock text-6xl text-[#ef4444] drop-shadow-lg"></i>
-                        <div class="comp-detail-minimal"><b>Cybersécurité</b><br>Très valorisée pour représenter la mise en place de pare-feux, de politiques de sécurité, de contrôle d’accès et de bonnes pratiques.</div>
+                        <div class="comp-detail-minimal"><b>Cybersécurité</b><br>Très valorisée pour représenter la mise en place de pare-feux, de politiques de sécurité, de contrôles d’accès et de bonnes pratiques.</div>
                     </div>
 
                     <div class="comp-card-minimal glass-card competency-item" onclick="toggleCompetencyCard(this)">
                         <i class="fa-brands fa-git-alt text-6xl text-[#f97316] drop-shadow-lg"></i>
-                        <div class="comp-detail-minimal"><b>Gestion de version (Git)</b><br>Un vrai marqueur de professionnalisme pour versionner ses scripts, suivre les évolutions d’un projet et structurer son travail.</div>
+                        <div class="comp-detail-minimal"><b>Gestion de version (Git)</b><br>Un marqueur de professionnalisme pour versionner ses scripts, suivre les évolutions d’un projet et structurer son travail.</div>
                     </div>
 
                     <div class="comp-card-minimal glass-card competency-item" onclick="toggleCompetencyCard(this)">
                         <i class="fa-solid fa-file-lines text-6xl text-[#a78bfa] drop-shadow-lg"></i>
-                        <div class="comp-detail-minimal"><b>Documentation</b><br>Montrer que l’on sait documenter ses procédures, ses interventions et ses projets est une compétence essentielle pour le jury.</div>
+                        <div class="comp-detail-minimal"><b>Documentation</b><br>La capacité à documenter procédures, interventions et projets est essentielle pour assurer la clarté et la continuité du travail.</div>
                     </div>
                 </div>
             </section>
@@ -1576,8 +1655,11 @@
 
                 <div id="project-entreprise" class="project-panel">
                     <h3 class="project-category-title">Projets d'entreprise</h3>
-                    <div class="project-placeholder glass-card">
-                        Cette rubrique est prête à accueillir tes projets réalisés en entreprise.
+                    <div class="school-project-grid">
+                        <div class="school-project-card glass-card">
+                            <h3>Projet Workday Entreprise</h3>
+                            <a href="PROJET WORKDAY ENTREPRISE.pdf" target="_blank"><i class="fa-solid fa-file-pdf"></i> Compte rendu</a>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -1638,7 +1720,7 @@
                             <i class="fa-solid fa-plus"></i>
                         </div>
                         <div class="details-content text-sm text-soft leading-relaxed text-justify">
-                            ista est l'un des leaders mondiaux de la gestion des données énergétiques, spécialisé dans l'amélioration de l'efficacité énergétique des bâtiments. En France, la société est structurée sous le statut de SAS et s'appuie sur une force humaine d'environ 800 collaborateurs. Le groupe accompagne ses clients dans la transition durable grâce à des services innovants de comptage et de facturation. Cette expertise permet de répondre aux enjeux écologiques actuels tout en optimisant la consommation de ressources.
+                            ista figure parmi les leaders mondiaux de la gestion des données énergétiques et se spécialise dans l’amélioration de l’efficacité énergétique des bâtiments. En France, l’entreprise est structurée sous le statut de SAS et s’appuie sur près de 800 collaborateurs. Le groupe accompagne ses clients dans la transition durable grâce à des services innovants de comptage, de télérelève et de facturation. Cette expertise lui permet de répondre aux enjeux environnementaux actuels tout en optimisant la consommation des ressources.
                         </div>
                     </div>
 
@@ -1648,7 +1730,7 @@
                             <i class="fa-solid fa-plus"></i>
                         </div>
                         <div class="details-content text-sm text-soft leading-relaxed text-justify">
-                            Le groupe possède une envergure internationale majeure avec une présence active dans plus de 20 pays, principalement en Europe et en Asie. Avec un chiffre d'affaires annuel dépassant le milliard d'euros, ista s'impose comme un acteur économique solide et pérenne. Globalement, l'entreprise gère un parc impressionnant de plus de 45 millions d'appareils connectés. Ce réseau mondial permet de collecter et d'analyser les données de 14 millions de logements et locaux commerciaux.
+                            Le groupe bénéficie d’un rayonnement international important avec une présence active dans plus de 20 pays, principalement en Europe et en Asie. Avec un chiffre d’affaires annuel supérieur au milliard d’euros, ista s’impose comme un acteur solide et durable. À l’échelle mondiale, l’entreprise gère plus de 45 millions d’appareils connectés et collecte les données de plusieurs millions de logements et de locaux commerciaux.
                         </div>
                     </div>
 
@@ -1658,7 +1740,7 @@
                             <i class="fa-solid fa-plus"></i>
                         </div>
                         <div class="details-content text-sm text-soft leading-relaxed text-justify">
-                            Le cœur de métier d'ista repose sur l'individualisation des frais de chauffage et d'eau au sein des habitations collectives. Grâce à des solutions de télérelève performantes, l'entreprise permet une gestion précise et transparente des consommations énergétiques. Ces services permettent aux résidents de devenir acteurs de leur consommation et de réduire leur impact environnemental. En digitalisant ces données, ista simplifie la gestion immobilière tout en garantissant une répartition équitable des charges.
+                            Le cœur de métier d’ista repose sur l’individualisation des frais de chauffage et d’eau dans les habitations collectives. Grâce à des solutions de télérelève performantes, l’entreprise permet une gestion précise, transparente et équitable des consommations énergétiques. Ces services offrent aux résidents une meilleure visibilité sur leurs usages tout en contribuant à la réduction de leur impact environnemental.
                         </div>
                     </div>
 
@@ -1668,7 +1750,7 @@
                             <i class="fa-solid fa-plus"></i>
                         </div>
                         <div class="details-content text-sm text-soft leading-relaxed text-justify">
-                            En tant qu'apprentie Technicienne Réseaux et Systèmes, j'évolue au sein d'une DSI internationale aux enjeux technologiques élevés. Ma mission consiste à garantir le maintien en condition opérationnelle du parc informatique via des outils de pointe comme Baramundi et Microsoft Azure. J'assure également le support utilisateur et la gestion des identités dans un environnement ITSM structuré. Ce rôle me permet de développer une polyvalence technique essentielle tout en participant activement à la transformation digitale du groupe.
+                            En tant qu’apprentie Technicienne Réseaux et Systèmes, j’évolue dans un environnement technique structuré au sein d’une DSI internationale. Ma mission consiste à contribuer au maintien en condition opérationnelle du parc informatique grâce à des outils comme Baramundi et Microsoft Azure. J’assure également le support utilisateur et la gestion des identités dans un cadre ITSM organisé. Ce rôle me permet de développer une vision globale du système d’information tout en renforçant mes compétences techniques et méthodologiques.
                         </div>
                     </div>
                 </div>
@@ -1750,7 +1832,7 @@
                 <div class="contact-intro">
                     <h3>Et pour la suite ?</h3>
                     <p>
-                        Dans la continuité de mon BTS SIO, je souhaite intégrer une licence Chef de projet en alternance afin de poursuivre ma progression dans le domaine des systèmes d’information. Curieuse, investie et motivée, je reste disponible pour échanger sur mon parcours, mes compétences et mes perspectives professionnelles.
+                        Dans la continuité de mon BTS SIO, je souhaite intégrer une licence Chef de projet en alternance afin de développer mes compétences en pilotage de projets informatiques. Motivée, rigoureuse et investie, je reste disponible pour toute opportunité, prise de contact ou échange professionnel.
                     </p>
                 </div>
 
@@ -1880,9 +1962,13 @@
 
         const themeToggle = document.getElementById("themeToggle");
         const themeToggleText = document.getElementById("themeToggleText");
+        const mobileThemeToggle = document.getElementById("mobileThemeToggle");
+        const mobileThemeToggleText = document.getElementById("mobileThemeToggleText");
 
         function updateThemeButton() {
-            themeToggleText.textContent = document.body.classList.contains("light-mode") ? "Mode sombre" : "Mode clair";
+            const isLight = document.body.classList.contains("light-mode");
+            themeToggleText.textContent = isLight ? "Mode sombre" : "Mode clair";
+            mobileThemeToggleText.textContent = isLight ? "Mode sombre" : "Mode clair";
         }
 
         function initTheme() {
@@ -1893,36 +1979,47 @@
             updateThemeButton();
         }
 
-        themeToggle.addEventListener("click", () => {
+        function toggleTheme() {
             document.body.classList.toggle("light-mode");
             const isLight = document.body.classList.contains("light-mode");
             localStorage.setItem("portfolio-theme", isLight ? "light" : "dark");
             updateThemeButton();
-        });
+        }
+
+        themeToggle.addEventListener("click", toggleTheme);
+        mobileThemeToggle.addEventListener("click", toggleTheme);
 
         const fontSlider = document.getElementById("fontSlider");
+        const mobileFontSlider = document.getElementById("mobileFontSlider");
+
         const fontMap = {
-            0: 0.92,
+            0: 0.9,
             1: 1,
-            2: 1.08
+            2: 1.1
         };
 
         function applyFontSizeFromSlider(value) {
-            const scale = fontMap[value];
-            document.documentElement.style.setProperty("--content-font-scale", scale);
+            document.documentElement.style.setProperty("--content-font-scale", fontMap[value]);
+            fontSlider.value = value;
+            mobileFontSlider.value = value;
         }
 
         function initFontSize() {
-            const savedFont = localStorage.getItem("portfolio-font-size-step");
-            const step = savedFont !== null ? savedFont : "1";
-            fontSlider.value = step;
+            const saved = localStorage.getItem("portfolio-font-size-step") || "1";
+            applyFontSizeFromSlider(saved);
+        }
+
+        function handleFontSlider(step) {
             applyFontSizeFromSlider(step);
+            localStorage.setItem("portfolio-font-size-step", step);
         }
 
         fontSlider.addEventListener("input", (e) => {
-            const step = e.target.value;
-            applyFontSizeFromSlider(step);
-            localStorage.setItem("portfolio-font-size-step", step);
+            handleFontSlider(e.target.value);
+        });
+
+        mobileFontSlider.addEventListener("input", (e) => {
+            handleFontSlider(e.target.value);
         });
 
         const projectTabs = document.querySelectorAll(".project-tab");
@@ -1944,8 +2041,7 @@
             card.classList.toggle("active");
         }
 
-        const toggleAllCompetencesBtn = document.getElementById("toggleAllCompetences");
-        toggleAllCompetencesBtn.addEventListener("click", () => {
+        document.getElementById("toggleAllCompetences").addEventListener("click", () => {
             const cards = document.querySelectorAll(".competency-item");
             const allOpen = Array.from(cards).every(card => card.classList.contains("active"));
 
@@ -1958,8 +2054,7 @@
             });
         });
 
-        const toggleAllEntrepriseBtn = document.getElementById("toggleAllEntreprise");
-        toggleAllEntrepriseBtn.addEventListener("click", () => {
+        document.getElementById("toggleAllEntreprise").addEventListener("click", () => {
             const items = document.querySelectorAll(".entreprise-item");
             const allOpen = Array.from(items).every(item => item.classList.contains("active"));
 
