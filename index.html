@@ -109,7 +109,6 @@
             50% { transform: translate(26px, -18px) scale(1.06); }
         }
 
-        /* SIDEBAR FIXE ET PLUS PETITE */
         .sidebar-fixed-font,
         .sidebar-fixed-font * {
             font-size: 11px !important;
@@ -392,7 +391,6 @@
             border: 2px solid var(--accent);
         }
 
-        /* ZOOM UNIQUEMENT SUR LE CONTENU */
         .content-scale {
             font-size: calc(15px * var(--content-font-scale));
         }
@@ -745,9 +743,21 @@
             border-color: rgba(96,165,250,0.30);
         }
 
+        .cert-logo-badge {
+            width: 74px;
+            height: 74px;
+            margin: 0 auto 1rem auto;
+            border-radius: 1.3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, rgba(59,130,246,0.16), rgba(139,92,246,0.12));
+            border: 1px solid rgba(96,165,250,0.18);
+            box-shadow: inset 0 1px 0 rgba(255,255,255,0.06), 0 10px 20px rgba(0,0,0,0.12);
+        }
+
         .cert-box i {
             font-size: 2rem;
-            margin-bottom: 0.9rem;
             background: linear-gradient(to bottom, var(--accent-soft), var(--accent));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -1067,11 +1077,18 @@
             margin-bottom: 0.25rem;
         }
 
-        .contact-info-item p:last-child {
+        .contact-info-item p:last-child,
+        .contact-info-item a {
             font-size: 1rem;
             font-weight: 900;
             color: var(--text-main);
             word-break: break-word;
+            text-decoration: none;
+            transition: color 0.25s ease;
+        }
+
+        .contact-info-item a:hover {
+            color: var(--accent-soft);
         }
 
         .contact-social-grid {
@@ -1113,6 +1130,21 @@
             color: var(--text-soft);
             line-height: 1.7;
             margin-bottom: 1.2rem;
+        }
+
+        .contact-availability {
+            margin-top: 1rem;
+            padding: 1rem 1.1rem;
+            border-radius: 1rem;
+            background: rgba(59,130,246,0.08);
+            border: 1px solid rgba(96,165,250,0.16);
+        }
+
+        .contact-availability p {
+            margin: 0;
+            color: var(--text-soft);
+            line-height: 1.6;
+            font-size: 0.94rem;
         }
 
         .form-input {
@@ -1339,7 +1371,7 @@
                     </div>
                 </div>
 
-                <div class="glass-card white-border-card p-10 rounded-[2rem] text-justify leading-relaxed text-main mb-10">
+                <div class="glass-card white-border-card p-10 rounded-[2rem] text-justify leading-relaxed text-main mb-6">
                     <p>
                         Mon parcours m’a permis de développer une double compétence entre compréhension des enjeux de l’entreprise et maîtrise des outils numériques. Aujourd’hui, je m’oriente pleinement vers les systèmes et réseaux afin de devenir une professionnelle capable d’assurer la fiabilité, la sécurité et l’évolution des infrastructures informatiques.
                     </p>
@@ -1348,8 +1380,15 @@
                     </p>
                 </div>
 
+                <div class="text-center mb-10">
+                    <button id="toggleAllProfil" class="section-action-btn">
+                        <i class="fa-solid fa-user-check"></i>
+                        Descriptif du profil
+                    </button>
+                </div>
+
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div class="details-item glass-card white-border-card p-6 rounded-[2rem] cursor-pointer hover:bg-white/5 transition-all" onclick="this.classList.toggle('active')">
+                    <div class="details-item profile-item glass-card white-border-card p-6 rounded-[2rem] cursor-pointer hover:bg-white/5 transition-all" onclick="this.classList.toggle('active')">
                         <div class="flex justify-between items-center font-black uppercase text-xs text-blue-400">
                             <span>Missions en entreprise</span>
                             <i class="fa-solid fa-plus transition-transform"></i>
@@ -1366,7 +1405,7 @@
                         </div>
                     </div>
 
-                    <div class="details-item glass-card white-border-card p-6 rounded-[2rem] cursor-pointer hover:bg-white/5 transition-all" onclick="this.classList.toggle('active')">
+                    <div class="details-item profile-item glass-card white-border-card p-6 rounded-[2rem] cursor-pointer hover:bg-white/5 transition-all" onclick="this.classList.toggle('active')">
                         <div class="flex justify-between items-center font-black uppercase text-xs text-blue-400">
                             <span>Soft Skills</span>
                             <i class="fa-solid fa-plus transition-transform"></i>
@@ -1383,7 +1422,7 @@
                         </div>
                     </div>
 
-                    <div class="details-item glass-card white-border-card p-6 rounded-[2rem] cursor-pointer hover:bg-white/5 transition-all" onclick="this.classList.toggle('active')">
+                    <div class="details-item profile-item glass-card white-border-card p-6 rounded-[2rem] cursor-pointer hover:bg-white/5 transition-all" onclick="this.classList.toggle('active')">
                         <div class="flex justify-between items-center font-black uppercase text-xs text-blue-400">
                             <span>Centres d'intérêt</span>
                             <i class="fa-solid fa-plus transition-transform"></i>
@@ -1565,35 +1604,45 @@
 
                 <div class="cert-grid-pro">
                     <div class="cert-box">
-                        <i class="fa-solid fa-network-wired"></i>
+                        <div class="cert-logo-badge">
+                            <i class="fa-solid fa-network-wired"></i>
+                        </div>
                         <h3>CCNA 1</h3>
                         <p>Introduction to Networks</p>
                         <a href="CCNA1.pdf" target="_blank"><i class="fa-solid fa-file-pdf"></i> Ouvrir</a>
                     </div>
 
                     <div class="cert-box">
-                        <i class="fa-solid fa-route"></i>
+                        <div class="cert-logo-badge">
+                            <i class="fa-solid fa-diagram-project"></i>
+                        </div>
                         <h3>CCNA 2</h3>
                         <p>Switching and Routing Essentials</p>
                         <a href="CCNA2.pdf" target="_blank"><i class="fa-solid fa-file-pdf"></i> Ouvrir</a>
                     </div>
 
                     <div class="cert-box">
-                        <i class="fa-solid fa-scale-balanced"></i>
+                        <div class="cert-logo-badge">
+                            <i class="fa-solid fa-scale-balanced"></i>
+                        </div>
                         <h3>CNIL</h3>
                         <p>Protection des données personnelles</p>
                         <a href="CNIL.pdf" target="_blank"><i class="fa-solid fa-file-pdf"></i> Ouvrir</a>
                     </div>
 
                     <div class="cert-box">
-                        <i class="fa-solid fa-shield-virus"></i>
+                        <div class="cert-logo-badge">
+                            <i class="fa-solid fa-shield-halved"></i>
+                        </div>
                         <h3>ANSSI</h3>
                         <p>SecNumAcadémie</p>
                         <a href="ANSSI.pdf" target="_blank"><i class="fa-solid fa-file-pdf"></i> Ouvrir</a>
                     </div>
 
                     <div class="cert-box">
-                        <i class="fa-solid fa-desktop"></i>
+                        <div class="cert-logo-badge">
+                            <i class="fa-solid fa-laptop-code"></i>
+                        </div>
                         <h3>PIX</h3>
                         <p>Compétences numériques</p>
                         <a href="PIX.pdf" target="_blank"><i class="fa-solid fa-file-pdf"></i> Ouvrir</a>
@@ -1761,11 +1810,17 @@
 
             <section id="veille" class="max-w-6xl mx-auto px-8 py-24 scroll-mt-24 text-center">
                 <div class="text-center mb-16">
-                    <h2 class="text-3xl font-black uppercase section-title text-main">Veille Technologique</h2>
+                    <div class="section-header-flex">
+                        <h2 class="text-3xl font-black uppercase section-title text-main">Veille Technologique</h2>
+                        <button id="toggleAllVeille" class="section-action-btn">
+                            <i class="fa-solid fa-globe"></i>
+                            Descriptions
+                        </button>
+                    </div>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
-                    <div class="veille-item glass-card" onclick="this.classList.toggle('active')">
+                    <div class="veille-item glass-card veille-toggle-item" onclick="this.classList.toggle('active')">
                         <div class="veille-header">
                             <span>Cybersécurité & CERT-FR</span>
                             <i class="fa-solid fa-plus transition-transform"></i>
@@ -1780,7 +1835,7 @@
                         </div>
                     </div>
 
-                    <div class="veille-item glass-card" onclick="this.classList.toggle('active')">
+                    <div class="veille-item glass-card veille-toggle-item" onclick="this.classList.toggle('active')">
                         <div class="veille-header">
                             <span>Cloud Computing & Azure</span>
                             <i class="fa-solid fa-plus transition-transform"></i>
@@ -1795,7 +1850,7 @@
                         </div>
                     </div>
 
-                    <div class="veille-item glass-card" onclick="this.classList.toggle('active')">
+                    <div class="veille-item glass-card veille-toggle-item" onclick="this.classList.toggle('active')">
                         <div class="veille-header">
                             <span>Admin Système</span>
                             <i class="fa-solid fa-plus transition-transform"></i>
@@ -1810,7 +1865,7 @@
                         </div>
                     </div>
 
-                    <div class="veille-item glass-card" onclick="this.classList.toggle('active')">
+                    <div class="veille-item glass-card veille-toggle-item" onclick="this.classList.toggle('active')">
                         <div class="veille-header">
                             <span>IA & Automatisation</span>
                             <i class="fa-solid fa-plus transition-transform"></i>
@@ -1833,15 +1888,15 @@
                 </div>
 
                 <div class="contact-intro">
-                    <h3>Et pour la suite ?</h3>
+                    <h3>Échange professionnel</h3>
                     <p>
-                        Dans la continuité de mon BTS SIO, je souhaite intégrer une licence Chef de projet en alternance afin de développer mes compétences en pilotage de projets informatiques. Motivée, rigoureuse et investie, je reste disponible pour toute opportunité, prise de contact ou échange professionnel.
+                        Dans la continuité de mon BTS SIO, je souhaite intégrer une licence Chef de projet en alternance afin de développer mes compétences en pilotage de projets informatiques. Sérieuse, rigoureuse et investie, je reste disponible pour toute opportunité d’alternance, prise de contact ou échange professionnel.
                     </p>
                 </div>
 
                 <div class="contact-layout-modern">
                     <div class="glass-card white-border-card contact-panel">
-                        <h3 class="contact-heading">Mes coordonnées</h3>
+                        <h3 class="contact-heading">Coordonnées professionnelles</h3>
 
                         <div class="contact-info-stack">
                             <div class="contact-info-item">
@@ -1850,7 +1905,7 @@
                                 </div>
                                 <div>
                                     <p>Adresse e-mail</p>
-                                    <p>alyssia.noireau@gmail.com</p>
+                                    <a href="mailto:alyssia.noireau@gmail.com">alyssia.noireau@gmail.com</a>
                                 </div>
                             </div>
 
@@ -1860,7 +1915,7 @@
                                 </div>
                                 <div>
                                     <p>Téléphone</p>
-                                    <p>07 67 17 89 08</p>
+                                    <a href="tel:+33767178908">07 67 17 89 08</a>
                                 </div>
                             </div>
                         </div>
@@ -1876,19 +1931,25 @@
                                 GitHub
                             </a>
                         </div>
+
+                        <div class="contact-availability">
+                            <p>
+                                Je suis disponible pour échanger au sujet de mon parcours, de mes compétences en systèmes et réseaux, ainsi que de mes projets réalisés dans le cadre de mon BTS SIO SISR et de mon expérience en entreprise.
+                            </p>
+                        </div>
                     </div>
 
                     <div class="glass-card white-border-card contact-panel contact-form-panel">
                         <div class="contact-form-top">
-                            <h3 class="contact-heading">Restons en contact</h3>
+                            <h3 class="contact-heading">Me contacter</h3>
                             <p>
-                                N’hésitez pas à me contacter pour échanger sur mon parcours, mon portfolio, une opportunité d’alternance ou un futur projet professionnel.
+                                Vous pouvez m’adresser un message pour une opportunité d’alternance, une prise de contact professionnelle, une question sur mon portfolio ou un échange autour de mon parcours.
                             </p>
                         </div>
 
                         <form action="https://formspree.io/f/mdalzynp" method="POST" class="space-y-4">
                             <input type="text" name="name" placeholder="Nom complet" class="w-full form-input p-4 rounded-xl text-sm" required>
-                            <input type="email" name="email" placeholder="Email" class="w-full form-input p-4 rounded-xl text-sm" required>
+                            <input type="email" name="email" placeholder="Adresse e-mail" class="w-full form-input p-4 rounded-xl text-sm" required>
                             <textarea name="message" rows="7" placeholder="Votre message..." class="w-full form-input p-4 rounded-xl text-sm resize-none" required></textarea>
                             <button type="submit" class="send-btn">
                                 Envoyer le message
@@ -2059,6 +2120,32 @@
 
         document.getElementById("toggleAllEntreprise").addEventListener("click", () => {
             const items = document.querySelectorAll(".entreprise-item");
+            const allOpen = Array.from(items).every(item => item.classList.contains("active"));
+
+            items.forEach(item => {
+                if (allOpen) {
+                    item.classList.remove("active");
+                } else {
+                    item.classList.add("active");
+                }
+            });
+        });
+
+        document.getElementById("toggleAllProfil").addEventListener("click", () => {
+            const items = document.querySelectorAll(".profile-item");
+            const allOpen = Array.from(items).every(item => item.classList.contains("active"));
+
+            items.forEach(item => {
+                if (allOpen) {
+                    item.classList.remove("active");
+                } else {
+                    item.classList.add("active");
+                }
+            });
+        });
+
+        document.getElementById("toggleAllVeille").addEventListener("click", () => {
+            const items = document.querySelectorAll(".veille-toggle-item");
             const allOpen = Array.from(items).every(item => item.classList.contains("active"));
 
             items.forEach(item => {
