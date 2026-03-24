@@ -780,25 +780,11 @@
             color: var(--text-soft);
         }
 
-        .cert-ccna1 .cert-logo-circle {
-            background: linear-gradient(135deg, #2563eb, #1d4ed8);
-        }
-
-        .cert-ccna2 .cert-logo-circle {
-            background: linear-gradient(135deg, #0ea5e9, #2563eb);
-        }
-
-        .cert-cnil .cert-logo-circle {
-            background: linear-gradient(135deg, #8b5cf6, #7c3aed);
-        }
-
-        .cert-anssi .cert-logo-circle {
-            background: linear-gradient(135deg, #ef4444, #dc2626);
-        }
-
-        .cert-pix .cert-logo-circle {
-            background: linear-gradient(135deg, #10b981, #059669);
-        }
+        .cert-ccna1 .cert-logo-circle { background: linear-gradient(135deg, #2563eb, #1d4ed8); }
+        .cert-ccna2 .cert-logo-circle { background: linear-gradient(135deg, #0ea5e9, #2563eb); }
+        .cert-cnil .cert-logo-circle { background: linear-gradient(135deg, #8b5cf6, #7c3aed); }
+        .cert-anssi .cert-logo-circle { background: linear-gradient(135deg, #ef4444, #dc2626); }
+        .cert-pix .cert-logo-circle { background: linear-gradient(135deg, #10b981, #059669); }
 
         .project-tabs {
             display: flex;
@@ -925,35 +911,32 @@
         }
 
         .org-expand.active {
-            max-height: 1000px;
+            max-height: 1200px;
             opacity: 1;
-            margin-top: 0.4rem;
+            margin-top: 1rem;
         }
 
-        .org-branch-grid {
+        .org-row-top {
             display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 1.2rem;
-            align-items: start;
-            max-width: 1100px;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            max-width: 900px;
+            margin: 0 auto 1rem auto;
+        }
+
+        .org-row-bottom {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            max-width: 700px;
             margin: 0 auto;
-        }
-
-        .org-branch-col {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .org-branch-children {
-            width: 100%;
         }
 
         .org-box-small {
             border-left: 3px solid var(--accent);
             background: rgba(255,255,255,0.05);
             padding: 12px 16px;
-            margin: 8px auto;
+            margin: 0 auto;
             width: 100%;
             max-width: 320px;
             border-radius: 4px 12px 12px 4px;
@@ -1028,13 +1011,8 @@
             font-size: 0.9rem;
         }
 
-        .swot-header {
-            background: linear-gradient(135deg, #1d4ed8, #2563eb);
-        }
-
-        .security-header {
-            background: linear-gradient(135deg, #7c3aed, #9333ea);
-        }
+        .swot-header { background: linear-gradient(135deg, #1d4ed8, #2563eb); }
+        .security-header { background: linear-gradient(135deg, #7c3aed, #9333ea); }
 
         .swot-content,
         .security-content {
@@ -1044,13 +1022,8 @@
             transition: all 0.45s ease;
         }
 
-        .swot-content {
-            background: rgba(59,130,246,0.07);
-        }
-
-        .security-content {
-            background: rgba(139,92,246,0.08);
-        }
+        .swot-content { background: rgba(59,130,246,0.07); }
+        .security-content { background: rgba(139,92,246,0.08); }
 
         .swot-wrapper.active .swot-content,
         .security-wrapper.active .security-content {
@@ -1421,7 +1394,8 @@
             .contact-layout-modern,
             .school-project-grid,
             .swot-grid,
-            .org-branch-grid {
+            .org-row-top,
+            .org-row-bottom {
                 grid-template-columns: 1fr;
             }
 
@@ -1978,38 +1952,39 @@
                         </div>
 
                         <div id="orgExpandBlock" class="org-expand">
-                            <div class="org-connector"></div>
-
-                            <div class="org-branch-grid">
-                                <div class="org-branch-col">
-                                    <div class="org-box-small">
-                                        <p class="text-[10px] text-muted uppercase font-bold">Superviseur du support utilisateur</p>
-                                        <p class="font-bold text-main">Gioia, Thomas</p>
-                                    </div>
-                                    <div class="org-connector"></div>
-                                    <div class="org-box-small">
-                                        <p class="text-[10px] text-muted uppercase font-bold">Alternant</p>
-                                        <p class="font-bold text-main">Hong, Long</p>
-                                    </div>
+                            <div class="org-row-top">
+                                <div class="org-box-small">
+                                    <p class="text-[10px] text-muted uppercase font-bold">Responsable du support utilisateur ista france</p>
+                                    <p class="font-bold text-main">Payet, Pascal</p>
                                 </div>
 
-                                <div class="org-branch-col">
-                                    <div class="org-box border-blue-500 bg-blue-500/5 shadow-[0_0_20px_rgba(59,130,246,0.2)]">
-                                        <p class="text-[10px] text-muted uppercase font-bold">Apprentie Technicienne Systèmes & Réseaux</p>
-                                        <p class="font-black text-main">Noireau, Alyssia</p>
-                                    </div>
+                                <div class="org-box-small">
+                                    <p class="text-[10px] text-muted uppercase font-bold">Superviseur du support utilisateur</p>
+                                    <p class="font-bold text-main">Gioia, Thomas</p>
+                                </div>
+                            </div>
+
+                            <div class="org-row-top">
+                                <div class="org-box-small">
+                                    <p class="text-[10px] text-muted uppercase font-bold">Interne au support informatique</p>
+                                    <p class="font-bold text-main">Noel, Brice</p>
                                 </div>
 
-                                <div class="org-branch-col">
-                                    <div class="org-box-small">
-                                        <p class="text-[10px] text-muted uppercase font-bold">Responsable du support utilisateur ista france</p>
-                                        <p class="font-bold text-main">Payet, Pascal</p>
-                                    </div>
-                                    <div class="org-connector"></div>
-                                    <div class="org-box-small">
-                                        <p class="text-[10px] text-muted uppercase font-bold">Alternante</p>
-                                        <p class="font-bold text-main">Mekacher, Farah</p>
-                                    </div>
+                                <div class="org-box-small">
+                                    <p class="text-[10px] text-muted uppercase font-bold">Interne au support informatique</p>
+                                    <p class="font-bold text-main">Ganesh, Ganesh</p>
+                                </div>
+                            </div>
+
+                            <div class="org-row-bottom mt-4">
+                                <div class="org-box-small">
+                                    <p class="text-[10px] text-muted uppercase font-bold">Alternante</p>
+                                    <p class="font-bold text-main">Mekacher, Farah</p>
+                                </div>
+
+                                <div class="org-box-small">
+                                    <p class="text-[10px] text-muted uppercase font-bold">Alternant</p>
+                                    <p class="font-bold text-main">Hong, Long</p>
                                 </div>
                             </div>
                         </div>
