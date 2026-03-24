@@ -607,7 +607,8 @@
         }
 
         .details-item.active .fa-plus,
-        .veille-item.active .fa-plus {
+        .veille-item.active .fa-plus,
+        .swot-wrapper.active .fa-plus {
             transform: rotate(45deg);
             color: #ef4444;
         }
@@ -782,6 +783,7 @@
             margin-top: 0.9rem;
             display: inline-flex;
             align-items: center;
+            justify-content: center;
             gap: 0.45rem;
             padding: 0.72rem 1rem;
             border-radius: 999px;
@@ -943,6 +945,84 @@
             transform: translateY(-3px);
             box-shadow: 0 16px 28px rgba(59,130,246,0.14);
         }
+
+        .swot-wrapper {
+            max-width: 820px;
+            margin: 2.2rem auto 0 auto;
+            border-radius: 1.8rem;
+            overflow: hidden;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .swot-header {
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            padding: 1.2rem 1.5rem;
+            background: linear-gradient(135deg, #1d4ed8, #2563eb);
+            color: white;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            font-size: 0.9rem;
+        }
+
+        .swot-content {
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+            transition: all 0.45s ease;
+            background: rgba(59,130,246,0.07);
+        }
+
+        .swot-wrapper.active .swot-content {
+            max-height: 900px;
+            opacity: 1;
+            padding: 1.4rem;
+        }
+
+        .swot-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            text-align: left;
+        }
+
+        .swot-card {
+            border-radius: 1.4rem;
+            padding: 1.3rem;
+            border: 1px solid var(--border-soft);
+            background: var(--bg-secondary);
+            box-shadow: var(--shadow-soft);
+        }
+
+        .swot-card h4 {
+            margin: 0 0 0.8rem 0;
+            font-size: 0.95rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+
+        .swot-card ul {
+            margin: 0;
+            padding-left: 1rem;
+            color: var(--text-soft);
+            line-height: 1.65;
+            font-size: 0.85rem;
+        }
+
+        .swot-s { border-top: 4px solid #22c55e; }
+        .swot-w { border-top: 4px solid #ef4444; }
+        .swot-o { border-top: 4px solid #3b82f6; }
+        .swot-t { border-top: 4px solid #f59e0b; }
+
+        .swot-s h4 { color: #22c55e; }
+        .swot-w h4 { color: #ef4444; }
+        .swot-o h4 { color: #60a5fa; }
+        .swot-t h4 { color: #f59e0b; }
 
         .veille-item {
             overflow: hidden;
@@ -1192,7 +1272,8 @@
         @media (max-width: 900px) {
             .profile-layout,
             .contact-layout-modern,
-            .school-project-grid {
+            .school-project-grid,
+            .swot-grid {
                 grid-template-columns: 1fr;
             }
 
@@ -1366,7 +1447,7 @@
                     <div class="profile-links-grid">
                         <a href="Professional CV Resume (1).pdf" target="_blank" class="profile-btn">Consulter CV</a>
                         <a href="Professional CV Resume (1).pdf" download class="profile-btn"><span><i class="fa-solid fa-download mr-2"></i> Télécharger CV</span></a>
-                        <a href="Tableau_de_Competences.pdf" target="_blank" class="profile-btn">Tableau de compétences</a>
+                        <a href="Tableau synthèse.pdf" target="_blank" class="profile-btn">Tableau de compétences</a>
                         <a href="https://www.linkedin.com/in/alyssia-noireau" target="_blank" class="profile-btn"><span><i class="fa-brands fa-linkedin mr-2"></i> LinkedIn</span></a>
                     </div>
                 </div>
@@ -1609,7 +1690,7 @@
                         </div>
                         <h3>CCNA 1</h3>
                         <p>Introduction to Networks</p>
-                        <a href="CCNA1.pdf" target="_blank"><i class="fa-solid fa-file-pdf"></i> Ouvrir</a>
+                        <a href="CCNA1.pdf" target="_blank">CCNA 1</a>
                     </div>
 
                     <div class="cert-box">
@@ -1618,7 +1699,7 @@
                         </div>
                         <h3>CCNA 2</h3>
                         <p>Switching and Routing Essentials</p>
-                        <a href="CCNA2.pdf" target="_blank"><i class="fa-solid fa-file-pdf"></i> Ouvrir</a>
+                        <a href="CCNA2.pdf" target="_blank">CCNA 2</a>
                     </div>
 
                     <div class="cert-box">
@@ -1627,7 +1708,7 @@
                         </div>
                         <h3>CNIL</h3>
                         <p>Protection des données personnelles</p>
-                        <a href="CNIL.pdf" target="_blank"><i class="fa-solid fa-file-pdf"></i> Ouvrir</a>
+                        <a href="CNIL.pdf" target="_blank">CNIL</a>
                     </div>
 
                     <div class="cert-box">
@@ -1636,7 +1717,7 @@
                         </div>
                         <h3>ANSSI</h3>
                         <p>SecNumAcadémie</p>
-                        <a href="ANSSI.pdf" target="_blank"><i class="fa-solid fa-file-pdf"></i> Ouvrir</a>
+                        <a href="ANSSI.pdf" target="_blank">ANSSI</a>
                     </div>
 
                     <div class="cert-box">
@@ -1645,7 +1726,7 @@
                         </div>
                         <h3>PIX</h3>
                         <p>Compétences numériques</p>
-                        <a href="PIX.pdf" target="_blank"><i class="fa-solid fa-file-pdf"></i> Ouvrir</a>
+                        <a href="PIX.pdf" target="_blank">PIX</a>
                     </div>
                 </div>
             </section>
@@ -1803,6 +1884,57 @@
                         </div>
                         <div class="details-content text-sm text-soft leading-relaxed text-justify">
                             En tant qu’apprentie Technicienne Réseaux et Systèmes, j’évolue dans un environnement technique structuré au sein d’une DSI internationale. Ma mission consiste à contribuer au maintien en condition opérationnelle du parc informatique grâce à des outils comme Baramundi et Microsoft Azure. J’assure également le support utilisateur et la gestion des identités dans un cadre ITSM organisé. Ce rôle me permet de développer une vision globale du système d’information tout en renforçant mes compétences techniques et méthodologiques.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swot-wrapper glass-card mt-10" id="swotBlock">
+                    <div class="swot-header" onclick="document.getElementById('swotBlock').classList.toggle('active')">
+                        <span>SWOT</span>
+                        <i class="fa-solid fa-plus transition-transform"></i>
+                    </div>
+
+                    <div class="swot-content">
+                        <div class="swot-grid">
+                            <div class="swot-card swot-s">
+                                <h4>S — Strengths</h4>
+                                <ul>
+                                    <li>Position forte sur le marché de la gestion énergétique</li>
+                                    <li>Présence internationale et expertise reconnue</li>
+                                    <li>Solutions connectées innovantes</li>
+                                    <li>Environnement structuré et professionnalisant</li>
+                                </ul>
+                            </div>
+
+                            <div class="swot-card swot-w">
+                                <h4>W — Weaknesses</h4>
+                                <ul>
+                                    <li>Organisation pouvant être complexe à grande échelle</li>
+                                    <li>Dépendance à des outils et processus internes nombreux</li>
+                                    <li>Temps d’adaptation plus long pour les nouveaux arrivants</li>
+                                    <li>Chaînes de validation parfois longues</li>
+                                </ul>
+                            </div>
+
+                            <div class="swot-card swot-o">
+                                <h4>O — Opportunities</h4>
+                                <ul>
+                                    <li>Développement croissant de la transition énergétique</li>
+                                    <li>Hausse des besoins en données et objets connectés</li>
+                                    <li>Évolution du cloud et de l’automatisation IT</li>
+                                    <li>Renforcement des métiers liés aux infrastructures et à la cybersécurité</li>
+                                </ul>
+                            </div>
+
+                            <div class="swot-card swot-t">
+                                <h4>T — Threats</h4>
+                                <ul>
+                                    <li>Risque cyber accru sur les systèmes d’information</li>
+                                    <li>Concurrence forte sur le marché de l’énergie connectée</li>
+                                    <li>Évolutions réglementaires exigeantes</li>
+                                    <li>Pression constante sur la performance et la sécurité</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
