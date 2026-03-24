@@ -608,7 +608,8 @@
 
         .details-item.active .fa-plus,
         .veille-item.active .fa-plus,
-        .swot-wrapper.active .fa-plus {
+        .swot-wrapper.active .fa-plus,
+        .security-wrapper.active .fa-plus {
             transform: rotate(45deg);
             color: #ef4444;
         }
@@ -718,81 +719,85 @@
             background: rgba(139, 92, 246, 0.12);
         }
 
-        .cert-grid-pro {
+        .cert-grid-modern {
             display: grid;
             grid-template-columns: repeat(5, 1fr);
-            gap: 1.15rem;
+            gap: 1.2rem;
         }
 
-        .cert-box {
-            padding: 1.45rem 1rem;
-            border-radius: 1.45rem;
-            background: linear-gradient(180deg, rgba(24,34,58,0.94), rgba(15,23,42,0.92));
-            border: 1px solid rgba(96,165,250,0.14);
+        .cert-card-modern {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 220px;
+            padding: 1.55rem 1rem;
+            border-radius: 1.4rem;
             text-align: center;
-            transition: all 0.3s ease;
             box-shadow: var(--shadow-soft);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255,255,255,0.06);
+            background: linear-gradient(180deg, rgba(24,34,58,0.94), rgba(15,23,42,0.92));
         }
 
-        body.light-mode .cert-box {
+        body.light-mode .cert-card-modern {
             background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(244,248,255,0.98));
             border: 1px solid rgba(37,99,235,0.10);
         }
 
-        .cert-box:hover {
-            transform: translateY(-5px);
-            border-color: rgba(96,165,250,0.30);
+        .cert-card-modern:hover {
+            transform: translateY(-5px) scale(1.02);
         }
 
-        .cert-logo-badge {
-            width: 74px;
-            height: 74px;
-            margin: 0 auto 1rem auto;
-            border-radius: 1.3rem;
+        .cert-logo-circle {
+            width: 86px;
+            height: 86px;
+            border-radius: 1.5rem;
             display: flex;
             align-items: center;
             justify-content: center;
-            background: linear-gradient(135deg, rgba(59,130,246,0.16), rgba(139,92,246,0.12));
-            border: 1px solid rgba(96,165,250,0.18);
-            box-shadow: inset 0 1px 0 rgba(255,255,255,0.06), 0 10px 20px rgba(0,0,0,0.12);
+            margin-bottom: 1rem;
+            box-shadow: inset 0 1px 0 rgba(255,255,255,0.08), 0 12px 24px rgba(0,0,0,0.15);
         }
 
-        .cert-box i {
-            font-size: 2rem;
-            background: linear-gradient(to bottom, var(--accent-soft), var(--accent));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        .cert-logo-circle i {
+            font-size: 2.3rem;
+            color: white;
         }
 
-        .cert-box h3 {
-            font-size: 0.82rem;
+        .cert-card-modern h3 {
+            font-size: 0.9rem;
             font-weight: 900;
             text-transform: uppercase;
             color: var(--text-main);
-            margin-bottom: 0.35rem;
-        }
-
-        .cert-box p {
-            font-size: 0.72rem;
-            color: var(--text-soft);
-            min-height: 46px;
             line-height: 1.45;
         }
 
-        .cert-box a {
-            margin-top: 0.9rem;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.45rem;
-            padding: 0.72rem 1rem;
-            border-radius: 999px;
-            font-size: 0.65rem;
-            font-weight: 900;
-            text-transform: uppercase;
-            background: linear-gradient(135deg, var(--accent), #1d4ed8);
-            color: white;
-            box-shadow: 0 10px 18px rgba(59,130,246,0.18);
+        .cert-card-modern p {
+            margin-top: 0.45rem;
+            font-size: 0.72rem;
+            line-height: 1.5;
+            color: var(--text-soft);
+        }
+
+        .cert-ccna1 .cert-logo-circle {
+            background: linear-gradient(135deg, #2563eb, #1d4ed8);
+        }
+
+        .cert-ccna2 .cert-logo-circle {
+            background: linear-gradient(135deg, #0ea5e9, #2563eb);
+        }
+
+        .cert-cnil .cert-logo-circle {
+            background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+        }
+
+        .cert-anssi .cert-logo-circle {
+            background: linear-gradient(135deg, #ef4444, #dc2626);
+        }
+
+        .cert-pix .cert-logo-circle {
+            background: linear-gradient(135deg, #10b981, #059669);
         }
 
         .project-tabs {
@@ -946,22 +951,23 @@
             box-shadow: 0 16px 28px rgba(59,130,246,0.14);
         }
 
-        .swot-wrapper {
-            max-width: 820px;
+        .swot-wrapper,
+        .security-wrapper {
+            max-width: 980px;
             margin: 2.2rem auto 0 auto;
             border-radius: 1.8rem;
             overflow: hidden;
             box-shadow: var(--shadow-soft);
         }
 
-        .swot-header {
+        .swot-header,
+        .security-header {
             cursor: pointer;
             display: flex;
             align-items: center;
             justify-content: space-between;
             gap: 1rem;
             padding: 1.2rem 1.5rem;
-            background: linear-gradient(135deg, #1d4ed8, #2563eb);
             color: white;
             font-weight: 900;
             text-transform: uppercase;
@@ -969,16 +975,33 @@
             font-size: 0.9rem;
         }
 
-        .swot-content {
+        .swot-header {
+            background: linear-gradient(135deg, #1d4ed8, #2563eb);
+        }
+
+        .security-header {
+            background: linear-gradient(135deg, #7c3aed, #9333ea);
+        }
+
+        .swot-content,
+        .security-content {
             max-height: 0;
             overflow: hidden;
             opacity: 0;
             transition: all 0.45s ease;
+        }
+
+        .swot-content {
             background: rgba(59,130,246,0.07);
         }
 
-        .swot-wrapper.active .swot-content {
-            max-height: 900px;
+        .security-content {
+            background: rgba(139,92,246,0.08);
+        }
+
+        .swot-wrapper.active .swot-content,
+        .security-wrapper.active .security-content {
+            max-height: 2000px;
             opacity: 1;
             padding: 1.4rem;
         }
@@ -999,19 +1022,40 @@
         }
 
         .swot-card h4 {
-            margin: 0 0 0.8rem 0;
-            font-size: 0.95rem;
+            margin: 0 0 0.35rem 0;
+            font-size: 1rem;
             font-weight: 900;
             text-transform: uppercase;
             letter-spacing: 0.04em;
         }
 
-        .swot-card ul {
+        .swot-card .swot-type {
+            display: inline-block;
+            margin-bottom: 0.9rem;
+            font-size: 0.72rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--text-muted);
+        }
+
+        .swot-points {
+            display: grid;
+            gap: 0.9rem;
+        }
+
+        .swot-point strong {
+            display: block;
+            color: var(--text-main);
+            margin-bottom: 0.25rem;
+            font-size: 0.88rem;
+        }
+
+        .swot-point p {
             margin: 0;
-            padding-left: 1rem;
             color: var(--text-soft);
             line-height: 1.65;
-            font-size: 0.85rem;
+            font-size: 0.82rem;
         }
 
         .swot-s { border-top: 4px solid #22c55e; }
@@ -1023,6 +1067,56 @@
         .swot-w h4 { color: #ef4444; }
         .swot-o h4 { color: #60a5fa; }
         .swot-t h4 { color: #f59e0b; }
+
+        .security-box {
+            text-align: left;
+            border-radius: 1.5rem;
+            padding: 1.5rem;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-soft);
+            box-shadow: var(--shadow-soft);
+        }
+
+        .security-intro {
+            color: var(--text-soft);
+            line-height: 1.75;
+            margin-bottom: 1.4rem;
+        }
+
+        .security-points {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .security-point {
+            border-left: 4px solid #a78bfa;
+            padding-left: 1rem;
+        }
+
+        .security-point strong {
+            display: block;
+            color: var(--text-main);
+            margin-bottom: 0.3rem;
+            font-size: 0.9rem;
+        }
+
+        .security-point p {
+            margin: 0;
+            color: var(--text-soft);
+            line-height: 1.7;
+            font-size: 0.84rem;
+        }
+
+        .security-objective {
+            margin-top: 1.4rem;
+            padding: 1rem 1.1rem;
+            border-radius: 1rem;
+            background: rgba(139,92,246,0.10);
+            border: 1px solid rgba(167,139,250,0.18);
+            color: var(--text-main);
+            line-height: 1.7;
+            font-size: 0.86rem;
+        }
 
         .veille-item {
             overflow: hidden;
@@ -1264,7 +1358,7 @@
         }
 
         @media (max-width: 1100px) {
-            .cert-grid-pro {
+            .cert-grid-modern {
                 grid-template-columns: repeat(3, 1fr);
             }
         }
@@ -1285,7 +1379,7 @@
                 grid-template-columns: 1fr;
             }
 
-            .cert-grid-pro {
+            .cert-grid-modern {
                 grid-template-columns: repeat(2, 1fr);
             }
         }
@@ -1311,7 +1405,7 @@
                 background-attachment: scroll;
             }
 
-            .cert-grid-pro {
+            .cert-grid-modern {
                 grid-template-columns: 1fr;
             }
 
@@ -1678,55 +1772,50 @@
                 </div>
             </section>
 
-            <section id="certifications" class="max-w-6xl mx-auto px-8 py-24 scroll-mt-24">
+            <section id="certifications" class="max-w-6xl mx-auto px-8 py-24 scroll-mt-24 text-center">
                 <div class="text-center mb-16">
                     <h2 class="text-3xl font-black uppercase section-title text-main">Certifications</h2>
                 </div>
 
-                <div class="cert-grid-pro">
-                    <div class="cert-box">
-                        <div class="cert-logo-badge">
+                <div class="cert-grid-modern">
+                    <div class="cert-card-modern cert-ccna1">
+                        <div class="cert-logo-circle">
                             <i class="fa-solid fa-network-wired"></i>
                         </div>
                         <h3>CCNA 1</h3>
                         <p>Introduction to Networks</p>
-                        <a href="CCNA1.pdf" target="_blank">CCNA 1</a>
                     </div>
 
-                    <div class="cert-box">
-                        <div class="cert-logo-badge">
+                    <div class="cert-card-modern cert-ccna2">
+                        <div class="cert-logo-circle">
                             <i class="fa-solid fa-diagram-project"></i>
                         </div>
                         <h3>CCNA 2</h3>
                         <p>Switching and Routing Essentials</p>
-                        <a href="CCNA2.pdf" target="_blank">CCNA 2</a>
                     </div>
 
-                    <div class="cert-box">
-                        <div class="cert-logo-badge">
+                    <div class="cert-card-modern cert-cnil">
+                        <div class="cert-logo-circle">
                             <i class="fa-solid fa-scale-balanced"></i>
                         </div>
                         <h3>CNIL</h3>
                         <p>Protection des données personnelles</p>
-                        <a href="CNIL.pdf" target="_blank">CNIL</a>
                     </div>
 
-                    <div class="cert-box">
-                        <div class="cert-logo-badge">
+                    <div class="cert-card-modern cert-anssi">
+                        <div class="cert-logo-circle">
                             <i class="fa-solid fa-shield-halved"></i>
                         </div>
                         <h3>ANSSI</h3>
                         <p>SecNumAcadémie</p>
-                        <a href="ANSSI.pdf" target="_blank">ANSSI</a>
                     </div>
 
-                    <div class="cert-box">
-                        <div class="cert-logo-badge">
+                    <div class="cert-card-modern cert-pix">
+                        <div class="cert-logo-circle">
                             <i class="fa-solid fa-laptop-code"></i>
                         </div>
                         <h3>PIX</h3>
                         <p>Compétences numériques</p>
-                        <a href="PIX.pdf" target="_blank">PIX</a>
                     </div>
                 </div>
             </section>
@@ -1897,43 +1986,124 @@
                     <div class="swot-content">
                         <div class="swot-grid">
                             <div class="swot-card swot-s">
-                                <h4>S — Strengths</h4>
-                                <ul>
-                                    <li>Position forte sur le marché de la gestion énergétique</li>
-                                    <li>Présence internationale et expertise reconnue</li>
-                                    <li>Solutions connectées innovantes</li>
-                                    <li>Environnement structuré et professionnalisant</li>
-                                </ul>
+                                <h4>Strengths</h4>
+                                <span class="swot-type">Interne</span>
+                                <div class="swot-points">
+                                    <div class="swot-point">
+                                        <strong>Leader du marché</strong>
+                                        <p>Une présence internationale forte et une expertise historique dans le comptage d'énergie.</p>
+                                    </div>
+                                    <div class="swot-point">
+                                        <strong>Infrastructure robuste</strong>
+                                        <p>Un parc informatique important qui permet de traiter des millions de données de télé-relève.</p>
+                                    </div>
+                                    <div class="swot-point">
+                                        <strong>Support de proximité</strong>
+                                        <p>Une équipe support structurée capable de gérer à la fois le matériel (PC, terminaux) et les logiciels métiers spécifiques à la gestion énergétique.</p>
+                                    </div>
+                                    <div class="swot-point">
+                                        <strong>Digitalisation avancée</strong>
+                                        <p>Utilisation de portails clients et d'outils de monitoring performants.</p>
+                                    </div>
+                                </div>
                             </div>
 
                             <div class="swot-card swot-w">
-                                <h4>W — Weaknesses</h4>
-                                <ul>
-                                    <li>Organisation pouvant être complexe à grande échelle</li>
-                                    <li>Dépendance à des outils et processus internes nombreux</li>
-                                    <li>Temps d’adaptation plus long pour les nouveaux arrivants</li>
-                                    <li>Chaînes de validation parfois longues</li>
-                                </ul>
+                                <h4>Weaknesses</h4>
+                                <span class="swot-type">Interne</span>
+                                <div class="swot-points">
+                                    <div class="swot-point">
+                                        <strong>Complexité du SI</strong>
+                                        <p>La cohabitation entre des anciens systèmes (legacy) et les nouvelles solutions cloud peut complexifier les interventions du support.</p>
+                                    </div>
+                                    <div class="swot-point">
+                                        <strong>Dépendance technique</strong>
+                                        <p>Si les outils de télé-relève tombent, l'activité principale est impactée, mettant une forte pression sur le support IT.</p>
+                                    </div>
+                                    <div class="swot-point">
+                                        <strong>Éparpillement géographique</strong>
+                                        <p>Soutenir des techniciens itinérants ou des agences distantes peut ralentir la résolution de certains incidents matériels.</p>
+                                    </div>
+                                </div>
                             </div>
 
                             <div class="swot-card swot-o">
-                                <h4>O — Opportunities</h4>
-                                <ul>
-                                    <li>Développement croissant de la transition énergétique</li>
-                                    <li>Hausse des besoins en données et objets connectés</li>
-                                    <li>Évolution du cloud et de l’automatisation IT</li>
-                                    <li>Renforcement des métiers liés aux infrastructures et à la cybersécurité</li>
-                                </ul>
+                                <h4>Opportunities</h4>
+                                <span class="swot-type">Externe</span>
+                                <div class="swot-points">
+                                    <div class="swot-point">
+                                        <strong>Transition Écologique</strong>
+                                        <p>La réglementation (loi ELAN en France, par exemple) pousse à l'individualisation des frais de chauffage, ce qui augmente la demande de services et donc de besoins IT.</p>
+                                    </div>
+                                    <div class="swot-point">
+                                        <strong>IA et Automatisation</strong>
+                                        <p>Intégrer des chatbots ou de l'IA pour le support niveau 1 permettrait de libérer du temps pour les tâches à plus haute valeur ajoutée.</p>
+                                    </div>
+                                    <div class="swot-point">
+                                        <strong>Cloud Computing</strong>
+                                        <p>La migration totale vers le cloud peut simplifier la maintenance et le déploiement des mises à jour à distance.</p>
+                                    </div>
+                                </div>
                             </div>
 
                             <div class="swot-card swot-t">
-                                <h4>T — Threats</h4>
-                                <ul>
-                                    <li>Risque cyber accru sur les systèmes d’information</li>
-                                    <li>Concurrence forte sur le marché de l’énergie connectée</li>
-                                    <li>Évolutions réglementaires exigeantes</li>
-                                    <li>Pression constante sur la performance et la sécurité</li>
-                                </ul>
+                                <h4>Threats</h4>
+                                <span class="swot-type">Externe</span>
+                                <div class="swot-points">
+                                    <div class="swot-point">
+                                        <strong>Cybersécurité</strong>
+                                        <p>En tant que gestionnaire de données de consommation, ISTA est une cible potentielle pour les cyberattaques (RGPD).</p>
+                                    </div>
+                                    <div class="swot-point">
+                                        <strong>Concurrence</strong>
+                                        <p>L'arrivée de nouveaux acteurs "Digital Native" (startups de la PropTech) avec des solutions IT plus agiles.</p>
+                                    </div>
+                                    <div class="swot-point">
+                                        <strong>Pénurie de composants</strong>
+                                        <p>Des difficultés d'approvisionnement en terminaux ou serveurs peuvent ralentir les projets IT internes.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="security-wrapper glass-card mt-8" id="securityBlock">
+                    <div class="security-header" onclick="document.getElementById('securityBlock').classList.toggle('active')">
+                        <span>Conformité RGPD & Cybersécurité</span>
+                        <i class="fa-solid fa-plus transition-transform"></i>
+                    </div>
+
+                    <div class="security-content">
+                        <div class="security-box">
+                            <p class="security-intro">
+                                Chez ISTA, la protection des données (consommation énergétique des résidents et informations RH) est une priorité absolue. Mon rôle au support intègre des missions de sécurité concrètes :
+                            </p>
+
+                            <div class="security-points">
+                                <div class="security-point">
+                                    <strong>Campagnes de Phishing</strong>
+                                    <p>Participation à l'organisation de tests (faux e-mails piégés) pour évaluer la vigilance des collaborateurs face aux menaces d'ingénierie sociale.</p>
+                                </div>
+
+                                <div class="security-point">
+                                    <strong>Analyses & Statistiques</strong>
+                                    <p>Suivi des taux de clics et de compromission. Ces rapports permettent d'identifier les services nécessitant une sensibilisation renforcée.</p>
+                                </div>
+
+                                <div class="security-point">
+                                    <strong>Sécurisation des Accès</strong>
+                                    <p>Gestion rigoureuse des comptes via Active Directory et application stricte du principe du moindre privilège.</p>
+                                </div>
+
+                                <div class="security-point">
+                                    <strong>Protection des Terminaux</strong>
+                                    <p>Chiffrement des disques via BitLocker et déploiement de solutions d'authentification forte (MFA).</p>
+                                </div>
+                            </div>
+
+                            <div class="security-objective">
+                                <strong>Objectif :</strong> Réduire le risque d'intrusion, limiter l'erreur humaine et garantir la conformité aux exigences de la CNIL et du RGPD.
                             </div>
                         </div>
                     </div>
